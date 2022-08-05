@@ -1,5 +1,5 @@
 {
-  "name": "antiage-ui-kit",
+  "name": "@itdogtor/antiage-ui-kit",
   "version": "0.0.1",
   "description": "A react component library Anti-Age",
   "scripts": {
@@ -23,5 +23,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/ITDOGTOR"
+  }
 }
