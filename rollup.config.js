@@ -3,10 +3,10 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
-import autoprefixer from 'autoprefixer';
-import cssnano from 'cssnano';
+import postcssPresetEnv from 'postcss-preset-env';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import {terser} from 'rollup-plugin-terser';
+import analyzer from 'rollup-plugin-analyzer';
 
 const packageJson = require('./package.json');
 
@@ -32,15 +32,15 @@ export default [
       typescript({tsconfig: './tsconfig.json'}),
       postcss({
         plugins: [
-          autoprefixer(),
-          cssnano({
-            preset: 'default',
-          }),
+          require('postcss-flexbugs-fixes'),
+          postcssPresetEnv({stage: 2}),
         ],
-        inject: false,
         extract: true,
+        minimize: true,
+        sourceMap: true,
       }),
       terser(),
+      analyzer(),
     ],
   },
   {
