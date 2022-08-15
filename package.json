@@ -3,8 +3,9 @@
 	"version": "0.0.4",
 	"description": "A react component library Anti-Age",
 	"scripts": {
-		"rollup": "rollup -c",
-		"test": "jest"
+		"build": "rollup -c",
+		"test": "jest",
+		"size": "size-limit"
 	},
 	"author": "IT_DOGTOR",
 	"license": "ISC",
@@ -16,6 +17,7 @@
 		"@rollup/plugin-commonjs": "^22.0.1",
 		"@rollup/plugin-node-resolve": "^13.3.0",
 		"@rollup/plugin-typescript": "^8.3.4",
+		"@size-limit/preset-small-lib": "^8.0.1",
 		"@testing-library/react": "^13.3.0",
 		"@types/jest": "^28.1.6",
 		"@types/react": "^18.0.15",
@@ -35,6 +37,7 @@
 		"rollup-plugin-peer-deps-external": "^2.2.4",
 		"rollup-plugin-postcss": "^4.0.2",
 		"rollup-plugin-terser": "^7.0.2",
+		"size-limit": "^8.0.1",
 		"tslib": "^2.4.0",
 		"typescript": "^4.7.4"
 	},
@@ -51,5 +54,18 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ITDOGTOR/antiage-ui-kit.git"
+	},
+	"size-limit": [
+		{
+			"path": "dist/cjs/index.js",
+			"limit": "10 KB"
+		},
+		{
+			"path": "dist/esm/index.js",
+			"limit": "10 KB"
+		}
+	],
+	"engines": {
+		"node": ">=14"
 	}
 }
