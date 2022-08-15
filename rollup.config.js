@@ -11,42 +11,42 @@ import analyzer from 'rollup-plugin-analyzer';
 const packageJson = require('./package.json');
 
 export default [
-  {
-    input: 'src/index.ts',
-    output: [
-      {
-        file: packageJson.main,
-        format: 'cjs',
-        sourcemap: true,
-      },
-      {
-        file: packageJson.module,
-        format: 'esm',
-        sourcemap: true,
-      },
-    ],
-    plugins: [
-      peerDepsExternal(),
-      resolve(),
-      commonjs(),
-      typescript({tsconfig: './tsconfig.json'}),
-      postcss({
-        plugins: [
-          require('postcss-flexbugs-fixes'),
-          postcssPresetEnv({stage: 2}),
-        ],
-        extract: true,
-        minimize: true,
-        sourceMap: true,
-      }),
-      terser(),
-      analyzer(),
-    ],
-  },
-  {
-    input: 'dist/esm/index.d.ts',
-    output: [{file: 'dist/index.d.ts', format: 'esm'}],
-    plugins: [dts()],
-    external: [/\.css$/],
-  },
+	{
+		input: 'src/index.ts',
+		output: [
+			{
+				file: packageJson.main,
+				format: 'cjs',
+				sourcemap: true,
+			},
+			{
+				file: packageJson.module,
+				format: 'esm',
+				sourcemap: true,
+			},
+		],
+		plugins: [
+			peerDepsExternal(),
+			resolve(),
+			commonjs(),
+			typescript({tsconfig: './tsconfig.json'}),
+			postcss({
+				plugins: [
+					require('postcss-flexbugs-fixes'),
+					postcssPresetEnv({stage: 2}),
+				],
+				extract: true,
+				minimize: true,
+				sourceMap: true,
+			}),
+			terser(),
+			analyzer(),
+		],
+	},
+	{
+		input: 'dist/esm/index.d.ts',
+		output: [{file: 'dist/index.d.ts', format: 'esm'}],
+		plugins: [dts()],
+		external: [/\.css$/],
+	},
 ];
