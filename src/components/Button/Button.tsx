@@ -1,12 +1,23 @@
-import React from 'react';
 import './Button.css';
 
+import React from 'react';
+
 interface ButtonProps {
-	label: string,
+	label: string;
 }
 
-const Button = (props: ButtonProps) => {
-	return <button className="button">{props.label}</button>;
-};
+function Button(props: ButtonProps) {
+	const gip = async (dir) => {
+		const g = await dir('gggg');
+
+		return g + 10;
+	};
+
+	return (
+		<button className="button" onClick={gip}>
+			{props.label}
+		</button>
+	);
+}
 
 export default Button;

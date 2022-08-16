@@ -1,13 +1,14 @@
-import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
-import dts from 'rollup-plugin-dts';
-import postcss from 'rollup-plugin-postcss';
 import postcssPresetEnv from 'postcss-preset-env';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import {terser} from 'rollup-plugin-terser';
 import analyzer from 'rollup-plugin-analyzer';
+import dts from 'rollup-plugin-dts';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss';
+import {terser} from 'rollup-plugin-terser';
 
+const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 const packageJson = require('./package.json');
 
 export default [
@@ -31,10 +32,7 @@ export default [
 			commonjs(),
 			typescript({tsconfig: './tsconfig.json'}),
 			postcss({
-				plugins: [
-					require('postcss-flexbugs-fixes'),
-					postcssPresetEnv({stage: 2}),
-				],
+				plugins: [postcssFlexbugsFixes, postcssPresetEnv({stage: 2})],
 				extract: true,
 				minimize: true,
 				sourceMap: true,
