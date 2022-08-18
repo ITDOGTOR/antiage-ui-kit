@@ -14,13 +14,15 @@ module.exports = {
 		},
 		ecmaVersion: 'latest',
 		sourceType: 'module',
-		project: './tsconfig.json',
+		project: './tsconfig.eslint.json',
 	},
 	env: {
 		browser: true,
 		es6: true,
 	},
 	rules: {
+		'no-restricted-exports': 'off',
+		'import/prefer-default-export': 'off',
 		'simple-import-sort/imports': 'error',
 		'simple-import-sort/exports': 'error',
 		'import/first': 'error',
