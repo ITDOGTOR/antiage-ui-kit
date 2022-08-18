@@ -1,7 +1,9 @@
 {
 	"include": [
 		"src",
-		"types"
+		"types",
+		"*.js",
+		".eslintrc.js"
 	],
 	"compilerOptions": {
 		"module": "ESNext",

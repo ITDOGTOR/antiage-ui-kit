@@ -1,5 +1,11 @@
 module.exports = {
-	extends: ['airbnb', 'airbnb-typescript', 'plugin:import/typescript', 'plugin:prettier/recommended'],
+	extends: [
+		'airbnb',
+		'airbnb-typescript',
+		'plugin:import/typescript',
+		'plugin:storybook/recommended',
+		'plugin:prettier/recommended',
+	],
 	plugins: ['react', '@typescript-eslint', 'jsx-a11y', 'simple-import-sort', 'import', 'react-hooks'],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -8,7 +14,7 @@ module.exports = {
 		},
 		ecmaVersion: 'latest',
 		sourceType: 'module',
-		project: './tsconfig.eslint.json',
+		project: './tsconfig.json',
 	},
 	env: {
 		browser: true,
@@ -36,7 +42,17 @@ module.exports = {
 				enforceForJSX: true,
 			},
 		],
-		'react/jsx-filename-extension': ['error', {extensions: ['.js', '.jsx', '.ts', '.tsx']}],
-		'import/no-extraneous-dependencies': ['error', {devDependencies: true}],
+		'react/jsx-filename-extension': [
+			'error',
+			{
+				extensions: ['.js', '.jsx', '.ts', '.tsx'],
+			},
+		],
+		'import/no-extraneous-dependencies': [
+			'error',
+			{
+				devDependencies: true,
+			},
+		],
 	},
 };

@@ -5,8 +5,14 @@ module.exports = {
 		'stylelint-config-css-modules',
 		'stylelint-prettier/recommended',
 	],
-	ignoreFiles: ['**/*.js', '**/*.tsx'],
+	'overrides': [
+		{
+			'files': ['**/*.tsx', '**/*.ts', '**/*.js', '**/*.jsx'],
+			'customSyntax': '@stylelint/postcss-css-in-js',
+		},
+	],
 	rules: {
+		'function-no-unknown': [true, {'ignoreFunctions': ['/\\${/']}],
 		'keyframe-declaration-no-important': true,
 		'alpha-value-notation': 'number',
 		'hue-degree-notation': 'angle',
