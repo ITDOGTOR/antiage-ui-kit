@@ -25,7 +25,7 @@
 		"*.{js,jsx,ts,tsx}": "eslint --fix"
 	},
 	"author": "IT_DOGTOR",
-	"license": "ISC",
+	"license": "MIT",
 	"devDependencies": {
 		"@babel/core": "^7.18.10",
 		"@babel/preset-env": "^7.18.10",
