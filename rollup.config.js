@@ -34,7 +34,7 @@ export default [
 				},
 			}),
 			terser(),
-			analyzer(),
+			analyzer({summaryOnly: true}),
 		],
 	},
 ];
