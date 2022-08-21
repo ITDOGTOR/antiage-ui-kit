@@ -5,7 +5,9 @@
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
 	"files": [
-		"dist"
+		"dist",
+		"LICENSE",
+		"README.md"
 	],
 	"types": "dist/index.d.ts",
 	"scripts": {
@@ -88,8 +90,7 @@
 		"webpack": "^5.74.0"
 	},
 	"peerDependencies": {
-		"react": ">=16.0.0",
-		"react-dom": ">=16.0.0"
+		"react": ">=16"
 	},
 	"repository": {
 		"type": "git",
@@ -97,18 +98,15 @@
 	},
 	"size-limit": [
 		{
-			"path": "dist/cjs/index.js",
+			"path": "dist/index.js",
 			"limit": "10 KB"
 		},
 		{
-			"path": "dist/esm/index.js",
+			"path": "dist/index.esm.js",
 			"limit": "10 KB"
 		}
 	],
 	"engines": {
-		"node": ">=14"
-	},
-	"publishConfig": {
-		"access": "public"
+		"node": ">=10"
 	}
 }
