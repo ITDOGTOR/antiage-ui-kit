@@ -1,3 +1,4 @@
 .testComponent {
-	font-size: 16px;
+	color: var(--complement-strong-up);
+	font-size: var(--fs-xs);
 }
