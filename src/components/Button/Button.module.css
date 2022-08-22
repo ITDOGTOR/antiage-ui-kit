@@ -1,0 +1,64 @@
+@import url('../../ui-kit.css');
+.button {
+	border-radius: var(--fs-md);
+	border: none;
+	padding: 14px 16px;
+	font-weight: 600;
+	line-height: 16px;
+	cursor: pointer;
+}
+
+.button:disabled {
+	cursor: not-allowed; 
+}
+
+.full {
+	width: 100%;
+}
+
+.loading {
+	pointer-events: none;
+	cursor: wait;
+}
+
+.blue {
+	background-color: var(--accent-strong);
+	color: var(--base-weak);
+}
+
+.blue:hover {
+	background-color: var(--accent-strong-up);
+	color: var(--base-weak);
+}
+
+.green {
+	background-color: var(--complement-strong);
+	color: var(--base-weak);
+}
+
+.green:hover {
+	background-color: var(--complement-strong-up);
+	color: var(--base-weak);
+}
+
+.gray {
+	background-color: var(--faint-weak);
+	color: var(--accent-strong);
+}
+
+.gray:hover {
+	background-color: var(--faint-weak-up);
+	color: var(--accent-strong);
+}
+
+.large {
+	font-size: var(--fs-xxl);
+}
+
+.middle  {
+	font-size: var(--fs-xs);
+}
+
+.small {
+	font-size: var(--fs-xxs);
+}
