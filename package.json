@@ -18,7 +18,8 @@
 		"stylelint": "stylelint \"src/**/*.css\" --fix",
 		"semantic-release": "semantic-release",
 		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook"
+		"build-storybook": "build-storybook",
+		"generate": "node ./utils/create-component"
 	},
 	"lint-staged": {
 		"*.css": "stylelint --fix",
@@ -45,6 +46,7 @@
 		"@stylelint/postcss-css-in-js": "^0.38.0",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.3.0",
+		"colors": "^1.4.0",
 		"@types/jest": "^28.1.6",
 		"@types/react": "^18.0.17",
 		"@types/react-dom": "^18.0.6",
