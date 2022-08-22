@@ -16,7 +16,7 @@ export function WithButtons() {
 			content={
 				<div>
 					<button type="button" onClick={() => alert('You clicked me!')}>
-						Click me
+						Click me please!
 					</button>
 				</div>
 			}
