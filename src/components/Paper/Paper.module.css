@@ -1,0 +1,14 @@
+.paper {
+	margin: 5px 10px;
+	padding: 30px 30px 20px;
+
+	background-color: var(--line-faint-weak);
+	border-radius: 15px;
+}
+
+@media (max-width: 767px) {
+	.paper {
+		margin: 5px 0;
+		padding: 20px 15px 15px;
+	}
+}
