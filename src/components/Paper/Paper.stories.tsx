@@ -1,6 +1,3 @@
-import '../../ui-kit.css';
-
-// @ts-ignore
 import React from 'react';
 
 import Paper from './Paper';
@@ -19,28 +16,17 @@ export default {
 			page: null,
 		},
 		backgrounds: {
+			default: 'main',
 			values: [{name: 'main', value: '#f2f5fa'}],
 		},
 	},
 };
 
-export function Empty(args) {
-	return <Paper>{args}</Paper>;
+export function Empty() {
+	return <Paper> </Paper>;
 }
 
-Empty.args = {
-	children: '',
-};
-
-export function WithTitle() {
-	return (
-		<Paper>
-			<h1>This Paper component</h1>
-		</Paper>
-	);
-}
-
-export function FewItems() {
+export function WithChildren() {
 	return (
 		<Paper>
 			<h1>This is Paper component</h1>

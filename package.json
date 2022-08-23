@@ -19,7 +19,8 @@
 		"semantic-release": "semantic-release",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"generate": "node ./utils/create-component"
+		"generate": "node ./utils/create-component",
+		"prepare": "husky install"
 	},
 	"lint-staged": {
 		"*.css": "stylelint --fix",

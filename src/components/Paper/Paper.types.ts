@@ -1,5 +1,6 @@
 import React from 'react';
 
 export interface PaperTypes {
-	children: React.ReactNode;
+	children?: React.ReactNode;
+	customClass?: string;
 }

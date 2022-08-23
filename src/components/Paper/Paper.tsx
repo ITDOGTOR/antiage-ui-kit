@@ -6,8 +6,8 @@ import {PaperTypes} from './Paper.types';
 
 const cx = classNames.bind(style);
 
-function Paper({children}: PaperTypes) {
-	return <div className={cx('paper')}>{children}</div>;
+function Paper({children, customClass = ''}: PaperTypes) {
+	return <div className={cx('paper', customClass)}>{children && children}</div>;
 }
 
 export default Paper;

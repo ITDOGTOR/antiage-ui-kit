@@ -1,10 +1,10 @@
 import {render, screen} from '@testing-library/react';
-// @ts-ignore
 import React from 'react';
 
 import Paper from './Paper';
 
 const childString = 'children';
+const customClass = 'custom';
 const childWithElements = (
 	<>
 		<h1>title</h1>
@@ -13,20 +13,28 @@ const childWithElements = (
 	</>
 );
 
-test('Paper should render without children', () => {
-	render(<Paper> </Paper>);
-});
+describe('Paper component', () => {
+	test('Paper render without children and customClass', () => {
+		const paper = render(<Paper> </Paper>);
+		expect(paper).toMatchSnapshot();
+	});
 
-test('Paper should render with children as string', () => {
-	render(<Paper>{childString}</Paper>);
+	test('Paper snapshot with customClass', () => {
+		const paper = render(<Paper customClass={customClass}> </Paper>);
+		expect(paper).toMatchSnapshot();
+	});
 
-	expect(screen.getByText('children')).toBeInTheDocument();
-});
+	test('Paper should render with children as string', () => {
+		render(<Paper>{childString}</Paper>);
 
-test('All elements must be inside Paper', () => {
-	render(<Paper>{childWithElements}</Paper>);
+		expect(screen.getByText('children')).toBeInTheDocument();
+	});
 
-	expect(screen.getByText('title')).toBeInTheDocument();
-	expect(screen.getByText('description')).toBeInTheDocument();
-	expect(screen.getByText('button')).toBeInTheDocument();
+	test('All elements must be inside Paper', () => {
+		render(<Paper>{childWithElements}</Paper>);
+
+		expect(screen.getByText('title')).toBeInTheDocument();
+		expect(screen.getByText('description')).toBeInTheDocument();
+		expect(screen.getByText('button')).toBeInTheDocument();
+	});
 });
