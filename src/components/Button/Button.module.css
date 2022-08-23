@@ -5,7 +5,7 @@
 	line-height: 16px;
 
 	border: none;
-	border-radius: var(--fs-md);
+	border-radius: 16px;
 	cursor: pointer;
 }
 

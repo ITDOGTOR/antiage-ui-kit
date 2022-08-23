@@ -8,12 +8,12 @@ export default {
 	argTypes: {
 		content: {
 			type: 'string',
-			description: 'Текст',
+			description: 'Content inside the button',
 			defaultValue: 'Click me!',
 		},
 		styleButton: {
 			type: 'string',
-			description: 'Цвет кнопки',
+			description: 'Button type',
 			defaultValue: 'accent-strong-fill',
 			control: {
 				type: 'select',
@@ -30,11 +30,11 @@ export default {
 		},
 		customClass: {
 			type: 'string',
-			description: 'Изменение переменных css',
+			description: 'Adding a custom class',
 		},
 		disabled: {
 			type: 'boolean',
-			description: 'Отключить возможность нажатия',
+			description: 'Disable the button',
 			defaultValue: false,
 			control: {
 				type: 'radio',
@@ -43,7 +43,7 @@ export default {
 		},
 		width: {
 			type: 'string',
-			description: 'Ширина кнопки',
+			description: 'Button width',
 			defaultValue: 'default',
 			control: {
 				type: 'select',
