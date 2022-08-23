@@ -1,9 +1,17 @@
+import {ReactNode} from 'react';
+
 export interface ButtonProps {
-	label: string;
+	content: ReactNode;
 	onClick: () => void;
-	typeButton: string;
-	size: string;
+	styleButton:
+		| 'accent-strong-fill'
+		| 'complement-strong-fill'
+		| 'faint-weak-fill'
+		| 'delete-button'
+		| 'base-weak-outline'
+		| 'text-link'
+		| 'base-weak-fill';
 	disabled: boolean;
-	width: string;
-	loading: boolean;
+	width: 'full' | 'default';
+	customClass: string;
 }

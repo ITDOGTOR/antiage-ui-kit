@@ -1,64 +1,192 @@
-@import url('../../ui-kit.css');
 .button {
-	border-radius: var(--fs-md);
-	border: none;
 	padding: 14px 16px;
+
 	font-weight: 600;
 	line-height: 16px;
+
+	border: none;
+	border-radius: var(--fs-md);
 	cursor: pointer;
 }
 
+.button:disabled:hover {
+	color: var(--back-faint-middle);
+
+	background-color: var(--faint-weak-up);
+	cursor: not-allowed;
+}
+
 .button:disabled {
-	cursor: not-allowed; 
+	color: var(--back-faint-middle);
+
+	background-color: var(--faint-weak-up);
+	cursor: not-allowed;
 }
 
 .full {
 	width: 100%;
 }
 
-.loading {
-	pointer-events: none;
-	cursor: wait;
-}
+.accent-strong-fill {
+	color: var(--base-weak);
 
-.blue {
 	background-color: var(--accent-strong);
-	color: var(--base-weak);
 }
 
-.blue:hover {
+.accent-strong-fill:hover {
+	color: var(--base-weak);
+
 	background-color: var(--accent-strong-up);
-	color: var(--base-weak);
+
+	transition: 0.4s;
 }
 
-.green {
+.delete-button {
+	color: var(--critic-strong);
+
+	background-color: var(--base-weak);
+	border: var(--critic-strong) 0.6px solid;
+}
+
+.delete-button:hover {
+	color: var(--critic-strong);
+
+	background-color: rgb(255 97 77 / 0.15);
+	border: var(--critic-strong) 0.6px solid;
+
+	transition: 0.4s;
+}
+
+.delete-button:disabled {
+	color: var(--critic-weak-up);
+
+	background-color: var(--base-weak);
+	border: var(--critic-weak-up) 0.6px solid;
+}
+
+.delete-button:disabled:hover {
+	color: var(--critic-weak-up);
+
+	background-color: var(--base-weak);
+	border: var(--critic-weak-up) 0.6px solid;
+}
+
+.complement-strong-fill {
+	color: var(--base-weak);
+
 	background-color: var(--complement-strong);
-	color: var(--base-weak);
 }
 
-.green:hover {
+.complement-strong-fill:hover {
+	color: var(--base-weak);
+
 	background-color: var(--complement-strong-up);
-	color: var(--base-weak);
+
+	transition: 0.4s;
 }
 
-.gray {
+.faint-weak-fill {
+	color: var(--accent-strong);
+
 	background-color: var(--faint-weak);
-	color: var(--accent-strong);
 }
 
-.gray:hover {
+.faint-weak-fill:hover {
+	color: var(--accent-strong);
+
 	background-color: var(--faint-weak-up);
+
+	transition: 0.4s;
+}
+
+.base-weak-outline {
+	color: var(--base-strong);
+
+	background-color: var(--base-weak);
+	border: var(--line-faint-weak) 0.6px solid;
+}
+
+.base-weak-outline:hover {
+	color: var(--base-strong);
+
+	background-color: var(--faint-weak);
+	border: var(--line-faint-weak) 0.6px solid;
+
+	transition: 0.4s;
+}
+
+.base-weak-outline:disabled {
+	color: var(--back-faint-middle);
+
+	background-color: var(--base-weak);
+	border: var(--line-faint-weak) 0.6px solid;
+
+	transition: 0.4s;
+}
+
+.base-weak-outline:disabled:hover {
+	color: var(--back-faint-middle);
+
+	background-color: var(--base-weak);
+	border: var(--line-faint-weak) 0.6px solid;
+
+	transition: 0.4s;
+}
+
+.text-link {
 	color: var(--accent-strong);
+	font-weight: 500;
+
+	background-color: transparent;
+	border: none;
 }
 
-.large {
-	font-size: var(--fs-xxl);
+.text-link:hover {
+	color: var(--accent-strong);
+	font-weight: 600;
+	text-decoration: underline;
+
+	background-color: transparent;
+	border: none;
 }
 
-.middle  {
-	font-size: var(--fs-xs);
+.text-link:disabled {
+	color: var(--back-faint-middle);
+	font-weight: 500;
+
+	background-color: transparent;
+	border: none;
 }
 
-.small {
-	font-size: var(--fs-xxs);
+.text-link:disabled:hover {
+	color: var(--back-faint-middle);
+	font-weight: 500;
+	text-decoration: none;
+
+	background-color: transparent;
+	border: none;
+}
+
+.base-weak-fill {
+	color: var(--base-strong);
+
+	background-color: var(--base-weak);
+}
+
+.base-weak-fill:hover {
+	color: var(--base-strong);
+
+	background-color: var(--faint-weak-up);
+}
+
+.base-weak-fill:disabled {
+	color: var(--back-faint-middle);
+
+	background-color: var(--base-weak);
+}
+
+.base-weak-fill:disabled:hover {
+	color: var(--back-faint-middle);
+
+	background-color: var(--base-weak);
 }

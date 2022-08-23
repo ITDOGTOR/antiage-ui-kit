@@ -6,28 +6,31 @@ export default {
 	title: 'Button',
 	component: Button,
 	argTypes: {
-		label: {
+		content: {
 			type: 'string',
 			description: 'Текст',
 			defaultValue: 'Click me!',
 		},
-		typeButton: {
+		styleButton: {
 			type: 'string',
 			description: 'Цвет кнопки',
-			defaultValue: 'blue',
+			defaultValue: 'accent-strong-fill',
 			control: {
 				type: 'select',
 			},
-			options: ['blue', 'green', 'gray'],
+			options: [
+				'accent-strong-fill',
+				'complement-strong-fill',
+				'faint-weak-fill',
+				'delete-button',
+				'base-weak-outline',
+				'text-link',
+				'base-weak-fill',
+			],
 		},
-		size: {
+		customClass: {
 			type: 'string',
-			description: 'Размер текста внутри',
-			defaultValue: 'middle',
-			control: {
-				type: 'select',
-			},
-			options: ['large', 'middle', 'small'],
+			description: 'Изменение переменных css',
 		},
 		disabled: {
 			type: 'boolean',
@@ -46,15 +49,6 @@ export default {
 				type: 'select',
 			},
 			options: ['default', 'full'],
-		},
-		loading: {
-			type: 'boolean',
-			description: 'Загрузка',
-			defaultValue: false,
-			control: {
-				type: 'radio',
-			},
-			options: [false, true],
 		},
 	},
 };

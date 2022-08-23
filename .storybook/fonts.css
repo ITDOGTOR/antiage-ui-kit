@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+@import url("http://fonts.cdnfonts.com/css/jetbrains-mono");
+
+* {
+	font-family: Montserrat, Arial, sans-serif;
+}
+
+pre * {
+	/* stylelint-disable declaration-no-important */
+	font-family: "JetBrains Mono", Arial, sans-serif !important;
+	/* stylelint-enable declaration-no-important */
+
+	tab-size: 2;
+}

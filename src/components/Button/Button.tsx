@@ -4,26 +4,13 @@ import React from 'react';
 import styles from './Button.module.css';
 import {ButtonProps} from './Button.types';
 
-function Button({
-	label = 'Кнопка',
-	onClick,
-	typeButton = 'accentStrong',
-	size = 'medium',
-	disabled = true,
-	width = 'default',
-	loading = true,
-}: ButtonProps) {
-	const mainClassName = className(
-		styles.button,
-		styles[typeButton],
-		styles[size],
-		styles[width],
-		loading && styles.loading,
-	);
+const cx = className.bind(styles);
 
+function Button({content, onClick, styleButton, disabled = true, width = 'default', customClass}: ButtonProps) {
+	const mainClassName = className(styles.button, styles[styleButton], styles[width], customClass);
 	return (
-		<button className={mainClassName} disabled={disabled} type="button" onClick={onClick}>
-			{label}
+		<button className={cx(mainClassName)} data-testid="button" disabled={disabled} type="button" onClick={onClick}>
+			{content}
 		</button>
 	);
 }
