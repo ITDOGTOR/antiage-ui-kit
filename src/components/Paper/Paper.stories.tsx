@@ -17,7 +17,7 @@ export default {
 		},
 		backgrounds: {
 			default: 'main',
-			values: [{name: 'main', value: '#f2f5fa'}],
+			values: [{name: 'main', value: '#f2f4f7'}],
 		},
 	},
 };

@@ -13,24 +13,24 @@ const childWithElements = (
 	</>
 );
 
-describe('Paper component', () => {
-	test('Paper render without children and customClass', () => {
+describe('Paper', () => {
+	test('Render without children and customClass', () => {
 		const paper = render(<Paper> </Paper>);
 		expect(paper).toMatchSnapshot();
 	});
 
-	test('Paper snapshot with customClass', () => {
+	test('Snapshot with customClass', () => {
 		const paper = render(<Paper customClass={customClass}> </Paper>);
 		expect(paper).toMatchSnapshot();
 	});
 
-	test('Paper should render with children as string', () => {
+	test('Should render with children as string', () => {
 		render(<Paper>{childString}</Paper>);
 
 		expect(screen.getByText('children')).toBeInTheDocument();
 	});
 
-	test('All elements must be inside Paper', () => {
+	test('Contain all elements', () => {
 		render(<Paper>{childWithElements}</Paper>);
 
 		expect(screen.getByText('title')).toBeInTheDocument();

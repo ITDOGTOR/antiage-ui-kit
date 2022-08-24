@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paper component Paper render without children and customClass 1`] = `
+exports[`Paper Render without children and customClass 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -73,7 +73,7 @@ Object {
 }
 `;
 
-exports[`Paper component Paper snapshot with customClass 1`] = `
+exports[`Paper Snapshot with customClass 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
