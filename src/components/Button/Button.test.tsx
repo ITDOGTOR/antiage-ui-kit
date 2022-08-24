@@ -77,11 +77,12 @@ describe('Button', () => {
 	test('Testing to check the type of button', () => {
 		const style =
 			'accent-fill' ||
+			'accent-outline' ||
 			'complement-fill' ||
-			'faint-fill' ||
-			'delete-button' ||
+			'complement-outline' ||
+			'critic-outline' ||
 			'base-outline' ||
-			'text-link' ||
+			'text' ||
 			'base-fill';
 
 		const {getByTestId} = renderComponent({styleType: style});
