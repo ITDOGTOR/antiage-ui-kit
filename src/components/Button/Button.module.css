@@ -1,39 +1,29 @@
 .button {
+	display: flex;
+	justify-content: center;
+	justify-items: center;
 	padding: 14px 16px;
 
-	font-weight: 600;
-	line-height: 16px;
+	font-weight: var(--fw-semibold);
+	font-size: var(--fs-xs);
+	line-height: var(--lh-xs);
 
 	border: none;
 	border-radius: 16px;
 	cursor: pointer;
 }
 
-.button:disabled:hover {
-	color: var(--back-faint-middle);
-
-	background-color: var(--faint-weak-up);
-	cursor: not-allowed;
-}
-
-.button:disabled {
-	color: var(--back-faint-middle);
-
-	background-color: var(--faint-weak-up);
-	cursor: not-allowed;
-}
-
 .full {
 	width: 100%;
 }
 
-.accent-strong-fill {
+.accent-fill-white {
 	color: var(--base-weak);
 
 	background-color: var(--accent-strong);
 }
 
-.accent-strong-fill:hover {
+.accent-fill-white:hover {
 	color: var(--base-weak);
 
 	background-color: var(--accent-strong-up);
@@ -41,14 +31,28 @@
 	transition: 0.4s;
 }
 
-.delete-button {
+.accent-fill-white:disabled {
+	color: var(--back-faint-middle);
+
+	background-color: var(--faint-weak-up);
+	cursor: not-allowed;
+}
+
+.accent-fill-white:disabled:hover {
+	color: var(--back-faint-middle);
+
+	background-color: var(--faint-weak-up);
+	cursor: not-allowed;
+}
+
+.delete-button-white {
 	color: var(--critic-strong);
 
 	background-color: var(--base-weak);
 	border: var(--critic-strong) 0.6px solid;
 }
 
-.delete-button:hover {
+.delete-button-white:hover {
 	color: var(--critic-strong);
 
 	background-color: rgb(255 97 77 / 0.15);
@@ -57,27 +61,29 @@
 	transition: 0.4s;
 }
 
-.delete-button:disabled {
+.delete-button-white:disabled {
 	color: var(--critic-weak-up);
 
 	background-color: var(--base-weak);
 	border: var(--critic-weak-up) 0.6px solid;
+	cursor: not-allowed;
 }
 
-.delete-button:disabled:hover {
+.delete-button-white:disabled:hover {
 	color: var(--critic-weak-up);
 
 	background-color: var(--base-weak);
 	border: var(--critic-weak-up) 0.6px solid;
+	cursor: not-allowed;
 }
 
-.complement-strong-fill {
+.complement-fill-white {
 	color: var(--base-weak);
 
 	background-color: var(--complement-strong);
 }
 
-.complement-strong-fill:hover {
+.complement-fill-white:hover {
 	color: var(--base-weak);
 
 	background-color: var(--complement-strong-up);
@@ -85,13 +91,27 @@
 	transition: 0.4s;
 }
 
-.faint-weak-fill {
+.complement-fill-white:disabled {
+	color: var(--back-faint-middle);
+
+	background-color: var(--faint-weak-up);
+	cursor: not-allowed;
+}
+
+.complement-fill-white:disabled:hover {
+	color: var(--back-faint-middle);
+
+	background-color: var(--faint-weak-up);
+	cursor: not-allowed;
+}
+
+.faint-fill-white {
 	color: var(--accent-strong);
 
 	background-color: var(--faint-weak);
 }
 
-.faint-weak-fill:hover {
+.faint-fill-white:hover {
 	color: var(--accent-strong);
 
 	background-color: var(--faint-weak-up);
@@ -99,14 +119,28 @@
 	transition: 0.4s;
 }
 
-.base-weak-outline {
+.faint-fill-white:disabled {
+	color: var(--back-faint-middle);
+
+	background-color: var(--faint-weak-up);
+	cursor: not-allowed;
+}
+
+.faint-fill-white:disabled:hover {
+	color: var(--back-faint-middle);
+
+	background-color: var(--faint-weak-up);
+	cursor: not-allowed;
+}
+
+.base-outline-white {
 	color: var(--base-strong);
 
 	background-color: var(--base-weak);
 	border: var(--line-faint-weak) 0.6px solid;
 }
 
-.base-weak-outline:hover {
+.base-outline-white:hover {
 	color: var(--base-strong);
 
 	background-color: var(--faint-weak);
@@ -115,78 +149,112 @@
 	transition: 0.4s;
 }
 
-.base-weak-outline:disabled {
+.base-outline-white:disabled {
 	color: var(--back-faint-middle);
 
 	background-color: var(--base-weak);
 	border: var(--line-faint-weak) 0.6px solid;
+	cursor: not-allowed;
 
 	transition: 0.4s;
 }
 
-.base-weak-outline:disabled:hover {
+.base-outline-white:disabled:hover {
 	color: var(--back-faint-middle);
 
 	background-color: var(--base-weak);
 	border: var(--line-faint-weak) 0.6px solid;
+	cursor: not-allowed;
 
 	transition: 0.4s;
 }
 
-.text-link {
+.text-link-white {
 	color: var(--accent-strong);
-	font-weight: 500;
 
 	background-color: transparent;
 	border: none;
 }
 
-.text-link:hover {
+.text-link-white:hover {
 	color: var(--accent-strong);
-	font-weight: 600;
+	font-weight: var(--fw-bold);
 	text-decoration: underline;
 
 	background-color: transparent;
 	border: none;
 }
 
-.text-link:disabled {
+.text-link-white:disabled {
 	color: var(--back-faint-middle);
-	font-weight: 500;
 
 	background-color: transparent;
 	border: none;
+	cursor: not-allowed;
 }
 
-.text-link:disabled:hover {
+.text-link-white:disabled:hover {
 	color: var(--back-faint-middle);
-	font-weight: 500;
+	font-weight: var(--fw-semibold);
 	text-decoration: none;
 
 	background-color: transparent;
 	border: none;
+	cursor: not-allowed;
 }
 
-.base-weak-fill {
+.base-fill-dark {
 	color: var(--base-strong);
 
 	background-color: var(--base-weak);
 }
 
-.base-weak-fill:hover {
+.base-fill-dark:hover {
 	color: var(--base-strong);
 
 	background-color: var(--faint-weak-up);
 }
 
-.base-weak-fill:disabled {
+.base-fill-dark:disabled {
 	color: var(--back-faint-middle);
 
 	background-color: var(--base-weak);
+	cursor: not-allowed;
 }
 
-.base-weak-fill:disabled:hover {
+.base-fill-dark:disabled:hover {
 	color: var(--back-faint-middle);
 
 	background-color: var(--base-weak);
+	cursor: not-allowed;
+}
+
+.base-outline-dark {
+	color: var(--base-strong);
+
+	background-color: var(--base-weak);
+	border: var(--line-faint-weak) 0.6px solid;
+}
+
+.base-outline-dark:hover {
+	color: var(--base-strong);
+
+	background-color: var(--faint-weak-up);
+	border: var(--line-faint-weak) 0.6px solid;
+}
+
+.base-outline-dark:disabled {
+	color: var(--back-faint-middle);
+
+	background-color: var(--faint-weak);
+	border: var(--line-faint-weak) 0.6px solid;
+	cursor: not-allowed;
+}
+
+.base-outline-dark:disabled:hover {
+	color: var(--back-faint-middle);
+
+	background-color: var(--faint-weak);
+	border: var(--line-faint-weak) 0.6px solid;
+	cursor: not-allowed;
 }
