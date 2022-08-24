@@ -9,15 +9,16 @@ const cx = className.bind(styles);
 function Button({
 	children = 'Click me!',
 	onClick,
-	styleButton = 'accent-fill',
+	styleType = 'accent-fill',
 	disabled = false,
 	width = 'default',
 	customClass = '',
 	theme = 'white',
-	icon,
+	icon = '',
 	htmlType = 'button',
+	label = '',
 }: ButtonProps) {
-	const mainClassName = className(styles.button, styles[`${styleButton}-${theme}`], styles[width], customClass);
+	const mainClassName = className(styles.button, styles[`${styleType}-${theme}`], styles[width], customClass);
 
 	return (
 		<button
@@ -27,7 +28,7 @@ function Button({
 			type={htmlType === 'button' ? 'button' : 'submit'}
 			onClick={onClick}
 		>
-			{icon} {children}
+			{label ? `${icon} ${label}` : children}
 		</button>
 	);
 }
