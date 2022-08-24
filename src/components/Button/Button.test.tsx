@@ -5,24 +5,28 @@ import Button from './Button';
 import {ButtonProps} from './Button.types';
 
 describe('Button', () => {
-	const renderComponent = ({content, customClass, disabled, styleButton, width}: Partial<ButtonProps>) =>
+	const renderComponent = ({children, customClass, disabled, styleButton, width}: Partial<ButtonProps>) =>
 		render(
 			<Button
-				content={content || <div>Default content</div>}
 				customClass={customClass || ''}
 				disabled={disabled || false}
-				styleButton={styleButton || 'accent-strong-fill'}
+				htmlType="button"
+				icon={undefined}
+				styleButton={styleButton || 'accent-fill'}
+				theme="white"
 				width={width || 'default'}
 				onClick={() => {
 					throw new Error('Function not implemented.');
 				}}
-			/>,
+			>
+				{children}
+			</Button>,
 		);
 
 	test('Testing for content inside the button', () => {
-		const headingText = 'Текст внутри кнопки';
+		const headingText = 'Click me';
 
-		const {getByTestId} = renderComponent({content: headingText});
+		const {getByTestId} = renderComponent({children: headingText});
 
 		const button = getByTestId('button');
 
@@ -61,19 +65,19 @@ describe('Button', () => {
 
 	test('Testing to check the type of button', () => {
 		const style =
-			'accent-strong-fill' ||
-			'complement-strong-fill' ||
-			'faint-weak-fill' ||
+			'accent-fill' ||
+			'complement-fill' ||
+			'faint-fill' ||
 			'delete-button' ||
-			'base-weak-outline' ||
+			'base-outline' ||
 			'text-link' ||
-			'base-weak-fill';
+			'base-fill';
 
 		const {getByTestId} = renderComponent({styleButton: style});
 
 		const button = getByTestId('button');
 
-		expect(button).toHaveClass(style);
+		expect(button).toHaveClass(`${style}-white` || `${style}-dark`);
 	});
 
 	test('Testing for button width', () => {
