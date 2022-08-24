@@ -6,28 +6,44 @@ export default {
 	title: 'Button',
 	component: Button,
 	argTypes: {
-		content: {
+		children: {
 			type: 'string',
 			description: 'Content inside the button',
 			defaultValue: 'Click me!',
 		},
+		icon: {
+			type: 'string',
+			description: 'Icon inside the button',
+			defaultValue: 'icon',
+		},
 		styleButton: {
 			type: 'string',
-			description: 'Button type',
-			defaultValue: 'accent-strong-fill',
+			description: 'Ready-made button style',
+			defaultValue: 'accent-fill',
 			control: {
 				type: 'select',
 			},
 			options: [
-				'accent-strong-fill',
-				'complement-strong-fill',
-				'faint-weak-fill',
+				'accent-fill',
+				'complement-fill',
+				'faint-fill',
 				'delete-button',
-				'base-weak-outline',
+				'base-outline',
 				'text-link',
-				'base-weak-fill',
+				'base-fill',
 			],
 		},
+
+		theme: {
+			type: 'string',
+			description: 'Background style for the button',
+			defaultValue: 'white',
+			control: {
+				type: 'select',
+			},
+			options: ['white', 'dark'],
+		},
+
 		customClass: {
 			type: 'string',
 			description: 'Adding a custom class',
@@ -49,6 +65,15 @@ export default {
 				type: 'select',
 			},
 			options: ['default', 'full'],
+		},
+		htmlType: {
+			type: 'string',
+			description: 'Button html type',
+			defaultValue: 'button',
+			control: {
+				type: 'select',
+			},
+			options: ['button', 'submit'],
 		},
 	},
 };
