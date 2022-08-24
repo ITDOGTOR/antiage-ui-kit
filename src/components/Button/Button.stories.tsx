@@ -31,7 +31,7 @@ export default {
 				'base-outline',
 				'base-fill',
 				'critic-outline',
-				'text-link',
+				'text',
 			],
 		},
 
