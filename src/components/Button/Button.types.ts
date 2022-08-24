@@ -1,17 +1,20 @@
 import {ReactNode} from 'react';
 
 export interface ButtonProps {
-	content: ReactNode;
+	children: ReactNode;
+	theme: 'white' | 'dark';
 	onClick: () => void;
 	styleButton:
-		| 'accent-strong-fill'
-		| 'complement-strong-fill'
-		| 'faint-weak-fill'
+		| 'accent-fill'
+		| 'complement-fill'
+		| 'faint-fill'
 		| 'delete-button'
-		| 'base-weak-outline'
+		| 'base-outline'
 		| 'text-link'
-		| 'base-weak-fill';
+		| 'base-fill';
 	disabled: boolean;
 	width: 'full' | 'default';
 	customClass: string;
+	htmlType: 'button' | 'submit';
+	icon: ReactNode;
 }

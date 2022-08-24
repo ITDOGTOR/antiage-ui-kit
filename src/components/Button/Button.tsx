@@ -6,11 +6,28 @@ import {ButtonProps} from './Button.types';
 
 const cx = className.bind(styles);
 
-function Button({content, onClick, styleButton, disabled = true, width = 'default', customClass}: ButtonProps) {
-	const mainClassName = className(styles.button, styles[styleButton], styles[width], customClass);
+function Button({
+	children = 'Click me!',
+	onClick,
+	styleButton = 'accent-fill',
+	disabled = false,
+	width = 'default',
+	customClass = '',
+	theme = 'white',
+	icon,
+	htmlType = 'button',
+}: ButtonProps) {
+	const mainClassName = className(styles.button, styles[`${styleButton}-${theme}`], styles[width], customClass);
+
 	return (
-		<button className={cx(mainClassName)} data-testid="button" disabled={disabled} type="button" onClick={onClick}>
-			{content}
+		<button
+			className={cx(mainClassName)}
+			data-testid="button"
+			disabled={disabled}
+			type={htmlType === 'button' ? 'button' : 'submit'}
+			onClick={onClick}
+		>
+			{icon} {children}
 		</button>
 	);
 }
