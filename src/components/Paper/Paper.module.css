@@ -1,4 +1,5 @@
 .paper {
+	min-height: 100px;
 	padding: 30px;
 
 	background-color: var(--base-weak);
