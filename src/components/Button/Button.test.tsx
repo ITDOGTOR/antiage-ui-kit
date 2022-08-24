@@ -5,14 +5,15 @@ import Button from './Button';
 import {ButtonProps} from './Button.types';
 
 describe('Button', () => {
-	const renderComponent = ({children, customClass, disabled, styleButton, width}: Partial<ButtonProps>) =>
+	const renderComponent = ({children, customClass, disabled, styleType, width}: Partial<ButtonProps>) =>
 		render(
 			<Button
 				customClass={customClass || ''}
 				disabled={disabled || false}
 				htmlType="button"
 				icon={undefined}
-				styleButton={styleButton || 'accent-fill'}
+				label=""
+				styleType={styleType || 'accent-fill'}
 				theme="white"
 				width={width || 'default'}
 				onClick={() => {
@@ -31,6 +32,16 @@ describe('Button', () => {
 		const button = getByTestId('button');
 
 		expect(button).toHaveTextContent(headingText);
+	});
+
+	test('Testing for label inside the button', () => {
+		const labelButton = 'Click me';
+
+		const {getByTestId} = renderComponent({label: labelButton});
+
+		const button = getByTestId('button');
+
+		expect(button).toHaveTextContent(labelButton);
 	});
 
 	test('Testing to verify your own class', () => {
@@ -73,7 +84,7 @@ describe('Button', () => {
 			'text-link' ||
 			'base-fill';
 
-		const {getByTestId} = renderComponent({styleButton: style});
+		const {getByTestId} = renderComponent({styleType: style});
 
 		const button = getByTestId('button');
 
