@@ -1,11 +1,11 @@
 import {ReactNode} from 'react';
 
 export interface ButtonProps {
-	children: ReactNode;
-	icon: ReactNode;
-	theme: 'white' | 'dark';
-	onClick: () => void;
-	styleType:
+	children?: ReactNode;
+	icon?: ReactNode;
+	theme?: 'white' | 'dark';
+	onClick?: () => void;
+	styleType?:
 		| 'accent-fill'
 		| 'accent-outline'
 		| 'complement-fill'
@@ -14,9 +14,9 @@ export interface ButtonProps {
 		| 'base-outline'
 		| 'text'
 		| 'base-fill';
-	disabled: boolean;
-	width: 'full' | 'default';
-	customClass: string;
-	htmlType: 'button' | 'submit';
-	label: string;
+	disabled?: boolean;
+	width?: 'full' | 'default';
+	customClass?: string;
+	htmlType?: 'button' | 'submit';
+	label?: string;
 }
