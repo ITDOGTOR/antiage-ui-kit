@@ -25,12 +25,13 @@ export default {
 			},
 			options: [
 				'accent-fill',
+				'accent-outline',
 				'complement-fill',
-				'faint-fill',
-				'delete-button',
+				'complement-outline',
 				'base-outline',
-				'text-link',
 				'base-fill',
+				'critic-outline',
+				'text-link',
 			],
 		},
 
