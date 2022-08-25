@@ -1,21 +1,21 @@
-import className from 'classnames/bind';
+import cn from 'classnames/bind';
 import React from 'react';
 
 import styles from './Button.module.css';
 import {ButtonProps} from './Button.types';
 
-const cx = className.bind(styles);
+const cx = cn.bind(styles);
 
 function Button({
 	children = 'Click me!',
 	onClick,
-	styleType = 'accent-fill',
+	styleType = 'base-fill',
 	disabled = false,
-	customClass = '',
+	className = '',
 	theme = 'white',
 	htmlType = 'button',
 }: ButtonProps) {
-	const mainClassName = className(styles.button, styles[`${styleType}-${theme}`], customClass);
+	const mainClassName = cn(styles.button, styles[`${styleType}-${theme}`], className);
 
 	return (
 		// eslint-disable-next-line react/button-has-type

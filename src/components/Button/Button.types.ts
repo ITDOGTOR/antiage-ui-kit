@@ -14,6 +14,6 @@ export interface ButtonProps {
 		| 'critic-outline'
 		| 'text';
 	disabled?: boolean;
-	customClass?: string;
+	className?: string;
 	htmlType?: 'button' | 'submit' | 'reset';
 }
