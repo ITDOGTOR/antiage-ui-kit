@@ -1,6 +1,6 @@
-import React from 'react';
+import {ReactNode} from 'react';
 
-export interface PaperTypes {
-	children?: React.ReactNode;
-	customClass?: string;
+export interface PaperProps {
+	children?: ReactNode;
+	className?: string;
 }

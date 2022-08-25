@@ -1,37 +1,30 @@
 import {render, screen} from '@testing-library/react';
 import React from 'react';
 
+import {CHILD, CHILDREN, CLASS_NAME} from '../../constants';
 import Paper from './Paper';
 
-const childString = 'children';
-const customClass = 'custom';
-const childWithElements = (
-	<>
-		<h1>title</h1>
-		<p>description</p>
-		<button type="button">button</button>
-	</>
-);
-
 describe('Paper', () => {
-	test('Render without children and customClass', () => {
-		const paper = render(<Paper> </Paper>);
+	test('Should render without children', () => {
+		const paper = render(<Paper />);
+
 		expect(paper).toMatchSnapshot();
 	});
 
-	test('Snapshot with customClass', () => {
-		const paper = render(<Paper customClass={customClass}> </Paper>);
+	test('Should render with className', () => {
+		const paper = render(<Paper className={CLASS_NAME} />);
+
 		expect(paper).toMatchSnapshot();
 	});
 
 	test('Should render with children as string', () => {
-		render(<Paper>{childString}</Paper>);
+		render(<Paper>{CHILD}</Paper>);
 
-		expect(screen.getByText('children')).toBeInTheDocument();
+		expect(screen.getByText('child')).toBeInTheDocument();
 	});
 
-	test('Contain all elements', () => {
-		render(<Paper>{childWithElements}</Paper>);
+	test('Should render with children as ReactNode', () => {
+		render(<Paper>{CHILDREN}</Paper>);
 
 		expect(screen.getByText('title')).toBeInTheDocument();
 		expect(screen.getByText('description')).toBeInTheDocument();

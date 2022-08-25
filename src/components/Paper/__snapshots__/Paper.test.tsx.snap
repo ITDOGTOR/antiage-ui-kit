@@ -1,23 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paper Render without children and customClass 1`] = `
+exports[`Paper Should render with className 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="paper"
-      >
-         
-      </div>
+        class="paper classname"
+      />
     </div>
   </body>,
   "container": <div>
     <div
-      class="paper"
-    >
-       
-    </div>
+      class="paper classname"
+    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -73,24 +69,20 @@ Object {
 }
 `;
 
-exports[`Paper Snapshot with customClass 1`] = `
+exports[`Paper Should render without children 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="paper custom"
-      >
-         
-      </div>
+        class="paper"
+      />
     </div>
   </body>,
   "container": <div>
     <div
-      class="paper custom"
-    >
-       
-    </div>
+      class="paper"
+    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

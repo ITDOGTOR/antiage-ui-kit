@@ -21,6 +21,7 @@ module.exports = {
 		es6: true,
 	},
 	rules: {
+		'react/jsx-props-no-spreading': 'off',
 		'no-restricted-exports': 'off',
 		'import/prefer-default-export': 'off',
 		'simple-import-sort/imports': 'error',
