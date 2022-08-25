@@ -2,21 +2,18 @@ import {ReactNode} from 'react';
 
 export interface ButtonProps {
 	children?: ReactNode;
-	icon?: ReactNode;
-	theme?: 'white' | 'dark';
+	theme?: 'white' | 'gray';
 	onClick?: () => void;
 	styleType?:
+		| 'base-fill'
+		| 'base-outline'
 		| 'accent-fill'
 		| 'accent-outline'
 		| 'complement-fill'
 		| 'complement-outline'
 		| 'critic-outline'
-		| 'base-outline'
-		| 'text'
-		| 'base-fill';
+		| 'text';
 	disabled?: boolean;
-	width?: 'full' | 'default';
 	customClass?: string;
-	htmlType?: 'button' | 'submit';
-	label?: string;
+	htmlType?: 'button' | 'submit' | 'reset';
 }

@@ -1,4 +1,4 @@
-import className from 'classnames';
+import className from 'classnames/bind';
 import React from 'react';
 
 import styles from './Button.module.css';
@@ -11,24 +11,16 @@ function Button({
 	onClick,
 	styleType = 'accent-fill',
 	disabled = false,
-	width = 'default',
 	customClass = '',
 	theme = 'white',
-	icon = '',
 	htmlType = 'button',
-	label = '',
 }: ButtonProps) {
-	const mainClassName = className(styles.button, styles[`${styleType}-${theme}`], styles[width], customClass);
+	const mainClassName = className(styles.button, styles[`${styleType}-${theme}`], customClass);
 
 	return (
-		<button
-			className={cx(mainClassName)}
-			data-testid="button"
-			disabled={disabled}
-			type={htmlType === 'button' ? 'button' : 'submit'}
-			onClick={onClick}
-		>
-			{label ? `${icon} ${label}` : children}
+		// eslint-disable-next-line react/button-has-type
+		<button className={cx(mainClassName)} disabled={disabled} type={htmlType} onClick={onClick}>
+			{children}
 		</button>
 	);
 }
