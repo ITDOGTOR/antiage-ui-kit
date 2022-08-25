@@ -19,7 +19,7 @@ function Button({
 
 	return (
 		// eslint-disable-next-line react/button-has-type
-		<button className={cx(mainClassName)} disabled={disabled} type={htmlType} onClick={onClick}>
+		<button className={cx(mainClassName)} data-testid="button" disabled={disabled} type={htmlType} onClick={onClick}>
 			{children}
 		</button>
 	);
