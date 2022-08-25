@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="button accent-fill-white class"
+        class="button base-fill-white class"
         data-testid="button"
         type="button"
       >
@@ -16,7 +16,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="button accent-fill-white class"
+      class="button base-fill-white class"
       data-testid="button"
       type="button"
     >

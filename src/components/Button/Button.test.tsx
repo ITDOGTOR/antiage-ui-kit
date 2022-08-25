@@ -4,13 +4,13 @@ import React from 'react';
 import Button from './Button';
 import {ButtonProps} from './Button.types';
 
-const renderComponent = ({children, customClass, disabled, styleType}: Partial<ButtonProps>) =>
+const renderComponent = ({children, className, disabled, styleType}: Partial<ButtonProps>) =>
 	render(
 		<Button
-			customClass={customClass || ''}
+			className={className || ''}
 			disabled={disabled || false}
 			htmlType="button"
-			styleType={styleType || 'accent-fill'}
+			styleType={styleType || 'base-fill'}
 			theme="white"
 			onClick={() => {
 				throw new Error('Function not implemented.');
@@ -32,8 +32,8 @@ describe('Button', () => {
 	});
 
 	test('Should render with className', () => {
-		const customClass = 'class';
-		const button = render(<Button customClass={customClass} />);
+		const className = 'class';
+		const button = render(<Button className={className} />);
 
 		expect(button).toMatchSnapshot();
 	});
@@ -58,17 +58,7 @@ describe('Button', () => {
 		expect(button).toBeEnabled();
 	});
 
-	test('Must be active', () => {
-		const disabledButton = false;
-
-		const {getByTestId} = renderComponent({disabled: disabledButton});
-
-		const button = getByTestId('button');
-
-		expect(button).toBeEnabled();
-	});
-
-	test('Must be active', () => {
+	test('A ready-made class must be used', () => {
 		const style =
 			'base-fill' ||
 			'base-outline' ||
