@@ -8,15 +8,9 @@ export default {
 	argTypes: {
 		children: {
 			type: 'string',
-			description: 'Content inside the button',
 			defaultValue: 'Click me!',
 		},
-		icon: {
-			type: 'string',
-			description: 'Icon inside the button',
-			defaultValue: 'icon',
-		},
-		styleButton: {
+		styleType: {
 			type: 'string',
 			description: 'Ready-made button style',
 			defaultValue: 'accent-fill',
@@ -24,12 +18,12 @@ export default {
 				type: 'select',
 			},
 			options: [
+				'base-fill',
+				'base-outline',
 				'accent-fill',
 				'accent-outline',
 				'complement-fill',
 				'complement-outline',
-				'base-outline',
-				'base-fill',
 				'critic-outline',
 				'text',
 			],
@@ -42,7 +36,7 @@ export default {
 			control: {
 				type: 'select',
 			},
-			options: ['white', 'dark'],
+			options: ['white', 'gray'],
 		},
 
 		customClass: {
@@ -51,30 +45,19 @@ export default {
 		},
 		disabled: {
 			type: 'boolean',
-			description: 'Disable the button',
 			defaultValue: false,
 			control: {
 				type: 'radio',
 			},
 			options: [false, true],
 		},
-		width: {
-			type: 'string',
-			description: 'Button width',
-			defaultValue: 'default',
-			control: {
-				type: 'select',
-			},
-			options: ['default', 'full'],
-		},
 		htmlType: {
 			type: 'string',
-			description: 'Button html type',
 			defaultValue: 'button',
 			control: {
 				type: 'select',
 			},
-			options: ['button', 'submit'],
+			options: ['button', 'submit', 'reset'],
 		},
 	},
 };
