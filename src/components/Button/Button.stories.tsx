@@ -13,7 +13,7 @@ export default {
 		styleType: {
 			type: 'string',
 			description: 'Ready-made button style',
-			defaultValue: 'accent-fill',
+			defaultValue: 'base-fill',
 			control: {
 				type: 'select',
 			},
@@ -39,17 +39,15 @@ export default {
 			options: ['white', 'gray'],
 		},
 
-		customClass: {
+		className: {
 			type: 'string',
-			description: 'Adding a custom class',
 		},
 		disabled: {
 			type: 'boolean',
 			defaultValue: false,
 			control: {
-				type: 'radio',
+				type: 'boolean',
 			},
-			options: [false, true],
 		},
 		htmlType: {
 			type: 'string',
