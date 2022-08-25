@@ -30,6 +30,23 @@
 	cursor: not-allowed;
 }
 
+.base-fill-white {
+	color: var(--base-strong);
+
+	background-color: var(--faint-weak);
+}
+
+.base-fill-white:hover {
+	background-color: var(--faint-weak-up);
+}
+
+.base-fill-white:disabled {
+	color: var(--back-faint-middle);
+
+	background-color: var(--faint-weak);
+	cursor: not-allowed;
+}
+
 .base-outline-gray {
 	color: var(--base-strong);
 
