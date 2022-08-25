@@ -1,0 +1,11 @@
+import React from 'react';
+
+export const CLASS_NAME = 'classname';
+export const CHILD = 'child';
+export const CHILDREN = (
+	<>
+		<h1>title</h1>
+		<p>description</p>
+		<button type="button">button</button>
+	</>
+);
