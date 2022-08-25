@@ -28,6 +28,7 @@ module.exports = {
 		'import/first': 'error',
 		'import/newline-after-import': 'error',
 		'import/no-duplicates': 'error',
+		'react/jsx-props-no-spreading': 'off',
 		'react/jsx-sort-props': [
 			'error',
 			{

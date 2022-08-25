@@ -63,7 +63,6 @@ export default {
 };
 
 function Template(arg) {
-	// eslint-disable-next-line react/jsx-props-no-spreading
 	return <Button {...arg} />;
 }
 export const WithButton = Template.bind({});
