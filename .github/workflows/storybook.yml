@@ -2,6 +2,8 @@ name: Storybook
 on:
   push:
     paths: ["stories/**", "src/**"]
+    branches:
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

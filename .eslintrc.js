@@ -21,6 +21,7 @@ module.exports = {
 		es6: true,
 	},
 	rules: {
+		'react/jsx-props-no-spreading': 'off',
 		'no-restricted-exports': 'off',
 		'import/prefer-default-export': 'off',
 		'simple-import-sort/imports': 'error',
@@ -28,7 +29,6 @@ module.exports = {
 		'import/first': 'error',
 		'import/newline-after-import': 'error',
 		'import/no-duplicates': 'error',
-		'react/jsx-props-no-spreading': 'off',
 		'react/jsx-sort-props': [
 			'error',
 			{
