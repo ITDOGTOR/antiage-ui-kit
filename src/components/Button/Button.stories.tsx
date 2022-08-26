@@ -63,4 +63,63 @@ export default {
 function Template(arg) {
 	return <Button {...arg} />;
 }
-export const WithButton = Template.bind({});
+export const BaseFillWhite = Template.bind({});
+export const BaseFillGray = Template.bind({});
+export const BaseOutlineWhite = Template.bind({});
+export const BaseOutlineGray = Template.bind({});
+export const AccentFill = Template.bind({});
+export const AccentOutline = Template.bind({});
+export const ComplementFill = Template.bind({});
+export const ComplementOutline = Template.bind({});
+export const CriticOutline = Template.bind({});
+export const Text = Template.bind({});
+
+BaseFillWhite.args = {
+	styleType: 'base-fill',
+	theme: 'white',
+};
+
+BaseFillGray.args = {
+	styleType: 'base-fill',
+	theme: 'gray',
+};
+
+BaseOutlineWhite.args = {
+	styleType: 'base-outline',
+	theme: 'white',
+};
+
+BaseOutlineGray.args = {
+	styleType: 'base-outline',
+	theme: 'gray',
+};
+
+AccentFill.args = {
+	styleType: 'accent-fill',
+	theme: 'white',
+};
+
+AccentOutline.args = {
+	styleType: 'accent-outline',
+	theme: 'white',
+};
+
+ComplementFill.args = {
+	styleType: 'complement-fill',
+	theme: 'white',
+};
+
+ComplementOutline.args = {
+	styleType: 'complement-outline',
+	theme: 'white',
+};
+
+CriticOutline.args = {
+	styleType: 'critic-outline',
+	theme: 'white',
+};
+
+Text.args = {
+	styleType: 'text',
+	theme: 'white',
+};
