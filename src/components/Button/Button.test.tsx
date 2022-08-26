@@ -1,6 +1,7 @@
-import {render, screen} from '@testing-library/react';
+import {fireEvent, render, screen} from '@testing-library/react';
 import React from 'react';
 
+import {CHILD, CLASS_NAME} from '../../constants';
 import Button from './Button';
 import {ButtonProps} from './Button.types';
 
@@ -12,9 +13,7 @@ const renderComponent = ({children, className, disabled, styleType}: Partial<But
 			htmlType="button"
 			styleType={styleType || 'base-fill'}
 			theme="white"
-			onClick={() => {
-				throw new Error('Function not implemented.');
-			}}
+			onClick={() => {}}
 		>
 			{children}
 		</Button>,
@@ -22,14 +21,13 @@ const renderComponent = ({children, className, disabled, styleType}: Partial<But
 
 describe('Button', () => {
 	test('Should render without children', () => {
-		render(<Button>test</Button>);
+		render(<Button>{CHILD}</Button>);
 
-		expect(screen.getByText('test')).toBeInTheDocument();
+		expect(screen.getByText('child')).toBeInTheDocument();
 	});
 
 	test('Should render with className', () => {
-		const className = 'class';
-		const button = render(<Button className={className} />);
+		const button = render(<Button className={CLASS_NAME} />);
 
 		expect(button).toMatchSnapshot();
 	});
@@ -69,5 +67,15 @@ describe('Button', () => {
 
 		const button = getByTestId('button');
 		expect(button).toHaveClass(`${style}-white` || `${style}-gray`);
+	});
+
+	test('There should be a click on the button', () => {
+		const click = () => {};
+
+		const {getByTestId} = renderComponent({onClick: click});
+
+		const button = getByTestId('button');
+
+		fireEvent.click(button);
 	});
 });

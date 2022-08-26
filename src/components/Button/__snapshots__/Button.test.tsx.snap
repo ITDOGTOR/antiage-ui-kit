@@ -6,22 +6,18 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="button base-fill-white class"
+        class="button base-fill-white classname"
         data-testid="button"
         type="button"
-      >
-        Click me!
-      </button>
+      />
     </div>
   </body>,
   "container": <div>
     <button
-      class="button base-fill-white class"
+      class="button base-fill-white classname"
       data-testid="button"
       type="button"
-    >
-      Click me!
-    </button>
+    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
