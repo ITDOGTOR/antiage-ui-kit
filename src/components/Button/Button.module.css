@@ -19,11 +19,8 @@
 	background-color: var(--base-weak);
 }
 
+.base-fill-gray:focus,
 .base-fill-gray:hover {
-	background-color: var(--faint-weak-up);
-}
-
-.base-fill-gray:focus {
 	background-color: var(--faint-weak-up);
 }
 
@@ -40,10 +37,7 @@
 	background-color: var(--faint-weak);
 }
 
-.base-fill-white:hover {
-	background-color: var(--faint-weak-up);
-}
-
+.base-fill-white:hover,
 .base-fill-white:focus {
 	background-color: var(--faint-weak-up);
 }
@@ -62,10 +56,7 @@
 	border: var(--line-faint-weak) 1px solid;
 }
 
-.base-outline-gray:hover {
-	background-color: var(--faint-weak-up);
-}
-
+.base-outline-gray:hover,
 .base-outline-gray:focus {
 	background-color: var(--faint-weak-up);
 }
@@ -85,10 +76,7 @@
 	border: var(--line-faint-weak) 1px solid;
 }
 
-.base-outline-white:hover {
-	background-color: var(--faint-weak);
-}
-
+.base-outline-white:hover,
 .base-outline-white:focus {
 	background-color: var(--faint-weak);
 }
@@ -107,11 +95,8 @@
 	background-color: var(--accent-strong);
 }
 
+.accent-fill-white:focus,
 .accent-fill-white:hover {
-	background-color: var(--accent-strong-up);
-}
-
-.accent-fill-white:focus {
 	background-color: var(--accent-strong-up);
 }
 
@@ -122,28 +107,27 @@
 	cursor: not-allowed;
 }
 
-.accent-outline-white {
-	color: var(--base-weak);
+.accent-outline-white,
+.accent-outline-gray {
+	color: var(--accent-strong);
 
-	background-color: var(--accent-strong);
-	border: var(--accent-strong-up) 1px solid;
-}
-
-.accent-outline-white:hover {
-	background-color: var(--accent-strong-up);
+	background-color: var(--base-weak);
 	border: var(--accent-strong) 1px solid;
 }
 
-.accent-outline-white:focus {
-	background-color: var(--accent-strong-up);
-	border: var(--accent-strong) 1px solid;
+.accent-outline-white:hover,
+.accent-outline-white:focus,
+.accent-outline-gray:hover,
+.accent-outline-gray:focus {
+	background-color: var(--accent-weak-down);
 }
 
-.accent-outline-white:disabled {
-	color: var(--back-faint-middle);
+.accent-outline-white:disabled,
+.accent-outline-gray:disabled {
+	color: var(--accent-weak-up);
 
-	background-color: var(--faint-weak-up);
-	border: var(--line-faint-weak) 1px solid;
+	background-color: var(--base-weak);
+	border: var(--accent-weak-up) 1px solid;
 	cursor: not-allowed;
 }
 
@@ -153,10 +137,7 @@
 	background-color: var(--complement-strong);
 }
 
-.complement-fill-white:hover {
-	background-color: var(--complement-strong-up);
-}
-
+.complement-fill-white:hover,
 .complement-fill-white:focus {
 	background-color: var(--complement-strong-up);
 }
@@ -168,28 +149,30 @@
 	cursor: not-allowed;
 }
 
-.complement-outline-white {
-	color: var(--base-weak);
+.complement-outline-white,
+.complement-outline-gray {
+	color: var(--complement-strong);
 
-	background-color: var(--complement-strong);
-	border: var(--accent-strong-up) 1px solid;
+	background-color: var(--base-weak);
+	border: var(--complement-strong-up) 1px solid;
 }
 
-.complement-outline-white:hover {
-	background-color: var(--complement-strong-up);
-	border: var(--accent-strong) 1px solid;
+.complement-outline-white:hover,
+.complement-outline-white:focus,
+.complement-outline-gray:hover,
+.complement-outline-gray:focus {
+	color: var(--complement-strong);
+
+	background-color: var(--complement-weak-down);
+	border: var(--complement-strong) 1px solid;
 }
 
-.complement-outline-white:focus {
-	background-color: var(--complement-strong-up);
-	border: var(--accent-strong) 1px solid;
-}
+.complement-outline-white:disabled,
+.complement-outline-gray:disabled {
+	color: var(--complement-weak-up);
 
-.complement-outline-white:disabled {
-	color: var(--back-faint-middle);
-
-	background-color: var(--faint-weak-up);
-	border: var(--line-faint-weak) 1px solid;
+	background-color: var(--base-weak);
+	border: var(--complement-weak-up) 1px solid;
 	cursor: not-allowed;
 }
 
@@ -202,10 +185,7 @@
 }
 
 .critic-outline-white:hover,
-.critic-outline-gray:hover {
-	background-color: var(--critic-weak-down);
-}
-
+.critic-outline-gray:hover,
 .critic-outline-white:focus,
 .critic-outline-gray:focus {
 	background-color: var(--critic-weak-down);
@@ -229,11 +209,7 @@
 }
 
 .text-white:hover,
-.text-gray:hover {
-	font-weight: var(--fw-bold);
-	text-decoration: underline;
-}
-
+.text-gray:hover,
 .text-white:focus,
 .text-gray:focus {
 	font-weight: var(--fw-bold);
