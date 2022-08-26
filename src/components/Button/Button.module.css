@@ -23,6 +23,10 @@
 	background-color: var(--faint-weak-up);
 }
 
+.base-fill-gray:focus {
+	background-color: var(--faint-weak-up);
+}
+
 .base-fill-gray:disabled {
 	color: var(--back-faint-middle);
 
@@ -37,6 +41,10 @@
 }
 
 .base-fill-white:hover {
+	background-color: var(--faint-weak-up);
+}
+
+.base-fill-white:focus {
 	background-color: var(--faint-weak-up);
 }
 
@@ -55,6 +63,10 @@
 }
 
 .base-outline-gray:hover {
+	background-color: var(--faint-weak-up);
+}
+
+.base-outline-gray:focus {
 	background-color: var(--faint-weak-up);
 }
 
@@ -77,6 +89,10 @@
 	background-color: var(--faint-weak);
 }
 
+.base-outline-white:focus {
+	background-color: var(--faint-weak);
+}
+
 .base-outline-white:disabled {
 	color: var(--back-faint-middle);
 
@@ -92,6 +108,10 @@
 }
 
 .accent-fill-white:hover {
+	background-color: var(--accent-strong-up);
+}
+
+.accent-fill-white:focus {
 	background-color: var(--accent-strong-up);
 }
 
@@ -114,6 +134,11 @@
 	border: var(--accent-strong) 1px solid;
 }
 
+.accent-outline-white:focus {
+	background-color: var(--accent-strong-up);
+	border: var(--accent-strong) 1px solid;
+}
+
 .accent-outline-white:disabled {
 	color: var(--back-faint-middle);
 
@@ -129,6 +154,10 @@
 }
 
 .complement-fill-white:hover {
+	background-color: var(--complement-strong-up);
+}
+
+.complement-fill-white:focus {
 	background-color: var(--complement-strong-up);
 }
 
@@ -151,6 +180,11 @@
 	border: var(--accent-strong) 1px solid;
 }
 
+.complement-outline-white:focus {
+	background-color: var(--complement-strong-up);
+	border: var(--accent-strong) 1px solid;
+}
+
 .complement-outline-white:disabled {
 	color: var(--back-faint-middle);
 
@@ -159,18 +193,26 @@
 	cursor: not-allowed;
 }
 
-.critic-outline-white {
+.critic-outline-white,
+.critic-outline-gray {
 	color: var(--critic-strong);
 
 	background-color: var(--base-weak);
 	border: var(--critic-strong) 1px solid;
 }
 
-.critic-outline-white:hover {
+.critic-outline-white:hover,
+.critic-outline-gray:hover {
 	background-color: var(--critic-weak-down);
 }
 
-.critic-outline-white:disabled {
+.critic-outline-white:focus,
+.critic-outline-gray:focus {
+	background-color: var(--critic-weak-down);
+}
+
+.critic-outline-white:disabled,
+.critic-outline-gray:disabled {
 	color: var(--critic-weak-up);
 
 	background-color: var(--base-weak);
@@ -178,19 +220,28 @@
 	cursor: not-allowed;
 }
 
-.text-white {
+.text-white,
+.text-gray {
 	color: var(--accent-strong);
 
 	background-color: transparent;
 	border: none;
 }
 
-.text-white:hover {
+.text-white:hover,
+.text-gray:hover {
 	font-weight: var(--fw-bold);
 	text-decoration: underline;
 }
 
-.text-white:disabled {
+.text-white:focus,
+.text-gray:focus {
+	font-weight: var(--fw-bold);
+	text-decoration: underline;
+}
+
+.text-white:disabled,
+.text-gray:disabled {
 	color: var(--back-faint-middle);
 	font-weight: var(--fw-semibold);
 	text-decoration: none;
