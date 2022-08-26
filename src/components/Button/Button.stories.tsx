@@ -31,10 +31,10 @@ export default {
 
 		theme: {
 			type: 'string',
-			description: 'Background style for the button',
+			description: 'The background color on which the button is displayed',
 			defaultValue: 'white',
 			control: {
-				type: 'select',
+				type: 'radio',
 			},
 			options: ['white', 'gray'],
 		},
@@ -53,7 +53,7 @@ export default {
 			type: 'string',
 			defaultValue: 'button',
 			control: {
-				type: 'select',
+				type: 'radio',
 			},
 			options: ['button', 'submit', 'reset'],
 		},
