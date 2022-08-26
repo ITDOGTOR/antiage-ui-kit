@@ -22,11 +22,7 @@ const renderComponent = ({children, className, disabled, styleType}: Partial<But
 
 describe('Button', () => {
 	test('Should render without children', () => {
-		render(
-			<Button>
-				<div>test</div>
-			</Button>,
-		);
+		render(<Button>test</Button>);
 
 		expect(screen.getByText('test')).toBeInTheDocument();
 	});
