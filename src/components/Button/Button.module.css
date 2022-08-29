@@ -13,14 +13,19 @@
 	cursor: pointer;
 }
 
+.button:focus,
+.button:focus:not(:focus-visible) {
+	outline: none;
+}
+
 .base-fill-gray {
 	color: var(--base-strong);
 
 	background-color: var(--base-weak);
 }
 
-.base-fill-gray:focus,
-.base-fill-gray:hover {
+.base-fill-gray:hover,
+.base-fill-gray:focus-visible {
 	background-color: var(--faint-weak-up);
 }
 
@@ -38,7 +43,7 @@
 }
 
 .base-fill-white:hover,
-.base-fill-white:focus {
+.base-fill-white:focus-visible {
 	background-color: var(--faint-weak-up);
 }
 
@@ -57,7 +62,7 @@
 }
 
 .base-outline-gray:hover,
-.base-outline-gray:focus {
+.base-outline-gray:focus-visible {
 	background-color: var(--faint-weak-up);
 }
 
@@ -77,7 +82,7 @@
 }
 
 .base-outline-white:hover,
-.base-outline-white:focus {
+.base-outline-white:focus-visible {
 	background-color: var(--faint-weak);
 }
 
@@ -89,18 +94,22 @@
 	cursor: not-allowed;
 }
 
-.accent-fill-white {
+.accent-fill-white,
+.accent-fill-gray {
 	color: var(--base-weak);
 
 	background-color: var(--accent-strong);
 }
 
-.accent-fill-white:focus,
-.accent-fill-white:hover {
+.accent-fill-white:hover,
+.accent-fill-white:focus-visible,
+.accent-fill-gray:hover,
+.accent-fill-gray:focus-visible {
 	background-color: var(--accent-strong-up);
 }
 
-.accent-fill-white:disabled {
+.accent-fill-white:disabled,
+.accent-fill-gray:disabled {
 	color: var(--back-faint-middle);
 
 	background-color: var(--faint-weak-up);
@@ -116,9 +125,9 @@
 }
 
 .accent-outline-white:hover,
-.accent-outline-white:focus,
+.accent-outline-white:focus-visible,
 .accent-outline-gray:hover,
-.accent-outline-gray:focus {
+.accent-outline-gray:focus-visible {
 	background-color: var(--accent-weak-down);
 }
 
@@ -131,18 +140,22 @@
 	cursor: not-allowed;
 }
 
-.complement-fill-white {
+.complement-fill-white,
+.complement-fill-gray {
 	color: var(--base-weak);
 
 	background-color: var(--complement-strong);
 }
 
 .complement-fill-white:hover,
-.complement-fill-white:focus {
+.complement-fill-gray:hover,
+.complement-fill-white:focus-visible,
+.complement-fill-gray:focus-visible {
 	background-color: var(--complement-strong-up);
 }
 
-.complement-fill-white:disabled {
+.complement-fill-white:disabled,
+.complement-fill-gray:disabled {
 	color: var(--back-faint-middle);
 
 	background-color: var(--faint-weak-up);
@@ -158,9 +171,9 @@
 }
 
 .complement-outline-white:hover,
-.complement-outline-white:focus,
+.complement-outline-white:focus-visible,
 .complement-outline-gray:hover,
-.complement-outline-gray:focus {
+.complement-outline-gray:focus-visible {
 	color: var(--complement-strong);
 
 	background-color: var(--complement-weak-down);
@@ -185,9 +198,9 @@
 }
 
 .critic-outline-white:hover,
+.critic-outline-white:focus-visible,
 .critic-outline-gray:hover,
-.critic-outline-white:focus,
-.critic-outline-gray:focus {
+.critic-outline-gray:focus-visible {
 	background-color: var(--critic-weak-down);
 }
 
@@ -209,9 +222,9 @@
 }
 
 .text-white:hover,
+.text-white:focus-visible,
 .text-gray:hover,
-.text-white:focus,
-.text-gray:focus {
+.text-gray:focus-visible {
 	font-weight: var(--fw-bold);
 	text-decoration: underline;
 }
