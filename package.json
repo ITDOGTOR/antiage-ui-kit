@@ -12,7 +12,7 @@
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"build": "rollup -c",
-		"test": "jest",
+		"test": "jest --coverage",
 		"size": "size-limit",
 		"lint": "eslint . --fix --ext .ts,.tsx",
 		"stylelint": "stylelint \"src/**/*.css\" --fix",
