@@ -37,7 +37,11 @@ export default [
 					generateScopedName: '[local]__[hash:base64:5]',
 				},
 			}),
-			terser(),
+			terser({
+				format: {
+					comments: false,
+				},
+			}),
 			analyzer({summaryOnly: true}),
 		],
 	},
