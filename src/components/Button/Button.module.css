@@ -7,6 +7,7 @@
 	font-weight: var(--fw-semibold);
 	font-size: var(--fs-xs);
 	line-height: var(--lh-xs);
+	text-decoration: none;
 
 	border: none;
 	border-radius: 16px;

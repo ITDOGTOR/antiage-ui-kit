@@ -3,6 +3,7 @@ import {ReactNode} from 'react';
 export interface ButtonProps {
 	children?: ReactNode;
 	theme?: 'white' | 'gray';
+	isLink?: boolean;
 	onClick?: () => void;
 	styleType?:
 		| 'base-fill'
