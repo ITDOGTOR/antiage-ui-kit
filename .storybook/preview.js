@@ -1,13 +1,14 @@
 import './fonts.css';
 import '../src/ui-kit.css';
-
 import {INITIAL_VIEWPORTS} from '@storybook/addon-viewport';
 
 export const parameters = {
+	actions: {argTypesRegex: '^on.*'},
 	options: {
 		storySort: (a, b) =>
 			a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, {numeric: true}),
 	},
+	controls: {sort: 'alpha'},
 	viewport: {
 		viewports: {
 			minimalContent: {
@@ -46,10 +47,10 @@ export const parameters = {
 		},
 	},
 	backgrounds: {
-		default: 'ghostwhite',
+		default: 'gray',
 		values: [
 			{
-				name: 'ghostwhite',
+				name: 'gray',
 				value: '#f2f5f7',
 			},
 			{

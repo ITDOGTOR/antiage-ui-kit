@@ -1,7 +1,7 @@
 :root {
 	--base-strong: #42474d;
 	--base-strong-down: #667280;
-	--base-weak: #dae3f1;
+	--base-weak: #ffffff;
 
 	--faint-strong: #a6acb3;
 	--faint-middle: #cedef2;
@@ -43,7 +43,7 @@
 	--back-faint-weak-up: #dae3f1;
 	--back-faint-weak: #e9edf5;
 
-	--line-faint-weak: #ffffff;
+	--line-faint-weak: #dae3f1;
 
 	--linear-base-strong: linear-gradient(135deg, #39e672 0%, #57a1d9 100%);
 	--linear-accent-strong: linear-gradient(135deg, #41b3d9 0%, #498ed2 100%);
@@ -60,6 +60,9 @@
 	--fs-xs: 12px;
 	--fs-xxs: 10px;
 	--fs-3xs: 8px;
+
+	--lh-xs: 12px;
+	--lh-xs-text: 16px;
 
 	--fw-bold: 700;
 	--fw-semibold: 600;
