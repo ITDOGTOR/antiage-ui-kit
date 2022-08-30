@@ -24,6 +24,10 @@ Object {
             data-testid="slider"
           />
         </label>
+        <button
+          class="label"
+          type="button"
+        />
       </div>
     </div>
   </body>,
@@ -47,6 +51,10 @@ Object {
           data-testid="slider"
         />
       </label>
+      <button
+        class="label"
+        type="button"
+      />
     </div>
   </div>,
   "debug": [Function],
