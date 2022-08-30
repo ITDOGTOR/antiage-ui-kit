@@ -3,6 +3,34 @@
 	align-items: center;
 }
 
+.shadow-box {
+	border-radius: 12px;
+	box-shadow: 0 0 3px 1px var(--complement-strong);
+
+	transition: 0.2s;
+}
+
+.not-shadow-box {
+	border: none;
+	border-radius: 12px;
+
+	transition: 0.2s;
+}
+
+.label {
+	padding: 0;
+
+	font-size: 14px;
+
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.label:disabled {
+	cursor: not-allowed;
+}
+
 .checkbox:disabled + .slider-white {
 	background-color: var(--complement-weak);
 	cursor: not-allowed;
