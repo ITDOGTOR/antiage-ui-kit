@@ -1,9 +1,9 @@
 import {ReactNode} from 'react';
 
-export interface CheckBoxProps {
+export interface SwitchProps {
 	className?: string;
 	theme?: 'white' | 'gray';
 	children?: ReactNode;
-	onChange?: () => void;
+	onChange: () => void;
 	disabled?: boolean;
 }

@@ -1,12 +1,12 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import React from 'react';
 
-import CheckBox from './CheckBox';
-import {CheckBoxProps} from './CheckBox.types';
+import Switch from './Switch';
+import {SwitchProps} from './Switch.types';
 
 export default {
-	title: 'CheckBox',
-	component: CheckBox,
+	title: 'Switch',
+	component: Switch,
 	argTypes: {
 		theme: {
 			type: 'string',
@@ -29,11 +29,11 @@ export default {
 			defaultValue: '',
 		},
 	},
-} as ComponentMeta<typeof CheckBox>;
+} as ComponentMeta<typeof Switch>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof CheckBox> = (args: CheckBoxProps) => {
-	return <CheckBox {...args} />;
+const Template: ComponentStory<typeof Switch> = (args: SwitchProps) => {
+	return <Switch {...args} />;
 };
 
 export const WhiteTheme = Template.bind({});

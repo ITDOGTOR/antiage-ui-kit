@@ -1,10 +1,8 @@
 import {render, screen} from '@testing-library/react';
 import React from 'react';
 
-import {CHILD, CLASS_NAME, IS_DISABLED} from '../../constants';
+import {CHILD, CLASS_NAME, IS_DISABLED, THEME} from '../../constants';
 import Button from './Button';
-
-const theme = Math.random() > 0.5 ? 'white' : 'gray';
 
 describe('Button', () => {
 	test('Should render without children', () => {
@@ -64,45 +62,45 @@ describe('Button', () => {
 		});
 
 		test('Must use ready-made classes accent-fill-white, accent-fill-gray', () => {
-			const {getByTestId} = render(<Button data-testid="button" styleType="accent-fill" theme={theme} />);
+			const {getByTestId} = render(<Button data-testid="button" styleType="accent-fill" theme={THEME} />);
 
 			const button = getByTestId('button');
-			expect(button).toHaveClass(`accent-fill-${theme}` || `accent-fill-${theme}`);
+			expect(button).toHaveClass(`accent-fill-${THEME}` || `accent-fill-${THEME}`);
 		});
 
 		test('Must use ready-made classes accent-outline-white, accent-outline-gray', () => {
-			const {getByTestId} = render(<Button data-testid="button" styleType="accent-outline" theme={theme} />);
+			const {getByTestId} = render(<Button data-testid="button" styleType="accent-outline" theme={THEME} />);
 
 			const button = getByTestId('button');
-			expect(button).toHaveClass(`accent-outline-${theme}` || `accent-outline-${theme}`);
+			expect(button).toHaveClass(`accent-outline-${THEME}` || `accent-outline-${THEME}`);
 		});
 
 		test('Must use ready-made classes complement-fill-white, complement-fill-gray', () => {
-			const {getByTestId} = render(<Button data-testid="button" styleType="complement-fill" theme={theme} />);
+			const {getByTestId} = render(<Button data-testid="button" styleType="complement-fill" theme={THEME} />);
 
 			const button = getByTestId('button');
-			expect(button).toHaveClass(`complement-fill-${theme}` || `complement-fill-${theme}`);
+			expect(button).toHaveClass(`complement-fill-${THEME}` || `complement-fill-${THEME}`);
 		});
 
 		test('Must use ready-made classes complement-outline-white, complement-outline-gray', () => {
-			const {getByTestId} = render(<Button data-testid="button" styleType="complement-outline" theme={theme} />);
+			const {getByTestId} = render(<Button data-testid="button" styleType="complement-outline" theme={THEME} />);
 
 			const button = getByTestId('button');
-			expect(button).toHaveClass(`complement-outline-${theme}` || `complement-outline-${theme}`);
+			expect(button).toHaveClass(`complement-outline-${THEME}` || `complement-outline-${THEME}`);
 		});
 
 		test('Must use ready-made classes critic-outline-white, critic-outline-gray', () => {
-			const {getByTestId} = render(<Button data-testid="button" styleType="critic-outline" theme={theme} />);
+			const {getByTestId} = render(<Button data-testid="button" styleType="critic-outline" theme={THEME} />);
 
 			const button = getByTestId('button');
-			expect(button).toHaveClass(`critic-outline-${theme}` || `critic-outline-${theme}`);
+			expect(button).toHaveClass(`critic-outline-${THEME}` || `critic-outline-${THEME}`);
 		});
 
 		test('Must use ready-made classes text-white, text-gray', () => {
-			const {getByTestId} = render(<Button data-testid="button" styleType="text" theme={theme} />);
+			const {getByTestId} = render(<Button data-testid="button" styleType="text" theme={THEME} />);
 
 			const button = getByTestId('button');
-			expect(button).toHaveClass(`text-${theme}` || `text-${theme}`);
+			expect(button).toHaveClass(`text-${THEME}` || `text-${THEME}`);
 		});
 	});
 

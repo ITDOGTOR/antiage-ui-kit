@@ -1,24 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`checkbox Should render with className 1`] = `
+exports[`Switch Should render with className 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="checkbox classname"
-        data-testid="checkbox-component"
+        class="component classname"
+        data-testid="Switch-component"
       >
         <label
           class="switch"
-          for="checkbox"
+          for="Switch"
         >
           <input
-            data-testid="checkbox"
-            id="checkbox"
+            class="checkbox"
+            data-testid="Switch"
+            id="Switch"
             type="checkbox"
           />
-          <div
+          <span
             class="slider-white round"
             data-testid="slider"
           />
@@ -28,19 +29,20 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="checkbox classname"
-      data-testid="checkbox-component"
+      class="component classname"
+      data-testid="Switch-component"
     >
       <label
         class="switch"
-        for="checkbox"
+        for="Switch"
       >
         <input
-          data-testid="checkbox"
-          id="checkbox"
+          class="checkbox"
+          data-testid="Switch"
+          id="Switch"
           type="checkbox"
         />
-        <div
+        <span
           class="slider-white round"
           data-testid="slider"
         />
