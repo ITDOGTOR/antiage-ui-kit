@@ -17,23 +17,20 @@ describe('Switch', () => {
 	});
 
 	test('Must be inactive', () => {
-		const {getByTestId} = render(<Switch disabled={IS_DISABLED} onChange={() => {}} />);
+		const switchComponent = render(<Switch data-testid="Switch" disabled={IS_DISABLED} onChange={() => {}} />);
 
-		const switchComponent = getByTestId('Switch');
-		expect(switchComponent).toBeDisabled();
+		expect(switchComponent).toMatchSnapshot();
 	});
 
 	test('Must be active', () => {
-		const {getByTestId} = render(<Switch disabled={!IS_DISABLED} onChange={() => {}} />);
+		const switchComponent = render(<Switch data-testid="Switch" disabled={!IS_DISABLED} onChange={() => {}} />);
 
-		const switchComponent = getByTestId('Switch');
-		expect(switchComponent).toBeEnabled();
+		expect(switchComponent).toMatchSnapshot();
 	});
 
 	test('Should be displayed with a different theme', () => {
-		const {getByTestId} = render(<Switch theme={THEME} onChange={() => {}} />);
+		const switchComponent = render(<Switch data-testid="Switch" theme={THEME} onChange={() => {}} />);
 
-		const switchComponent = getByTestId('slider');
-		expect(switchComponent).toHaveClass(`slider-${THEME}` || `slider-${THEME}`);
+		expect(switchComponent).toMatchSnapshot();
 	});
 });
