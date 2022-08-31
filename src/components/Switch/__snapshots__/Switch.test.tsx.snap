@@ -207,7 +207,7 @@ Object {
           type="checkbox"
         />
         <span
-          class="slider-white round"
+          class="slider-gray round"
         />
         <span
           class="label"
@@ -226,7 +226,7 @@ Object {
         type="checkbox"
       />
       <span
-        class="slider-white round"
+        class="slider-gray round"
       />
       <span
         class="label"
