@@ -10,7 +10,7 @@
 	text-decoration: none;
 
 	border: none;
-	border-radius: 16px;
+	border-radius: var(--border-radius-16);
 	cursor: pointer;
 }
 
