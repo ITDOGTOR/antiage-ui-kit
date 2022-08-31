@@ -21,6 +21,9 @@ module.exports = {
 		es6: true,
 	},
 	rules: {
+		'jsx-a11y/no-noninteractive-tabindex': 'off',
+		'jsx-a11y/no-static-element-interactions': 'off',
+		'jsx-a11y/click-events-have-key-events': 'off',
 		'react/jsx-props-no-spreading': 'off',
 		'no-restricted-exports': 'off',
 		'import/prefer-default-export': 'off',
