@@ -35,20 +35,8 @@ export default {
 const Template: ComponentStory<typeof Switch> = (args: SwitchProps) => {
 	return <Switch {...args} />;
 };
-
-export const WhiteTheme = Template.bind({});
-export const GrayTheme = Template.bind({});
 export const WhiteThemeChildren = Template.bind({});
 
 WhiteThemeChildren.args = {
-	theme: 'white',
 	children: 'Text',
-};
-
-WhiteTheme.args = {
-	theme: 'white',
-};
-
-GrayTheme.args = {
-	theme: 'gray',
 };
