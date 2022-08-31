@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react';
 import React from 'react';
 
-import {CHILD, CLASS_NAME, IS_DISABLED, THEME} from '../../constants';
+import {CHILD, CLASS_NAME, IS_DISABLED} from '../../constants';
 import Switch from './Switch';
 
 describe('Switch', () => {
@@ -33,9 +33,16 @@ describe('Switch', () => {
 	});
 
 	test('Should be displayed with a different theme', () => {
-		const {getByTestId} = render(<Switch theme={THEME} onChange={() => {}} />);
+		const {getByTestId} = render(<Switch theme="white" onChange={() => {}} />);
 
 		const switchComponent = getByTestId('switch-span');
-		expect(switchComponent).toHaveClass('slider-white' || 'slider-gray');
+		expect(switchComponent).toHaveClass('slider-white round');
+	});
+
+	test('Should be displayed with a different theme', () => {
+		const {getByTestId} = render(<Switch theme="gray" onChange={() => {}} />);
+
+		const switchComponent = getByTestId('switch-span');
+		expect(switchComponent).toHaveClass('slider-gray round');
 	});
 });
