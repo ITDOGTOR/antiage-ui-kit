@@ -16,21 +16,26 @@ describe('Switch', () => {
 		expect(switchComponent).toMatchSnapshot();
 	});
 
-	test('Must be inactive', () => {
-		const switchComponent = render(<Switch data-testid="Switch" disabled={IS_DISABLED} onChange={() => {}} />);
+	describe('disable prop', () => {
+		test('Must be inactive', () => {
+			const {getByTestId} = render(<Switch disabled={IS_DISABLED} onChange={() => {}} />);
 
-		expect(switchComponent).toMatchSnapshot();
-	});
+			const switchComponent = getByTestId('switch-input');
+			expect(switchComponent).toBeDisabled();
+		});
 
-	test('Must be active', () => {
-		const switchComponent = render(<Switch data-testid="Switch" disabled={!IS_DISABLED} onChange={() => {}} />);
+		test('Must be active', () => {
+			const {getByTestId} = render(<Switch disabled={!IS_DISABLED} onChange={() => {}} />);
 
-		expect(switchComponent).toMatchSnapshot();
+			const switchComponent = getByTestId('switch-input');
+			expect(switchComponent).toBeEnabled();
+		});
 	});
 
 	test('Should be displayed with a different theme', () => {
-		const switchComponent = render(<Switch data-testid="Switch" theme={THEME} onChange={() => {}} />);
+		const {getByTestId} = render(<Switch theme={THEME} onChange={() => {}} />);
 
-		expect(switchComponent).toMatchSnapshot();
+		const switchComponent = getByTestId('switch-span');
+		expect(switchComponent).toHaveClass('slider-white' || 'slider-gray');
 	});
 });
