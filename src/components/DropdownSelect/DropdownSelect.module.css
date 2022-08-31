@@ -1,0 +1,83 @@
+.select-placeholder {
+	margin-left: 14px;
+
+	color: var(--faint-strong);
+
+	font-weight: var(--fw-medium);
+	font-size: var(--fs-xs);
+}
+
+.select-label {
+	margin-left: 14px;
+
+	color: var(--base-strong);
+
+	font-weight: var(--fw-semibold);
+	font-size: var(--fs-sm);
+}
+
+.select-currency {
+	margin-right: 30px;
+
+	color: var(--back-faint-middle);
+	font-weight: var(--fw-medium);
+	font-size: var(--fs-xs);
+	line-height: 15px;
+
+	text-align: right;
+}
+
+.select-icon {
+	position: absolute;
+	top: 11px;
+	right: 0;
+
+	margin-right: 14px;
+}
+
+.select-icon__default {
+	position: absolute;
+	/* top: 11px; */
+	right: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 11px;
+	height: 8px;
+
+	margin-right: 14px;
+
+	transition: 0.3s all;
+}
+
+.select-icon__default::before,
+.select-icon__default::after {
+	position: absolute;
+
+	width: 1px;
+	height: 7px;
+
+	background-color: var(--base-strong);
+
+	transition: 0.3s all;
+
+	content: "";
+}
+
+.select-icon__default::after {
+	right: 2px;
+
+	transform: rotate(135deg);
+}
+
+.select-icon__default::before {
+	right: 7px;
+
+	transform: rotate(45deg);
+}
+
+.select-icon__default:hover::after,
+.select-icon__default:hover::before {
+	background-color: var(--accent-strong);
+}
