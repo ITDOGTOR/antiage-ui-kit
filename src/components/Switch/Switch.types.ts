@@ -4,6 +4,7 @@ export interface SwitchProps {
 	className?: string;
 	theme?: 'white' | 'gray';
 	children?: ReactNode;
-	onChange: () => void;
+	onChange?: (checked: boolean) => void;
 	disabled?: boolean;
+	defaultChecked?: boolean;
 }

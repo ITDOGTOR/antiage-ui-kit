@@ -21,6 +21,7 @@ module.exports = {
 		es6: true,
 	},
 	rules: {
+		'jsx-a11y/label-has-associated-control': 'off',
 		'react/jsx-props-no-spreading': 'off',
 		'no-restricted-exports': 'off',
 		'import/prefer-default-export': 'off',
