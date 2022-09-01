@@ -1,0 +1,93 @@
+.switch {
+	display: inline-flex;
+
+	align-items: center;
+
+	column-gap: 10px;
+}
+
+.input {
+	margin: 0;
+
+	appearance: none;
+}
+
+.switchHandle {
+	position: relative;
+
+	width: 44px;
+	height: 26px;
+
+	border-radius: 14px;
+	cursor: pointer;
+
+	transition: all 0.2s;
+}
+
+.white .switchHandle {
+	background-color: var(--back-faint-weak);
+}
+
+.gray .switchHandle {
+	background-color: var(--back-faint-weak-up);
+}
+
+.input:checked + .switchHandle {
+	background-color: var(--complement-strong);
+}
+
+.input:disabled + .switchHandle {
+	cursor: not-allowed;
+	opacity: 0.4;
+}
+
+.circle {
+	position: absolute;
+	top: 2px;
+	left: calc(100% - 23px);
+
+	width: 22px;
+	height: 22px;
+
+	transition: all 0.2s ease-in-out;
+}
+
+.circle::before {
+	position: absolute;
+
+	background-color: var(--base-weak);
+	border-radius: 50%;
+	box-shadow: 0 4px 4px rgb(0 0 0 / 0.07);
+
+	transition: all 0.2s ease-in-out;
+
+	content: "";
+	inset: 0;
+}
+
+.input:checked + .switchHandle .circle {
+	left: 2px;
+}
+
+.input:not(:disabled) + .switchHandle:active .circle::before {
+	right: 0;
+	left: -15%;
+}
+
+.input:checked:not(:disabled) + .switchHandle:active .circle::before {
+	right: -15%;
+	left: 0;
+}
+
+.label {
+	color: var(--base-strong);
+	font-size: var(--fs-xs);
+	line-height: var(--lh-xs);
+
+	cursor: pointer;
+}
+
+.input:disabled ~ .label {
+	cursor: not-allowed;
+	opacity: 0.4;
+}

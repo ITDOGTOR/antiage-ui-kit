@@ -1,33 +1,19 @@
 import {render, screen} from '@testing-library/react';
 import React from 'react';
 
-import {CHILD, CHILDREN, CLASS_NAME} from '../../constants';
+import {CHILD, CLASS_NAME} from '../../constants';
 import Paper from './Paper';
 
 describe('Paper', () => {
-	test('Should render without children', () => {
-		const paper = render(<Paper />);
+	test('Should render with children', () => {
+		render(<Paper>{CHILD}</Paper>);
 
-		expect(paper).toMatchSnapshot();
+		expect(screen.getByText(CHILD)).toBeInTheDocument();
 	});
 
 	test('Should render with className', () => {
-		const paper = render(<Paper className={CLASS_NAME} />);
+		const {container} = render(<Paper className={CLASS_NAME} />);
 
-		expect(paper).toMatchSnapshot();
-	});
-
-	test('Should render with children as string', () => {
-		render(<Paper>{CHILD}</Paper>);
-
-		expect(screen.getByText('child')).toBeInTheDocument();
-	});
-
-	test('Should render with children as ReactNode', () => {
-		render(<Paper>{CHILDREN}</Paper>);
-
-		expect(screen.getByText('title')).toBeInTheDocument();
-		expect(screen.getByText('description')).toBeInTheDocument();
-		expect(screen.getByText('button')).toBeInTheDocument();
+		expect(container.firstChild).toHaveClass(CLASS_NAME);
 	});
 });

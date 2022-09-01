@@ -9,11 +9,12 @@ export default {
 	component: Paper,
 	argTypes: {
 		children: {
-			name: 'children',
-			type: {name: 'string', required: false},
-			control: {
-				type: 'text',
-			},
+			type: 'string',
+			defaultValue: '',
+		},
+		className: {
+			type: 'string',
+			control: {disable: true},
 		},
 	},
 } as ComponentMeta<typeof Paper>;
@@ -21,11 +22,6 @@ export default {
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Paper> = (args: PaperProps) => {
 	return <Paper {...args} />;
-};
-
-export const Empty = Template.bind({});
-Empty.args = {
-	children: '',
 };
 
 export const WithChildren = Template.bind({});
@@ -44,3 +40,9 @@ WithChildren.args = {
 		</>
 	),
 };
+
+WithChildren.argTypes = {
+	children: {control: {disable: true}},
+};
+
+export const WithoutChildren = Template.bind({});

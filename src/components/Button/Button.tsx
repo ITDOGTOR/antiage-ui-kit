@@ -13,31 +13,30 @@ function Button({
 	isLink = false,
 	styleType = 'base-fill',
 	disabled = false,
-	className = '',
+	className,
 	theme = 'white',
 	htmlType = 'button',
-	...props
 }: ButtonProps) {
 	const defaultProps = {
-		className: cx('button', `${styleType}-${theme}`, className),
+		className: cx(styles.button, theme, styleType, className),
 		disabled,
 		type: htmlType,
 	};
 
 	if (isLink) {
-		return cloneElement(children as ReactElement, {className: defaultProps.className});
+		return cloneElement(children as ReactElement, {className: defaultProps.className, 'data-testid': 'link'});
 	}
 
 	if (htmlType === 'button') {
 		return (
-			<button {...defaultProps} onClick={onClick} {...props}>
+			<button {...defaultProps} data-testid="button" onClick={onClick}>
 				{children}
 			</button>
 		);
 	}
 
 	return (
-		<button {...defaultProps} {...props}>
+		<button {...defaultProps} data-testid="button">
 			{children}
 		</button>
 	);

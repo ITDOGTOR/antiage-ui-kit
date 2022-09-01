@@ -37,7 +37,11 @@ export default {
 		},
 		children: {
 			type: 'string',
-			defaultValue: 'Название',
+			defaultValue: 'Name',
+		},
+		className: {
+			type: 'string',
+			control: {disable: true},
 		},
 		htmlType: {
 			type: 'string',
@@ -59,7 +63,7 @@ export default {
 			description: 'A flag that says that children contains a link',
 			defaultValue: false,
 			control: {
-				type: 'boolean',
+				disable: true,
 			},
 		},
 	},
@@ -67,18 +71,6 @@ export default {
 
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Button> = (args: ButtonProps) => {
-	const {isLink} = args;
-
-	if (isLink) {
-		return (
-			<Button {...args}>
-				<a href="/" target="_blank">
-					Ссылка
-				</a>
-			</Button>
-		);
-	}
-
 	return <Button {...args} />;
 };
 
@@ -109,40 +101,69 @@ BaseOutlineGray.args = {
 export const AccentFill = Template.bind({});
 AccentFill.args = {
 	styleType: 'accent-fill',
-	theme: 'white',
+};
+
+AccentFill.argTypes = {
+	theme: {control: {disable: true}},
 };
 
 export const AccentOutline = Template.bind({});
 AccentOutline.args = {
 	styleType: 'accent-outline',
-	theme: 'white',
+};
+
+AccentOutline.argTypes = {
+	theme: {control: {disable: true}},
 };
 
 export const ComplementFill = Template.bind({});
 ComplementFill.args = {
 	styleType: 'complement-fill',
-	theme: 'white',
+};
+
+ComplementFill.argTypes = {
+	theme: {control: {disable: true}},
 };
 
 export const ComplementOutline = Template.bind({});
 ComplementOutline.args = {
 	styleType: 'complement-outline',
-	theme: 'white',
+};
+
+ComplementOutline.argTypes = {
+	theme: {control: {disable: true}},
 };
 
 export const CriticOutline = Template.bind({});
 CriticOutline.args = {
 	styleType: 'critic-outline',
-	theme: 'white',
+};
+
+CriticOutline.argTypes = {
+	theme: {control: {disable: true}},
 };
 
 export const Text = Template.bind({});
 Text.args = {
 	styleType: 'text',
-	theme: 'white',
+};
+
+Text.argTypes = {
+	theme: {control: {disable: true}},
 };
 
 export const Link = Template.bind({});
 Link.args = {
 	isLink: true,
+	children: (
+		<a href="/" target="_blank">
+			Link
+		</a>
+	),
+};
+
+Link.argTypes = {
+	children: {control: {disable: true}},
+	disabled: {control: {disable: true}},
+	htmlType: {control: {disable: true}},
 };
