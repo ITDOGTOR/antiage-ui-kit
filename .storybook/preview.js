@@ -20,7 +20,7 @@ export const parameters = {
 				type: 'tablet',
 			},
 			desktop: {
-				name: 'Desktop',
+				name: 'HD',
 				styles: {
 					width: '1024px',
 					height: '768px',
@@ -28,15 +28,15 @@ export const parameters = {
 				type: 'desktop',
 			},
 			largeDesktop: {
-				name: 'Large desktop',
+				name: 'Full HD',
 				styles: {
-					width: '1536px',
-					height: '864px',
+					width: '1920px',
+					height: '1080px',
 				},
 				type: 'desktop',
 			},
 			veryLargeDesktop: {
-				name: 'Very large desktop',
+				name: 'Quadro HD',
 				styles: {
 					width: '2560px',
 					height: '1536px',
