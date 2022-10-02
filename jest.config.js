@@ -1,10 +1,13 @@
 module.exports = {
-	testEnvironment: 'jsdom',
 	roots: ['src'],
-	setupFilesAfterEnv: ['./jest.setup.ts'],
-	moduleFileExtensions: ['ts', 'tsx', 'js'],
-	testPathIgnorePatterns: ['node_modules/'],
+	collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts'],
+	coveragePathIgnorePatterns: ['.stories.ts'],
+	setupFilesAfterEnv: ['./setupTests.ts'],
+	testEnvironment: 'jsdom',
 	moduleNameMapper: {
-		'.(css|less|scss)$': 'identity-obj-proxy',
+		'^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
 	},
+	moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+	watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
+	resetMocks: true,
 };
