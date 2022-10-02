@@ -21,7 +21,7 @@
 		"storybook-static",
 		"src/**/*.stories.tsx",
 		"src/**/*.test.tsx",
-		"jest.setup.ts",
+		"setupTests.ts",
 		"src/constants.tsx"
 	]
 }
