@@ -1,0 +1,14 @@
+.container {
+	position: relative;
+
+	padding: 20px 16px;
+
+	background-color: var(--base-weak);
+	border-radius: var(--brad-basic);
+}
+
+@media screen and (min-width: 1220px) {
+	.container {
+		padding: 30px;
+	}
+}

@@ -34,7 +34,7 @@ export default [
 			}),
 			postcss({
 				modules: {
-					generateScopedName: '[local]__[hash:base64:5]',
+					generateScopedName: 'ui-kit-[local]',
 				},
 			}),
 			terser({

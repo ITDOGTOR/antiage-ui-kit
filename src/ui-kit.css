@@ -59,11 +59,29 @@
 	--fs-xxs: 10px;
 	--fs-3xs: 8px;
 
+	--lh-3xl: 32px;
+	--lh-3xl-text: 36px;
+	--lh-xxl: 26px;
+	--lh-xxl-text: 30px;
+	--lh-xl: 22px;
+	--lh-xl-text: 26px;
+	--lh-lg: 20px;
+	--lh-lg-text: 24px;
+	--lh-md: 18px;
+	--lh-md-text: 22px;
+	--lh-sm: 16px;
+	--lh-sm-text: 20px;
 	--lh-xs: 14px;
 	--lh-xs-text: 18px;
+	--lh-xss: 12px;
+	--lh-xss-text: 16px;
+	--lh-3xs: 10px;
+	--lh-3xs-text: 14px;
 
 	--fw-bold: 700;
 	--fw-semibold: 600;
 	--fw-medium: 500;
 	--fw-regular: 400;
+
+	--brad-basic: 16px;
 }
