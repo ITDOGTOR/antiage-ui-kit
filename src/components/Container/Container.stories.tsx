@@ -1,12 +1,12 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import React from 'react';
 
-import Paper from './Paper';
-import {PaperProps} from './Paper.types';
+import Container from './Container';
+import {ContainerProps} from './Container.types';
 
 export default {
 	title: 'Paper',
-	component: Paper,
+	component: Container,
 	argTypes: {
 		children: {
 			type: 'string',
@@ -17,11 +17,11 @@ export default {
 			control: {disable: true},
 		},
 	},
-} as ComponentMeta<typeof Paper>;
+} as ComponentMeta<typeof Container>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof Paper> = (args: PaperProps) => {
-	return <Paper {...args} />;
+const Template: ComponentStory<typeof Container> = (args: ContainerProps) => {
+	return <Container {...args} />;
 };
 
 export const WithChildren = Template.bind({});

@@ -1,6 +1,6 @@
 import {ReactNode} from 'react';
 
-export interface PaperProps {
+export interface ContainerProps {
 	children?: ReactNode;
 	className?: string;
 }
