@@ -8,162 +8,69 @@ export default {
 	title: 'Button',
 	component: Button,
 	argTypes: {
+		type: {
+			name: 'type',
+			defaultValue: 'default',
+			table: {defaultValue: {summary: 'default'}},
+			control: {type: 'select', options: ['default', 'primary']},
+		},
+		color: {
+			name: 'color',
+			defaultValue: 'base',
+			control: {type: 'select'},
+			if: {arg: 'danger', truthy: false},
+		},
 		theme: {
-			type: 'string',
-			description: 'The background color on which the button is displayed',
 			defaultValue: 'white',
-			control: {
-				type: 'radio',
-			},
-			options: ['white', 'gray'],
+			control: {type: 'select'},
+			if: {arg: 'danger', truthy: false},
 		},
-		styleType: {
-			type: 'string',
-			description: 'Ready-made button style',
-			defaultValue: 'base-fill',
-			control: {
-				type: 'select',
-			},
-			options: [
-				'base-fill',
-				'base-outline',
-				'accent-fill',
-				'accent-outline',
-				'complement-fill',
-				'complement-outline',
-				'critic-outline',
-				'text',
-			],
-		},
-		children: {
-			type: 'string',
-			defaultValue: 'Name',
-		},
-		className: {
-			type: 'string',
-			control: {disable: true},
-		},
-		htmlType: {
-			type: 'string',
-			defaultValue: 'button',
-			control: {
-				type: 'radio',
-			},
-			options: ['button', 'submit', 'reset'],
+		danger: {
+			name: 'danger',
+			defaultValue: false,
+			control: {type: 'boolean'},
 		},
 		disabled: {
-			type: 'boolean',
+			name: 'disable',
 			defaultValue: false,
-			control: {
-				type: 'boolean',
-			},
+			control: {type: 'boolean'},
 		},
-		isLink: {
-			type: 'boolean',
-			description: 'A flag that says that children contains a link',
-			defaultValue: false,
-			control: {
-				disable: true,
-			},
-		},
+		className: {table: {disable: true}},
+		href: {table: {disable: true}},
+		htmlType: {table: {disable: true}},
+		target: {table: {disable: true}},
+		onClick: {table: {disable: true}},
 	},
 } as ComponentMeta<typeof Button>;
 
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Button> = (args: ButtonProps) => {
-	return <Button {...args} />;
+	return <Button {...args}>Название</Button>;
 };
 
-export const BaseFillWhite = Template.bind({});
-BaseFillWhite.args = {
-	styleType: 'base-fill',
-	theme: 'white',
-};
+export const Sandbox = Template.bind({});
+Sandbox.args = {};
 
-export const BaseFillGray = Template.bind({});
-BaseFillGray.args = {
-	styleType: 'base-fill',
-	theme: 'gray',
-};
+export const DefaultBase = Template.bind({});
+DefaultBase.args = {color: 'base'};
 
-export const BaseOutlineWhite = Template.bind({});
-BaseOutlineWhite.args = {
-	styleType: 'base-outline',
-	theme: 'white',
-};
+export const PrimaryBase = Template.bind({});
+PrimaryBase.args = {type: 'primary', color: 'base'};
 
-export const BaseOutlineGray = Template.bind({});
-BaseOutlineGray.args = {
-	styleType: 'base-outline',
-	theme: 'gray',
-};
+export const PrimaryAccent = Template.bind({});
+PrimaryAccent.args = {type: 'primary', color: 'accent'};
 
-export const AccentFill = Template.bind({});
-AccentFill.args = {
-	styleType: 'accent-fill',
-};
+export const PrimaryComplement = Template.bind({});
+PrimaryComplement.args = {type: 'primary', color: 'complement'};
 
-AccentFill.argTypes = {
-	theme: {control: {disable: true}},
-};
+export const PrimaryWarning = Template.bind({});
+PrimaryWarning.args = {type: 'primary', color: 'warning'};
 
-export const AccentOutline = Template.bind({});
-AccentOutline.args = {
-	styleType: 'accent-outline',
-};
+export const PrimarySuccess = Template.bind({});
+PrimarySuccess.args = {type: 'primary', color: 'success'};
 
-AccentOutline.argTypes = {
-	theme: {control: {disable: true}},
-};
+export const DefaultCritic = Template.bind({});
+DefaultCritic.args = {danger: true};
 
-export const ComplementFill = Template.bind({});
-ComplementFill.args = {
-	styleType: 'complement-fill',
-};
-
-ComplementFill.argTypes = {
-	theme: {control: {disable: true}},
-};
-
-export const ComplementOutline = Template.bind({});
-ComplementOutline.args = {
-	styleType: 'complement-outline',
-};
-
-ComplementOutline.argTypes = {
-	theme: {control: {disable: true}},
-};
-
-export const CriticOutline = Template.bind({});
-CriticOutline.args = {
-	styleType: 'critic-outline',
-};
-
-CriticOutline.argTypes = {
-	theme: {control: {disable: true}},
-};
-
-export const Text = Template.bind({});
-Text.args = {
-	styleType: 'text',
-};
-
-Text.argTypes = {
-	theme: {control: {disable: true}},
-};
-
-export const Link = Template.bind({});
-Link.args = {
-	isLink: true,
-	children: (
-		<a href="/" target="_blank">
-			Link
-		</a>
-	),
-};
-
-Link.argTypes = {
-	children: {control: {disable: true}},
-	disabled: {control: {disable: true}},
-	htmlType: {control: {disable: true}},
-};
+export const PrimaryCritic = Template.bind({});
+PrimaryCritic.args = {type: 'primary', danger: true};

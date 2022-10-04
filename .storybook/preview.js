@@ -1,3 +1,4 @@
+import 'antd/dist/antd.css'
 import './fonts.css';
 import '../src/ui-kit.css';
 import {INITIAL_VIEWPORTS} from '@storybook/addon-viewport';
@@ -47,11 +48,11 @@ export const parameters = {
 		},
 	},
 	backgrounds: {
-		default: 'gray',
+		default: 'white',
 		values: [
 			{
 				name: 'gray',
-				value: '#f2f5f7',
+				value: '#f2f4f7',
 			},
 			{
 				name: 'white',

@@ -42,7 +42,7 @@ module.exports = {
 		],
 		'comment-whitespace-inside': 'always',
 		'selector-max-id': 0,
-		'declaration-no-important': true,
+		'declaration-no-important': null,
 		'no-descending-specificity': null,
 		'prettier/prettier': [
 			true,

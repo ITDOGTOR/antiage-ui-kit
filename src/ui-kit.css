@@ -1,46 +1,46 @@
 :root {
 	--base-strong: #42474d;
-	--base-strong-down: #667280;
+	--base-strong-lighter: #667280;
 	--base-weak: #ffffff;
 
 	--faint-strong: #a6acb3;
 	--faint-middle: #cedef2;
-	--faint-weak-up: #e9edf5;
+	--faint-weak-darker: #e9edf5;
 	--faint-weak: #f2f4f7;
-	--faint-weak-down: #f8f8fa;
+	--faint-weak-lighter: #f8f8fa;
 
-	--accent-strong-up: #4087b3;
+	--accent-strong-darker: #4087b3;
 	--accent-strong: #4da2d6;
-	--accent-weak-up: #9cd0f0;
+	--accent-weak-darker: #9cd0f0;
 	--accent-weak: #bbe2fa;
-	--accent-weak-down: #d9f0ff;
+	--accent-weak-lighter: #d9f0ff;
 
-	--complement-strong-up: #43a865;
+	--complement-strong-darker: #43a865;
 	--complement-strong: #5ccc81;
-	--complement-weak-up: #a4eba4;
+	--complement-weak-darker: #a4eba4;
 	--complement-weak: #c2f2c2;
-	--complement-weak-down: #e6ffe6;
+	--complement-weak-lighter: #e6ffe6;
 
-	--critic-strong-up: #e6432e;
+	--critic-strong-darker: #e6432e;
 	--critic-strong: #ff614d;
-	--critic-weak-up: #f5aa9f;
+	--critic-weak-darker: #f5aa9f;
 	--critic-weak: #ffc7bf;
-	--critic-weak-down: #ffe9e6;
+	--critic-weak-lighter: #ffe9e6;
 
-	--warning-strong-up: #e69e39;
+	--warning-strong-darker: #e69e39;
 	--warning-strong: #f2ba48;
-	--warning-weak-up: #f0cd9c;
+	--warning-weak-darker: #f0cd9c;
 	--warning-weak: #f5e0b8;
-	--warning-weak-down: #fff6e6;
+	--warning-weak-lighter: #fff6e6;
 
-	--success-strong-up: #876abd;
+	--success-strong-darker: #876abd;
 	--success-strong: #af90e7;
-	--success-weak-up: #d0c0f0;
+	--success-weak-darker: #d0c0f0;
 	--success-weak: #e7def8;
-	--success-weak-down: #f2edfa;
+	--success-weak-lighter: #f2edfa;
 
 	--back-faint-middle: #c3d3e6;
-	--back-faint-weak-up: #dae3f1;
+	--back-faint-weak-darker: #dae3f1;
 	--back-faint-weak: #e9edf5;
 
 	--linear-base-strong: linear-gradient(135deg, #39e672 0%, #57a1d9 100%);
@@ -84,4 +84,267 @@
 	--fw-regular: 400;
 
 	--brad-basic: 16px;
+}
+
+.ui-kit-container {
+	position: relative;
+
+	padding: 20px 16px;
+
+	background-color: var(--base-weak);
+	border-radius: var(--brad-basic);
+}
+
+@media screen and (min-width: 1220px) {
+	.ui-kit-container {
+		padding: 30px;
+	}
+}
+
+.ui-kit-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: auto;
+	padding: 14px;
+
+	font-weight: var(--fw-medium);
+	font-size: var(--fs-xs);
+	line-height: var(--lh-xs);
+	text-shadow: none !important;
+
+	border: 0;
+	border-radius: var(--brad-basic);
+
+	box-shadow: none;
+}
+
+.ui-kit-button:not(.ant-btn-loading) {
+	gap: 10px;
+}
+
+.ui-kit-button.ant-btn-default svg,
+.ui-kit-button.ant-btn-primary.base svg {
+	color: var(--accent-strong);
+}
+
+.ui-kit-button.ant-btn-default:disabled svg,
+.ui-kit-button.ant-btn-primary.base:disabled svg {
+	color: var(--back-faint-middle);
+}
+
+.ui-kit-button.ant-btn-primary svg {
+	color: var(--base-weak);
+}
+
+.ui-kit-button.ant-btn-primary:disabled svg {
+	color: var(--back-faint-middle);
+}
+
+.ui-kit-button.ant-btn-default.ant-btn-dangerous svg {
+	color: var(--critic-strong);
+}
+
+.ui-kit-button.ant-btn-default.ant-btn-dangerous:disabled svg {
+	color: var(--critic-weak-darker);
+}
+
+.ui-kit-button.ant-btn-default.base {
+	color: var(--base-strong);
+
+	border: 1px solid var(--back-faint-weak-darker);
+}
+
+.ui-kit-button.ant-btn-default[ant-click-animating-without-extra-node="true"].base::after {
+	--antd-wave-shadow-color: var(--base-strong);
+}
+
+.ui-kit-button.ant-btn-default.base:disabled {
+	color: var(--back-faint-middle);
+
+	background-color: transparent !important;
+	border-color: var(--back-faint-weak-darker);
+}
+
+.ui-kit-button.ant-btn-default.base.white:hover,
+.ui-kit-button.ant-btn-default.base.white:focus-visible {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-button.ant-btn-default.base.gray:hover,
+.ui-kit-button.ant-btn-default.base.gray:focus-visible {
+	background-color: var(--faint-weak-darker);
+}
+
+.ui-kit-button.ant-btn-primary.base {
+	color: var(--base-strong);
+}
+
+.ui-kit-button.ant-btn-primary.base.white {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-button.ant-btn-primary.base.gray {
+	background-color: var(--base-weak);
+}
+
+.ui-kit-button.ant-btn-primary[ant-click-animating-without-extra-node="true"].base::after {
+	--antd-wave-shadow-color: var(--base-strong);
+}
+
+.ui-kit-button.ant-btn-primary:disabled {
+	color: var(--back-faint-middle) !important;
+}
+
+.ui-kit-button.ant-btn-primary.white:not(.base):disabled {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-button.ant-btn-primary.gray:not(.base):disabled {
+	background-color: var(--faint-weak-darker);
+}
+
+.ui-kit-button.ant-btn-primary.base.white:disabled {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-button.ant-btn-primary.base.gray:disabled {
+	background-color: var(--base-weak);
+}
+
+.ui-kit-button.ant-btn-primary.base:hover,
+.ui-kit-button.ant-btn-primary.base:focus-visible {
+	background-color: var(--faint-weak-darker);
+}
+
+.ui-kit-button.ant-btn-primary:not(.base) {
+	color: var(--base-weak);
+}
+
+.ui-kit-button.ant-btn-primary.accent {
+	background-color: var(--accent-strong);
+}
+
+.ui-kit-button.ant-btn-primary[ant-click-animating-without-extra-node="true"].accent::after {
+	--antd-wave-shadow-color: var(--accent-strong);
+}
+
+.ui-kit-button.ant-btn-primary.accent:hover,
+.ui-kit-button.ant-btn-primary.accent:focus-visible {
+	background-color: var(--accent-strong-darker);
+}
+
+.ui-kit-button.ant-btn-primary.complement {
+	background-color: var(--complement-strong);
+}
+
+.ui-kit-button.ant-btn-primary[ant-click-animating-without-extra-node="true"].complement::after {
+	--antd-wave-shadow-color: var(--complement-strong);
+}
+
+.ui-kit-button.ant-btn-primary.complement:hover,
+.ui-kit-button.ant-btn-primary.complement:focus-visible {
+	background-color: var(--complement-strong-darker);
+}
+
+.ui-kit-button.ant-btn-primary.warning {
+	background-color: var(--warning-strong);
+}
+
+.ui-kit-button.ant-btn-primary[ant-click-animating-without-extra-node="true"].warning::after {
+	--antd-wave-shadow-color: var(--warning-strong);
+}
+
+.ui-kit-button.ant-btn-primary.warning:hover,
+.ui-kit-button.ant-btn-primary.warning:focus-visible {
+	background-color: var(--warning-strong-darker);
+}
+
+.ui-kit-button.ant-btn-primary.success {
+	background-color: var(--success-strong);
+}
+
+.ui-kit-button.ant-btn-primary[ant-click-animating-without-extra-node="true"].success::after {
+	--antd-wave-shadow-color: var(--success-strong);
+}
+
+.ui-kit-button.ant-btn-primary.success:hover,
+.ui-kit-button.ant-btn-primary.success:focus-visible {
+	background-color: var(--success-strong-darker);
+}
+
+.ui-kit-button.ant-btn-default.ant-btn-dangerous {
+	color: var(--critic-strong);
+
+	border: 1px solid var(--critic-strong);
+}
+
+.ui-kit-button.ant-btn-default.ant-btn-dangerous:disabled {
+	color: var(--critic-weak-darker);
+
+	background-color: transparent !important;
+
+	border-color: var(--critic-weak);
+}
+
+.ui-kit-button.ant-btn-default.ant-btn-dangerous[ant-click-animating-without-extra-node="true"]::after {
+	--antd-wave-shadow-color: var(--critic-strong);
+}
+
+.ui-kit-button.ant-btn-default.ant-btn-dangerous:hover,
+.ui-kit-button.ant-btn-default.ant-btn-dangerous:focus-visible {
+	background-color: var(--critic-weak-lighter);
+}
+
+.ui-kit-button.ant-btn-primary.ant-btn-dangerous {
+	color: var(--base-weak);
+
+	background-color: var(--critic-strong);
+}
+
+.ui-kit-button.ant-btn-primary.ant-btn-dangerous[ant-click-animating-without-extra-node="true"]::after {
+	--antd-wave-shadow-color: var(--critic-strong);
+}
+
+.ui-kit-button.ant-btn-primary.ant-btn-dangerous:hover,
+.ui-kit-button.ant-btn-primary.ant-btn-dangerous:focus-visible {
+	background-color: var(--critic-strong-darker);
+}
+
+@supports not selector(:focus-visible) {
+	.ui-kit-button.ant-btn-default.base.white:focus {
+		background-color: var(--faint-weak);
+	}
+
+	.ui-kit-button.ant-btn-default.base.gray:focus {
+		background-color: var(--faint-weak-darker);
+	}
+
+	.ui-kit-button.ant-btn-primary.base:focus {
+		background-color: var(--faint-weak-darker);
+	}
+
+	.ui-kit-button.ant-btn-primary.accent:focus {
+		background-color: var(--accent-strong-darker);
+	}
+
+	.ui-kit-button.ant-btn-primary.complement:focus {
+		background-color: var(--complement-strong-darker);
+	}
+
+	.ui-kit-button.ant-btn-primary.warning:focus {
+		background-color: var(--warning-strong-darker);
+	}
+
+	.ui-kit-button.ant-btn-primary.success:focus {
+		background-color: var(--success-strong-darker);
+	}
+
+	.ui-kit-button.ant-btn-default.ant-btn-dangerous:focus {
+		background-color: var(--critic-weak-lighter);
+	}
+
+	.ui-kit-button.ant-btn-primary.ant-btn-dangerous:focus {
+		background-color: var(--critic-strong-darker);
+	}
 }

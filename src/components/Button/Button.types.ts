@@ -1,20 +1,12 @@
-import {ReactNode} from 'react';
+import {ButtonProps as ButtonPropsAntd} from 'antd';
 
-export interface ButtonProps {
-	children?: ReactNode;
-	theme?: 'white' | 'gray';
-	isLink?: boolean;
-	onClick?: () => void;
-	styleType?:
-		| 'base-fill'
-		| 'base-outline'
-		| 'accent-fill'
-		| 'accent-outline'
-		| 'complement-fill'
-		| 'complement-outline'
-		| 'critic-outline'
-		| 'text';
-	disabled?: boolean;
-	className?: string;
-	htmlType?: 'button' | 'submit' | 'reset';
-}
+declare const ButtonThemes: ['white', 'gray'];
+declare type ButtonTheme = typeof ButtonThemes[number];
+declare const ButtonColors: ['base', 'accent', 'complement', 'warning', 'success'];
+declare type ButtonColor = typeof ButtonColors[number];
+
+export declare type ButtonProps = {
+	className?: 'string';
+	theme?: ButtonTheme;
+	color?: ButtonColor;
+} & ButtonPropsAntd;

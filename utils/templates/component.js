@@ -1,14 +1,11 @@
 module.exports = (componentName) => ({
-	content: `import classNames from 'classnames/bind';
+	content: `import classNames from 'classnames';
 import React from 'react';
 
-import styles from './${componentName}.module.css';
 import {${componentName}Props} from './${componentName}.types';
 
-const cx = classNames.bind(styles);
-
 function ${componentName}({foo}: ${componentName}Props) {
-\treturn <div className={cx('foo')}>${componentName} {foo}</div>;
+\treturn <div className={classNames('foo')}>${componentName} {foo}</div>;
 }
 
 export default ${componentName};`,

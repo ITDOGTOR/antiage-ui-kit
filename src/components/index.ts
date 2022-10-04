@@ -1,2 +1,2 @@
 export {default as Button} from './Button';
-export {default as Paper} from './Container';
+export {default as Container} from './Container';

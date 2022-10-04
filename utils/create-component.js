@@ -23,6 +23,11 @@ fs.mkdirSync(componentDirectory);
 const generatedTemplates = templates.map((template) => template(componentName));
 
 generatedTemplates.forEach((template) => {
+	if (template.export) {
+		fs.writeFileSync(`${componentDirectory}/index${template.extension}`, template.content);
+		return;
+	}
+
 	fs.writeFileSync(`${componentDirectory}/${componentName}${template.extension}`, template.content);
 });
 
