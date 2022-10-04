@@ -32,11 +32,7 @@ export default [
 			copy({
 				targets: [{src: 'src/ui-kit.css', dest: 'dist'}],
 			}),
-			postcss({
-				modules: {
-					generateScopedName: 'ui-kit-[local]',
-				},
-			}),
+			postcss(),
 			terser({
 				format: {
 					comments: false,

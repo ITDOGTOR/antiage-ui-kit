@@ -1,3 +1,4 @@
+import 'antd/dist/antd.css'
 import './fonts.css';
 import '../src/ui-kit.css';
 import {INITIAL_VIEWPORTS} from '@storybook/addon-viewport';

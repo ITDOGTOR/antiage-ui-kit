@@ -5,29 +5,18 @@ import Container from './Container';
 import {ContainerProps} from './Container.types';
 
 export default {
-	title: 'Paper',
+	title: 'Container',
 	component: Container,
 	argTypes: {
-		children: {
-			type: 'string',
-			defaultValue: '',
-		},
-		className: {
-			type: 'string',
-			control: {disable: true},
-		},
+		children: {table: {disable: true}},
+		className: {table: {disable: true}},
 	},
 } as ComponentMeta<typeof Container>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof Container> = (args: ContainerProps) => {
-	return <Container {...args} />;
-};
-
-export const WithChildren = Template.bind({});
-WithChildren.args = {
-	children: (
-		<>
+export const Story: ComponentStory<typeof Container> = (args: ContainerProps) => {
+	return (
+		<Container {...args}>
 			<h1>This is Paper component</h1>
 
 			<p>
@@ -37,12 +26,6 @@ WithChildren.args = {
 			</p>
 
 			<button type="button">Click</button>
-		</>
-	),
+		</Container>
+	);
 };
-
-WithChildren.argTypes = {
-	children: {control: {disable: true}},
-};
-
-export const WithoutChildren = Template.bind({});

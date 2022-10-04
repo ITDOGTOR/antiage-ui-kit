@@ -1,44 +1,20 @@
-/* eslint-disable react/button-has-type */
-import classnames from 'classnames/bind';
-import React, {cloneElement, ReactElement} from 'react';
+import {Button as ButtonAntd} from 'antd';
+import classNames from 'classnames';
+import React from 'react';
 
-import styles from './Button.module.css';
 import {ButtonProps} from './Button.types';
 
-const cx = classnames.bind(styles);
-
-function Button({
-	children,
-	onClick,
-	isLink = false,
-	styleType = 'base-fill',
-	disabled = false,
-	className,
-	theme = 'white',
-	htmlType = 'button',
-}: ButtonProps) {
-	const defaultProps = {
-		className: cx(styles.button, theme, styleType, className),
-		disabled,
-		type: htmlType,
-	};
-
-	if (isLink) {
-		return cloneElement(children as ReactElement, {className: defaultProps.className, 'data-testid': 'link'});
-	}
-
-	if (htmlType === 'button') {
-		return (
-			<button {...defaultProps} data-testid="button" onClick={onClick}>
-				{children}
-			</button>
-		);
-	}
+function Button({className, theme = 'white', color, children, ...props}: ButtonProps) {
+	const classes = classNames('ui-kit-button', {
+		[theme]: theme,
+		[color as string]: color,
+		[className as string]: className,
+	});
 
 	return (
-		<button {...defaultProps} data-testid="button">
+		<ButtonAntd className={classes} {...props}>
 			{children}
-		</button>
+		</ButtonAntd>
 	);
 }
 

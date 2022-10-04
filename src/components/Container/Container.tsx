@@ -1,13 +1,10 @@
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 import React from 'react';
 
-import styles from './Container.module.css';
 import {ContainerProps} from './Container.types';
 
-const cx = classNames.bind(styles);
-
 function Container({children, className}: ContainerProps) {
-	return <div className={cx(styles.container, className)}>{children}</div>;
+	return <div className={classNames('ui-kit-container', className)}>{children}</div>;
 }
 
 export default Container;
