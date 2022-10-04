@@ -47,11 +47,11 @@ export const parameters = {
 		},
 	},
 	backgrounds: {
-		default: 'gray',
+		default: 'white',
 		values: [
 			{
 				name: 'gray',
-				value: '#f2f5f7',
+				value: '#f2f4f7',
 			},
 			{
 				name: 'white',
