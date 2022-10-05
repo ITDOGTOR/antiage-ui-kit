@@ -10,39 +10,42 @@ export default {
 	argTypes: {
 		type: {
 			name: 'type',
+			description: 'Ant-Design prop',
 			defaultValue: 'default',
 			table: {defaultValue: {summary: 'default'}},
 			control: {type: 'select', options: ['default', 'primary', 'text']},
 		},
 		color: {
-			name: 'color',
 			defaultValue: 'base',
 			control: {type: 'select'},
 			if: {arg: 'danger', truthy: false},
 		},
 		theme: {
 			defaultValue: 'white',
+			table: {defaultValue: {summary: 'white'}},
 			control: {type: 'select'},
 			if: {arg: 'danger', truthy: false},
 		},
 		danger: {
 			name: 'danger',
+			description: 'Ant-Design prop',
 			defaultValue: false,
 			control: {type: 'boolean'},
 		},
-		disable: {
-			name: 'disable',
+		disabled: {
+			name: 'disabled',
+			description: 'Ant-Design prop',
 			defaultValue: false,
 			control: {type: 'boolean'},
 		},
 		gradient: {
-			name: 'gradient',
 			defaultValue: false,
 			control: {type: 'boolean'},
 			if: {arg: 'type', eq: 'primary'},
 		},
 		loading: {
 			name: 'loading',
+			description: 'Ant-Design prop',
 			defaultValue: false,
 			control: {type: 'boolean'},
 		},
@@ -60,7 +63,6 @@ const Template: ComponentStory<typeof Button> = (args: ButtonProps) => {
 };
 
 export const Sandbox = Template.bind({});
-Sandbox.args = {};
 
 export const DefaultBase = Template.bind({});
 DefaultBase.args = {color: 'base'};

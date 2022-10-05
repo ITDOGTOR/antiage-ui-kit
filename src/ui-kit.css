@@ -102,6 +102,8 @@
 }
 
 .ui-kit-button {
+	position: relative;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -111,12 +113,22 @@
 	font-weight: var(--fw-medium);
 	font-size: var(--fs-xs);
 	line-height: var(--lh-xs);
-	text-shadow: none !important;
+	white-space: nowrap;
+	text-align: center;
+	text-shadow: none;
+
+	background-image: none;
 
 	border: 0;
 	border-radius: var(--brad-basic);
 
 	box-shadow: none;
+	cursor: pointer;
+
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	user-select: none;
+	touch-action: manipulation;
 }
 
 .ui-kit-button:not(.ant-btn-loading) {
@@ -324,6 +336,7 @@
 
 .ui-kit-button.ant-btn-primary.ant-btn-dangerous {
 	color: var(--base-weak);
+	text-shadow: none;
 
 	background-color: var(--critic-strong);
 }
@@ -334,6 +347,10 @@
 
 .ui-kit-button.ant-btn-primary.ant-btn-dangerous[ant-click-animating-without-extra-node="true"]::after {
 	--antd-wave-shadow-color: var(--critic-strong);
+}
+
+.ui-kit-button.ant-btn-primary.ant-btn-dangerous:disabled {
+	background-color: var(--faint-weak) !important;
 }
 
 .ui-kit-button.ant-btn-primary.ant-btn-dangerous:hover,
@@ -347,6 +364,8 @@
 	color: var(--accent-strong);
 
 	background-color: transparent;
+
+	transition: none;
 }
 
 .ui-kit-button.ant-btn-text:hover,
@@ -367,6 +386,8 @@
 
 .ui-kit-button.ant-btn-text.ant-btn-dangerous {
 	color: var(--critic-strong);
+
+	background-color: transparent;
 }
 
 .ui-kit-button.ant-btn-text.ant-btn-dangerous:disabled {
