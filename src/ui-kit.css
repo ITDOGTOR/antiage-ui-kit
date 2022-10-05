@@ -124,12 +124,14 @@
 }
 
 .ui-kit-button.ant-btn-default svg,
-.ui-kit-button.ant-btn-primary.base svg {
+.ui-kit-button.ant-btn-primary.base svg,
+.ui-kit-button.ant-btn-text svg {
 	color: var(--accent-strong);
 }
 
 .ui-kit-button.ant-btn-default:disabled svg,
-.ui-kit-button.ant-btn-primary.base:disabled svg {
+.ui-kit-button.ant-btn-primary.base:disabled svg,
+.ui-kit-button.ant-btn-text:disabled svg {
 	color: var(--back-faint-middle);
 }
 
@@ -141,11 +143,13 @@
 	color: var(--back-faint-middle);
 }
 
-.ui-kit-button.ant-btn-default.ant-btn-dangerous svg {
+.ui-kit-button.ant-btn-default.ant-btn-dangerous svg,
+.ui-kit-button.ant-btn-text.ant-btn-dangerous svg {
 	color: var(--critic-strong);
 }
 
-.ui-kit-button.ant-btn-default.ant-btn-dangerous:disabled svg {
+.ui-kit-button.ant-btn-default.ant-btn-dangerous:disabled svg,
+.ui-kit-button.ant-btn-text.ant-btn-dangerous:disabled svg {
 	color: var(--critic-weak-darker);
 }
 
@@ -176,6 +180,10 @@
 	background-color: var(--faint-weak-darker);
 }
 
+.ui-kit-button.ant-btn-primary.gradient:disabled {
+	background-image: none !important;
+}
+
 .ui-kit-button.ant-btn-primary.base {
 	color: var(--base-strong);
 }
@@ -186,6 +194,12 @@
 
 .ui-kit-button.ant-btn-primary.base.gray {
 	background-color: var(--base-weak);
+}
+
+.ui-kit-button.ant-btn-primary.base.gradient {
+	color: var(--base-weak);
+
+	background-image: var(--linear-base-strong);
 }
 
 .ui-kit-button.ant-btn-primary[ant-click-animating-without-extra-node="true"].base::after {
@@ -225,6 +239,10 @@
 	background-color: var(--accent-strong);
 }
 
+.ui-kit-button.ant-btn-primary.accent.gradient {
+	background-image: var(--linear-accent-strong);
+}
+
 .ui-kit-button.ant-btn-primary[ant-click-animating-without-extra-node="true"].accent::after {
 	--antd-wave-shadow-color: var(--accent-strong);
 }
@@ -236,6 +254,10 @@
 
 .ui-kit-button.ant-btn-primary.complement {
 	background-color: var(--complement-strong);
+}
+
+.ui-kit-button.ant-btn-primary.complement.gradient {
+	background-image: var(--linear-complement-strong);
 }
 
 .ui-kit-button.ant-btn-primary[ant-click-animating-without-extra-node="true"].complement::after {
@@ -262,6 +284,10 @@
 
 .ui-kit-button.ant-btn-primary.success {
 	background-color: var(--success-strong);
+}
+
+.ui-kit-button.ant-btn-primary.success.gradient {
+	background-image: var(--linear-success-strong);
 }
 
 .ui-kit-button.ant-btn-primary[ant-click-animating-without-extra-node="true"].success::after {
@@ -302,6 +328,10 @@
 	background-color: var(--critic-strong);
 }
 
+.ui-kit-button.ant-btn-primary.ant-btn-dangerous.gradient {
+	background-image: var(--linear-critic-strong);
+}
+
 .ui-kit-button.ant-btn-primary.ant-btn-dangerous[ant-click-animating-without-extra-node="true"]::after {
 	--antd-wave-shadow-color: var(--critic-strong);
 }
@@ -309,6 +339,38 @@
 .ui-kit-button.ant-btn-primary.ant-btn-dangerous:hover,
 .ui-kit-button.ant-btn-primary.ant-btn-dangerous:focus-visible {
 	background-color: var(--critic-strong-darker);
+}
+
+.ui-kit-button.ant-btn-text {
+	padding: 0;
+
+	color: var(--accent-strong);
+
+	background-color: transparent;
+}
+
+.ui-kit-button.ant-btn-text:hover,
+.ui-kit-button.ant-btn-text:focus-visible {
+	font-weight: var(--fw-semibold);
+}
+
+.ui-kit-button.ant-btn-text:only-child:hover,
+.ui-kit-button.ant-btn-text:only-child:focus-visible {
+	text-decoration: underline;
+}
+
+.ui-kit-button.ant-btn-text:disabled {
+	color: var(--back-faint-middle);
+	font-weight: var(--fw-medium);
+	text-decoration: none !important;
+}
+
+.ui-kit-button.ant-btn-text.ant-btn-dangerous {
+	color: var(--critic-strong);
+}
+
+.ui-kit-button.ant-btn-text.ant-btn-dangerous:disabled {
+	color: var(--critic-weak-darker);
 }
 
 @supports not selector(:focus-visible) {
@@ -346,5 +408,13 @@
 
 	.ui-kit-button.ant-btn-primary.ant-btn-dangerous:focus {
 		background-color: var(--critic-strong-darker);
+	}
+
+	.ui-kit-button.ant-btn-text:focus {
+		font-weight: var(--fw-semibold);
+	}
+
+	.ui-kit-button.ant-btn-text:only-child:focus {
+		text-decoration: underline;
 	}
 }
