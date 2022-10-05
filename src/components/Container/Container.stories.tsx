@@ -1,6 +1,7 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import React from 'react';
 
+import Button from '../Button';
 import Container from './Container';
 import {ContainerProps} from './Container.types';
 
@@ -25,7 +26,9 @@ export const Story: ComponentStory<typeof Container> = (args: ContainerProps) =>
 				voluptas.
 			</p>
 
-			<button type="button">Click</button>
+			<Button gradient color="accent" type="primary">
+				Click
+			</Button>
 		</Container>
 	);
 };

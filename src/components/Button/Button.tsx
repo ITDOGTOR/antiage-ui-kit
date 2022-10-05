@@ -4,13 +4,8 @@ import React from 'react';
 
 import {ButtonProps} from './Button.types';
 
-function Button({className, theme = 'white', color, gradient, children, ...props}: ButtonProps) {
-	const classes = classNames('ui-kit-button', {
-		[theme]: theme,
-		[color as string]: color,
-		[className as string]: className,
-		gradient,
-	});
+function Button({className, theme, color, gradient, children, ...props}: ButtonProps) {
+	const classes = classNames('ui-kit-button', theme, color, {gradient}, className);
 
 	return (
 		<ButtonAntd className={classes} {...props}>
