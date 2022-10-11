@@ -1,42 +1,51 @@
-import classNames from 'classnames/bind';
-import React, {ChangeEvent, useState} from 'react';
+import {Switch as SwitchAntd} from 'antd';
+import classNames from 'classnames';
+import React, {useState} from 'react';
 
-import styles from './Switch.module.css';
 import {SwitchProps} from './Switch.types';
 
-const cx = classNames.bind(styles);
-
 function Switch({
-	className,
 	theme = 'white',
-	children,
-	onChange,
-	disabled = false,
-	defaultChecked = false,
+	className,
+	classNameContainer,
+	status,
+	label,
+	disabled,
+	defaultChecked,
+	unCheckedChildren,
+	checkedChildren,
+	onChange = () => {},
+	...props
 }: SwitchProps) {
-	const [inputChecked, setInputChecked] = useState<boolean>(defaultChecked || false);
+	const [isChecked, setIsChecked] = useState(defaultChecked || false);
 
-	const onChangeChecked = (evt: ChangeEvent) => {
-		setInputChecked((evt.target as HTMLInputElement).checked);
-		onChange?.((evt.target as HTMLInputElement).checked);
+	const onToggle = (checked: boolean, event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+		setIsChecked(checked);
+		onChange(checked, event);
 	};
 
+	const classesContainer = classNames(
+		'ui-kit-switch-container',
+		{
+			'ui-kit-switch-status-container': status,
+			'ui-kit-switch-status-disabled': status && disabled,
+			'ui-kit-switch-status-checked': status && isChecked,
+		},
+		classNameContainer,
+	);
+	const classesSwitch = classNames('ui-kit-switch', theme, className);
+
 	return (
-		<label className={cx(styles.switch, theme, className)}>
-			<input
-				checked={inputChecked}
-				className={cx(styles.input)}
-				data-testid="switch-input"
-				disabled={disabled}
-				type="checkbox"
-				onChange={onChangeChecked}
-			/>
+		<label className={classesContainer}>
+			<SwitchAntd className={classesSwitch} disabled={disabled} onChange={onToggle} {...props} />
 
-			<span className={cx(styles.switchHandle)} data-testid="switch-label">
-				<span className={cx(styles.circle)} />
-			</span>
+			{label && !status && <span className={classNames('ui-kit-switch-label')}>{label}</span>}
 
-			{children && <span className={cx(styles.label)}>{children}</span>}
+			{status && !label && (
+				<span className={classNames('ui-kit-switch-status-label', {'ui-kit-switch-status-label-checked': isChecked})}>
+					{isChecked ? checkedChildren : unCheckedChildren}
+				</span>
+			)}
 		</label>
 	);
 }

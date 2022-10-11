@@ -83,7 +83,7 @@
 	--fw-medium: 500;
 	--fw-regular: 400;
 
-	--brad-basic: 16px;
+	--brad-base: 16px;
 }
 
 .ui-kit-container {
@@ -92,7 +92,7 @@
 	padding: 20px 16px;
 
 	background-color: var(--base-weak);
-	border-radius: var(--brad-basic);
+	border-radius: var(--brad-base);
 }
 
 @media screen and (min-width: 1220px) {
@@ -120,7 +120,7 @@
 	background-image: none;
 
 	border: 0;
-	border-radius: var(--brad-basic);
+	border-radius: var(--brad-base);
 
 	box-shadow: none;
 	cursor: pointer;
@@ -163,6 +163,13 @@
 .ui-kit-button.ant-btn-default.ant-btn-dangerous:disabled svg,
 .ui-kit-button.ant-btn-text.ant-btn-dangerous:disabled svg {
 	color: var(--critic-weak-darker);
+}
+
+.ui-kit-button.ant-btn-default[ant-click-animating-without-extra-node="true"]::after {
+	top: -1px;
+	right: -1px;
+	bottom: -1px;
+	left: -1px;
 }
 
 .ui-kit-button.ant-btn-default.base {

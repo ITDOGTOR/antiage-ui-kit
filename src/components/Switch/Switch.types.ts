@@ -1,10 +1,12 @@
+import {SwitchProps as SwitchPropsAntd} from 'antd';
 import {ReactNode} from 'react';
 
-export interface SwitchProps {
+import {Theme} from '../index.types';
+
+export declare type SwitchProps = {
 	className?: string;
-	theme?: 'white' | 'gray';
-	children?: ReactNode;
-	onChange?: (checked: boolean) => void;
-	disabled?: boolean;
-	defaultChecked?: boolean;
-}
+	classNameContainer?: string;
+	status?: boolean;
+	theme?: Theme;
+	label?: ReactNode;
+} & SwitchPropsAntd;
