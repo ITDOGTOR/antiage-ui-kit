@@ -1,6 +1,6 @@
-import 'antd/dist/antd.css'
+import 'antd/dist/antd.css';
 import './fonts.css';
-import '../src/ui-kit.css';
+import '../src/index';
 import {INITIAL_VIEWPORTS} from '@storybook/addon-viewport';
 
 export const parameters = {

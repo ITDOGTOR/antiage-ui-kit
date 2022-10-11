@@ -19,8 +19,7 @@
 		"semantic-release": "semantic-release",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"generate": "node ./utils/create-component",
-		"prepare": "husky install"
+		"generate": "node ./utils/create-component"
 	},
 	"lint-staged": {
 		"*.css": "stylelint --fix",
@@ -83,9 +82,8 @@
 		"react-router-dom": "^6.4.1",
 		"rollup": "^2.79.1",
 		"rollup-plugin-analyzer": "^4.0.0",
-		"rollup-plugin-copy": "^3.4.0",
+		"rollup-plugin-import-css": "^3.0.3",
 		"rollup-plugin-peer-deps-external": "^2.2.4",
-		"rollup-plugin-postcss": "^4.0.2",
 		"rollup-plugin-terser": "^7.0.2",
 		"rollup-plugin-typescript2": "^0.34.0",
 		"semantic-release": "^19.0.5",
