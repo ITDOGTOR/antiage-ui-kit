@@ -86,21 +86,6 @@
 	--brad-base: 16px;
 }
 
-.ui-kit-container {
-	position: relative;
-
-	padding: 20px 16px;
-
-	background-color: var(--base-weak);
-	border-radius: var(--brad-base);
-}
-
-@media screen and (min-width: 1220px) {
-	.ui-kit-container {
-		padding: 30px;
-	}
-}
-
 .ui-kit-button {
 	position: relative;
 
