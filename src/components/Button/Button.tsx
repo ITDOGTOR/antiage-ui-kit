@@ -4,11 +4,11 @@ import React from 'react';
 
 import {ButtonProps} from './Button.types';
 
-function Button({className, theme = 'white', color, gradient, children, ...props}: ButtonProps) {
-	const classes = classNames('ui-kit-button', theme, color, {gradient}, className);
+function Button({className, theme = 'white', color, gradient, children, type, ...props}: ButtonProps) {
+	const classes = classNames('ui-kit-button', `ui-kit-button-${type}`, theme, color, {gradient}, className);
 
 	return (
-		<ButtonAntd className={classes} {...props}>
+		<ButtonAntd className={classes} type={type} {...props}>
 			{children}
 		</ButtonAntd>
 	);

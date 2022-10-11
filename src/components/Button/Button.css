@@ -1,0 +1,355 @@
+.ui-kit-button {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: auto;
+	padding: 14px;
+
+	font-weight: var(--fw-medium);
+	font-size: var(--fs-xs);
+	line-height: var(--lh-xs);
+	white-space: nowrap;
+	text-align: center;
+	text-shadow: none;
+
+	background-image: none;
+
+	border: 0;
+	border-radius: var(--brad-base);
+
+	box-shadow: none;
+	cursor: pointer;
+
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	user-select: none;
+	touch-action: manipulation;
+}
+
+.ui-kit-button:not(.ant-btn-loading) {
+	gap: 10px;
+}
+
+.ui-kit-button-default svg,
+.ui-kit-button-primary.base svg,
+.ui-kit-button-text svg {
+	color: var(--accent-strong);
+}
+
+.ui-kit-button-default:disabled svg,
+.ui-kit-button-primary.base:disabled svg,
+.ui-kit-button-text:disabled svg {
+	color: var(--back-faint-middle);
+}
+
+.ui-kit-button-primary svg {
+	color: var(--base-weak);
+}
+
+.ui-kit-button-primary:disabled svg {
+	color: var(--back-faint-middle);
+}
+
+.ui-kit-button-default.ant-btn-dangerous svg,
+.ui-kit-button-text.ant-btn-dangerous svg {
+	color: var(--critic-strong);
+}
+
+.ui-kit-button-default.ant-btn-dangerous:disabled svg,
+.ui-kit-button-text.ant-btn-dangerous:disabled svg {
+	color: var(--critic-weak-darker);
+}
+
+.ui-kit-button-default[ant-click-animating-without-extra-node="true"]::after {
+	top: -1px;
+	right: -1px;
+	bottom: -1px;
+	left: -1px;
+}
+
+.ui-kit-button-default.base {
+	color: var(--base-strong);
+
+	border: 1px solid var(--back-faint-weak-darker);
+}
+
+.ui-kit-button-default[ant-click-animating-without-extra-node="true"].base::after {
+	--antd-wave-shadow-color: var(--base-strong);
+}
+
+.ui-kit-button-default.base:disabled {
+	color: var(--back-faint-middle);
+
+	background-color: transparent !important;
+	border-color: var(--back-faint-weak-darker);
+}
+
+.ui-kit-button-default.base.white:hover,
+.ui-kit-button-default.base.white:focus-visible {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-button-default.base.gray:hover,
+.ui-kit-button-default.base.gray:focus-visible {
+	background-color: var(--faint-weak-darker);
+}
+
+.ui-kit-button-primary.gradient:disabled {
+	background-image: none !important;
+}
+
+.ui-kit-button-primary.base {
+	color: var(--base-strong);
+}
+
+.ui-kit-button-primary.base.white {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-button-primary.base.gray {
+	background-color: var(--base-weak);
+}
+
+.ui-kit-button-primary.base.gradient {
+	color: var(--base-weak);
+
+	background-image: var(--linear-base-strong);
+}
+
+.ui-kit-button-primary[ant-click-animating-without-extra-node="true"].base::after {
+	--antd-wave-shadow-color: var(--base-strong);
+}
+
+.ui-kit-button-primary:disabled {
+	color: var(--back-faint-middle) !important;
+}
+
+.ui-kit-button-primary.white:not(.base):disabled {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-button-primary.gray:not(.base):disabled {
+	background-color: var(--faint-weak-darker);
+}
+
+.ui-kit-button-primary.base.white:disabled {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-button-primary.base.gray:disabled {
+	background-color: var(--base-weak);
+}
+
+.ui-kit-button-primary.base:hover,
+.ui-kit-button-primary.base:focus-visible {
+	background-color: var(--faint-weak-darker);
+}
+
+.ui-kit-button-primary:not(.base) {
+	color: var(--base-weak);
+}
+
+.ui-kit-button-primary.accent {
+	background-color: var(--accent-strong);
+}
+
+.ui-kit-button-primary.accent.gradient {
+	background-image: var(--linear-accent-strong);
+}
+
+.ui-kit-button-primary[ant-click-animating-without-extra-node="true"].accent::after {
+	--antd-wave-shadow-color: var(--accent-strong);
+}
+
+.ui-kit-button-primary.accent:hover,
+.ui-kit-button-primary.accent:focus-visible {
+	background-color: var(--accent-strong-darker);
+}
+
+.ui-kit-button-primary.complement {
+	background-color: var(--complement-strong);
+}
+
+.ui-kit-button-primary.complement.gradient {
+	background-image: var(--linear-complement-strong);
+}
+
+.ui-kit-button-primary[ant-click-animating-without-extra-node="true"].complement::after {
+	--antd-wave-shadow-color: var(--complement-strong);
+}
+
+.ui-kit-button-primary.complement:hover,
+.ui-kit-button-primary.complement:focus-visible {
+	background-color: var(--complement-strong-darker);
+}
+
+.ui-kit-button-primary.warning {
+	background-color: var(--warning-strong);
+}
+
+.ui-kit-button-primary[ant-click-animating-without-extra-node="true"].warning::after {
+	--antd-wave-shadow-color: var(--warning-strong);
+}
+
+.ui-kit-button-primary.warning:hover,
+.ui-kit-button-primary.warning:focus-visible {
+	background-color: var(--warning-strong-darker);
+}
+
+.ui-kit-button-primary.success {
+	background-color: var(--success-strong);
+}
+
+.ui-kit-button-primary.success.gradient {
+	background-image: var(--linear-success-strong);
+}
+
+.ui-kit-button-primary[ant-click-animating-without-extra-node="true"].success::after {
+	--antd-wave-shadow-color: var(--success-strong);
+}
+
+.ui-kit-button-primary.success:hover,
+.ui-kit-button-primary.success:focus-visible {
+	background-color: var(--success-strong-darker);
+}
+
+.ui-kit-button-default.ant-btn-dangerous {
+	color: var(--critic-strong);
+
+	border: 1px solid var(--critic-strong);
+}
+
+.ui-kit-button-default.ant-btn-dangerous:disabled {
+	color: var(--critic-weak-darker);
+
+	background-color: transparent !important;
+
+	border-color: var(--critic-weak);
+}
+
+.ui-kit-button-default.ant-btn-dangerous[ant-click-animating-without-extra-node="true"]::after {
+	--antd-wave-shadow-color: var(--critic-strong);
+}
+
+.ui-kit-button-default.ant-btn-dangerous:hover,
+.ui-kit-button-default.ant-btn-dangerous:focus-visible {
+	background-color: var(--critic-weak-lighter);
+}
+
+.ui-kit-button-primary.ant-btn-dangerous {
+	color: var(--base-weak);
+	text-shadow: none;
+
+	background-color: var(--critic-strong);
+}
+
+.ui-kit-button-primary.ant-btn-dangerous.gradient {
+	background-image: var(--linear-critic-strong);
+}
+
+.ui-kit-button-primary.ant-btn-dangerous[ant-click-animating-without-extra-node="true"]::after {
+	--antd-wave-shadow-color: var(--critic-strong);
+}
+
+.ui-kit-button-primary.ant-btn-dangerous:disabled {
+	background-color: var(--faint-weak) !important;
+}
+
+.ui-kit-button-primary.ant-btn-dangerous:hover,
+.ui-kit-button-primary.ant-btn-dangerous:focus-visible {
+	background-color: var(--critic-strong-darker);
+}
+
+.ui-kit-button.ant-btn-text {
+	color: var(--accent-strong);
+
+	background-color: transparent !important;
+}
+
+.ui-kit-button-text {
+	padding: 0;
+
+	transition: none;
+}
+
+.ui-kit-button-text:hover,
+.ui-kit-button-text:focus-visible {
+	font-weight: var(--fw-semibold);
+}
+
+.ui-kit-button-text:only-child:hover,
+.ui-kit-button-text:only-child:focus-visible {
+	text-decoration: underline;
+}
+
+.ui-kit-button-text:active {
+	color: var(--accent-strong-darker);
+}
+
+.ui-kit-button-text:disabled {
+	color: var(--back-faint-middle) !important;
+	font-weight: var(--fw-medium);
+	text-decoration: none !important;
+}
+
+.ui-kit-button-text.ant-btn-dangerous {
+	color: var(--critic-strong);
+
+	background-color: transparent;
+}
+
+.ui-kit-button-text.ant-btn-dangerous:active {
+	color: var(--critic-strong-darker);
+}
+
+.ui-kit-button-text.ant-btn-dangerous:disabled {
+	color: var(--critic-weak-darker) !important;
+}
+
+@supports not selector(:focus-visible) {
+	.ui-kit-button-default.base.white:focus {
+		background-color: var(--faint-weak);
+	}
+
+	.ui-kit-button-default.base.gray:focus {
+		background-color: var(--faint-weak-darker);
+	}
+
+	.ui-kit-button-primary.base:focus {
+		background-color: var(--faint-weak-darker);
+	}
+
+	.ui-kit-button-primary.accent:focus {
+		background-color: var(--accent-strong-darker);
+	}
+
+	.ui-kit-button-primary.complement:focus {
+		background-color: var(--complement-strong-darker);
+	}
+
+	.ui-kit-button-primary.warning:focus {
+		background-color: var(--warning-strong-darker);
+	}
+
+	.ui-kit-button-primary.success:focus {
+		background-color: var(--success-strong-darker);
+	}
+
+	.ui-kit-button-default.ant-btn-dangerous:focus {
+		background-color: var(--critic-weak-lighter);
+	}
+
+	.ui-kit-button-primary.ant-btn-dangerous:focus {
+		background-color: var(--critic-strong-darker);
+	}
+
+	.ui-kit-button-text:focus {
+		font-weight: var(--fw-semibold);
+	}
+
+	.ui-kit-button-text:only-child:focus {
+		text-decoration: underline;
+	}
+}
