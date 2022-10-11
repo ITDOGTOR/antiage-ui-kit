@@ -1,9 +1,8 @@
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import analyzer from 'rollup-plugin-analyzer';
-import copy from 'rollup-plugin-copy';
+import css from 'rollup-plugin-import-css';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import postcss from 'rollup-plugin-postcss';
 import {terser} from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 
@@ -27,12 +26,9 @@ export default [
 		plugins: [
 			peerDepsExternal(),
 			resolve({browser: true}),
+			css({output: 'ui-kit.css'}),
 			commonjs(),
 			typescript({useTsconfigDeclarationDir: true}),
-			copy({
-				targets: [{src: 'src/ui-kit.css', dest: 'dist'}],
-			}),
-			postcss(),
 			terser({
 				format: {
 					comments: false,
