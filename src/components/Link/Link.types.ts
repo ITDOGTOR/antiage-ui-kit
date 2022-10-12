@@ -9,6 +9,7 @@ export declare type LinkProps = {
 	className?: string;
 	gradient?: boolean;
 	danger?: boolean;
+	withoutRouterDom?: boolean;
 	type?: LinkType;
 	theme?: Theme;
 	color?: Color;
