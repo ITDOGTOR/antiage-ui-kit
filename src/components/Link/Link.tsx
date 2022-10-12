@@ -4,7 +4,17 @@ import {Link as LinkRouterDom} from 'react-router-dom';
 
 import {LinkProps} from './Link.types';
 
-function Link({className, theme = 'white', gradient, color, danger, type = 'default', children, ...props}: LinkProps) {
+function Link({
+	className,
+	theme = 'white',
+	gradient,
+	color,
+	danger,
+	type = 'default',
+	withoutRouterDom,
+	children,
+	...props
+}: LinkProps) {
 	const classes = classNames(
 		`ant-btn-${type}`,
 		{'ant-btn-dangerous': danger},
@@ -15,6 +25,14 @@ function Link({className, theme = 'white', gradient, color, danger, type = 'defa
 		{gradient},
 		className,
 	);
+
+	if (withoutRouterDom) {
+		return (
+			<a className={classes} {...props}>
+				{children}
+			</a>
+		);
+	}
 
 	return (
 		<LinkRouterDom className={classes} {...props}>
