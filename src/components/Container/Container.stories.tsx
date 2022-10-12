@@ -9,16 +9,22 @@ export default {
 	title: 'Container',
 	component: Container,
 	argTypes: {
+		theme: {
+			control: {type: 'select'},
+		},
+		radius: {
+			control: {type: 'select'},
+		},
 		children: {table: {disable: true}},
 		className: {table: {disable: true}},
 	},
 } as ComponentMeta<typeof Container>;
 
 // eslint-disable-next-line react/function-component-definition
-export const Story: ComponentStory<typeof Container> = (args: ContainerProps) => {
+export const Sandbox: ComponentStory<typeof Container> = (args: ContainerProps) => {
 	return (
 		<Container {...args}>
-			<h1>This is Paper component</h1>
+			<h1>Контейнер</h1>
 
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus aspernatur commodi cupiditate dignissimos
@@ -27,7 +33,7 @@ export const Story: ComponentStory<typeof Container> = (args: ContainerProps) =>
 			</p>
 
 			<Button gradient color="accent" type="primary">
-				Click
+				Нажми на меня!
 			</Button>
 		</Container>
 	);
