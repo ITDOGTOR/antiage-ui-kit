@@ -44,8 +44,6 @@ export default {
 } as ComponentMeta<typeof Link>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof Link> = (args: LinkProps) => {
+export const Sandbox: ComponentStory<typeof Link> = (args: LinkProps) => {
 	return <Link {...args}>Ссылка</Link>;
 };
-
-export const Sandbox = Template.bind({});
