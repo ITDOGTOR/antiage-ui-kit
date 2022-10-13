@@ -4,7 +4,9 @@ import React from 'react';
 import {ContainerProps} from './Container.types';
 
 function Container({children, className, theme = 'white', radius = 'default'}: ContainerProps) {
-	return <div className={classNames('ui-kit-container', theme, radius, className)}>{children}</div>;
+	const classes = classNames('ui-kit-container', `ui-kit-container-${theme}`, `ui-kit-container-${radius}`, className);
+
+	return <div className={classes}>{children}</div>;
 }
 
 export default Container;

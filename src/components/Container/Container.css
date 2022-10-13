@@ -1,26 +1,28 @@
 .ui-kit-container {
 	position: relative;
+}
 
+.ui-kit-container-white {
+	background-color: var(--base-weak);
+}
+
+.ui-kit-container-gray {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-container-default {
 	padding: 20px 16px;
 
 	border-radius: var(--brad-base);
 }
 
-.ui-kit-container.white {
-	background-color: var(--base-weak);
-}
-
-.ui-kit-container.gray {
-	background-color: var(--faint-weak);
-}
-
-.ui-kit-container.top {
+.ui-kit-container-top {
 	padding-bottom: 20px;
 
 	border-radius: var(--brad-base) var(--brad-base) 0 0;
 }
 
-.ui-kit-container.bottom {
+.ui-kit-container-bottom {
 	padding-top: 0;
 
 	border-radius: 0 0 var(--brad-base) var(--brad-base);
