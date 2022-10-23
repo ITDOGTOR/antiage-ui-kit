@@ -1,0 +1,64 @@
+.ant-table {
+	color: var(--base-strong);
+	font-size: var(--fs-xs);
+	line-height: var(--lh-xs);
+}
+
+.ant-table-thead > tr > th {
+	color: var(--base-strong);
+	font-weight: var(--fw-semibold);
+
+	background-color: var(--faint-weak);
+	border-bottom: 0;
+}
+
+.ant-table-thead
+	> tr
+	> th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+	content: none;
+}
+
+.ant-table-container table > thead > tr:first-child th:first-child {
+	border-top-left-radius: var(--brad-base);
+}
+
+.ant-table-container table > thead > tr:first-child th:last-child {
+	border-top-right-radius: var(--brad-base);
+}
+
+.ant-table-thead > tr > th,
+.ant-table-tbody > tr > td,
+.ant-table tfoot > tr > th,
+.ant-table tfoot > tr > td {
+	padding: 18px 10px;
+}
+
+.ant-table-thead > tr > th:first-child,
+.ant-table-tbody > tr > td:first-child,
+.ant-table tfoot > tr > th:first-child,
+.ant-table tfoot > tr > td:first-child {
+	padding-left: 14px;
+}
+
+.ant-table-thead > tr > th:last-child,
+.ant-table-tbody > tr > td:last-child,
+.ant-table tfoot > tr > th:last-child,
+.ant-table tfoot > tr > td:last-child {
+	padding-right: 14px;
+}
+
+.ant-table-tbody > tr > td {
+	border-bottom-color: var(--back-faint-weak-darker);
+}
+
+.ant-table-thead th.ant-table-column-has-sorters:hover {
+	background-color: var(--faint-weak-darker);
+}
+
+td.ant-table-column-sort {
+	background-color: var(--faint-weak);
+}
+
+.ant-table-pagination.ant-pagination {
+	margin-bottom: 0;
+}
