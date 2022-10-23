@@ -1,0 +1,128 @@
+.ui-kit-pagination {
+	font-weight: var(--fw-medium);
+	font-size: var(--fs-xs);
+	line-height: var(--lh-xs);
+}
+
+.ant-pagination-prev,
+.ant-pagination-next,
+.ant-pagination-jump-next,
+.ant-pagination-jump-prev,
+.ant-pagination-item {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 34px;
+	min-height: 34px;
+
+	border: 0;
+	border-radius: 14px;
+
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ui-kit-pagination-white .ant-pagination-prev,
+.ui-kit-pagination-white .ant-pagination-next,
+.ui-kit-pagination-white .ant-pagination-item {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-pagination-gray .ant-pagination-prev,
+.ui-kit-pagination-gray .ant-pagination-next,
+.ui-kit-pagination-gray .ant-pagination-item {
+	background-color: var(--base-weak);
+}
+
+.ant-pagination-prev:hover,
+.ant-pagination-prev:focus-visible,
+.ant-pagination-next:hover,
+.ant-pagination-next:focus-visible,
+.ant-pagination-item:hover,
+.ant-pagination-item:focus-visible {
+	background-color: var(--back-faint-weak);
+
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ant-pagination-prev.ant-pagination-disabled,
+.ant-pagination-next.ant-pagination-disabled,
+.ant-pagination-jump-prev.ant-pagination-disabled,
+.ant-pagination-jump-next.ant-pagination-disabled {
+	background-color: var(--faint-weak);
+}
+
+.ant-pagination-item a,
+.ant-pagination-item:hover a,
+.ant-pagination-item:focus-visible a {
+	color: var(--base-strong-lighter);
+
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ui-kit-pagination:not(.ant-pagination-disabled) .ant-pagination-item-active {
+	background-color: var(--accent-strong);
+}
+
+.ui-kit-pagination:not(.ant-pagination-disabled) .ant-pagination-item-active:hover,
+.ui-kit-pagination:not(.ant-pagination-disabled) .ant-pagination-item-active:focus-visible {
+	background-color: var(--accent-strong-darker);
+}
+
+.ui-kit-pagination:not(.ant-pagination-disabled) .ant-pagination-item-active a,
+.ui-kit-pagination:not(.ant-pagination-disabled) .ant-pagination-item-active:hover a,
+.ui-kit-pagination:not(.ant-pagination-disabled) .ant-pagination-item-active:focus-visible a {
+	color: var(--base-weak);
+}
+
+.ui-kit-pagination .ui-kit-pagination-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	color: var(--base-strong-lighter);
+
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+}
+
+.ui-kit-pagination .ui-kit-pagination-button:disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+.ui-kit-pagination-white .ant-pagination-jump-next,
+.ui-kit-pagination-white .ant-pagination-jump-prev {
+	background-color: var(--base-weak);
+}
+
+.ui-kit-pagination-gray .ant-pagination-jump-next,
+.ui-kit-pagination-gray .ant-pagination-jump-prev {
+	background-color: var(--faint-weak);
+}
+
+@supports not selector(:focus-visible) {
+	.ant-pagination-prev:focus,
+	.ant-pagination-next:focus,
+	.ant-pagination-jump-next:focus,
+	.ant-pagination-jump-prev:focus,
+	.ant-pagination-item:focus {
+		background-color: var(--back-faint-weak);
+
+		transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+
+	.ant-pagination-item:focus a {
+		color: var(--base-strong-lighter);
+
+		transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+
+	.ui-kit-pagination:not(.ant-pagination-disabled) .ant-pagination-item-active:focus {
+		background-color: var(--accent-strong-darker);
+	}
+
+	.ui-kit-pagination:not(.ant-pagination-disabled) .ant-pagination-item-active:focus a {
+		color: var(--base-weak);
+	}
+}

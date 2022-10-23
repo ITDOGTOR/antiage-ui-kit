@@ -19,7 +19,8 @@
 		"semantic-release": "semantic-release",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"generate": "node ./utils/create-component"
+		"generate": "node ./utils/create-component",
+		"svgr": "npx @svgr/cli --out-dir \"src/assets\" --ignore-existing --typescript -- \"src/assets\""
 	},
 	"lint-staged": {
 		"*.css": "stylelint --fix",
@@ -45,6 +46,7 @@
 		"@storybook/react": "^6.5.10",
 		"@storybook/theming": "^6.5.10",
 		"@stylelint/postcss-css-in-js": "^0.38.0",
+		"@svgr/cli": "^6.5.0",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^14.4.3",
