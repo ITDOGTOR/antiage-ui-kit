@@ -2,3 +2,8 @@ export {default as ArrowDown} from './ArrowDown';
 export {default as ArrowLeft} from './ArrowLeft';
 export {default as ArrowRight} from './ArrowRight';
 export {default as ArrowUp} from './ArrowUp';
+export {default as Danger} from './Danger';
+export {default as LightMessage} from './LightMessage';
+export {default as PasswordEye} from './PasswordEye';
+export {default as PasswordEyeHide} from './PasswordEyeHide';
+export {default as PasswordLock} from './PasswordLock';
