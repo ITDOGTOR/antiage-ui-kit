@@ -1,0 +1,180 @@
+.ui-kit-input-wrapper {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+
+	border: 1px solid transparent;
+	border-radius: var(--brad-base);
+}
+
+.ui-kit-input-wrapper.password {
+	padding-right: 14px;
+}
+
+.ui-kit-input-wrapper.icon {
+	padding-left: 14px;
+}
+
+.ui-kit-input-wrapper.focused {
+	box-shadow: 0 0 0 2px var(--accent-weak-lighter);
+}
+
+.ui-kit-input-wrapper.white {
+	border: 1px solid var(--back-faint-weak-darker);
+}
+
+.ui-kit-input-wrapper.white.focused {
+	border-color: var(--accent-weak-lighter);
+}
+
+.ui-kit-input-wrapper.gray {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-input-wrapper.white.error {
+	border: 1px solid var(--critic-strong);
+}
+
+.ui-kit-input-wrapper.gray.error {
+	background-color: var(--critic-weak-lighter);
+}
+
+.ui-kit-input-wrapper.disabled {
+	cursor: not-allowed;
+}
+
+.ui-kit-input-label-common {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+
+	color: var(--faint-strong);
+
+	font-size: var(--fs-xs);
+
+	background-color: transparent;
+
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	resize: none;
+}
+
+.ui-kit-input-label-common.error {
+	color: var(--critic-strong);
+}
+
+.ui-kit-input-label-common.disabled {
+	color: var(--faint-middle);
+}
+
+.ui-kit-input-label {
+	left: 14px;
+
+	padding: 2px 4px;
+
+	font-size: var(--fs-xxs);
+
+	background-color: var(--base-weak);
+
+	border-radius: 4px;
+
+	transform: translate(0, -50%);
+}
+
+.ui-kit-input-label.gray {
+	padding: 0;
+
+	background-color: transparent;
+	transform: translate(0, 6px);
+}
+
+.ui-kit-input-label.gray.icon {
+	left: 38px;
+}
+
+.ui-kit-input-placeholder {
+	left: 15px;
+
+	transform: translate(0, calc(24px - 50%));
+
+	cursor: text;
+}
+
+.ui-kit-input-placeholder.icon {
+	left: 42px;
+}
+
+.ui-kit-input {
+	padding: 14px;
+
+	font-size: var(--fs-xs);
+
+	background-color: transparent;
+
+	border: none;
+	border-radius: var(--brad-base);
+}
+
+.ui-kit-input:focus {
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
+.ui-kit-input:disabled {
+	color: var(--faint-middle);
+
+	background-color: transparent;
+}
+
+.ui-kit-input.icon {
+	padding-left: 10px;
+}
+
+.ui-kit-input.gray.withPlaceholder {
+	padding-top: 20px;
+	padding-bottom: 8px;
+}
+
+.ui-kit-input-password-btn {
+	padding: 0;
+
+	color: var(--faint-strong);
+
+	background-color: transparent;
+	border: 1px solid transparent;
+
+	cursor: pointer;
+}
+
+.ui-kit-input-password-btn:hover {
+	color: var(--accent-strong);
+}
+
+.ui-kit-input-password-btn.disabled {
+	display: none;
+}
+
+.ui-kit-input-error {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+
+	padding: 10px 14px;
+
+	color: var(--critic-strong);
+	font-size: var(--fs-xxs);
+}
+
+.ui-kit-input-icon {
+	color: var(--accent-strong);
+}
+
+.ui-kit-input-icon.error {
+	color: var(--critic-strong);
+}
+
+.ui-kit-input-icon.disabled {
+	color: var(--faint-middle);
+}
