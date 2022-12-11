@@ -6,4 +6,3 @@ dist
 .DS_Store
 .cache
 coverage
-package-lock.json
