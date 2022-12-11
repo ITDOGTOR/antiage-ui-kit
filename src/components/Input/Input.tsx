@@ -91,9 +91,11 @@ function Input({className, theme = 'white', placeholder = '', error = '', ...pro
 	return (
 		<div>
 			<div className={wrapperClasses}>
-				<label className={labelClasses} htmlFor={id.current.id}>
-					{placeholder}
-				</label>
+				{placeholder && (
+					<label className={labelClasses} htmlFor={id.current.id}>
+						{placeholder}
+					</label>
+				)}
 				{(isPassword || isEmail) && <Icon className={iconClasses} />}
 				<Component id={id.current.id} ref={ref} {...commonProps} />
 				{isPassword && !disabled && (
