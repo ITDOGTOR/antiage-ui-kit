@@ -23,9 +23,32 @@ export default {
 			name: 'type',
 			description: 'HTML input type',
 			defaultValue: 'text',
-			control: {type: 'select', options: ['text', 'password', 'email', 'textarea', 'number', 'range']},
+			control: {type: 'select', options: ['text', 'password', 'email', 'number', 'range']},
+		},
+		error: {
+			name: 'error',
+			description: 'error message',
+			defaultValue: '',
+			control: {type: 'text'},
+		},
+		label: {
+			name: 'label',
+			description: 'Label-placeholder',
+			defaultValue: '',
+			control: {type: 'text'},
+		},
+		placeholder: {
+			name: 'placeholder',
+			description: 'simple placeholder',
+			defaultValue: '',
+			control: {type: 'text'},
 		},
 		className: {table: {disable: true}},
+		wrapperClassName: {table: {disable: true}},
+		labelClassName: {table: {disable: true}},
+		placeholderClassName: {table: {disable: true}},
+		iconClassName: {table: {disable: true}},
+		innerRef: {table: {disable: true}},
 	},
 } as ComponentMeta<typeof Input>;
 

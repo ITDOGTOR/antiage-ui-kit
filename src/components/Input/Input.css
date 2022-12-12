@@ -21,6 +21,7 @@
 }
 
 .ui-kit-input-wrapper.white {
+	background-color: var(--base-weak);
 	border: 1px solid var(--back-faint-weak-darker);
 }
 
@@ -90,7 +91,7 @@
 }
 
 .ui-kit-input-label.gray.icon {
-	left: 38px;
+	left: 40px;
 }
 
 .ui-kit-input-placeholder {
@@ -106,6 +107,7 @@
 }
 
 .ui-kit-input {
+	flex: 1 1;
 	padding: 14px;
 
 	font-size: var(--fs-xs);
@@ -132,7 +134,7 @@
 	padding-left: 10px;
 }
 
-.ui-kit-input.gray.withPlaceholder {
+.ui-kit-input.gray.withLabel {
 	padding-top: 20px;
 	padding-bottom: 8px;
 }
