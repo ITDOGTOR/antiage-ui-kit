@@ -1,15 +1,15 @@
 :root {
 	--base-strong: #42474d;
-	--base-strong-lighter: #667280;
+	--base-strong-lighter: #828d99;
 	--base-weak: #ffffff;
 
 	--faint-strong: #a6acb3;
 	--faint-middle: #cedef2;
 	--faint-weak-darker: #e9edf5;
 	--faint-weak: #f2f4f7;
-	--faint-weak-lighter: #f8f8fa;
+	--faint-weak-lighter: #f7f8fa;
 
-	--accent-strong-darker: #4087b3;
+	--accent-strong-darker: #4087b2;
 	--accent-strong: #4da2d6;
 	--accent-weak-darker: #9cd0f0;
 	--accent-weak: #bbe2fa;
@@ -19,27 +19,27 @@
 	--complement-strong: #5ccc81;
 	--complement-weak-darker: #a4eba4;
 	--complement-weak: #c2f2c2;
-	--complement-weak-lighter: #e6ffe6;
+	--complement-weak-lighter: #e5ffe5;
 
-	--critic-strong-darker: #e6432e;
-	--critic-strong: #ff614d;
+	--critic-strong-darker: #e5432e;
+	--critic-strong: #ff4a33;
 	--critic-weak-darker: #f5aa9f;
 	--critic-weak: #ffc7bf;
-	--critic-weak-lighter: #ffe9e6;
+	--critic-weak-lighter: #ffe9e5;
 
-	--warning-strong-darker: #e69e39;
-	--warning-strong: #f2ba48;
+	--warning-strong-darker: #e59e39;
+	--warning-strong: #fab425;
 	--warning-weak-darker: #f0cd9c;
 	--warning-weak: #f5e0b8;
-	--warning-weak-lighter: #fff6e6;
+	--warning-weak-lighter: #fff6e5;
 
 	--success-strong-darker: #876abd;
-	--success-strong: #af90e7;
+	--success-strong: #9568e7;
 	--success-weak-darker: #d0c0f0;
 	--success-weak: #e7def8;
 	--success-weak-lighter: #f2edfa;
 
-	--back-faint-middle: #c3d3e6;
+	--back-faint-middle: #c3d3e5;
 	--back-faint-weak-darker: #dae3f1;
 	--back-faint-weak: #e9edf5;
 
