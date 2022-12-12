@@ -1,4 +1,4 @@
-import {InputProps as InputPropsAntd} from 'antd';
+import React, {DetailedHTMLProps, InputHTMLAttributes} from 'react';
 
 import {Theme} from '../index.types';
 
@@ -6,5 +6,11 @@ export declare type InputProps = {
 	className?: string;
 	theme?: Theme;
 	placeholder?: string;
+	label?: string;
 	error?: string;
-} & InputPropsAntd;
+	wrapperClassName?: string;
+	labelClassName?: string;
+	placeholderClassName?: string;
+	iconClassName?: string;
+	innerRef?: React.RefObject<any>;
+} & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
