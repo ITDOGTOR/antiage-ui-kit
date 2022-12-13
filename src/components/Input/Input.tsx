@@ -20,7 +20,7 @@ function Input({
 	const [isFocused, setFocused] = useState(false);
 	const [localValue, setLocalValue] = useState<SetStateAction<string | number | readonly string[] | undefined>>('');
 
-	const id = useRef({id: String(Date.now())});
+	const id = useRef({id: String(Math.random())});
 
 	const {disabled, type, onChange, value} = props;
 
@@ -121,12 +121,12 @@ function Input({
 		<div>
 			<div className={wrapperClasses}>
 				{label && (
-					<label className={labelClasses} htmlFor={id.current.id}>
+					<label className={labelClasses} htmlFor={props.id || id.current.id}>
 						{label}
 					</label>
 				)}
 				{placeholder && !localValue && (
-					<label className={placeholderClasses} htmlFor={id.current.id}>
+					<label className={placeholderClasses} htmlFor={props.id || id.current.id}>
 						{placeholder}
 					</label>
 				)}
