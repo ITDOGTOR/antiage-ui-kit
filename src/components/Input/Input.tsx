@@ -39,9 +39,7 @@ function Input({
 		if (props.onBlur) {
 			props.onBlur(e);
 		}
-		if (!localValue) {
-			setFocused(false);
-		}
+		setFocused(false);
 	};
 
 	const onFocus = (e: FocusEvent<HTMLInputElement>) => {

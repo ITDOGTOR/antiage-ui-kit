@@ -43,6 +43,12 @@ export default {
 			defaultValue: '',
 			control: {type: 'text'},
 		},
+		value: {
+			name: 'value',
+			description: 'Outer value',
+			defaultValue: '',
+			control: {type: 'text'},
+		},
 		className: {table: {disable: true}},
 		wrapperClassName: {table: {disable: true}},
 		labelClassName: {table: {disable: true}},
