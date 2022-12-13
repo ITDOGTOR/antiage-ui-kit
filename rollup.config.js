@@ -1,9 +1,9 @@
 import commonjs from '@rollup/plugin-commonjs';
-import resolve from '@rollup/plugin-node-resolve';
+import nodeResolve from '@rollup/plugin-node-resolve';
+import terser from '@rollup/plugin-terser';
 import analyzer from 'rollup-plugin-analyzer';
-import css from 'rollup-plugin-import-css';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import {terser} from 'rollup-plugin-terser';
+import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2';
 
 const packageJson = require('./package.json');
@@ -15,26 +15,25 @@ export default [
 			{
 				file: packageJson.main,
 				format: 'cjs',
-				sourcemap: true,
 			},
 			{
 				file: packageJson.module,
 				format: 'esm',
-				sourcemap: true,
 			},
 		],
 		plugins: [
 			peerDepsExternal(),
-			resolve({browser: true}),
-			css({output: 'ui-kit.css'}),
+			nodeResolve(),
 			commonjs(),
-			typescript({useTsconfigDeclarationDir: true}),
+			postcss(),
+			// css({output: 'ui-kit.css'}),
 			terser({
 				format: {
 					comments: false,
 				},
 			}),
-			analyzer({summaryOnly: true}),
+			typescript({useTsconfigDeclarationDir: true}),
+			analyzer(),
 		],
 	},
 ];
