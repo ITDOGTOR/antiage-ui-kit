@@ -12,5 +12,5 @@ export declare type InputProps = {
 	labelClassName?: string;
 	placeholderClassName?: string;
 	iconClassName?: string;
-	innerRef?: React.RefObject<any>;
+	innerRef?: React.RefObject<HTMLInputElement>;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;

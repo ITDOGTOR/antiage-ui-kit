@@ -1,12 +1,12 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import React from 'react';
 
-import Input from './Input';
-import {InputProps} from './Input.types';
+import TextArea from './TextArea';
+import {TextAreaProps} from './TextArea.types';
 
 export default {
-	title: 'Input',
-	component: Input,
+	title: 'TextArea',
+	component: TextArea,
 	argTypes: {
 		theme: {
 			defaultValue: 'white',
@@ -15,14 +15,9 @@ export default {
 		},
 		disabled: {
 			name: 'disabled',
+			description: 'Ant-Design prop',
 			defaultValue: false,
 			control: {type: 'boolean'},
-		},
-		type: {
-			name: 'type',
-			description: 'HTML input type',
-			defaultValue: 'text',
-			control: {type: 'select', options: ['text', 'password', 'email', 'number', 'range']},
 		},
 		error: {
 			name: 'error',
@@ -48,6 +43,18 @@ export default {
 			defaultValue: '',
 			control: {type: 'text'},
 		},
+		rows: {
+			name: 'rows',
+			description: 'HTML TextArea prop',
+			defaultValue: 2,
+			control: {type: 'number'},
+		},
+		autoSize: {
+			name: 'autoSize',
+			description: 'flag',
+			defaultValue: false,
+			control: {type: 'boolean'},
+		},
 		className: {table: {disable: true}},
 		wrapperClassName: {table: {disable: true}},
 		labelClassName: {table: {disable: true}},
@@ -55,11 +62,11 @@ export default {
 		iconClassName: {table: {disable: true}},
 		innerRef: {table: {disable: true}},
 	},
-} as ComponentMeta<typeof Input>;
+} as ComponentMeta<typeof TextArea>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof Input> = (args: InputProps) => {
-	return <Input {...args} />;
+const Template: ComponentStory<typeof TextArea> = (args: TextAreaProps) => {
+	return <TextArea {...args} />;
 };
 
 export const Sandbox = Template.bind({});

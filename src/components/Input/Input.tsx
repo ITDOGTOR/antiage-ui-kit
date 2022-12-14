@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import React, {ChangeEvent, FocusEvent, SetStateAction, useEffect, useRef, useState} from 'react';
 
-import {Danger, LightMessage, PasswordEye, PasswordEyeHide, PasswordLock} from '../../assets';
+import {LightMessage, PasswordEye, PasswordEyeHide, PasswordLock} from '../../assets';
+import InputError from '../InputError';
 import {InputProps} from './Input.types';
 
 function Input({
@@ -89,7 +90,6 @@ function Input({
 		placeholderClassName,
 	);
 	const passwordBtnClasses = classNames('ui-kit-input-password-btn');
-	const errorClasses = classNames('ui-kit-input-error');
 	const iconClasses = classNames('ui-kit-input-icon', {disabled}, {error}, iconClassName);
 
 	let Icon = PasswordLock;
@@ -138,12 +138,7 @@ function Input({
 					</button>
 				)}
 			</div>
-			{error && (
-				<div className={errorClasses}>
-					<Danger aria-label="error" />
-					<span>{error}</span>
-				</div>
-			)}
+			<InputError error={error} />
 		</div>
 	);
 }
