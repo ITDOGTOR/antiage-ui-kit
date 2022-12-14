@@ -22,7 +22,6 @@ function TextArea({
 	const [isFocused, setFocused] = useState(false);
 	const [localValue, setLocalValue] = useState<string | number | readonly string[] | undefined>('');
 
-	const id = useRef({id: String(Math.random())});
 	const ref = useRef<HTMLTextAreaElement>(null);
 
 	const {disabled, onChange, value} = props;
@@ -82,7 +81,6 @@ function TextArea({
 	);
 
 	const commonProps = {
-		id: id.current.id,
 		className: classes,
 		...props,
 		onBlur,
@@ -94,19 +92,11 @@ function TextArea({
 
 	return (
 		<div>
-			<div className={wrapperClasses}>
-				{label && (
-					<label className={labelClasses} htmlFor={props.id || id.current.id}>
-						{label}
-					</label>
-				)}
-				{placeholder && !localValue && (
-					<label className={placeholderClasses} htmlFor={props.id || id.current.id}>
-						{placeholder}
-					</label>
-				)}
+			<label className={wrapperClasses}>
+				{label && <span className={labelClasses}>{label}</span>}
+				{placeholder && !localValue && <span className={placeholderClasses}>{placeholder}</span>}
 				<textarea {...commonProps} />
-			</div>
+			</label>
 			<InputError error={error} />
 		</div>
 	);

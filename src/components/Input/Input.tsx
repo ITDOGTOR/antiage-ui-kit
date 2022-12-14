@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, {ChangeEvent, FocusEvent, SetStateAction, useEffect, useRef, useState} from 'react';
+import React, {ChangeEvent, FocusEvent, SetStateAction, useEffect, useState} from 'react';
 
 import {LightMessage, PasswordEye, PasswordEyeHide, PasswordLock} from '../../assets';
 import InputError from '../InputError';
@@ -20,8 +20,6 @@ function Input({
 }: InputProps) {
 	const [isFocused, setFocused] = useState(false);
 	const [localValue, setLocalValue] = useState<SetStateAction<string | number | readonly string[] | undefined>>('');
-
-	const id = useRef({id: String(Math.random())});
 
 	const {disabled, type, onChange, value} = props;
 
@@ -107,7 +105,6 @@ function Input({
 	}
 
 	const commonProps = {
-		id: id.current.id,
 		className: classes,
 		...props,
 		type: localType,
@@ -119,17 +116,9 @@ function Input({
 
 	return (
 		<div>
-			<div className={wrapperClasses}>
-				{label && (
-					<label className={labelClasses} htmlFor={props.id || id.current.id}>
-						{label}
-					</label>
-				)}
-				{placeholder && !localValue && (
-					<label className={placeholderClasses} htmlFor={props.id || id.current.id}>
-						{placeholder}
-					</label>
-				)}
+			<label className={wrapperClasses}>
+				{label && <span className={labelClasses}>{label}</span>}
+				{placeholder && !localValue && <span className={placeholderClasses}>{placeholder}</span>}
 				{(isPassword || isEmail) && <Icon className={iconClasses} />}
 				<input {...commonProps} />
 				{isPassword && !disabled && (
@@ -137,7 +126,7 @@ function Input({
 						{showPassword ? <PasswordEyeHide aria-label="hide-password" /> : <PasswordEye aria-label="show-password" />}
 					</button>
 				)}
-			</div>
+			</label>
 			<InputError error={error} />
 		</div>
 	);
