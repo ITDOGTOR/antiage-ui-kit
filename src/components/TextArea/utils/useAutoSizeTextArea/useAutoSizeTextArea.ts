@@ -8,7 +8,6 @@ export default function useAutosizeTextArea({textAreaRef, value, enabled}: UseAu
 			// eslint-disable-next-line no-param-reassign
 			textAreaRef.style.height = '0px';
 			const {scrollHeight} = textAreaRef;
-
 			// eslint-disable-next-line no-param-reassign
 			textAreaRef.style.height = `${scrollHeight}px`;
 		}
