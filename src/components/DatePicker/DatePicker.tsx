@@ -112,7 +112,7 @@ function DatePicker({
 	};
 
 	return (
-		<div>
+		<>
 			<label className={wrapperClasses}>
 				{label && (
 					<span className={labelClasses}>
@@ -125,7 +125,7 @@ function DatePicker({
 				{dropdown && !centered && !disabled && <ArrowShow className={dropdownClasses} />}
 			</label>
 			<InputError error={error} />
-		</div>
+		</>
 	);
 }
 
