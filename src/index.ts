@@ -7,6 +7,7 @@ import './components/Table/Table.css';
 import './components/Input/Input.css';
 import './components/TextArea/TextArea.css';
 import './components/InputError/InputError.css';
+import './components/DatePicker/DatePicker.css';
 
 export * from './assets';
 export * from './components';
