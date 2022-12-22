@@ -104,6 +104,10 @@
 	cursor: text;
 }
 
+.ui-kit-input-placeholder.noLabel {
+	transform: translate(0, calc(21px - 50%));
+}
+
 .ui-kit-input-placeholder.icon {
 	left: 42px;
 }

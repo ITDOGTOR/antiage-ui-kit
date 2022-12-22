@@ -1,0 +1,167 @@
+.ui-kit-phoneInput-hidden {
+	display: none;
+}
+
+.ui-kit-phoneInput-wrapper {
+	display: grid;
+	grid-template-columns: 100px 1fr;
+	gap: 6px;
+}
+
+.ui-kit-phoneInput-dropdownButton {
+	display: flex;
+	gap: 6px;
+	align-items: center;
+	justify-content: center;
+	height: 44px;
+
+	padding: 12px 14px;
+
+	font-weight: 500;
+
+	font-size: var(--fs-xs);
+
+	background-color: var(--faint-weak);
+	border: none;
+	border-radius: var(--brad-base);
+
+	cursor: pointer;
+}
+
+.ui-kit-phoneInput-arrow {
+	min-width: 8px;
+}
+
+.ui-kit-phoneInput-arrow.opened {
+	rotate: 180deg;
+}
+
+.ui-kit-phoneInput-dropdownButton:hover .ui-kit-phoneInput-arrow {
+	color: var(--accent-strong);
+}
+
+.ui-kit-phoneInput-wrapper .ui-kit-phoneInput .ui-kit-phoneInput-button {
+	display: flex;
+	align-items: center;
+
+	background-color: transparent;
+	border: none;
+}
+
+.ui-kit-phoneInput-wrapper .ui-kit-phoneInput .ui-kit-phoneInput-button.open {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-phoneInput-wrapper .ui-kit-phoneInput .ui-kit-phoneInput-button.open .selected-flag {
+	border-radius: var(--brad-base);
+}
+
+.ui-kit-phoneInput .ui-kit-phoneInput-button .selected-flag {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	overflow: hidden;
+
+	border-radius: var(--brad-circle);
+}
+
+.ui-kit-phoneInput .ui-kit-phoneInput-button .flag {
+	scale: 120%;
+}
+
+/* DROPDOWN ARROW */
+.ui-kit-phoneInput .ui-kit-phoneInput-button .selected-flag .flag .arrow {
+	display: none;
+}
+
+/* PICKED COUNTRY */
+.ui-kit-phoneInput-wrapper .react-tel-input .country-list .country.highlight {
+	background-color: var(--faint-weak);
+}
+
+/* COUNTRY FLAG */
+.ui-kit-phoneInput-wrapper .react-tel-input .country-list .country > *:first-child {
+	position: relative;
+	top: initial;
+	left: initial;
+
+	width: 20px;
+
+	max-width: 20px;
+	height: 20px;
+	max-height: 20px;
+
+	scale: 100%;
+
+	overflow: hidden;
+
+	border-radius: var(--brad-base);
+}
+
+.ui-kit-phoneInput-wrapper .react-tel-input .country-list .country > *:first-child::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	width: 20px;
+	height: 20px;
+
+	overflow: hidden;
+
+	background: inherit;
+	border-radius: var(--brad-base);
+
+	transform: translate(-50%, -50%);
+
+	scale: 120%;
+
+	content: " ";
+}
+
+/* COUNTRY */
+.ui-kit-phoneInput-wrapper .react-tel-input .country-list .country.highlight > *:not(:first-child) {
+	color: var(--base-strong);
+	font-weight: 600;
+}
+
+.ui-kit-phoneInput-wrapper .react-tel-input .country-list .country > *:not(:first-child) {
+	color: var(--base-strong-lighter);
+	font-weight: 500;
+}
+
+.ui-kit-phoneInput-wrapper .react-tel-input .country-list .country > *:last-child {
+	color: var(--base-strong);
+}
+
+/* COMMON DROPDOWN STYLES */
+.ui-kit-phoneInput-wrapper .ui-kit-phoneInput .ui-kit-phoneInput-dropdown > li {
+	display: grid;
+	grid-template-columns: 20px 40px 1fr;
+	gap: 6px;
+
+	padding: 7px 14px;
+
+	font-size: var(--fs-xs);
+}
+
+.ui-kit-phoneInput-wrapper .ui-kit-phoneInput .ui-kit-phoneInput-dropdown {
+	top: calc(100% + 20px);
+	left: -14px;
+
+	border-radius: var(--brad-base);
+}
+
+.ui-kit-phoneInput-wrapper .ui-kit-phoneInput .ui-kit-phoneInput-dropdown > li > *:first-child {
+	order: 1;
+}
+
+.ui-kit-phoneInput-wrapper .ui-kit-phoneInput .ui-kit-phoneInput-dropdown > li > *:nth-child(2) {
+	order: 3;
+}
+
+.ui-kit-phoneInput-wrapper .ui-kit-phoneInput .ui-kit-phoneInput-dropdown > li > *:last-child {
+	order: 2;
+}

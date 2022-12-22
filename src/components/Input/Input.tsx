@@ -82,6 +82,7 @@ function Input({
 		'ui-kit-input-label-common',
 		'ui-kit-input-placeholder',
 		theme,
+		{noLabel: !label},
 		{
 			icon: isEmail || isPassword,
 		},
