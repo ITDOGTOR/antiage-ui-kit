@@ -8,6 +8,7 @@ import './components/Input/Input.css';
 import './components/TextArea/TextArea.css';
 import './components/InputError/InputError.css';
 import './components/DatePicker/DatePicker.css';
+import './components/PhoneInput/PhoneInput.css';
 
 export * from './assets';
 export * from './components';
