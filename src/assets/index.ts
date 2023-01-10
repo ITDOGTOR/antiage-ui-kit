@@ -1,8 +1,5 @@
-export {default as ArrowDown} from './ArrowDown';
-export {default as ArrowLeft} from './ArrowLeft';
-export {default as ArrowRight} from './ArrowRight';
-export {default as ArrowShow} from './ArrowShow';
-export {default as ArrowUp} from './ArrowUp';
+export {default as ArrowHorizontal} from './ArrowHorizontal';
+export {default as ArrowVertical} from './ArrowVertical';
 export {default as Danger} from './Danger';
 export {default as LightCalendar} from './LightCalendar';
 export {default as LightMessage} from './LightMessage';

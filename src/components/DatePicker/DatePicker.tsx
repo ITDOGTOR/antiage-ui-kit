@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, {ChangeEvent, FocusEvent, MouseEvent, SetStateAction, useEffect, useRef, useState} from 'react';
 
-import {ArrowShow, LightCalendar} from '../../assets';
+import {ArrowVertical, LightCalendar} from '../../assets';
 import InputError from '../InputError';
 import {DatePickerProps} from './DatePicker.types';
 
@@ -122,7 +122,7 @@ function DatePicker({
 				)}
 				<LightCalendar className={iconClasses} />
 				<input {...commonProps} />
-				{dropdown && !centered && !disabled && <ArrowShow className={dropdownClasses} />}
+				{dropdown && !centered && !disabled && <ArrowVertical className={dropdownClasses} />}
 			</label>
 			<InputError error={error} />
 		</>

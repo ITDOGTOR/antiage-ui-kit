@@ -6,7 +6,7 @@ import RPhone from 'react-phone-input-2';
 // @ts-ignore
 import ru from 'react-phone-input-2/lang/ru.json';
 
-import {ArrowShow} from '../../assets';
+import {ArrowVertical} from '../../assets';
 import Input from '../Input';
 import InputError from '../InputError';
 import {PhoneInputProps} from './PhoneInput.types';
@@ -120,7 +120,7 @@ function PhoneInput({
 				<button className={dropdownButtonClasses} type="button" onClick={handleClickOnSelector}>
 					<RPhone {...commonProps} />
 					<span>{`+${countryInfo.dialCode}`}</span>
-					<ArrowShow className={dropdownArrowClasses} />
+					<ArrowVertical className={dropdownArrowClasses} />
 				</button>
 				<Input
 					disabled={disabled}
