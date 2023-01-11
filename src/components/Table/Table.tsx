@@ -2,14 +2,14 @@ import {PaginationProps, Table as TableAntd} from 'antd';
 import classNames from 'classnames';
 import React from 'react';
 
-import {ArrowLeft, ArrowRight} from '../../assets';
+import {ChevronHorizontal} from '../../assets';
 import {TableProps} from './Table.types';
 
 const itemRender: PaginationProps['itemRender'] = (_, type, originalElement) => {
 	if (type === 'prev') {
 		return (
 			<button className={classNames('ui-kit-pagination-button')} tabIndex={-1} type="button">
-				<ArrowLeft aria-label="left" />
+				<ChevronHorizontal aria-label="left" />
 			</button>
 		);
 	}
@@ -17,7 +17,7 @@ const itemRender: PaginationProps['itemRender'] = (_, type, originalElement) => 
 	if (type === 'next') {
 		return (
 			<button className={classNames('ui-kit-pagination-button')} tabIndex={-1} type="button">
-				<ArrowRight aria-label="right" />
+				<ChevronHorizontal aria-label="right" />
 			</button>
 		);
 	}
