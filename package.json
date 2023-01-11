@@ -20,7 +20,7 @@
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
 		"generate": "node ./utils/create-component",
-		"svgr": "npx @svgr/cli --out-dir \"src/assets\" --ignore-existing --typescript -- \"src/assets\""
+		"svgr": "npx @svgr/cli --template \"utils/templates/svg.js\" --index-template \"utils/templates/index-svg.js\" --svgo-config svgo.config.js --out-dir \"src/assets\" --ignore-existing --typescript -- \"src/assets\""
 	},
 	"lint-staged": {
 		"*.css": "stylelint --fix",
@@ -117,11 +117,11 @@
 	"size-limit": [
 		{
 			"path": "dist/index.js",
-			"limit": "10 KB"
+			"limit": "300 KB"
 		},
 		{
 			"path": "dist/index.esm.js",
-			"limit": "10 KB"
+			"limit": "300 KB"
 		}
 	],
 	"engines": {

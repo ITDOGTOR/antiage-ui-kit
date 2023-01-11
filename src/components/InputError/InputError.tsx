@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 
-import {Danger} from '../../assets';
+import {ReportProblem} from '../../assets';
 import {InputErrorProps} from './InputError.types';
 
 function InputError({error}: InputErrorProps) {
@@ -13,7 +13,7 @@ function InputError({error}: InputErrorProps) {
 
 	return (
 		<div className={errorClasses}>
-			<Danger aria-label="error" />
+			<ReportProblem aria-label="error" />
 			<p>{error}</p>
 		</div>
 	);

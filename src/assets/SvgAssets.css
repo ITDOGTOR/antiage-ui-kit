@@ -1,0 +1,30 @@
+.svg-template code {
+	padding: 4px;
+
+	font-weight: 700;
+
+	background-color: rgb(194 194 194 / 0.2);
+}
+
+.svg-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+
+	font-size: 12px;
+}
+
+.svg-item {
+	display: grid;
+	grid-row-gap: 2px;
+	grid-template-rows: 1fr min-content;
+	align-items: center;
+	justify-items: center;
+
+	padding: 2px;
+}
+
+.svg-item svg {
+	width: 26px;
+	height: auto;
+}
