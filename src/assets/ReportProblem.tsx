@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {SVGProps} from 'react';
 
-function SvgDanger(props: SVGProps<SVGSVGElement>) {
+function ReportProblem(props: SVGProps<SVGSVGElement>) {
 	return (
-		<svg fill="none" height={12} role="img" width={13} xmlns="http://www.w3.org/2000/svg" {...props}>
+		<svg fill="none" height={12} viewBox="0 0 13 12" width={13} xmlns="http://www.w3.org/2000/svg" {...props}>
 			<path
 				d="M1.815 11.993h-.078a1.736 1.736 0 0 1-.449-.079l-.15-.053a1.848 1.848 0 0 1-.985-.978 1.887 1.887 0 0 1-.036-1.399l.039-.112L4.886.967A1.862 1.862 0 0 1 5.99.073a1.816 1.816 0 0 1 2.053.782L8.1.96l4.763 8.465a1.88 1.88 0 0 1-.306 1.915 1.86 1.86 0 0 1-1.216.66H1.815v-.007Zm9.396-.99a.867.867 0 0 0 .594-.289.893.893 0 0 0 .225-.629v-.231L7.287 1.442a.868.868 0 0 0-.516-.416.854.854 0 0 0-.948.337l-.052.086L1.067 9.8a.89.89 0 0 0 .005.671.872.872 0 0 0 .47.472l.189.052h9.512l-.033.007ZM6.004 8.758a.5.5 0 0 1 .143-.35.484.484 0 0 1 .796.155.495.495 0 0 1-.45.684.484.484 0 0 1-.346-.145.499.499 0 0 1-.143-.35v.006Zm0-1.829V4.816a.505.505 0 0 1 .15-.346.49.49 0 0 1 .664-.023.49.49 0 0 1 .162.303v2.113a.495.495 0 0 1-.3.46.484.484 0 0 1-.508-.087.497.497 0 0 1-.161-.307h-.007Z"
 				fill="currentColor"
@@ -12,4 +12,4 @@ function SvgDanger(props: SVGProps<SVGSVGElement>) {
 	);
 }
 
-export default SvgDanger;
+export default ReportProblem;

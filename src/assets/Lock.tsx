@@ -1,9 +1,8 @@
-import * as React from 'react';
-import {SVGProps} from 'react';
+import React, {SVGProps} from 'react';
 
-function SvgPasswordLock(props: SVGProps<SVGSVGElement>) {
+function Lock(props: SVGProps<SVGSVGElement>) {
 	return (
-		<svg fill="none" height={18} role="img" width={16} xmlns="http://www.w3.org/2000/svg" {...props}>
+		<svg fill="none" height={18} viewBox="0 0 16 18" width={16} xmlns="http://www.w3.org/2000/svg" {...props}>
 			<path
 				d="M12.002 6.8V4.942a3.862 3.862 0 0 0-1.204-2.788A4.199 4.199 0 0 0 7.893 1c-1.09 0-2.135.415-2.906 1.154a3.862 3.862 0 0 0-1.203 2.788v1.875"
 				stroke="currentColor"
@@ -20,4 +19,4 @@ function SvgPasswordLock(props: SVGProps<SVGSVGElement>) {
 	);
 }
 
-export default SvgPasswordLock;
+export default Lock;

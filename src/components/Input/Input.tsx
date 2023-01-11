@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, {ChangeEvent, FocusEvent, SetStateAction, useEffect, useState} from 'react';
 
-import {LightMessage, PasswordEye, PasswordEyeHide, PasswordLock} from '../../assets';
+import {Eye, EyeClosed, Letter, Lock} from '../../assets';
 import InputError from '../InputError';
 import {InputProps} from './Input.types';
 
@@ -91,9 +91,9 @@ function Input({
 	const passwordBtnClasses = classNames('ui-kit-input-password-btn');
 	const iconClasses = classNames('ui-kit-input-icon', {disabled}, {error}, iconClassName);
 
-	let Icon = PasswordLock;
+	let Icon = Lock;
 	if (isEmail) {
-		Icon = LightMessage;
+		Icon = Letter;
 	}
 
 	const [showPassword, setShowPassword] = useState(false);
@@ -124,7 +124,7 @@ function Input({
 				<input {...commonProps} />
 				{isPassword && !disabled && (
 					<button className={passwordBtnClasses} type="button" onClick={togglePasswordVisible}>
-						{showPassword ? <PasswordEyeHide aria-label="hide-password" /> : <PasswordEye aria-label="show-password" />}
+						{showPassword ? <EyeClosed aria-label="hide-password" /> : <Eye aria-label="show-password" />}
 					</button>
 				)}
 			</label>
