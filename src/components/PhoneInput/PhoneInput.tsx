@@ -1,4 +1,5 @@
-import 'react-phone-input-2/lib/high-res.css';
+// TODO Enable css-file
+// import 'react-phone-input-2/lib/high-res.css';
 
 import classNames from 'classnames';
 import React, {ChangeEvent, useRef, useState} from 'react';
