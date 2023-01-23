@@ -6,5 +6,4 @@ export interface ContainerProps {
 	children?: ReactNode;
 	className?: string;
 	theme?: Theme;
-	radius?: 'default' | 'top' | 'bottom';
 }
