@@ -2,6 +2,8 @@ export {default as ArrowHorizontal} from './ArrowHorizontal';
 export {default as ArrowSquareHorizontal} from './ArrowSquareHorizontal';
 export {default as ArrowSquareVertical} from './ArrowSquareVertical';
 export {default as ArrowVertical} from './ArrowVertical';
+export {default as Bag} from './Bag';
+export {default as Bell} from './Bell';
 export {default as Buy} from './Buy';
 export {default as Calendar} from './Calendar';
 export {default as Call} from './Call';

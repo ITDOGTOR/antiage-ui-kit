@@ -6,6 +6,8 @@ import ArrowHorizontal from './ArrowHorizontal';
 import ArrowSquareHorizontal from './ArrowSquareHorizontal';
 import ArrowSquareVertical from './ArrowSquareVertical';
 import ArrowVertical from './ArrowVertical';
+import Bag from './Bag';
+import Bell from './Bell';
 import Buy from './Buy';
 import Calendar from './Calendar';
 import Call from './Call';
@@ -297,6 +299,16 @@ function Template() {
 				<div className="svg-item">
 					<Scan />
 					Scan
+				</div>
+
+				<div className="svg-item">
+					<Bag />
+					Bag
+				</div>
+
+				<div className="svg-item">
+					<Bell />
+					Bell
 				</div>
 
 				<div className="svg-item">
