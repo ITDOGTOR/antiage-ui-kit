@@ -47,9 +47,13 @@
 	cursor: not-allowed;
 }
 
+.ui-kit-input-wrapper.white.disabled {
+	border: 1px solid var(--faint-middle);
+}
+
 .ui-kit-input-label-common {
 	position: absolute;
-	top: 0;
+	top: 50%;
 
 	color: var(--faint-strong);
 
@@ -72,6 +76,7 @@
 }
 
 .ui-kit-input-label {
+	top: 0;
 	left: 14px;
 
 	padding: 2px 4px;
@@ -99,13 +104,9 @@
 .ui-kit-input-placeholder {
 	left: 15px;
 
-	transform: translate(0, calc(24px - 50%));
+	transform: translate(0, -50%);
 
 	cursor: text;
-}
-
-.ui-kit-input-placeholder.noLabel {
-	transform: translate(0, calc(21px - 50%));
 }
 
 .ui-kit-input-placeholder.icon {
@@ -114,6 +115,8 @@
 
 .ui-kit-input {
 	flex: 1 1;
+
+	height: 100%;
 	padding: 14px;
 
 	font-size: var(--fs-xs);
@@ -122,6 +125,13 @@
 
 	border: none;
 	border-radius: var(--brad-base);
+}
+
+.ui-kit-input:-webkit-autofill,
+.ui-kit-input:-webkit-autofill:hover,
+.ui-kit-input:-webkit-autofill:focus,
+.ui-kit-input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
 }
 
 .ui-kit-input:focus {
@@ -154,6 +164,11 @@
 	border: 1px solid transparent;
 
 	cursor: pointer;
+}
+
+.ui-kit-input-password-btn > svg {
+	width: 14px;
+	height: 14px;
 }
 
 .ui-kit-input-password-btn:hover {
