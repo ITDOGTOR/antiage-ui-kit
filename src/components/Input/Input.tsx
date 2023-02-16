@@ -50,6 +50,7 @@ function Input({
 
 	const isPassword = type === 'password';
 	const isEmail = type === 'email';
+	const isPlaceholder = !(isFocused || localValue) || !label;
 
 	const wrapperClasses = classNames(
 		'ui-kit-input-wrapper',
@@ -119,7 +120,7 @@ function Input({
 		<div>
 			<label className={wrapperClasses}>
 				{label && <span className={labelClasses}>{label}</span>}
-				{placeholder && !localValue && <span className={placeholderClasses}>{placeholder}</span>}
+				{placeholder && isPlaceholder && !localValue && <span className={placeholderClasses}>{placeholder}</span>}
 				{(isPassword || isEmail) && <Icon className={iconClasses} />}
 				<input {...commonProps} />
 				{isPassword && !disabled && (

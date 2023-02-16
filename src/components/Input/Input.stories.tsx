@@ -42,18 +42,30 @@ export default {
 			defaultValue: '',
 			control: {type: 'text'},
 		},
-		value: {
-			name: 'value',
-			description: 'Outer value',
-			defaultValue: '',
-			control: {type: 'text'},
-		},
+		// value: {
+		// 	name: 'value',
+		// 	description: 'Outer value',
+		// 	defaultValue: '',
+		// 	control: {type: 'text'},
+		// },
 		className: {table: {disable: true}},
 		wrapperClassName: {table: {disable: true}},
 		labelClassName: {table: {disable: true}},
 		placeholderClassName: {table: {disable: true}},
 		iconClassName: {table: {disable: true}},
 		innerRef: {table: {disable: true}},
+		name: {
+			name: 'name',
+			description: 'input name',
+			defaultValue: '',
+			control: {type: 'text'},
+		},
+		autoComplete: {
+			name: 'autocomplete',
+			description: 'input autocomplete',
+			defaultValue: false,
+			control: {type: 'boolean'},
+		},
 	},
 } as ComponentMeta<typeof Input>;
 
