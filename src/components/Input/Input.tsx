@@ -117,7 +117,7 @@ function Input({
 	};
 
 	return (
-		<div>
+		<>
 			<label className={wrapperClasses}>
 				{label && <span className={labelClasses}>{label}</span>}
 				{placeholder && isPlaceholder && !localValue && <span className={placeholderClasses}>{placeholder}</span>}
@@ -130,7 +130,7 @@ function Input({
 				)}
 			</label>
 			<InputError error={error} />
-		</div>
+		</>
 	);
 }
 
