@@ -129,6 +129,8 @@
 }
 
 .ui-kit-textarea.autoSize {
+	height: initial !important;
+
 	resize: none;
 }
 
