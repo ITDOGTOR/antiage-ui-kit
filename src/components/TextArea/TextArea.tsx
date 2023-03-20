@@ -91,14 +91,14 @@ function TextArea({
 	};
 
 	return (
-		<div>
+		<>
 			<label className={wrapperClasses}>
 				{label && <span className={labelClasses}>{label}</span>}
 				{placeholder && !localValue && <span className={placeholderClasses}>{placeholder}</span>}
 				<textarea {...commonProps} />
 			</label>
 			<InputError error={error} />
-		</div>
+		</>
 	);
 }
 
