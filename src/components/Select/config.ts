@@ -1,0 +1,77 @@
+import {DropdownIndicatorProps, StylesConfig} from 'react-select';
+
+export const defaultStyles: StylesConfig = {
+	control: (classes) => ({
+		...classes,
+		cursor: 'pointer',
+		display: 'flex',
+		outline: 'var(--back-faint-middle) 1px solid',
+		border: 'none',
+		alignItems: 'center',
+		padding: '9.5px 14px',
+		borderRadius: 'var(--brad-base)',
+		backgroundColor: 'transparent',
+		minHeight: 'none',
+		boxShadow: 'none',
+	}),
+	input: (classes) => ({
+		...classes,
+		fontWeight: 500,
+		fontSize: 'var(--fs-xs)',
+		color: 'var(--base-strong)',
+		paddingLeft: '0px',
+	}),
+	indicatorSeparator: (classes) => ({
+		...classes,
+		display: 'none',
+	}),
+	dropdownIndicator: (classes, state: DropdownIndicatorProps) => {
+		const transform = state.selectProps.menuIsOpen ? 'rotate(180deg)' : '';
+		const color = state.selectProps.menuIsOpen ? 'var(--accent-strong)' : 'var(--faint-strong)';
+		return {
+			...classes,
+			padding: '0px',
+			transform,
+			color,
+		};
+	},
+	valueContainer: (classes) => ({
+		...classes,
+		padding: '0px',
+	}),
+	placeholder: (classes) => ({
+		...classes,
+		color: 'black',
+		opacity: 0.6,
+	}),
+	menu: (classes) => ({
+		...classes,
+		backgroundColor: 'white',
+		boxShadow: '0px 10px 15px rgba(66, 71, 77, 0.1)',
+		overflow: 'auto',
+		borderRadius: 'var(--brad-base)',
+	}),
+	menuList: (classes) => ({
+		...classes,
+		padding: '0',
+		width: '100%',
+		'::-webkit-scrollbar': {
+			width: '6px',
+			height: '6px',
+		},
+		'::-webkit-scrollbar-thumb': {
+			background: '#C3D3E6',
+			borderRadius: '3px',
+		}
+	}),
+	option: (classes, { isSelected }) => ({
+		...classes,
+		cursor: 'pointer',
+		fontWeight: '500',
+		background: isSelected ? '#F3F8FF' : '',
+		color: isSelected ? 'black' : 'var(--base-strong-lighter)',
+		':hover': {
+			background: 'var(--faint-weak)',
+		},
+	}),
+};
