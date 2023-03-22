@@ -8,6 +8,7 @@ import {InputProps} from './Input.types';
 function Input({
 	className = '',
 	wrapperClassName = '',
+	inputWrapperClassName = '',
 	labelClassName = '',
 	placeholderClassName = '',
 	iconClassName = '',
@@ -52,7 +53,8 @@ function Input({
 	const isEmail = type === 'email';
 	const isPlaceholder = !(isFocused || localValue) || !label;
 
-	const wrapperClasses = classNames(
+	const wrapperClasses = classNames(wrapperClassName);
+	const inputWrapperClasses = classNames(
 		'ui-kit-input-wrapper',
 		theme,
 		{focused: isFocused},
@@ -60,7 +62,7 @@ function Input({
 		{icon: isEmail || isPassword},
 		{disabled},
 		{error},
-		wrapperClassName,
+		inputWrapperClassName,
 	);
 	const classes = classNames(
 		'ui-kit-input',
@@ -117,8 +119,8 @@ function Input({
 	};
 
 	return (
-		<>
-			<label className={wrapperClasses}>
+		<div className={wrapperClasses}>
+			<label className={inputWrapperClasses}>
 				{label && <span className={labelClasses}>{label}</span>}
 				{placeholder && isPlaceholder && !localValue && <span className={placeholderClasses}>{placeholder}</span>}
 				{(isPassword || isEmail) && <Icon className={iconClasses} />}
@@ -130,7 +132,7 @@ function Input({
 				)}
 			</label>
 			<InputError error={error} />
-		</>
+		</div>
 	);
 }
 
