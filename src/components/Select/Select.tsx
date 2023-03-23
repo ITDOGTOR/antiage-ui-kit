@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, {useState} from 'react';
 import Select from 'react-select';
 import CreatableSelect from 'react-select/creatable';
 
@@ -11,15 +11,36 @@ const components = {
 	default: Select,
 };
 
-function SelectComponent({containerStyle = '', type = 'default', ...props}: SelectLocalProps) {
+function SelectComponent({containerStyle = '', type = 'default', customStyles = {}, label = '', ...props}: SelectLocalProps) {
+	const [search, setSearch] = useState('');
+	const { value } = props;
+
+	const containerClasses = classNames(
+		'ui-kit-select-container',
+		containerStyle
+	);
+	const labelContainerClasses = classNames(
+		'ui-kit-select-label-container',
+		{ 'ui-kit-select-label-container-active': search || value },
+	);
+	const labelClasses = classNames(
+		'ui-kit-select-label',
+	);
+
 	const Component = components[type];
 	return (
-		<div className={classNames('container', containerStyle)}>
+		<div className={containerClasses}>
+			{label ? (
+				<p className={labelContainerClasses}>
+					<span className={labelClasses}>{label}</span>
+				</p>
+			) : null}
 			<Component
-				menuIsOpen
 				styles={{
 					...defaultStyles,
+					...customStyles
 				}}
+				onInputChange={setSearch}
 				{...props}
 			/>
 		</div>

@@ -8,10 +8,10 @@ export const defaultStyles: StylesConfig = {
 		outline: 'var(--back-faint-middle) 1px solid',
 		border: 'none',
 		alignItems: 'center',
-		padding: '9.5px 14px',
+		padding: '0 14px',
 		borderRadius: 'var(--brad-base)',
-		backgroundColor: 'transparent',
-		minHeight: 'none',
+		backgroundColor: 'var(--base-weak)',
+		minHeight: '44px',
 		boxShadow: 'none',
 	}),
 	input: (classes) => ({
@@ -38,6 +38,11 @@ export const defaultStyles: StylesConfig = {
 	valueContainer: (classes) => ({
 		...classes,
 		padding: '0px',
+	}),
+	singleValue: (classes) => ({
+		...classes,
+		fontWeight: '500',
+		fontSize: 'var(--fs-xs)',
 	}),
 	placeholder: (classes) => ({
 		...classes,
@@ -68,8 +73,8 @@ export const defaultStyles: StylesConfig = {
 		...classes,
 		cursor: 'pointer',
 		fontWeight: '500',
-		background: isSelected ? '#F3F8FF' : '',
-		color: isSelected ? 'black' : 'var(--base-strong-lighter)',
+		background: isSelected ? 'var(--faint-weak)' : 'white',
+		color: 'var(--base-strong-lighter)',
 		':hover': {
 			background: 'var(--faint-weak)',
 		},

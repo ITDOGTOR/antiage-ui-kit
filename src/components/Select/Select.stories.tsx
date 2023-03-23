@@ -30,6 +30,14 @@ export default {
 		},
 		type: {
 			defaultValue: 'default',
+		},
+		label: {
+			defaultValue: '',
+			control: {type: 'text'},
+		},
+		value: {
+			defaultValue: null,
+			control: {type: 'text'},
 		}
 	},
 } as ComponentMeta<typeof Select>;
