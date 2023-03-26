@@ -19,7 +19,14 @@ export const defaultStyles: StylesConfig = {
 		fontWeight: 500,
 		fontSize: 'var(--fs-xs)',
 		color: 'var(--base-strong)',
+	}),
+	placeholder: (classes) => ({
+		...classes,
+		fontWeight: 500,
+		fontSize: 'var(--fs-xs)',
+		color: 'var(--faint-strong)',
 		paddingLeft: '0px',
+		margin: '0',
 	}),
 	indicatorSeparator: (classes) => ({
 		...classes,
@@ -43,11 +50,6 @@ export const defaultStyles: StylesConfig = {
 		...classes,
 		fontWeight: '500',
 		fontSize: 'var(--fs-xs)',
-	}),
-	placeholder: (classes) => ({
-		...classes,
-		color: 'black',
-		opacity: 0.6,
 	}),
 	menu: (classes) => ({
 		...classes,

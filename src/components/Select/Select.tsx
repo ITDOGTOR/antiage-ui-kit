@@ -5,19 +5,23 @@ import CreatableSelect from 'react-select/creatable';
 
 import {defaultStyles} from './config';
 import {SelectLocalProps} from './Select.types';
+import InputError from "../InputError";
 
 const components = {
 	creatable: CreatableSelect,
 	default: Select,
 };
 
-function SelectComponent({containerStyle = '', type = 'default', customStyles = {}, label = '', ...props}: SelectLocalProps) {
+function SelectComponent({containerStyle = '', type = 'default', customStyles = {}, label = '', error, theme, ...props}: SelectLocalProps) {
 	const [search, setSearch] = useState('');
 	const { value } = props;
 
 	const containerClasses = classNames(
 		'ui-kit-select-container',
-		containerStyle
+		containerStyle,
+	);
+	const contentClasses = classNames(
+		'ui-kit-select-content-container',
 	);
 	const labelContainerClasses = classNames(
 		'ui-kit-select-label-container',
@@ -25,24 +29,35 @@ function SelectComponent({containerStyle = '', type = 'default', customStyles = 
 	);
 	const labelClasses = classNames(
 		'ui-kit-select-label',
+		{ 'ui-kit-select-label-error': error }
 	);
 
 	const Component = components[type];
 	return (
-		<div className={containerClasses}>
-			{label ? (
-				<p className={labelContainerClasses}>
-					<span className={labelClasses}>{label}</span>
-				</p>
+		<div
+			className={containerClasses}
+			data-error={error}
+			data-theme={theme}
+		>
+			<div className={contentClasses}>
+				{label ? (
+					<p className={labelContainerClasses}>
+						<span className={labelClasses}>{label}</span>
+					</p>
+				) : null}
+				<Component
+					styles={{
+						...defaultStyles,
+						...customStyles,
+					}}
+					classNamePrefix="ui-kit-select"
+					onInputChange={setSearch}
+					{...props}
+				/>
+			</div>
+			{error ? (
+				<InputError error={error} />
 			) : null}
-			<Component
-				styles={{
-					...defaultStyles,
-					...customStyles
-				}}
-				onInputChange={setSearch}
-				{...props}
-			/>
 		</div>
 	);
 }
