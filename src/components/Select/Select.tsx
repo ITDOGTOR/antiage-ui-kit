@@ -33,6 +33,7 @@ function SelectComponent({containerStyle = '', type = 'default', customStyles = 
 	);
 
 	const Component = components[type];
+	
 	return (
 		<div
 			className={containerClasses}
