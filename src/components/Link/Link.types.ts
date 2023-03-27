@@ -3,7 +3,7 @@ import {LinkProps as LinkPropsRouterDom} from 'react-router-dom';
 import {Color, Theme} from '../index.types';
 
 declare const LinkTypes: ['default', 'primary', 'text'];
-declare type LinkType = typeof LinkTypes[number];
+declare type LinkType = (typeof LinkTypes)[number];
 
 export declare type LinkProps = {
 	className?: string;

@@ -3,7 +3,7 @@ import React, {DetailedHTMLProps, InputHTMLAttributes} from 'react';
 import {Theme} from '../index.types';
 
 declare const Sizes: ['small', 'default'];
-export declare type Size = typeof Sizes[number];
+export declare type Size = (typeof Sizes)[number];
 
 export declare type DatePickerProps = {
 	className?: string;
