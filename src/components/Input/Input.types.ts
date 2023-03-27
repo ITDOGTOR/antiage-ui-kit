@@ -9,6 +9,7 @@ export declare type InputProps = {
 	label?: string;
 	error?: string;
 	wrapperClassName?: string;
+	inputWrapperClassName?: string;
 	labelClassName?: string;
 	placeholderClassName?: string;
 	iconClassName?: string;
