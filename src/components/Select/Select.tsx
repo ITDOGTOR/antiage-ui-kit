@@ -6,6 +6,7 @@ import CreatableSelect from 'react-select/creatable';
 import InputError from '../InputError';
 import {defaultStyles} from './config';
 import {SelectLocalProps} from './Select.types';
+import {Search} from "../../assets";
 
 const components = {
 	creatable: CreatableSelect,
@@ -19,21 +20,30 @@ function SelectComponent({
 	label = '',
 	error,
 	theme,
+	showLabelAlways = false,
+													 search = false,
 	...props
 }: SelectLocalProps) {
-	const [search, setSearch] = useState('');
+	const [localSearch, setLocalSearch] = useState('');
 	const {value} = props;
 
 	const containerClasses = classNames('ui-kit-select-container', containerStyle);
 	const contentClasses = classNames('ui-kit-select-content-container');
 	const labelContainerClasses = classNames('ui-kit-select-label-container', {
-		'ui-kit-select-label-container-active': search || value,
+		'ui-kit-select-label-container-active': showLabelAlways || localSearch || value,
 	});
 	const labelClasses = classNames('ui-kit-select-label', {'ui-kit-select-label-error': error});
+	const iconClasses = classNames('ui-kit-select-icon', { 'error': error });
 
 	const Component = components[type];
+
 	return (
-		<div className={containerClasses} data-error={error} data-theme={theme}>
+		<div
+			className={containerClasses}
+			data-error={error}
+			data-theme={theme}
+			data-search={search}
+		>
 			<div className={contentClasses}>
 				{label ? (
 					<p className={labelContainerClasses}>
@@ -46,9 +56,12 @@ function SelectComponent({
 						...defaultStyles,
 						...customStyles,
 					}}
-					onInputChange={setSearch}
+					onInputChange={setLocalSearch}
 					{...props}
 				/>
+				{search ? (
+					<Search className={iconClasses} />
+				) : null}
 			</div>
 			{error ? <InputError error={error} /> : null}
 		</div>

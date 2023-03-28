@@ -42,7 +42,7 @@ export default {
 		error: {
 			defaultValue: '',
 			control: {type: 'text'},
-		}
+		},
 	},
 } as ComponentMeta<typeof Select>;
 
