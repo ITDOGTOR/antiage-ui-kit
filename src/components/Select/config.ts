@@ -69,9 +69,9 @@ export const defaultStyles: StylesConfig = {
 		'::-webkit-scrollbar-thumb': {
 			background: '#C3D3E6',
 			borderRadius: '3px',
-		}
+		},
 	}),
-	option: (classes, { isSelected }) => ({
+	option: (classes, {isSelected}) => ({
 		...classes,
 		cursor: 'pointer',
 		fontWeight: '500',
