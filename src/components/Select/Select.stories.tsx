@@ -15,6 +15,7 @@ const options = [
 	{value: 8, label: 'Восемь'},
 	{value: 9, label: 'Девять'},
 	{value: 10, label: 'Десять'},
+	{value: 11, label: 'Одиннадцать'},
 ];
 
 export default {
