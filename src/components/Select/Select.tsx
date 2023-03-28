@@ -40,11 +40,6 @@ function SelectComponent({
 	return (
 		<div className={containerClasses} data-error={error || ''} data-search={search} data-theme={theme}>
 			<div className={contentClasses}>
-				{label ? (
-					<p className={labelContainerClasses}>
-						<span className={labelClasses}>{label}</span>
-					</p>
-				) : null}
 				<Component
 					classNamePrefix="ui-kit-select"
 					styles={{
@@ -55,6 +50,11 @@ function SelectComponent({
 					{...props}
 				/>
 				{search ? <Search className={iconClasses} /> : null}
+				{label ? (
+					<p className={labelContainerClasses}>
+						<span className={labelClasses}>{label}</span>
+					</p>
+				) : null}
 			</div>
 			{error ? <InputError error={error} /> : null}
 		</div>
