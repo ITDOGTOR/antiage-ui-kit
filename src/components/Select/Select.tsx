@@ -49,12 +49,12 @@ function SelectComponent({
 					onInputChange={setLocalSearch}
 					{...props}
 				/>
-				{search ? <Search className={iconClasses} /> : null}
 				{label ? (
 					<p className={labelContainerClasses}>
 						<span className={labelClasses}>{label}</span>
 					</p>
 				) : null}
+				{search ? <Search className={iconClasses} /> : null}
 			</div>
 			{error ? <InputError error={error} /> : null}
 		</div>
