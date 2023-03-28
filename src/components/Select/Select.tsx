@@ -38,7 +38,7 @@ function SelectComponent({
 	const Component = components[type];
 
 	return (
-		<div className={containerClasses} data-error={error} data-search={search} data-theme={theme}>
+		<div className={containerClasses} data-error={error || ''} data-search={search} data-theme={theme}>
 			<div className={contentClasses}>
 				{label ? (
 					<p className={labelContainerClasses}>
