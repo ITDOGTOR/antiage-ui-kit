@@ -46,7 +46,8 @@ export const defaultStyles: StylesConfig = {
 		...classes,
 		padding: '0px',
 	}),
-	singleValue: () => ({
+	singleValue: (classes) => ({
+		...classes,
 		fontWeight: '500',
 		fontSize: 'var(--fs-xs)',
 	}),

@@ -37,7 +37,7 @@ export default {
 			control: {type: 'text'},
 		},
 		value: {
-			defaultValue: null,
+			defaultValue: {value: 1, label: 'sadsada'},
 			control: {type: 'text'},
 		},
 		error: {
