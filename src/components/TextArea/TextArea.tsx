@@ -27,7 +27,7 @@ function TextArea({
 	const {disabled, onChange, value} = props;
 
 	useAutosizeTextArea({
-		textAreaRef: innerRef ? innerRef.current : ref.current,
+		textAreaRef: innerRef && innerRef.current ? innerRef.current : ref.current,
 		value: localValue,
 		autoSize,
 		rows,
