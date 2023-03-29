@@ -27,7 +27,7 @@ function TextArea({
 	const {disabled, onChange, value} = props;
 
 	useAutosizeTextArea({
-		textAreaRef: innerRef && innerRef.current ? innerRef.current : ref.current,
+		textAreaRef: ref.current,
 		value: localValue,
 		autoSize,
 		rows,
@@ -43,6 +43,13 @@ function TextArea({
 	useEffect(() => {
 		setLocalValue(value);
 	}, [value]);
+
+	useEffect(() => {
+		if (innerRef) {
+			// @ts-ignore
+			innerRef(ref.current);
+		}
+	}, [ref.current]);
 
 	const onBlur = (e: FocusEvent<HTMLTextAreaElement>) => {
 		if (props.onBlur) {
@@ -94,7 +101,7 @@ function TextArea({
 		onBlur,
 		onFocus,
 		onChange: handleChange,
-		ref: innerRef || ref,
+		ref,
 		rows: getDefaultRows(),
 	};
 
