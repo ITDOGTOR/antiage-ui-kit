@@ -13,5 +13,5 @@ export declare type TextAreaProps = {
 	placeholderClassName?: string;
 	innerRef?: React.RefObject<HTMLTextAreaElement>;
 	rows?: number;
-	autoSize?: boolean;
+	autoSize?: boolean | {minRows: number; maxRows: number};
 } & DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;

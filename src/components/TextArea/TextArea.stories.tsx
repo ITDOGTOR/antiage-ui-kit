@@ -70,3 +70,10 @@ const Template: ComponentStory<typeof TextArea> = (args: TextAreaProps) => {
 };
 
 export const Sandbox = Template.bind({});
+export const AutoSizeTextArea = Template.bind({});
+AutoSizeTextArea.args = {
+	autoSize: {
+		minRows: 2,
+		maxRows: 4,
+	},
+};
