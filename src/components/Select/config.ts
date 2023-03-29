@@ -68,6 +68,7 @@ export const defaultStyles: StylesConfig = {
 		...classes,
 		padding: '0',
 		width: '100%',
+		fontSize: 'var(--fs-sm)',
 		'::-webkit-scrollbar': {
 			width: '6px',
 			height: '6px',
