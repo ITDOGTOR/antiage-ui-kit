@@ -54,7 +54,6 @@ export default {
 			description: 'flag',
 			defaultValue: false,
 			control: {type: 'boolean'},
-			table: {disable: true},
 		},
 		className: {table: {disable: true}},
 		wrapperClassName: {table: {disable: true}},

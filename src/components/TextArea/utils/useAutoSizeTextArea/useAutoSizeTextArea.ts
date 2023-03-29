@@ -29,6 +29,7 @@ export default function useAutosizeTextArea({textAreaRef, value, autoSize, rows:
 					textAreaRef.rows = currentRows;
 				}
 			} else {
+				textAreaRef.style.height = `0px`;
 				const {scrollHeight} = textAreaRef;
 				textAreaRef.style.height = `${scrollHeight}px`;
 			}
