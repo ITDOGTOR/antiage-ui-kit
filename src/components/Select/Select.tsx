@@ -49,6 +49,7 @@ function SelectComponent({
 					}}
 					onInputChange={setLocalSearch}
 					isDisabled={isDisabled}
+					menuIsOpen
 					{...props}
 				/>
 				{label ? (
