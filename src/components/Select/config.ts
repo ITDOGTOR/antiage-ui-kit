@@ -1,19 +1,23 @@
 import {DropdownIndicatorProps, StylesConfig} from 'react-select';
 
 export const defaultStyles: StylesConfig = {
-	control: (classes) => ({
-		...classes,
-		cursor: 'pointer',
-		display: 'flex',
-		outline: 'var(--back-faint-middle) 1px solid',
-		border: 'none',
-		alignItems: 'center',
-		padding: '0 14px',
-		borderRadius: 'var(--brad-base)',
-		backgroundColor: 'var(--base-weak)',
-		minHeight: '44px',
-		boxShadow: 'none',
-	}),
+	control: (classes, state) => {
+		const cursor = state.isDisabled ? 'not-allowed' : 'pointer';
+		return {
+			...classes,
+			display: 'flex',
+			outline: 'var(--back-faint-middle) 1px solid',
+			border: 'none',
+			alignItems: 'center',
+			padding: '0 14px',
+			borderRadius: 'var(--brad-base)',
+			backgroundColor: 'var(--base-weak)',
+			minHeight: '44px',
+			boxShadow: 'none',
+			pointerEvents: 'auto',
+			cursor,
+		}
+	},
 	input: (classes) => ({
 		...classes,
 		fontWeight: 500,
@@ -46,11 +50,13 @@ export const defaultStyles: StylesConfig = {
 		...classes,
 		padding: '0px',
 	}),
-	singleValue: (classes) => ({
-		...classes,
-		fontWeight: '500',
-		fontSize: 'var(--fs-xs)',
-	}),
+	singleValue: (classes) => {
+		return {
+			...classes,
+			fontWeight: '500',
+			fontSize: 'var(--fs-xs)',
+		};
+	},
 	menu: (classes) => ({
 		...classes,
 		backgroundColor: 'white',

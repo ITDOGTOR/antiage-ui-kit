@@ -14,20 +14,21 @@ const components = {
 };
 
 function SelectComponent({
-	containerStyle = '',
+	containerClassname = '',
 	type = 'default',
-	customStyles = {},
+	getCustomStyles = () => ({}),
 	label = '',
 	error,
 	theme,
 	showLabelAlways = false,
 	search = false,
+	isDisabled = false,
 	...props
 }: SelectLocalProps) {
 	const [localSearch, setLocalSearch] = useState('');
 	const {value} = props;
 
-	const containerClasses = classNames('ui-kit-select-container', containerStyle);
+	const containerClasses = classNames('ui-kit-select-container', containerClassname);
 	const contentClasses = classNames('ui-kit-select-content-container');
 	const labelContainerClasses = classNames('ui-kit-select-label-container', {
 		'ui-kit-select-label-container-active': showLabelAlways || localSearch || value,
@@ -44,9 +45,10 @@ function SelectComponent({
 					classNamePrefix="ui-kit-select"
 					styles={{
 						...defaultStyles,
-						...customStyles,
+						...getCustomStyles(defaultStyles),
 					}}
 					onInputChange={setLocalSearch}
+					isDisabled={isDisabled}
 					{...props}
 				/>
 				{label ? (
