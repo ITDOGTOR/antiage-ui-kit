@@ -44,6 +44,13 @@ function TextArea({
 		setLocalValue(value);
 	}, [value]);
 
+	useEffect(() => {
+		if (innerRef) {
+			// @ts-ignore
+			innerRef(ref.current);
+		}
+	}, [ref.current]);
+
 	const onBlur = (e: FocusEvent<HTMLTextAreaElement>) => {
 		if (props.onBlur) {
 			props.onBlur(e);
@@ -94,7 +101,7 @@ function TextArea({
 		onBlur,
 		onFocus,
 		onChange: handleChange,
-		ref: innerRef || ref,
+		ref,
 		rows: getDefaultRows(),
 	};
 
