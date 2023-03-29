@@ -29,7 +29,8 @@ function TextArea({
 	useAutosizeTextArea({
 		textAreaRef: innerRef ? innerRef.current : ref.current,
 		value: localValue,
-		enabled: autoSize,
+		autoSize,
+		rows,
 	});
 
 	const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -80,6 +81,13 @@ function TextArea({
 		placeholderClassName,
 	);
 
+	const getDefaultRows = () => {
+		if (typeof autoSize === 'object') {
+			return autoSize.minRows > rows ? autoSize.minRows : rows;
+		}
+		return rows;
+	};
+
 	const commonProps = {
 		className: classes,
 		...props,
@@ -87,7 +95,7 @@ function TextArea({
 		onFocus,
 		onChange: handleChange,
 		ref: innerRef || ref,
-		rows,
+		rows: getDefaultRows(),
 	};
 
 	return (
