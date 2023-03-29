@@ -89,6 +89,7 @@ function Input({
 		{
 			icon: isEmail || isPassword,
 		},
+		{error},
 		placeholderClassName,
 	);
 	const passwordBtnClasses = classNames('ui-kit-input-password-btn');
