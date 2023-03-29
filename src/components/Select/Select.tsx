@@ -23,6 +23,7 @@ function SelectComponent({
 	showLabelAlways = false,
 	search = false,
 	isDisabled = false,
+													 onInputChange = () => {},
 	...props
 }: SelectLocalProps) {
 	const [localSearch, setLocalSearch] = useState('');
@@ -47,7 +48,10 @@ function SelectComponent({
 						...defaultStyles,
 						...getCustomStyles(defaultStyles),
 					}}
-					onInputChange={setLocalSearch}
+					onInputChange={(value, meta) => {
+						onInputChange(value, meta);
+						setLocalSearch(value);
+					}}
 					isDisabled={isDisabled}
 					{...props}
 				/>

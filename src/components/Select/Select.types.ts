@@ -1,4 +1,4 @@
-import {StylesConfig} from 'react-select';
+import {InputActionMeta, StylesConfig} from 'react-select';
 
 import {Theme} from '../index.types';
 
@@ -13,4 +13,5 @@ export interface SelectLocalProps {
 	theme?: Theme;
 	search?: boolean;
 	isDisabled?: boolean;
+	onInputChange?: (value: string, meta: InputActionMeta) => void;
 }
