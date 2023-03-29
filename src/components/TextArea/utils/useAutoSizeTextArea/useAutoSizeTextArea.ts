@@ -33,5 +33,5 @@ export default function useAutosizeTextArea({textAreaRef, value, autoSize, rows:
 				textAreaRef.style.height = `${scrollHeight}px`;
 			}
 		}
-	}, [textAreaRef, value]);
+	}, [textAreaRef, value, autoSize, defaultRows]);
 }
