@@ -54,6 +54,7 @@ export default {
 			description: 'flag',
 			defaultValue: false,
 			control: {type: 'boolean'},
+			table: {disable: true},
 		},
 		className: {table: {disable: true}},
 		wrapperClassName: {table: {disable: true}},
@@ -70,3 +71,10 @@ const Template: ComponentStory<typeof TextArea> = (args: TextAreaProps) => {
 };
 
 export const Sandbox = Template.bind({});
+export const AutoSizeTextArea = Template.bind({});
+AutoSizeTextArea.args = {
+	autoSize: {
+		minRows: 2,
+		maxRows: 4,
+	},
+};
