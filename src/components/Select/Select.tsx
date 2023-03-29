@@ -48,9 +48,9 @@ function SelectComponent({
 						...defaultStyles,
 						...getCustomStyles(defaultStyles),
 					}}
-					onInputChange={(val, meta) => {
-						onInputChange(val, meta);
-						setLocalSearch(val);
+					onInputChange={(v, meta) => {
+						onInputChange(v, meta);
+						setLocalSearch(v);
 					}}
 					isDisabled={isDisabled}
 					{...props}
