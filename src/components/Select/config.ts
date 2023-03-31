@@ -16,7 +16,7 @@ export const defaultStyles: StylesConfig = {
 			boxShadow: 'none',
 			pointerEvents: 'auto',
 			cursor,
-		}
+		};
 	},
 	input: (classes) => ({
 		...classes,

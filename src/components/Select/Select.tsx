@@ -23,8 +23,8 @@ function SelectComponent({
 	showLabelAlways = false,
 	search = false,
 	isDisabled = false,
-													 onInputChange = () => {},
-	customRef,
+	onInputChange = () => {},
+	innerRef,
 	...props
 }: SelectLocalProps) {
 	const [localSearch, setLocalSearch] = useState('');
@@ -45,6 +45,8 @@ function SelectComponent({
 			<div className={contentClasses}>
 				<Component
 					classNamePrefix="ui-kit-select"
+					isDisabled={isDisabled}
+					ref={innerRef}
 					styles={{
 						...defaultStyles,
 						...getCustomStyles(defaultStyles),
@@ -53,8 +55,6 @@ function SelectComponent({
 						onInputChange(val, meta);
 						setLocalSearch(val);
 					}}
-					isDisabled={isDisabled}
-					ref={customRef}
 					{...props}
 				/>
 				{label ? (

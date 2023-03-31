@@ -1,7 +1,7 @@
+import {Ref} from 'react';
 import {InputActionMeta, StylesConfig} from 'react-select';
 
 import {Theme} from '../index.types';
-import {Ref} from "react";
 
 export interface SelectLocalProps {
 	containerClassname?: string;
@@ -15,5 +15,5 @@ export interface SelectLocalProps {
 	search?: boolean;
 	isDisabled?: boolean;
 	onInputChange?: (value: string, meta: InputActionMeta) => void;
-	customRef?: Ref<any>;
+	innerRef?: Ref<any>;
 }
