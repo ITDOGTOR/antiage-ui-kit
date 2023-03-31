@@ -24,6 +24,7 @@ function SelectComponent({
 	search = false,
 	isDisabled = false,
 													 onInputChange = () => {},
+	customRef,
 	...props
 }: SelectLocalProps) {
 	const [localSearch, setLocalSearch] = useState('');
@@ -53,6 +54,7 @@ function SelectComponent({
 						setLocalSearch(val);
 					}}
 					isDisabled={isDisabled}
+					ref={customRef}
 					{...props}
 				/>
 				{label ? (
