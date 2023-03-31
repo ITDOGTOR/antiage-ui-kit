@@ -132,6 +132,10 @@
 	resize: none;
 }
 
+.ui-kit-textarea.autoSize.autoSize_noScroll {
+	overflow: hidden;
+}
+
 .ui-kit-textarea.gray.withLabel {
 	padding-top: 20px;
 	padding-bottom: 8px;

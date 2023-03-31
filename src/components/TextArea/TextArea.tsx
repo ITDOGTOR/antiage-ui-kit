@@ -73,7 +73,15 @@ function TextArea({
 		{error},
 		wrapperClassName,
 	);
-	const classes = classNames('ui-kit-textarea', theme, {autoSize}, {withLabel: label}, {error}, className);
+	const classes = classNames(
+		'ui-kit-textarea',
+		theme,
+		{autoSize},
+		{autoSize_noScroll: typeof autoSize === 'boolean' && autoSize},
+		{withLabel: label},
+		{error},
+		className,
+	);
 	const labelClasses = classNames(
 		'ui-kit-textarea-label-common',
 		isFocused || localValue ? 'ui-kit-textarea-label' : 'ui-kit-textarea-placeholder',
