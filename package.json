@@ -11,6 +11,7 @@
 	],
 	"types": "dist/index.d.ts",
 	"scripts": {
+		"prepare": "husky install",
 		"build": "rollup -c",
 		"test": "jest --coverage",
 		"size": "size-limit",
