@@ -12,8 +12,9 @@ export default {
 		theme: {
 			control: {type: 'select'},
 		},
-		radius: {
-			control: {type: 'select'},
+		resetStyle: {
+			defaultValue: false,
+			control: {type: 'boolean'},
 		},
 		children: {table: {disable: true}},
 		className: {table: {disable: true}},
