@@ -76,6 +76,7 @@ function Input({
 	const labelClasses = classNames(
 		'ui-kit-input-label-common',
 		isFocused || localValue ? 'ui-kit-input-label' : 'ui-kit-input-placeholder',
+		{invisible: isPlaceholder && placeholder},
 		theme,
 		{icon: isEmail || isPassword},
 		{error},

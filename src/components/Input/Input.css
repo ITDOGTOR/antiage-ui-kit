@@ -76,6 +76,10 @@
 	color: var(--faint-middle);
 }
 
+.ui-kit-input-label-common.invisible {
+	color: transparent;
+}
+
 .ui-kit-input-label {
 	top: 0;
 	left: 14px;
