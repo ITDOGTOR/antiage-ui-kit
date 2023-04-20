@@ -49,7 +49,7 @@
 }
 
 .ui-kit-input-wrapper.white.disabled {
-	border: 1px solid var(--faint-middle);
+	border: 1px solid var(--faint-weak);
 }
 
 .ui-kit-input-label-common {
@@ -73,7 +73,7 @@
 }
 
 .ui-kit-input-label-common.disabled {
-	color: var(--faint-middle);
+	color: var(--faint-weak);
 }
 
 .ui-kit-input-label-common.invisible {
@@ -147,7 +147,7 @@
 }
 
 .ui-kit-input:disabled {
-	color: var(--faint-middle);
+	color: var(--faint-weak);
 
 	background-color: transparent;
 }
@@ -194,5 +194,5 @@
 }
 
 .ui-kit-input-icon.disabled {
-	color: var(--faint-middle);
+	color: var(--faint-weak);
 }
