@@ -5,7 +5,7 @@
 }
 
 .ui-kit-select-container:not([data-error=""]) .ui-kit-select__control {
-	outline: 1px solid var(--critic-strong);
+	border: 1px solid var(--critic-strong);
 }
 
 .ui-kit-select-container[data-theme="gray"] .ui-kit-select__control {

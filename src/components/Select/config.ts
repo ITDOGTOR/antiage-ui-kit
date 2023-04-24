@@ -6,8 +6,7 @@ export const defaultStyles: StylesConfig = {
 		return {
 			...classes,
 			display: 'flex',
-			outline: 'var(--back-faint-middle) 1px solid',
-			border: 'none',
+			border: 'var(--back-faint-middle) 1px solid',
 			alignItems: 'center',
 			padding: '0 14px',
 			borderRadius: 'var(--brad-base)',
