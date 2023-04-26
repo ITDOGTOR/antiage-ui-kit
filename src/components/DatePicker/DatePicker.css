@@ -76,7 +76,7 @@
 }
 
 .ui-kit-datepicker-label-common.disabled {
-	color: var(--faint-weak);
+	color: var(--faint-strong);
 }
 
 .ui-kit-datepicker-label.white {
@@ -194,7 +194,7 @@
 }
 
 .ui-kit-datepicker:disabled {
-	color: var(--faint-weak);
+	color: var(--faint-strong);
 
 	background-color: transparent;
 }
@@ -218,7 +218,7 @@
 }
 
 .ui-kit-datepicker-icon.disabled {
-	color: var(--faint-weak);
+	color: var(--faint-strong);
 }
 
 .ui-kit-datepicker-dropdown {
