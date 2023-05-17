@@ -29,6 +29,7 @@ import Eye from './Eye';
 import EyeClosed from './EyeClosed';
 import Female from './Female';
 import Heart from './Heart';
+import LayeredStar from './LayeredStar';
 import Letter from './Letter';
 import LinkAttachment from './LinkAttachment';
 import Lock from './Lock';
@@ -44,6 +45,7 @@ import ReportProblemCircle from './ReportProblemCircle';
 import Scan from './Scan';
 import Search from './Search';
 import Send from './Send';
+import Star from './Star';
 import Sync from './Sync';
 import SyncRounded from './SyncRounded';
 import Upload from './Upload';
@@ -279,6 +281,16 @@ function Template() {
 				<div className="svg-item">
 					<LinkAttachment />
 					Link Attachment
+				</div>
+
+				<div className="svg-item">
+					<LayeredStar />
+					Layered Star
+				</div>
+
+				<div className="svg-item">
+					<Star />
+					Star
 				</div>
 
 				<div className="svg-item">
