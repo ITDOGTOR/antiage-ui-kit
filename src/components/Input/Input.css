@@ -7,6 +7,8 @@
 
 	height: 44px;
 
+	font-weight: var(--fw-medium);
+
 	border: 1px solid transparent;
 	border-radius: var(--brad-base);
 }
@@ -49,7 +51,7 @@
 }
 
 .ui-kit-input-wrapper.white.disabled {
-	border: 1px solid var(--faint-strong);
+	border: 1px solid var(--back-faint-weak-darker);
 }
 
 .ui-kit-input-label-common {
