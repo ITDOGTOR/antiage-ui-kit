@@ -152,6 +152,7 @@
 
 .ui-kit-input:disabled {
 	color: var(--faint-strong);
+	-webkit-text-fill-color: var(--faint-strong);
 
 	background-color: transparent;
 }
