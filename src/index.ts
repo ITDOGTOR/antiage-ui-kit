@@ -10,6 +10,7 @@ import './components/InputError/InputError.css';
 import './components/DatePicker/DatePicker.css';
 import './components/PhoneInput/PhoneInput.css';
 import './components/Select/select.css';
+import './components/Status/Status.css';
 
 export * from './assets';
 export * from './components';
