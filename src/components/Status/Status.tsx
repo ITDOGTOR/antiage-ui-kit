@@ -11,13 +11,13 @@ function Status({text, color = 'accent', size = 'medium', containerClassName, te
 		containerClassName,
 	);
 
+	const textClasses = classNames('ui-kit-status-text', `ui-kit-status-text__size-${size}`, textClassName);
+
 	const iconClasses = classNames(
 		'ui-kit-status-icon',
 		`ui-kit-status-icon__size-${size}`,
 		`ui-kit-status-icon__color-${color}`,
 	);
-
-	const textClasses = classNames('ui-kit-status-text', `ui-kit-status-text__size-${size}`, textClassName);
 
 	return (
 		<div className={containerClasses}>
