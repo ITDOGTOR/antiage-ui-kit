@@ -21,7 +21,7 @@
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
 		"generate": "node ./utils/create-component",
-		"svgr": "npx @svgr/cli --template \"utils/templates/svg.js\" --index-template \"utils/templates/index-svg.js\" --svgo-config svgo.config.js --out-dir \"src/assets\" --ignore-existing --typescript -- \"src/assets\""
+		"svgr": "npx @svgr/cli --template \"utils/templates/svg.js\" --index-template \"utils/templates/index-svg.js\" --svgo-config svgo.config.js --out-dir \"src/assets\" --ignore-existing --typescript -- \"src/assets\" && node -e \"const fs = require('fs'); const path = require('path'); const svgFiles = fs.readdirSync('src/assets').filter(file => path.extname(file) === '.svg'); svgFiles.forEach(file => { const svgFilePath = path.join('src/assets', file); fs.unlinkSync(svgFilePath); });\""
 	},
 	"lint-staged": {
 		"*.css": "stylelint --fix",
