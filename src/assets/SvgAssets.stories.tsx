@@ -28,11 +28,13 @@ import Category from './Category';
 import Chart from './Chart';
 import Chat from './Chat';
 import Check from './Check';
+import CheckShield from './CheckShield';
 import CheckSquare from './CheckSquare';
 import ChevronHorizontal from './ChevronHorizontal';
 import ChevronVertical from './ChevronVertical';
 import Copy from './Copy';
 import Cross from './Cross';
+import CrossShield from './CrossShield';
 import CrossSquare from './CrossSquare';
 import Danger from './Danger';
 import DangerRounded from './DangerRounded';
@@ -88,8 +90,6 @@ import Scan from './Scan';
 import Search from './Search';
 import Send from './Send';
 import Settings from './Settings';
-import ShieldDone from './ShieldDone';
-import ShieldFail from './ShieldFail';
 import Star from './Star';
 import StarOutlined from './StarOutlined';
 import Swap from './Swap';
@@ -145,572 +145,582 @@ function Template() {
 				</li>
 			</ul>
 
-			<div className="svg-wrapper">
-				<div className="svg-item">
-					<ArrowVertical />
-					Arrow Vertical
-				</div>
-
-				<div className="svg-item">
-					<ArrowHorizontal />
-					Arrow Horizontal
-				</div>
-
-				<div className="svg-item">
-					<ArrowSquareVertical />
-					Arrow Square Vertical
-				</div>
-
-				<div className="svg-item">
-					<ArrowSquareHorizontal />
-					Arrow Square Horizontal
-				</div>
-
-				<div className="svg-item">
-					<ArrowRoundedVertical />
-					Arrow Rounded Vertical
-				</div>
-
-				<div className="svg-item">
-					<ArrowRoundedHorizontal />
-					Arrow Rounded Horizontal
-				</div>
-
-				<div className="svg-item">
-					<ArrowPointerVertical />
-					Arrow Pointer Vertical
-				</div>
-
-				<div className="svg-item">
-					<ArrowPointerHorizontal />
-					Arrow Pointer Horizontal
-				</div>
-
-				<div className="svg-item">
-					<ChevronVertical />
-					Chevron Vertical
-				</div>
-
-				<div className="svg-item">
-					<ChevronHorizontal />
-					Chevron Horizontal
-				</div>
-
-				<div className="svg-item">
-					<CaretVertical />
-					Caret Vertical
-				</div>
-
-				<div className="svg-item">
-					<CaretHorizontal />
-					Caret Horizontal
-				</div>
-
-				<br />
-
-				<div className="svg-item">
-					<Sync />
-					Sync
-				</div>
-
-				<div className="svg-item">
-					<SyncRounded />
-					Sync Rounded
-				</div>
-
-				<div className="svg-item">
-					<Refresh />
-					Refresh
-				</div>
-
-				<div className="svg-item">
-					<Wait />
-					Wait
-				</div>
-
-				<div className="svg-item">
-					<Plus />
-					Plus
-				</div>
-
-				<div className="svg-item">
-					<PlusSquare />
-					PlusSquare
-				</div>
-
-				<div className="svg-item">
-					<Minus />
-					Minus
-				</div>
-
-				<div className="svg-item">
-					<Cross />
-					Cross
-				</div>
-
-				<div className="svg-item">
-					<CrossSquare />
-					CrossSquare
-				</div>
-
-				<div className="svg-item">
-					<Check />
-					Check
-				</div>
-
-				<div className="svg-item">
-					<CheckSquare />
-					CheckSquare
-				</div>
-
-				<div className="svg-item">
-					<Male />
-					Male
-				</div>
-
-				<div className="svg-item">
-					<Female />
-					Female
-				</div>
-
-				<div className="svg-item">
-					<Calendar />
-					Calendar
-				</div>
-
-				<div className="svg-item">
-					<Letter />
-					Letter
-				</div>
-
-				<div className="svg-item">
-					<Lock />
-					Lock
-				</div>
-
-				<div className="svg-item">
-					<Unlock />
-					Unlock
-				</div>
-
-				<div className="svg-item">
-					<Eye />
-					Eye
-				</div>
-
-				<div className="svg-item">
-					<EyeClosed />
-					Eye Closed
-				</div>
-
-				<div className="svg-item">
-					<ReportProblem />
-					Report Problem
-				</div>
-
-				<div className="svg-item">
-					<ReportProblemCircle />
-					Report Problem Circle
-				</div>
-
-				<div className="svg-item">
-					<Edit />
-					Edit
-				</div>
-
-				<div className="svg-item">
-					<EditSquare />
-					EditSquare
-				</div>
-
-				<div className="svg-item">
-					<Copy />
-					Copy
-				</div>
-
-				<div className="svg-item">
-					<Delete />
-					Delete
-				</div>
-
-				<div className="svg-item">
-					<Search />
-					Search
-				</div>
-
-				<div className="svg-item">
-					<Send />
-					Send
-				</div>
-
-				<div className="svg-item">
-					<Buy />
-					Buy
-				</div>
-
-				<div className="svg-item">
-					<Call />
-					Call
-				</div>
-
-				<div className="svg-item">
-					<CallActive />
-					CallActive
-				</div>
-
-				<div className="svg-item">
-					<CallMissed />
-					CallMissed
-				</div>
-
-				<div className="svg-item">
-					<CallMute />
-					CallMute
-				</div>
-
-				<div className="svg-item">
-					<WhatsApp />
-					Whats App
-				</div>
-
-				<div className="svg-item">
-					<Chat />
-					Chat
-				</div>
-
-				<div className="svg-item">
-					<Document />
-					Document
-				</div>
-
-				<div className="svg-item">
-					<Paper />
-					Paper
-				</div>
-
-				<div className="svg-item">
-					<PaperPlus />
-					PaperPlus
-				</div>
-
-				<div className="svg-item">
-					<PaperMinus />
-					PaperMinus
-				</div>
-
-				<div className="svg-item">
-					<PaperDownload />
-					PaperDownload
-				</div>
-
-				<div className="svg-item">
-					<PaperUpload />
-					PaperUpload
-				</div>
-
-				<div className="svg-item">
-					<PaperFail />
-					PaperFail
-				</div>
-
-				<div className="svg-item">
-					<Email />
-					Email
-				</div>
-
-				<div className="svg-item">
-					<Phone />
-					Phone
-				</div>
-
-				<div className="svg-item">
-					<Wallet />
-					Wallet
-				</div>
-
-				<div className="svg-item">
-					<Heart />
-					Heart
-				</div>
-
-				<div className="svg-item">
-					<LinkAttachment />
-					Link Attachment
-				</div>
-
-				<div className="svg-item">
-					<LayeredStar />
-					Layered Star
-				</div>
-
-				<div className="svg-item">
-					<Star />
-					Star
-				</div>
-
-				<div className="svg-item">
-					<StarOutlined />
-					StarOutlined
-				</div>
-
-				<div className="svg-item">
-					<Upload />
-					Upload
-				</div>
-
-				<div className="svg-item">
-					<Download />
-					Download
-				</div>
-
-				<div className="svg-item">
-					<Camera />
-					Camera
-				</div>
-
-				<div className="svg-item">
-					<Scan />
-					Scan
-				</div>
-
-				<div className="svg-item">
-					<Bag />
-					Bag
-				</div>
-
-				<div className="svg-item">
-					<Bag2 />
-					Bag2
-				</div>
-
-				<div className="svg-item">
-					<Bell />
-					Bell
-				</div>
-
-				<div className="svg-item">
-					<PointPlus />
-					Point Plus
-				</div>
-
-				<div className="svg-item">
-					<PointMinus />
-					Point Minus
-				</div>
-
-				<div className="svg-item">
-					<Discovery />
-					Discovery
-				</div>
-
-				<div className="svg-item">
-					<Voice />
-					Voice
-				</div>
-
-				<div className="svg-item">
-					<Voice2 />
-					Voice2
-				</div>
-
-				<div className="svg-item">
-					<Activity />
-					Activity
-				</div>
-
-				<div className="svg-item">
-					<Folder />
-					Folder
-				</div>
-
-				<div className="svg-item">
-					<Location />
-					Location
-				</div>
-
-				<div className="svg-item">
-					<Graph />
-					Graph
-				</div>
-
-				<div className="svg-item">
-					<Settings />
-					Settings
-				</div>
-
-				<div className="svg-item">
-					<Bookmark />
-					Bookmark
-				</div>
-
-				<div className="svg-item">
-					<Time />
-					Time
-				</div>
-
-				<div className="svg-item">
-					<TimeSquare />
-					TimeSquare
-				</div>
-
-				<div className="svg-item">
-					<Video />
-					Video
-				</div>
-
-				<div className="svg-item">
-					<Category />
-					Category
-				</div>
-
-				<div className="svg-item">
-					<Play />
-					Play
-				</div>
-
-				<div className="svg-item">
-					<VolumeMute />
-					VolumeMute
-				</div>
-
-				<div className="svg-item">
-					<VolumeLow />
-					VolumeLow
-				</div>
-
-				<div className="svg-item">
-					<VolumeMax />
-					VolumeMax
-				</div>
-
-				<div className="svg-item">
-					<Home />
-					Home
-				</div>
-
-				<div className="svg-item">
-					<Chart />
-					Chart
-				</div>
-
-				<div className="svg-item">
-					<ShieldDone />
-					ShieldDone
-				</div>
-
-				<div className="svg-item">
-					<ShieldFail />
-					ShieldFail
-				</div>
-
-				<div className="svg-item">
-					<Game />
-					Game
-				</div>
-
-				<div className="svg-item">
-					<Filter />
-					Filter
-				</div>
-
-				<div className="svg-item">
-					<Filter2 />
-					Filter2
-				</div>
-
-				<div className="svg-item">
-					<Ticket />
-					Ticket
-				</div>
-
-				<div className="svg-item">
-					<TicketStar />
-					TicketStar
-				</div>
-
-				<div className="svg-item">
-					<MoreRounded />
-					MoreRounded
-				</div>
-
-				<div className="svg-item">
-					<MoreSquare />
-					MoreSquare
-				</div>
-
-				<div className="svg-item">
-					<User />
-					User
-				</div>
-
-				<div className="svg-item">
-					<UserPlus />
-					UserPlus
-				</div>
-
-				<div className="svg-item">
-					<UserGroup />
-					UserGroup
-				</div>
-
-				<div className="svg-item">
-					<UserGroup2 />
-					UserGroup2
-				</div>
-
-				<div className="svg-item">
-					<Image />
-					Image
-				</div>
-
-				<div className="svg-item">
-					<Image2 />
-					Image2
-				</div>
-
-				<div className="svg-item">
-					<Danger />
-					Danger
-				</div>
-
-				<div className="svg-item">
-					<DangerRounded />
-					DangerRounded
-				</div>
-
-				<div className="svg-item">
-					<Discount />
-					Discount
-				</div>
-
-				<div className="svg-item">
-					<InfoSquare />
-					InfoSquare
-				</div>
-
-				<div className="svg-item">
-					<Login />
-					Login
-				</div>
-
-				<div className="svg-item">
-					<Logout />
-					Logout
-				</div>
-
-				<div className="svg-item">
-					<Password />
-					Password
-				</div>
-
-				<div className="svg-item">
-					<Swap />
-					Swap
-				</div>
-
-				<div className="svg-item">
-					<Work />
-					Work
+			<div className="svg__container">
+				<div className="svg-section__wrapper">
+					<div className="svg-item">
+						<ArrowVertical />
+						ArrowVertical
+					</div>
+
+					<div className="svg-item">
+						<ArrowHorizontal />
+						ArrowHorizontal
+					</div>
+
+					<div className="svg-item">
+						<ArrowSquareVertical />
+						ArrowSquareVertical
+					</div>
+
+					<div className="svg-item">
+						<ArrowSquareHorizontal />
+						ArrowSquareHorizontal
+					</div>
+
+					<div className="svg-item">
+						<ArrowRoundedVertical />
+						ArrowRoundedVertical
+					</div>
+
+					<div className="svg-item">
+						<ArrowRoundedHorizontal />
+						ArrowRoundedHorizontal
+					</div>
+
+					<div className="svg-item">
+						<ArrowPointerVertical />
+						ArrowPointerVertical
+					</div>
+
+					<div className="svg-item">
+						<ArrowPointerHorizontal />
+						ArrowPointerHorizontal
+					</div>
+
+					<div className="svg-item">
+						<ChevronVertical />
+						ChevronVertical
+					</div>
+
+					<div className="svg-item">
+						<ChevronHorizontal />
+						ChevronHorizontal
+					</div>
+
+					<div className="svg-item">
+						<CaretVertical />
+						CaretVertical
+					</div>
+
+					<div className="svg-item">
+						<CaretHorizontal />
+						CaretHorizontal
+					</div>
+				</div>
+
+				<div className="svg-section__wrapper">
+					<div className="svg-item">
+						<Plus />
+						Plus
+					</div>
+
+					<div className="svg-item">
+						<PlusSquare />
+						PlusSquare
+					</div>
+
+					<div className="svg-item">
+						<Check />
+						Check
+					</div>
+
+					<div className="svg-item">
+						<CheckSquare />
+						CheckSquare
+					</div>
+
+					<div className="svg-item">
+						<CheckShield />
+						CheckShield
+					</div>
+
+					<div className="svg-item">
+						<Minus />
+						Minus
+					</div>
+
+					<div className="svg-item">
+						<Cross />
+						Cross
+					</div>
+
+					<div className="svg-item">
+						<CrossSquare />
+						CrossSquare
+					</div>
+
+					<div className="svg-item">
+						<CrossShield />
+						CrossShield
+					</div>
+				</div>
+
+				<div className="svg-section__wrapper">
+					<div className="svg-item">
+						<Male />
+						Male
+					</div>
+
+					<div className="svg-item">
+						<Female />
+						Female
+					</div>
+
+					<div className="svg-item">
+						<Lock />
+						Lock
+					</div>
+
+					<div className="svg-item">
+						<Unlock />
+						Unlock
+					</div>
+
+					<div className="svg-item">
+						<Eye />
+						Eye
+					</div>
+
+					<div className="svg-item">
+						<EyeClosed />
+						EyeClosed
+					</div>
+
+					<div className="svg-item">
+						<Sync />
+						Sync
+					</div>
+
+					<div className="svg-item">
+						<SyncRounded />
+						SyncRounded
+					</div>
+
+					<div className="svg-item">
+						<Edit />
+						Edit
+					</div>
+
+					<div className="svg-item">
+						<EditSquare />
+						EditSquare
+					</div>
+
+					<div className="svg-item">
+						<ReportProblem />
+						ReportProblem
+					</div>
+
+					<div className="svg-item">
+						<ReportProblemCircle />
+						ReportProblemCircle
+					</div>
+
+					<div className="svg-item">
+						<Upload />
+						Upload
+					</div>
+
+					<div className="svg-item">
+						<Download />
+						Download
+					</div>
+
+					<div className="svg-item">
+						<Bag />
+						Bag
+					</div>
+
+					<div className="svg-item">
+						<Bag2 />
+						Bag2
+					</div>
+
+					<div className="svg-item">
+						<PointPlus />
+						PointPlus
+					</div>
+
+					<div className="svg-item">
+						<PointMinus />
+						PointMinus
+					</div>
+
+					<div className="svg-item">
+						<Voice />
+						Voice
+					</div>
+
+					<div className="svg-item">
+						<Voice2 />
+						Voice2
+					</div>
+
+					<div className="svg-item">
+						<Time />
+						Time
+					</div>
+
+					<div className="svg-item">
+						<TimeSquare />
+						TimeSquare
+					</div>
+
+					<div className="svg-item">
+						<Filter />
+						Filter
+					</div>
+
+					<div className="svg-item">
+						<Filter2 />
+						Filter2
+					</div>
+
+					<div className="svg-item">
+						<Ticket />
+						Ticket
+					</div>
+
+					<div className="svg-item">
+						<TicketStar />
+						TicketStar
+					</div>
+
+					<div className="svg-item">
+						<MoreRounded />
+						MoreRounded
+					</div>
+
+					<div className="svg-item">
+						<MoreSquare />
+						MoreSquare
+					</div>
+
+					<div className="svg-item">
+						<Danger />
+						Danger
+					</div>
+
+					<div className="svg-item">
+						<DangerRounded />
+						DangerRounded
+					</div>
+
+					<div className="svg-item">
+						<Login />
+						Login
+					</div>
+
+					<div className="svg-item">
+						<Logout />
+						Logout
+					</div>
+				</div>
+
+				<div className="svg-section__wrapper">
+					<div className="svg-item">
+						<WhatsApp />
+						WhatsApp
+					</div>
+
+					<div className="svg-item">
+						<Chat />
+						Chat
+					</div>
+
+					<div className="svg-item">
+						<Call />
+						Call
+					</div>
+
+					<div className="svg-item">
+						<CallActive />
+						CallActive
+					</div>
+
+					<div className="svg-item">
+						<CallMissed />
+						CallMissed
+					</div>
+
+					<div className="svg-item">
+						<CallMute />
+						CallMute
+					</div>
+
+					<div className="svg-item">
+						<Play />
+						Play
+					</div>
+
+					<div className="svg-item">
+						<VolumeMute />
+						VolumeMute
+					</div>
+
+					<div className="svg-item">
+						<VolumeLow />
+						VolumeLow
+					</div>
+
+					<div className="svg-item">
+						<VolumeMax />
+						VolumeMax
+					</div>
+				</div>
+
+				<div className="svg-section__wrapper">
+					<div className="svg-item">
+						<Document />
+						Document
+					</div>
+
+					<div className="svg-item">
+						<Paper />
+						Paper
+					</div>
+
+					<div className="svg-item">
+						<PaperPlus />
+						PaperPlus
+					</div>
+
+					<div className="svg-item">
+						<PaperMinus />
+						PaperMinus
+					</div>
+
+					<div className="svg-item">
+						<PaperDownload />
+						PaperDownload
+					</div>
+
+					<div className="svg-item">
+						<PaperUpload />
+						PaperUpload
+					</div>
+
+					<div className="svg-item">
+						<PaperFail />
+						PaperFail
+					</div>
+
+					<div className="svg-item">
+						<Activity />
+						Activity
+					</div>
+
+					<div className="svg-item">
+						<Folder />
+						Folder
+					</div>
+
+					<div className="svg-item">
+						<Chart />
+						Chart
+					</div>
+
+					<div className="svg-item">
+						<Image />
+						Image
+					</div>
+
+					<div className="svg-item">
+						<Image2 />
+						Image2
+					</div>
+				</div>
+
+				<div className="svg-section__wrapper">
+					<div className="svg-item">
+						<Refresh />
+						Refresh
+					</div>
+
+					<div className="svg-item">
+						<Wait />
+						Wait
+					</div>
+
+					<div className="svg-item">
+						<Calendar />
+						Calendar
+					</div>
+
+					<div className="svg-item">
+						<Letter />
+						Letter
+					</div>
+
+					<div className="svg-item">
+						<Copy />
+						Copy
+					</div>
+
+					<div className="svg-item">
+						<Delete />
+						Delete
+					</div>
+
+					<div className="svg-item">
+						<Search />
+						Search
+					</div>
+
+					<div className="svg-item">
+						<Send />
+						Send
+					</div>
+
+					<div className="svg-item">
+						<Buy />
+						Buy
+					</div>
+
+					<div className="svg-item">
+						<Email />
+						Email
+					</div>
+
+					<div className="svg-item">
+						<Phone />
+						Phone
+					</div>
+
+					<div className="svg-item">
+						<Wallet />
+						Wallet
+					</div>
+
+					<div className="svg-item">
+						<Heart />
+						Heart
+					</div>
+
+					<div className="svg-item">
+						<LinkAttachment />
+						LinkAttachment
+					</div>
+
+					<div className="svg-item">
+						<LayeredStar />
+						LayeredStar
+					</div>
+
+					<div className="svg-item">
+						<Star />
+						Star
+					</div>
+
+					<div className="svg-item">
+						<StarOutlined />
+						StarOutlined
+					</div>
+
+					<div className="svg-item">
+						<Camera />
+						Camera
+					</div>
+
+					<div className="svg-item">
+						<Scan />
+						Scan
+					</div>
+
+					<div className="svg-item">
+						<Bell />
+						Bell
+					</div>
+
+					<div className="svg-item">
+						<Discovery />
+						Discovery
+					</div>
+
+					<div className="svg-item">
+						<Location />
+						Location
+					</div>
+
+					<div className="svg-item">
+						<Graph />
+						Graph
+					</div>
+
+					<div className="svg-item">
+						<Settings />
+						Settings
+					</div>
+
+					<div className="svg-item">
+						<Bookmark />
+						Bookmark
+					</div>
+
+					<div className="svg-item">
+						<Video />
+						Video
+					</div>
+
+					<div className="svg-item">
+						<Category />
+						Category
+					</div>
+
+					<div className="svg-item">
+						<Home />
+						Home
+					</div>
+
+					<div className="svg-item">
+						<Game />
+						Game
+					</div>
+
+					<div className="svg-item">
+						<User />
+						User
+					</div>
+
+					<div className="svg-item">
+						<UserPlus />
+						UserPlus
+					</div>
+
+					<div className="svg-item">
+						<UserGroup />
+						UserGroup
+					</div>
+
+					<div className="svg-item">
+						<UserGroup2 />
+						UserGroup2
+					</div>
+
+					<div className="svg-item">
+						<Discount />
+						Discount
+					</div>
+
+					<div className="svg-item">
+						<InfoSquare />
+						InfoSquare
+					</div>
+
+					<div className="svg-item">
+						<Password />
+						Password
+					</div>
+
+					<div className="svg-item">
+						<Swap />
+						Swap
+					</div>
+
+					<div className="svg-item">
+						<Work />
+						Work
+					</div>
 				</div>
 			</div>
 		</div>

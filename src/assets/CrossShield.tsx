@@ -1,6 +1,6 @@
 import React, {SVGProps} from 'react';
 
-function ShieldFail(props: SVGProps<SVGSVGElement>) {
+function CrossShield(props: SVGProps<SVGSVGElement>) {
 	return (
 		<svg fill="none" height={21} viewBox="0 0 18 21" width={18} xmlns="http://www.w3.org/2000/svg" {...props}>
 			<path
@@ -10,4 +10,4 @@ function ShieldFail(props: SVGProps<SVGSVGElement>) {
 		</svg>
 	);
 }
-export default ShieldFail;
+export default CrossShield;
