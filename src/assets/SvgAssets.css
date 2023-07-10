@@ -25,6 +25,7 @@
 }
 
 .svg-item svg {
-	width: 26px;
+	min-width: 16px;
+	max-width: 26px;
 	height: auto;
 }

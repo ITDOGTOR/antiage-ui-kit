@@ -2,14 +2,11 @@ import React, {SVGProps} from 'react';
 
 function Time(props: SVGProps<SVGSVGElement>) {
 	return (
-		<svg fill="none" height={14} viewBox="0 0 14 14" width={14} xmlns="http://www.w3.org/2000/svg" {...props}>
+		<svg fill="none" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg" {...props}>
 			<path
-				d="M13 7c0 3.326-2.66 6-5.968 6S1 10.326 1 7s2.66-6 5.968-6S13 3.674 13 7Z"
-				stroke="currentColor"
-				strokeLinecap="round"
-				strokeLinejoin="round"
+				d="M0.900024 10.1003C0.900024 4.60034 5.40002 0.100342 10.9 0.100342C16.4 0.100342 20.9 4.60034 20.9 10.1003C20.9 15.6003 16.4 20.1003 10.9 20.1003C5.40002 20.1003 1.00002 15.6003 0.900024 10.1003ZM2.50002 10.1003C2.50002 14.8003 6.30002 18.6003 11 18.6003C15.7 18.6003 19.5 14.8003 19.5 10.1003C19.5 5.40034 15.7 1.60034 11 1.60034C6.30002 1.60034 2.50002 5.40034 2.50002 10.1003ZM14.1 13.7003L10.2 11.4003C10 11.3003 9.90003 11.1003 9.80002 10.9003V10.8003V5.90034C9.80002 5.50034 10.1 5.20034 10.6 5.20034C11 5.20034 11.3 5.50034 11.3 5.80034V5.90034V10.3003L14.7 12.3003C15 12.5003 15.2 12.9003 15 13.2003V13.3003C14.8 13.8003 14.4 13.9003 14.1 13.7003Z"
+				fill="currentColor"
 			/>
-			<path d="m9.238 8.891-2.465-1.5v-3.13" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
 		</svg>
 	);
 }
