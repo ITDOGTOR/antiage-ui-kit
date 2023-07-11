@@ -12,7 +12,6 @@ import ArrowSquareHorizontal from './ArrowSquareHorizontal';
 import ArrowSquareVertical from './ArrowSquareVertical';
 import ArrowVertical from './ArrowVertical';
 import Bag from './Bag';
-import Bag2 from './Bag2';
 import Bell from './Bell';
 import Bookmark from './Bookmark';
 import Buy from './Buy';
@@ -57,7 +56,6 @@ import Graph from './Graph';
 import Heart from './Heart';
 import Home from './Home';
 import Image from './Image';
-import Image2 from './Image2';
 import InfoSquare from './InfoSquare';
 import LayeredStar from './LayeredStar';
 import Letter from './Letter';
@@ -107,7 +105,6 @@ import UserGroup2 from './UserGroup2';
 import UserPlus from './UserPlus';
 import Video from './Video';
 import Voice from './Voice';
-import Voice2 from './Voice2';
 import VolumeLow from './VolumeLow';
 import VolumeMax from './VolumeMax';
 import VolumeMute from './VolumeMute';
@@ -327,16 +324,6 @@ function Template() {
 					</div>
 
 					<div className="svg-item">
-						<Bag />
-						Bag
-					</div>
-
-					<div className="svg-item">
-						<Bag2 />
-						Bag2
-					</div>
-
-					<div className="svg-item">
 						<PointPlus />
 						PointPlus
 					</div>
@@ -344,16 +331,6 @@ function Template() {
 					<div className="svg-item">
 						<PointMinus />
 						PointMinus
-					</div>
-
-					<div className="svg-item">
-						<Voice />
-						Voice
-					</div>
-
-					<div className="svg-item">
-						<Voice2 />
-						Voice2
 					</div>
 
 					<div className="svg-item">
@@ -449,6 +426,11 @@ function Template() {
 					</div>
 
 					<div className="svg-item">
+						<Voice />
+						Voice
+					</div>
+
+					<div className="svg-item">
 						<Play />
 						Play
 					</div>
@@ -523,11 +505,6 @@ function Template() {
 					<div className="svg-item">
 						<Image />
 						Image
-					</div>
-
-					<div className="svg-item">
-						<Image2 />
-						Image2
 					</div>
 				</div>
 
@@ -675,6 +652,11 @@ function Template() {
 					<div className="svg-item">
 						<Game />
 						Game
+					</div>
+
+					<div className="svg-item">
+						<Bag />
+						Bag
 					</div>
 
 					<div className="svg-item">
