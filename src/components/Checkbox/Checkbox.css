@@ -1,0 +1,128 @@
+.ui-kit-checkbox__wrapper {
+	width: max-content;
+}
+
+.ui-kit-checkbox__wrapper-disabled {
+	cursor: not-allowed;
+}
+
+.ui-kit-checkbox-input__hidden {
+	display: none;
+}
+
+.ui-kit-checkbox {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: flex-start;
+	width: min-content;
+
+	cursor: pointer;
+}
+
+.ui-kit-checkbox-input__hidden:disabled + .ui-kit-checkbox {
+	pointer-events: none;
+}
+
+/* Стили для чекбокса */
+.ui-kit-checkbox-fakeInput {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+
+	border: 3px solid transparent;
+	border-radius: var(--brad-circle);
+
+	transition: border-color 0.1s linear, background-color 0.1s linear;
+}
+
+.ui-kit-checkbox-fakeInput__theme-white {
+	background-color: var(--faint-weak);
+	border-color: var(--faint-weak);
+}
+
+.ui-kit-checkbox-fakeInput__theme-gray {
+	background-color: var(--base-weak);
+	border-color: var(--base-weak);
+}
+
+.ui-kit-checkbox:hover .ui-kit-checkbox-fakeInput__theme-white,
+.ui-kit-checkbox:hover .ui-kit-checkbox-fakeInput__theme-gray {
+	background-color: var(--faint-weak-darker);
+	border-color: var(--faint-weak-darker);
+}
+
+.ui-kit-checkbox-input__hidden:checked + .ui-kit-checkbox .ui-kit-checkbox-fakeInput__theme-white,
+.ui-kit-checkbox-input__hidden:checked + .ui-kit-checkbox .ui-kit-checkbox-fakeInput__theme-gray {
+	background-color: var(--complement-strong);
+	border-color: var(--complement-strong);
+}
+
+.ui-kit-checkbox-input__hidden:checked + .ui-kit-checkbox:hover .ui-kit-checkbox-fakeInput__theme-white,
+.ui-kit-checkbox-input__hidden:checked + .ui-kit-checkbox:hover .ui-kit-checkbox-fakeInput__theme-gray {
+	background-color: var(--complement-strong-darker);
+	border-color: var(--complement-strong-darker);
+}
+
+.ui-kit-checkbox-input__hidden:disabled + .ui-kit-checkbox .ui-kit-checkbox-fakeInput__theme-white {
+	background-color: var(--base-weak);
+	border-color: var(--faint-weak);
+}
+
+.ui-kit-checkbox-input__hidden:disabled + .ui-kit-checkbox .ui-kit-checkbox-fakeInput__theme-gray {
+	background-color: var(--faint-weak);
+	border-color: var(--base-weak);
+}
+
+/* Стили для иконки чекбокса */
+.ui-kit-checkbox-fakeInput-icon {
+	width: 10px;
+	height: 10px;
+
+	transition: color 0.1s linear;
+}
+
+.ui-kit-checkbox-fakeInput-icon__theme-white {
+	color: var(--base-weak);
+}
+
+.ui-kit-checkbox-fakeInput-icon__theme-gray {
+	color: var(--faint-weak);
+}
+
+.ui-kit-checkbox:hover .ui-kit-checkbox-fakeInput-icon__theme-gray,
+.ui-kit-checkbox-input__hidden:checked + .ui-kit-checkbox .ui-kit-checkbox-fakeInput-icon__theme-gray {
+	color: var(--base-weak);
+}
+
+.ui-kit-checkbox-input__hidden:disabled + .ui-kit-checkbox .ui-kit-checkbox-fakeInput-icon__theme-white {
+	color: var(--faint-weak);
+}
+
+.ui-kit-checkbox-input__hidden:disabled + .ui-kit-checkbox .ui-kit-checkbox-fakeInput-icon__theme-gray {
+	color: var(--base-weak);
+}
+
+/* Стили для текста */
+.ui-kit-checkbox-text {
+	color: var(--base-strong);
+	font-weight: 500;
+	font-size: var(--fs-sm);
+
+	transition: font-weight 0.1s linear, color 0.1s linear;
+}
+
+.ui-kit-checkbox-input__hidden:checked:not(:disabled) + .ui-kit-checkbox .ui-kit-checkbox-text {
+	font-weight: 600;
+}
+
+.ui-kit-checkbox-input__hidden:checked + .ui-kit-checkbox:hover .ui-kit-checkbox-text {
+	font-weight: 700;
+}
+
+.ui-kit-checkbox-input__hidden:disabled + .ui-kit-checkbox .ui-kit-checkbox-text {
+	color: var(--faint-strong);
+}
