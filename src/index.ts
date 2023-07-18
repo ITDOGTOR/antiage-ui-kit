@@ -11,6 +11,7 @@ import './components/DatePicker/DatePicker.css';
 import './components/PhoneInput/PhoneInput.css';
 import './components/Select/select.css';
 import './components/Status/Status.css';
+import './components/Checkbox/Checkbox.css';
 
 export * from './assets';
 export * from './components';
