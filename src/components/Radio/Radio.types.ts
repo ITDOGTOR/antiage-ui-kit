@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import {Theme} from '../index.types';
 
-export interface CheckboxProps {
+export interface RadioProps {
+	name: string;
 	id: string;
 	value?: any;
 	onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;

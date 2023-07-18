@@ -1,12 +1,12 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import React from 'react';
 
-import Checkbox from './Checkbox';
-import {CheckboxProps} from './Checkbox.types';
+import Radio from './Radio';
+import {RadioProps} from './Radio.types';
 
 export default {
-	title: 'Checkbox',
-	component: Checkbox,
+	title: 'Radio',
+	component: Radio,
 	argTypes: {
 		value: {
 			defaultValue: '',
@@ -18,6 +18,10 @@ export default {
 		},
 		containerClassName: {
 			defaultValue: '',
+			control: {type: 'text'},
+		},
+		name: {
+			defaultValue: 'radioGroupName',
 			control: {type: 'text'},
 		},
 		defaultChecked: {
@@ -48,11 +52,11 @@ export default {
 			},
 		},
 	},
-} as ComponentMeta<typeof Checkbox>;
+} as ComponentMeta<typeof Radio>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof Checkbox> = (args: CheckboxProps) => {
-	return <Checkbox {...args} />;
+const Template: ComponentStory<typeof Radio> = (args: RadioProps) => {
+	return <Radio {...args} />;
 };
 
 export const Sandbox = Template.bind({});

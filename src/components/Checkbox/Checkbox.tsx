@@ -6,16 +6,16 @@ import {CheckboxProps} from './Checkbox.types';
 
 function Checkbox({
 	id,
-	checked,
+	value,
 	onChange,
 	onClick,
 	theme,
 	disabled,
 	defaultChecked,
-	text,
+	label,
 	containerClassName,
 	className,
-	textClassName,
+	labelClassName,
 	...props
 }: CheckboxProps) {
 	const wrapperClasses = classNames('ui-kit-checkbox__wrapper', disabled && 'ui-kit-checkbox__wrapper-disabled');
@@ -24,18 +24,17 @@ function Checkbox({
 	const inputIconClasses = classNames(
 		'ui-kit-checkbox-fakeInput-icon',
 		`ui-kit-checkbox-fakeInput-icon__theme-${theme}`,
-		className,
 	);
-	const textClasses = classNames('ui-kit-checkbox-text', textClassName);
+	const labelClasses = classNames('ui-kit-checkbox-label', labelClassName);
 	return (
 		<div className={wrapperClasses}>
 			<input
-				checked={checked}
 				className="ui-kit-checkbox-input__hidden"
 				defaultChecked={defaultChecked}
 				disabled={disabled}
 				id={id}
 				type="checkbox"
+				value={value}
 				onChange={onChange}
 				onClick={onClick}
 				{...props}
@@ -44,7 +43,7 @@ function Checkbox({
 				<div className={inputClasses}>
 					<Check className={inputIconClasses} />
 				</div>
-				<span className={textClasses}>{text}</span>
+				<span className={labelClasses}>{label}</span>
 			</label>
 		</div>
 	);

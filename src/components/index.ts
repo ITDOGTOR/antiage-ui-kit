@@ -5,6 +5,7 @@ export {default as DatePicker} from './DatePicker';
 export {default as Input} from './Input';
 export {default as Link} from './Link';
 export {default as PhoneInput} from './PhoneInput';
+export {default as Radio} from './Radio';
 export {default as Select} from './Select';
 export {default as Status} from './Status';
 export {default as Switch} from './Switch';

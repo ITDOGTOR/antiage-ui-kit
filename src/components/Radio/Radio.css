@@ -1,0 +1,130 @@
+.ui-kit-radio__wrapper {
+	width: max-content;
+}
+
+.ui-kit-radio__wrapper-disabled {
+	cursor: not-allowed;
+}
+
+.ui-kit-radio-input__hidden {
+	display: none;
+}
+
+.ui-kit-radio {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: flex-start;
+	width: fit-content;
+
+	cursor: pointer;
+}
+
+.ui-kit-radio-input__hidden:disabled + .ui-kit-radio {
+	pointer-events: none;
+}
+
+/* Стили для радио-батона */
+.ui-kit-radio-fakeInput {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+
+	border: 3px solid transparent;
+	border-radius: var(--brad-circle);
+
+	transition: border-color 0.1s linear, background-color 0.1s linear;
+}
+
+.ui-kit-radio-fakeInput__theme-white {
+	background-color: var(--faint-weak);
+	border-color: var(--faint-weak);
+}
+
+.ui-kit-radio-fakeInput__theme-gray {
+	background-color: var(--base-weak);
+	border-color: var(--base-weak);
+}
+
+.ui-kit-radio:hover .ui-kit-radio-fakeInput__theme-white,
+.ui-kit-radio:hover .ui-kit-radio-fakeInput__theme-gray {
+	background-color: var(--faint-weak-darker);
+	border-color: var(--faint-weak-darker);
+}
+
+.ui-kit-radio-input__hidden:checked + .ui-kit-radio .ui-kit-radio-fakeInput__theme-white,
+.ui-kit-radio-input__hidden:checked + .ui-kit-radio .ui-kit-radio-fakeInput__theme-gray {
+	background-color: var(--complement-strong);
+	border-color: var(--complement-strong);
+}
+
+.ui-kit-radio-input__hidden:checked + .ui-kit-radio:hover .ui-kit-radio-fakeInput__theme-white,
+.ui-kit-radio-input__hidden:checked + .ui-kit-radio:hover .ui-kit-radio-fakeInput__theme-gray {
+	background-color: var(--complement-strong-darker);
+	border-color: var(--complement-strong-darker);
+}
+
+.ui-kit-radio-input__hidden:disabled + .ui-kit-radio .ui-kit-radio-fakeInput__theme-white {
+	background-color: var(--base-weak);
+	border-color: var(--faint-weak);
+}
+
+.ui-kit-radio-input__hidden:disabled + .ui-kit-radio .ui-kit-radio-fakeInput__theme-gray {
+	background-color: var(--faint-weak);
+	border-color: var(--base-weak);
+}
+
+/* Стили для иконки радио-батона */
+.ui-kit-radio-fakeInput-icon {
+	width: 10px;
+	height: 10px;
+
+	border-radius: 50%;
+
+	transition: background-color 0.1s linear;
+}
+
+.ui-kit-radio-fakeInput-icon__theme-white {
+	background-color: var(--base-weak);
+}
+
+.ui-kit-radio-fakeInput-icon__theme-gray {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-radio:hover .ui-kit-radio-fakeInput-icon__theme-gray,
+.ui-kit-radio-input__hidden:checked + .ui-kit-radio .ui-kit-radio-fakeInput-icon__theme-gray {
+	background-color: var(--base-weak);
+}
+
+.ui-kit-radio-input__hidden:disabled + .ui-kit-radio .ui-kit-radio-fakeInput-icon__theme-white {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-radio-input__hidden:disabled + .ui-kit-radio .ui-kit-radio-fakeInput-icon__theme-gray {
+	background-color: var(--base-weak);
+}
+
+/* Стили для текста */
+.ui-kit-radio-label {
+	color: var(--base-strong);
+	font-weight: 500;
+	font-size: var(--fs-sm);
+
+	transition: font-weight 0.1s linear, color 0.1s linear;
+}
+
+.ui-kit-radio-input__hidden:checked:not(:disabled) + .ui-kit-radio .ui-kit-radio-label {
+	font-weight: 600;
+}
+
+.ui-kit-radio-input__hidden:checked + .ui-kit-radio:hover .ui-kit-radio-label {
+	font-weight: 700;
+}
+
+.ui-kit-radio-input__hidden:disabled + .ui-kit-radio .ui-kit-radio-label {
+	color: var(--faint-strong);
+}
