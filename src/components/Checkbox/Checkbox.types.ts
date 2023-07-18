@@ -4,14 +4,14 @@ import {Theme} from '../index.types';
 
 export interface CheckboxProps {
 	id: string;
-	checked?: boolean;
+	value?: any;
 	onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
 	onClick?: React.MouseEventHandler<HTMLElement> | undefined;
 	theme?: Theme;
 	disabled?: boolean;
 	defaultChecked?: boolean;
-	text?: string;
+	label?: string;
 	className?: string;
-	textClassName?: string;
+	labelClassName?: string;
 	containerClassName?: string;
 }

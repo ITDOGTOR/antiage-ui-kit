@@ -8,9 +8,9 @@ export default {
 	title: 'Checkbox',
 	component: Checkbox,
 	argTypes: {
-		checked: {
-			defaultValue: false,
-			control: {type: 'boolean'},
+		value: {
+			defaultValue: '',
+			control: {type: 'text'},
 		},
 		className: {
 			defaultValue: '',
@@ -32,11 +32,11 @@ export default {
 			defaultValue: 'checkboxId',
 			control: {type: 'text'},
 		},
-		text: {
+		label: {
 			defaultValue: 'Значение',
 			control: {type: 'text'},
 		},
-		textClassName: {
+		labelClassName: {
 			defaultValue: '',
 			control: {type: 'text'},
 		},
