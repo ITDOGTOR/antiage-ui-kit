@@ -1,48 +1,16 @@
-import {PaginationProps, Table as TableAntd} from 'antd';
-import classNames from 'classnames';
+import {Table as TableAntd} from 'antd';
 import React from 'react';
 
-import {ChevronHorizontal} from '../../assets';
 import {TableProps} from './Table.types';
+import {getPaginationComponentLocal} from "./ui";
 
-const itemRender: PaginationProps['itemRender'] = (_, type, originalElement) => {
-	if (type === 'prev') {
-		return (
-			<button className={classNames('ui-kit-pagination-button')} tabIndex={-1} type="button">
-				<ChevronHorizontal aria-label="left" />
-			</button>
-		);
-	}
 
-	if (type === 'next') {
-		return (
-			<button className={classNames('ui-kit-pagination-button')} tabIndex={-1} type="button">
-				<ChevronHorizontal aria-label="right" />
-			</button>
-		);
-	}
 
-	if (type.includes('jump')) {
-		return (
-			<button className={classNames('ui-kit-pagination-button')} tabIndex={-1} type="button">
-				..{' '}
-			</button>
-		);
-	}
-
-	return originalElement;
-};
-
-function Table({theme = 'white', ...props}: TableProps) {
+function Table({theme = 'white', getPaginationComponent = getPaginationComponentLocal, ...props}: TableProps) {
+	const Pagination = getPaginationComponent({ theme });
 	return (
 		<TableAntd
-			pagination={{
-				hideOnSinglePage: true,
-				className: classNames('ui-kit-pagination', ['ui-kit-pagination', theme].join('-')),
-				position: ['bottomCenter'],
-				showSizeChanger: false,
-				itemRender,
-			}}
+			pagination={Pagination}
 			showSorterTooltip={false}
 			{...props}
 		/>

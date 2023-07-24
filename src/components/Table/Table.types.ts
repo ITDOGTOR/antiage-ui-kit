@@ -6,4 +6,5 @@ import {Theme} from '../index.types';
 export declare interface TableProps extends TablePropsAntd {
 	className?: string;
 	theme?: Theme;
+	getPaginationComponent?: (props: any) => {} | false;
 }
