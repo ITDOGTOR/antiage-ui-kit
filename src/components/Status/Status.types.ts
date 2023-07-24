@@ -1,6 +1,6 @@
-import {Size} from '../index.types';
+import {Size, Theme} from '../index.types';
 
-declare const StatusColorsOptions: ['accent', 'complement', 'warning', 'critic', 'success'];
+declare const StatusColorsOptions: ['accent', 'complement', 'warning', 'critic', 'success', 'disabled'];
 export declare type StatusColor = (typeof StatusColorsOptions)[number];
 
 export declare type StatusProps = {
@@ -9,4 +9,5 @@ export declare type StatusProps = {
 	size?: Size;
 	containerClassName?: string;
 	textClassName?: string;
+	theme?: Theme;
 };
