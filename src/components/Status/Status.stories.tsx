@@ -28,6 +28,12 @@ export default {
 			defaultValue: '',
 			control: {type: 'text'},
 		},
+		theme: {
+			defaultValue: 'white',
+			control: {
+				type: 'inline-radio',
+			},
+		},
 	},
 } as ComponentMeta<typeof Status>;
 

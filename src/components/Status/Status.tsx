@@ -3,15 +3,27 @@ import React from 'react';
 
 import {StatusProps} from './Status.types';
 
-function Status({text, color = 'accent', size = 'medium', containerClassName, textClassName}: StatusProps) {
+function Status({
+	text,
+	color = 'accent',
+	size = 'medium',
+	containerClassName,
+	textClassName,
+	theme = 'white',
+}: StatusProps) {
 	const containerClasses = classNames(
 		'ui-kit-status',
 		`ui-kit-status__size-${size}`,
-		`ui-kit-status__color-${color}`,
+		`ui-kit-status__color-${color}__theme-${theme}`,
 		containerClassName,
 	);
 
-	const textClasses = classNames('ui-kit-status-text', `ui-kit-status-text__size-${size}`, textClassName);
+	const textClasses = classNames(
+		'ui-kit-status-text',
+		`ui-kit-status-text__size-${size}`,
+		`ui-kit-status-text__color-${color}`,
+		textClassName,
+	);
 
 	const iconClasses = classNames(
 		'ui-kit-status-icon',

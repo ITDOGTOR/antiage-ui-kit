@@ -1,3 +1,4 @@
+/* Стили контейнера статуса */
 .ui-kit-status {
 	position: relative;
 
@@ -12,7 +13,7 @@
 
 .ui-kit-status__size-small {
 	min-width: 80px;
-	height: 26px;
+	height: 28px;
 }
 
 .ui-kit-status__size-medium {
@@ -23,38 +24,60 @@
 .ui-kit-status__size-large {
 	min-width: 160px;
 	height: 44px;
+	padding: 10px;
+
+	border-radius: 16px;
 }
 
-.ui-kit-status__color-accent {
-	color: var(--accent-strong-darker);
+.ui-kit-status__color-accent__theme-white {
+	background: var(--accent-weak-lighter);
+}
 
+.ui-kit-status__color-complement__theme-white {
+	background: var(--complement-weak-lighter);
+}
+
+.ui-kit-status__color-warning__theme-white {
+	background: var(--warning-weak-lighter);
+}
+
+.ui-kit-status__color-critic__theme-white {
+	background: var(--critic-weak-lighter);
+}
+
+.ui-kit-status__color-success__theme-white {
+	background: var(--success-weak-lighter);
+}
+
+.ui-kit-status__color-disabled__theme-white {
+	background: var(--faint-weak);
+}
+
+.ui-kit-status__color-accent__theme-gray {
 	background: var(--accent-weak);
 }
 
-.ui-kit-status__color-complement {
-	color: var(--complement-strong-darker);
-
+.ui-kit-status__color-complement__theme-gray {
 	background: var(--complement-weak);
 }
 
-.ui-kit-status__color-warning {
-	color: var(--warning-strong-darker);
-
+.ui-kit-status__color-warning__theme-gray {
 	background: var(--warning-weak);
 }
 
-.ui-kit-status__color-critic {
-	color: var(--critic-strong-darker);
-
+.ui-kit-status__color-critic__theme-gray {
 	background: var(--critic-weak);
 }
 
-.ui-kit-status__color-success {
-	color: var(--success-strong-darker);
-
+.ui-kit-status__color-success__theme-gray {
 	background: var(--success-weak);
 }
 
+.ui-kit-status__color-disabled__theme-gray {
+	background: var(--faint-weak-darker);
+}
+
+/* Стили иконки статуса */
 .ui-kit-status-icon {
 	position: absolute;
 	left: 4px;
@@ -73,7 +96,9 @@
 }
 
 .ui-kit-status-icon__size-large {
-	height: 36px;
+	left: 10px;
+
+	height: 24px;
 }
 
 .ui-kit-status-icon__color-accent {
@@ -96,6 +121,11 @@
 	background: var(--success-strong);
 }
 
+.ui-kit-status-icon__color-disabled {
+	background: var(--base-strong-lighter);
+}
+
+/* Стили текста статуса */
 .ui-kit-status-text {
 	margin-left: 12px;
 
@@ -113,4 +143,28 @@
 
 .ui-kit-status-text__size-large {
 	font-size: var(--fs-sm);
+}
+
+.ui-kit-status-text__color-accent {
+	color: var(--accent-strong-darker);
+}
+
+.ui-kit-status-text__color-complement {
+	color: var(--complement-strong-darker);
+}
+
+.ui-kit-status-text__color-warning {
+	color: var(--warning-strong-darker);
+}
+
+.ui-kit-status-text__color-critic {
+	color: var(--critic-strong-darker);
+}
+
+.ui-kit-status-text__color-success {
+	color: var(--success-strong-darker);
+}
+
+.ui-kit-status-text__color-disabled {
+	color: var(--base-strong-lighter);
 }

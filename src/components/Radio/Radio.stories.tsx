@@ -48,7 +48,6 @@ export default {
 			defaultValue: 'white',
 			control: {
 				type: 'inline-radio',
-				options: ['white', 'gray'],
 			},
 		},
 	},
