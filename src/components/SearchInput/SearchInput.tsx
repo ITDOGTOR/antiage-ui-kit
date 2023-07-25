@@ -8,7 +8,7 @@ import {SearchInputProps} from './SearchInput.types';
 function SearchInput({
 	value,
 	onChange,
-	debounceCallback,
+	onDebounce,
 	debounceTimer = 0,
 	placeholder,
 	disabled,
@@ -34,8 +34,9 @@ function SearchInput({
 		if (onChange) {
 			onChange(inputValue);
 		}
-		if (debounceCallback) {
-			debounce(() => debounceCallback(inputValue), debounceTimer);
+		if (onDebounce) {
+			const debouncedOnChange = debounce(onDebounce, debounceTimer);
+			debouncedOnChange(inputValue);
 		}
 		setLocalValue(inputValue);
 	}
