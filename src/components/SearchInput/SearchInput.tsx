@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import debounce from 'lodash.debounce';
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 
 import {Search} from '../../assets';
 import {SearchInputProps} from './SearchInput.types';
@@ -20,6 +20,13 @@ function SearchInput({
 }: SearchInputProps) {
 	const [localValue, setLocalValue] = useState('');
 
+	const debouncedOnChange = useMemo(() => {
+		if (onDebounce) {
+			return debounce(onDebounce, debounceTimer);
+		}
+		return undefined;
+	}, [onDebounce, debounceTimer]);
+
 	const containerClasses = classNames(
 		'ui-kit-search-input-container',
 		disabled && `ui-kit-search-input-container-disabled`,
@@ -34,8 +41,7 @@ function SearchInput({
 		if (onChange) {
 			onChange(inputValue);
 		}
-		if (onDebounce) {
-			const debouncedOnChange = debounce(onDebounce, debounceTimer);
+		if (debouncedOnChange) {
 			debouncedOnChange(inputValue);
 		}
 		setLocalValue(inputValue);
