@@ -1,5 +1,5 @@
 .ui-kit-radio__wrapper {
-	width: max-content;
+	width: fit-content;
 }
 
 .ui-kit-radio__wrapper-disabled {
@@ -119,10 +119,6 @@
 
 .ui-kit-radio-input__hidden:checked:not(:disabled) + .ui-kit-radio .ui-kit-radio-label {
 	font-weight: 600;
-}
-
-.ui-kit-radio-input__hidden:checked + .ui-kit-radio:hover .ui-kit-radio-label {
-	font-weight: 700;
 }
 
 .ui-kit-radio-input__hidden:disabled + .ui-kit-radio .ui-kit-radio-label {

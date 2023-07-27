@@ -1,5 +1,5 @@
 .ui-kit-checkbox__wrapper {
-	width: max-content;
+	width: fit-content;
 }
 
 .ui-kit-checkbox__wrapper-disabled {
@@ -117,10 +117,6 @@
 
 .ui-kit-checkbox-input__hidden:checked:not(:disabled) + .ui-kit-checkbox .ui-kit-checkbox-label {
 	font-weight: 600;
-}
-
-.ui-kit-checkbox-input__hidden:checked + .ui-kit-checkbox:hover .ui-kit-checkbox-label {
-	font-weight: 700;
 }
 
 .ui-kit-checkbox-input__hidden:disabled + .ui-kit-checkbox .ui-kit-checkbox-label {
