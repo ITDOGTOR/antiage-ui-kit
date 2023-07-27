@@ -20,6 +20,10 @@ export default {
 			defaultValue: '',
 			control: {type: 'text'},
 		},
+		wrapperClassName: {
+			defaultValue: '',
+			control: {type: 'text'},
+		},
 		defaultChecked: {
 			defaultValue: false,
 			control: {type: 'boolean'},

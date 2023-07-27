@@ -14,4 +14,5 @@ export interface CheckboxProps {
 	className?: string;
 	labelClassName?: string;
 	containerClassName?: string;
+	wrapperClassName?: string;
 }

@@ -13,12 +13,17 @@ function Radio({
 	disabled,
 	defaultChecked,
 	label,
+	wrapperClassName,
 	containerClassName,
 	className,
 	labelClassName,
 	...props
 }: RadioProps) {
-	const wrapperClasses = classNames('ui-kit-radio__wrapper', disabled && 'ui-kit-radio__wrapper-disabled');
+	const wrapperClasses = classNames(
+		'ui-kit-radio__wrapper',
+		disabled && 'ui-kit-radio__wrapper-disabled',
+		wrapperClassName,
+	);
 	const containerClasses = classNames('ui-kit-radio', containerClassName);
 	const inputClasses = classNames('ui-kit-radio-fakeInput', `ui-kit-radio-fakeInput__theme-${theme}`, className);
 	const inputIconClasses = classNames('ui-kit-radio-fakeInput-icon', `ui-kit-radio-fakeInput-icon__theme-${theme}`);
