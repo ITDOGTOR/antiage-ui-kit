@@ -13,12 +13,17 @@ function Checkbox({
 	disabled,
 	defaultChecked,
 	label,
+	wrapperClassName,
 	containerClassName,
 	className,
 	labelClassName,
 	...props
 }: CheckboxProps) {
-	const wrapperClasses = classNames('ui-kit-checkbox__wrapper', disabled && 'ui-kit-checkbox__wrapper-disabled');
+	const wrapperClasses = classNames(
+		'ui-kit-checkbox__wrapper',
+		disabled && 'ui-kit-checkbox__wrapper-disabled',
+		wrapperClassName,
+	);
 	const containerClasses = classNames('ui-kit-checkbox', containerClassName);
 	const inputClasses = classNames('ui-kit-checkbox-fakeInput', `ui-kit-checkbox-fakeInput__theme-${theme}`, className);
 	const inputIconClasses = classNames(

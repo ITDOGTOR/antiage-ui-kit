@@ -15,4 +15,5 @@ export interface RadioProps {
 	className?: string;
 	labelClassName?: string;
 	containerClassName?: string;
+	wrapperClassName?: string;
 }

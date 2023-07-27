@@ -20,6 +20,10 @@ export default {
 			defaultValue: '',
 			control: {type: 'text'},
 		},
+		wrapperClassName: {
+			defaultValue: '',
+			control: {type: 'text'},
+		},
 		name: {
 			defaultValue: 'radioGroupName',
 			control: {type: 'text'},
