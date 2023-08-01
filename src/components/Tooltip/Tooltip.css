@@ -1,0 +1,27 @@
+.ui-kit-tooltip {
+	font-size: var(--fs-sm);
+	line-height: var(--lh-sm-text);
+}
+
+.ui-kit-tooltip:is(.ant-tooltip-placement-bottom, .ant-tooltip-placement-bottomLeft, .ant-tooltip-placement-bottomRight) {
+	padding-top: 10px;
+}
+
+.ui-kit-tooltip:is(.ant-tooltip-placement-top, .ant-tooltip-placement-topLeft, .ant-tooltip-placement-topRight) {
+	padding-bottom: 10px;
+}
+
+.ui-kit-tooltip:is(.ant-tooltip-placement-right, .ant-tooltip-placement-rightTop, .ant-tooltip-placement-rightBottom) {
+	padding-left: 10px;
+}
+
+.ui-kit-tooltip:is(.ant-tooltip-placement-left, .ant-tooltip-placement-leftTop, .ant-tooltip-placement-leftBottom) {
+	padding-right: 10px;
+}
+
+@media screen and (max-width: 520px) {
+	.ui-kit-tooltip {
+		font-size: var(--fs-xs);
+		line-height: var(--lh-xs-text);
+	}
+}
