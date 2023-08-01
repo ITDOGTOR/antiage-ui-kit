@@ -12,3 +12,4 @@ export {default as Status} from './Status';
 export {default as Switch} from './Switch';
 export {default as Table} from './Table';
 export {default as TextArea} from './TextArea';
+export {default as Tooltip} from './Tooltip';
