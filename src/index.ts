@@ -15,6 +15,7 @@ import './components/Checkbox/Checkbox.css';
 import './components/Radio/Radio.css';
 import './components/SearchInput/SearchInput.css';
 import './components/Tooltip/Tooltip.css';
+import './components/NavTabs/NavTabs.css';
 
 export * from './assets';
 export * from './components';
