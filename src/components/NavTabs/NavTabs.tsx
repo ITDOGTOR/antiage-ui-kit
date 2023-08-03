@@ -22,7 +22,7 @@ function NavTabs({
 
 	return (
 		<div className={containerClasses}>
-			{tabs.map(({key, title, disabled}) => {
+			{tabs.map(({key, title, disabled, ...tabProps}) => {
 				const activeTabClasses = classNames(key === activeTabKey && `ui-kit-navTabs-tab__active__theme-${theme}`);
 				return (
 					<button
@@ -31,6 +31,7 @@ function NavTabs({
 						key={key}
 						type="button"
 						onClick={() => onClick(key)}
+						{...tabProps}
 					>
 						<span className={tabTextClasses} title={title}>
 							{title}
