@@ -1,6 +1,7 @@
 import {Theme} from '../index.types';
 
 declare const TabsPositions: ['top', 'right', 'bottom', 'left'];
+declare const TabsTypes: ['button', 'link'];
 
 declare type NavTab = {
 	key: string;
@@ -8,6 +9,7 @@ declare type NavTab = {
 	disabled?: boolean;
 };
 declare type TabsPosition = (typeof TabsPositions)[number];
+declare type TabsType = (typeof TabsTypes)[number];
 
 export declare type NavTabsProps = {
 	tabs?: NavTab[];
@@ -15,6 +17,7 @@ export declare type NavTabsProps = {
 	onClick?: ((tabKey: string) => void) | undefined;
 	theme?: Theme;
 	tabsPosition?: TabsPosition;
+	tabsType?: TabsType;
 	containerClassName?: string;
 	tabClassName?: string;
 };

@@ -28,6 +28,11 @@ export default {
 				type: 'inline-radio',
 			},
 		},
+		tabsType: {
+			defaultValue: 'button',
+			description: 'Regulates tabs type',
+			control: {type: 'select'},
+		},
 		tabsPosition: {
 			defaultValue: 'top',
 			description: 'Position of the block relative to content',

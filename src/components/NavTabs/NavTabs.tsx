@@ -2,12 +2,14 @@ import classNames from 'classnames';
 import React from 'react';
 
 import {NavTabsProps} from './NavTabs.types';
+import {NavTabButton, NavTabLink} from './ui';
 
 function NavTabs({
 	tabs = [{key: '', title: '', disabled: true}],
 	activeTabKey,
 	onClick = () => {},
 	theme,
+	tabsType = 'button',
 	tabsPosition = 'top',
 	containerClassName,
 	tabClassName,
@@ -17,27 +19,28 @@ function NavTabs({
 		`ui-kit-navTabs-container__rotate-${tabsPosition}`,
 		containerClassName,
 	);
-	const singleTabClasses = classNames('ui-kit-navTabs-tab', `ui-kit-navTabs-tab__theme-${theme}`, tabClassName);
-	const tabTextClasses = classNames('ui-kit-navTabs-tab-text');
 
 	return (
 		<div className={containerClasses}>
 			{tabs.map(({key, title, disabled, ...tabProps}) => {
-				const activeTabClasses = classNames(key === activeTabKey && `ui-kit-navTabs-tab__active__theme-${theme}`);
-				return (
-					<button
-						className={[singleTabClasses, activeTabClasses].join(' ')}
-						disabled={disabled}
-						key={key}
-						type="button"
-						onClick={() => onClick(key)}
-						{...tabProps}
-					>
-						<span className={tabTextClasses} title={title}>
-							{title}
-						</span>
-					</button>
-				);
+				if (tabsType === 'button') {
+					return (
+						<NavTabButton
+							disabled={disabled}
+							isActive={key === activeTabKey}
+							key={key}
+							tabClassName={tabClassName}
+							theme={theme}
+							title={title}
+							onClick={() => onClick(key)}
+							{...tabProps}
+						/>
+					);
+				}
+				if (tabsType === 'link') {
+					return <NavTabLink {...tabProps} />;
+				}
+				return null;
 			})}
 		</div>
 	);
