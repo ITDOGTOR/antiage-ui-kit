@@ -1,9 +1,55 @@
 /* Стили контейнера */
+.ui-kit-navTabs-boxShadow__wrapper {
+	position: relative;
+
+	width: 100%;
+}
+
 .ui-kit-navTabs-container {
 	display: flex;
+	flex-wrap: nowrap;
 	align-items: center;
 	justify-content: flex-start;
-	width: fit-content;
+	width: auto;
+	overflow-x: auto;
+
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Chrome, Safari and Opera */
+.ui-kit-navTabs-container::-webkit-scrollbar {
+	display: none;
+}
+
+.ui-kit-navTabs-boxShadow__wrapper::before,
+.ui-kit-navTabs-boxShadow__wrapper::after {
+	position: absolute;
+
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+
+	width: 50px;
+
+	opacity: 0;
+
+	transition: opacity 0.3s linear;
+
+	content: "";
+	pointer-events: none;
+}
+
+.ui-kit-navTabs-boxShadow__wrapper::before {
+	left: 0;
+
+	background-image: linear-gradient(to right, var(--faint-weak-darker), transparent);
+}
+
+.ui-kit-navTabs-boxShadow__wrapper::after {
+	right: 0;
+
+	background-image: linear-gradient(to left, var(--faint-weak-darker), transparent);
 }
 
 .ui-kit-navTabs-container__rotate-right {
@@ -28,11 +74,20 @@
 	flex-direction: row-reverse;
 }
 
+.ui-kit-navTabs-boxShadow__wrapper-leftShadowVisible::before {
+	opacity: 1;
+}
+
+.ui-kit-navTabs-boxShadow__wrapper-rightShadowVisible::after {
+	opacity: 1;
+}
+
 /* Стили таба */
 .ui-kit-navTabs-tab {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	min-width: min-content;
 	height: 44px;
 	padding: 0 35px;
 	overflow: hidden;
@@ -77,10 +132,11 @@
 	color: var(--base-strong);
 	font-weight: var(--fw-medium);
 	font-size: var(--fs-sm);
+	font-variant: normal;
 	line-height: var(--lh-md);
-	font-feature-settings: normal;
 
 	transition: color 0.2s linear;
+	font-feature-settings: normal;
 }
 
 .ui-kit-navTabs-tab__active__theme-gray .ui-kit-navTabs-tab-text,
@@ -96,4 +152,15 @@
 .ui-kit-navTabs-tab__disabledLink .ui-kit-navTabs-tab-text {
 	color: var(--faint-middle);
 	font-weight: var(--fw-medium);
+}
+
+@media screen and (max-width: 520px) {
+	.ui-kit-navTabs-tab {
+		padding: 0 25px;
+	}
+
+	.ui-kit-navTabs-tab-text {
+		font-size: var(--fs-xs);
+		line-height: var(--lh-xs);
+	}
 }

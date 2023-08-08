@@ -1,5 +1,6 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import React from 'react';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 import NavTabs from './NavTabs';
 import {NavTabsProps} from './NavTabs.types';
@@ -52,9 +53,11 @@ export default {
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof NavTabs> = (args: NavTabsProps) => {
 	return (
-		<div style={{height: '400px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-			<NavTabs {...args} />
-		</div>
+		<Router>
+			<div style={{height: '400px', width: '400px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+				<NavTabs {...args} />
+			</div>
+		</Router>
 	);
 };
 
