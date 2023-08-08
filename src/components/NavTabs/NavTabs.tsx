@@ -38,7 +38,18 @@ function NavTabs({
 					);
 				}
 				if (tabsType === 'link') {
-					return <NavTabLink {...tabProps} />;
+					return (
+						<NavTabLink
+							disabled={disabled}
+							isActive={key === window.location.pathname}
+							key={key}
+							link={key}
+							tabClassName={tabClassName}
+							theme={theme}
+							title={title}
+							{...tabProps}
+						/>
+					);
 				}
 				return null;
 			})}

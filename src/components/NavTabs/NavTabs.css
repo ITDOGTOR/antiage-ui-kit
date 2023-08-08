@@ -38,6 +38,7 @@
 	overflow: hidden;
 
 	white-space: nowrap;
+	text-decoration: none;
 	text-overflow: ellipsis;
 
 	background-color: var(--faint-weak-lighter);
@@ -63,7 +64,10 @@
 
 .ui-kit-navTabs-tab:disabled:hover,
 .ui-kit-navTabs-tab:disabled:active,
-.ui-kit-navTabs-tab:disabled {
+.ui-kit-navTabs-tab:disabled,
+.ui-kit-navTabs-tab__disabledLink:hover,
+.ui-kit-navTabs-tab__disabledLink:active,
+.ui-kit-navTabs-tab__disabledLink {
 	background-color: var(--faint-weak-lighter);
 	cursor: not-allowed;
 }
@@ -74,6 +78,7 @@
 	font-weight: var(--fw-medium);
 	font-size: var(--fs-sm);
 	line-height: var(--lh-md);
+	font-feature-settings: normal;
 
 	transition: color 0.2s linear;
 }
@@ -87,7 +92,8 @@
 	rotate: 180deg;
 }
 
-.ui-kit-navTabs-tab:disabled .ui-kit-navTabs-tab-text {
+.ui-kit-navTabs-tab:disabled .ui-kit-navTabs-tab-text,
+.ui-kit-navTabs-tab__disabledLink .ui-kit-navTabs-tab-text {
 	color: var(--faint-middle);
 	font-weight: var(--fw-medium);
 }
