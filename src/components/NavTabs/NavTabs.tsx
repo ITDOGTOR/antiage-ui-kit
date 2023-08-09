@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, {UIEvent, useEffect, useRef, useState} from 'react';
+import React, {UIEvent, useEffect, useRef} from 'react';
 
 import {NavTabsProps} from './NavTabs.types';
 import {NavTabButton, NavTabLink} from './ui';
@@ -14,16 +14,9 @@ function NavTabs({
 	containerClassName,
 	tabClassName,
 }: NavTabsProps) {
+	const wrapperRef = useRef(null);
 	const containerRef = useRef(null);
 
-	const [scrollingLeft, setScrollingLeft] = useState(false);
-	const [scrollingRight, setScrollingRight] = useState(false);
-
-	const wrapperClasses = classNames(
-		'ui-kit-navTabs-boxShadow__wrapper',
-		scrollingLeft && 'ui-kit-navTabs-boxShadow__wrapper-leftShadowVisible',
-		scrollingRight && 'ui-kit-navTabs-boxShadow__wrapper-rightShadowVisible',
-	);
 	const containerClasses = classNames(
 		'ui-kit-navTabs-container',
 		`ui-kit-navTabs-container__rotate-${tabsPosition}`,
@@ -31,29 +24,40 @@ function NavTabs({
 	);
 
 	function handleScrollChange(event: UIEvent) {
-		const container = event.currentTarget;
+		const wrapper = wrapperRef.current as HTMLElement | null;
 
-		if (container.scrollLeft > 0 !== scrollingLeft) {
-			setScrollingLeft(container.scrollLeft > 0);
-		}
-		if (container.scrollLeft < container.scrollWidth - container.clientWidth !== scrollingRight) {
-			setScrollingRight(container.scrollLeft < container.scrollWidth - container.clientWidth);
+		if (wrapper) {
+			if (event.currentTarget.scrollLeft > 0) {
+				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper-leftShadowVisible');
+			} else {
+				wrapper.classList.remove('ui-kit-navTabs-boxShadow__wrapper-leftShadowVisible');
+			}
+
+			if (event.currentTarget.scrollLeft < event.currentTarget.scrollWidth - event.currentTarget.clientWidth) {
+				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper-rightShadowVisible');
+			} else {
+				wrapper.classList.remove('ui-kit-navTabs-boxShadow__wrapper-rightShadowVisible');
+			}
 		}
 	}
 
 	useEffect(() => {
-		const container = containerRef.current || {
-			scrollLeft: 0,
-			scrollWidth: 0,
-			clientWidth: 100,
-		};
+		const wrapper = wrapperRef.current as HTMLElement | null;
+		const container = containerRef.current as HTMLElement | null;
 
-		setScrollingLeft(container.scrollLeft > 0);
-		setScrollingRight(container.scrollLeft < container.scrollWidth - container.clientWidth);
+		if (wrapper && container) {
+			if (container.scrollLeft > 0) {
+				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper-leftShadowVisible');
+			}
+
+			if (container.scrollLeft < container.scrollWidth - container.clientWidth) {
+				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper-rightShadowVisible');
+			}
+		}
 	}, []);
 
 	return (
-		<div className={wrapperClasses}>
+		<div className={classNames('ui-kit-navTabs-boxShadow__wrapper')} ref={wrapperRef}>
 			<div className={containerClasses} ref={containerRef} onScroll={handleScrollChange}>
 				{tabs.map(({key, title, disabled, ...tabProps}) => {
 					if (tabsType === 'button') {
