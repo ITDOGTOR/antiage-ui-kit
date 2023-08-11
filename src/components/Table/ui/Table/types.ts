@@ -1,12 +1,12 @@
 import {ReactElement} from 'react';
 
-export type UIColumns = Array<{
+export declare type UIColumns = Array<{
 	title: string;
 	sortingKey: string;
 	fixed?: 'left' | 'right';
 }>;
 
-export interface UITable {
+export declare interface UITable {
 	children: ReactElement;
 	header: ReactElement;
 	trClassName?: string;

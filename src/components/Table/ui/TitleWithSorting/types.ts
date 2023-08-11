@@ -1,6 +1,6 @@
 import {SyntheticEvent} from 'react';
 
-export interface UITitleWithSorting {
+export declare interface UITitleWithSorting {
 	onClick?: (e: SyntheticEvent) => void;
 	upActive?: boolean;
 	downActive?: boolean;
