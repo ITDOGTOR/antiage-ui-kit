@@ -11,19 +11,19 @@ export default {
 	argTypes: {
 		tabs: {
 			defaultValue: [
-				{key: 'tab1', title: 'Tab 1', disabled: false},
-				{key: 'tab2', title: 'Tab 2', disabled: false},
-				{key: 'tab3', title: 'Tab 3', disabled: false},
-				{key: 'tab4', title: 'Tab long 4', disabled: false},
-				{key: 'tab5', title: 'Tab long 5', disabled: true},
-				{key: 'tab6', title: 'Tab long 6', disabled: false},
+				{link: 'tab1', title: 'Tab 1', disabled: false},
+				{link: 'tab2', title: 'Tab 2', disabled: false},
+				{link: 'tab3', title: 'Tab 3', disabled: false},
+				{link: 'tab4', title: 'Tab long 4', disabled: false},
+				{link: 'tab5', title: 'Tab long 5', disabled: true},
+				{link: 'tab6', title: 'Tab long 6', disabled: false},
 			],
 			description: 'An array of tab objects.',
 			control: {type: 'object'},
 		},
-		activeTabKey: {
+		activeTabLink: {
 			defaultValue: 'tab1',
-			description: '`key` property of current active `NavTab` object',
+			description: '`link` property of current active `NavTab` object',
 			control: {type: 'text'},
 		},
 		theme: {

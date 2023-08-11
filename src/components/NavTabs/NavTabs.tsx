@@ -6,8 +6,8 @@ import {NavTabsProps} from './NavTabs.types';
 import {NavTabButton, NavTabLink} from './ui';
 
 function NavTabs({
-	tabs = [{key: '', title: '', disabled: true}],
-	activeTabKey,
+	tabs = [{link: '', title: '', disabled: true}],
+	activeTabLink,
 	onClick = () => {},
 	theme,
 	tabsType = 'button',
@@ -59,17 +59,17 @@ function NavTabs({
 	return (
 		<div className={wrapperClasses} ref={wrapperRef}>
 			<div className={containerClasses} ref={containerRef} onScroll={handleScrollChange}>
-				{tabs.map(({key, title, disabled, ...tabProps}) => {
+				{tabs.map(({link, title, disabled, ...tabProps}) => {
 					if (tabsType === 'button') {
 						return (
 							<NavTabButton
 								disabled={disabled}
-								isActive={key === activeTabKey}
-								key={key}
+								isActive={link === activeTabLink}
+								key={link}
 								tabClassName={tabClassName}
 								theme={theme}
 								title={title}
-								onClick={() => onClick(key)}
+								onClick={() => onClick(link)}
 								{...tabProps}
 							/>
 						);
@@ -78,8 +78,8 @@ function NavTabs({
 						return (
 							<NavTabLink
 								disabled={disabled}
-								key={key}
-								link={key}
+								key={link}
+								link={link}
 								tabClassName={tabClassName}
 								theme={theme}
 								title={title}

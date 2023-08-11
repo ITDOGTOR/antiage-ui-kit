@@ -4,7 +4,7 @@ declare const TabsPositions: ['top', 'right', 'bottom', 'left'];
 declare const TabsTypes: ['button', 'link'];
 
 declare type NavTab = {
-	key: string;
+	link: string;
 	title?: string;
 	disabled?: boolean;
 };
@@ -13,7 +13,7 @@ declare type TabsType = (typeof TabsTypes)[number];
 
 export declare type NavTabsProps = {
 	tabs?: NavTab[];
-	activeTabKey?: string;
+	activeTabLink?: string;
 	onClick?: ((tabKey: string) => void) | undefined;
 	theme?: Theme;
 	tabsPosition?: TabsPosition;
