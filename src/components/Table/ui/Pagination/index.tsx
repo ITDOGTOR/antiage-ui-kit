@@ -1,7 +1,8 @@
-import {PaginationProps} from "antd";
-import classNames from "classnames";
-import {ChevronHorizontal} from "../../../../assets";
-import React from "react";
+import {PaginationProps} from 'antd';
+import classNames from 'classnames';
+import React from 'react';
+
+import {ChevronHorizontal} from '../../../../assets';
 
 const itemRender: PaginationProps['itemRender'] = (_, type, originalElement) => {
 	if (type === 'prev') {
@@ -31,12 +32,12 @@ const itemRender: PaginationProps['itemRender'] = (_, type, originalElement) => 
 	return originalElement;
 };
 
-export const getPaginationComponentLocal = ({theme}: { theme: string }) => {
+export const getPaginationComponentLocal = ({theme}: {theme: string}) => {
 	return {
 		hideOnSinglePage: true,
 		className: classNames('ui-kit-pagination', ['ui-kit-pagination', theme].join('-')),
 		position: ['bottomCenter'],
 		showSizeChanger: false,
 		itemRender,
-	}
-}
+	};
+};

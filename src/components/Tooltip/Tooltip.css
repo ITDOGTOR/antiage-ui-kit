@@ -3,7 +3,11 @@
 	line-height: var(--lh-sm-text);
 }
 
-.ui-kit-tooltip:is(.ant-tooltip-placement-bottom, .ant-tooltip-placement-bottomLeft, .ant-tooltip-placement-bottomRight) {
+.ui-kit-tooltip:is(
+		.ant-tooltip-placement-bottom,
+		.ant-tooltip-placement-bottomLeft,
+		.ant-tooltip-placement-bottomRight
+	) {
 	padding-top: 10px;
 }
 

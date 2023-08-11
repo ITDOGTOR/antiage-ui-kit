@@ -1,3 +1,6 @@
-import {getPaginationComponentLocal} from "./Pagination";
+import {getPaginationComponentLocal} from './Pagination';
+import SortingProvider from './SortingProvider';
+import Table from './Table';
+import TitleWithSorting from './TitleWithSorting';
 
-export { getPaginationComponentLocal };
+export {getPaginationComponentLocal, SortingProvider, Table, TitleWithSorting};
