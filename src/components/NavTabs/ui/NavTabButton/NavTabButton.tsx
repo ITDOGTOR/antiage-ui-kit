@@ -12,9 +12,9 @@ function NavTabButton({
 	title,
 	...tabProps
 }: NavTabButtonProps) {
-	const tabTextClasses = classNames('ui-kit-navTabs-tab-text');
-	const singleTabClasses = classNames('ui-kit-navTabs-tab', `ui-kit-navTabs-tab__theme-${theme}`, tabClassName);
-	const activeTabClasses = classNames(isActive && `ui-kit-navTabs-tab__active__theme-${theme}`);
+	const tabTextClasses = classNames('ui-kit-navTabs__tab__text');
+	const singleTabClasses = classNames('ui-kit-navTabs__tab', `ui-kit-navTabs__tab--theme-${theme}`, tabClassName);
+	const activeTabClasses = classNames(isActive && `ui-kit-navTabs__tab--active--theme-${theme}`);
 
 	return (
 		<button

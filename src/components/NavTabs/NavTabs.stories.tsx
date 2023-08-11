@@ -13,10 +13,10 @@ export default {
 			defaultValue: [
 				{key: 'tab1', title: 'Tab 1', disabled: false},
 				{key: 'tab2', title: 'Tab 2', disabled: false},
-				{key: 'tab3', title: 'Tab 3', disabled: true},
+				{key: 'tab3', title: 'Tab 3', disabled: false},
 				{key: 'tab4', title: 'Tab long 4', disabled: false},
-				{key: 'tab5', title: 'Tab long 5', disabled: false},
-				{key: 'tab6', title: 'Tab long 6', disabled: true},
+				{key: 'tab5', title: 'Tab long 5', disabled: true},
+				{key: 'tab6', title: 'Tab long 6', disabled: false},
 			],
 			description: 'An array of tab objects.',
 			control: {type: 'object'},

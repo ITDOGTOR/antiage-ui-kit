@@ -18,8 +18,8 @@ function NavTabs({
 	const containerRef = useRef(null);
 
 	const containerClasses = classNames(
-		'ui-kit-navTabs-container',
-		`ui-kit-navTabs-container__rotate-${tabsPosition}`,
+		'ui-kit-navTabs__container',
+		`ui-kit-navTabs__container--rotate-${tabsPosition}`,
 		containerClassName,
 	);
 
@@ -28,15 +28,15 @@ function NavTabs({
 
 		if (wrapper) {
 			if (event.currentTarget.scrollLeft > 0) {
-				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper-leftShadowVisible');
+				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper--leftShadowVisible');
 			} else {
-				wrapper.classList.remove('ui-kit-navTabs-boxShadow__wrapper-leftShadowVisible');
+				wrapper.classList.remove('ui-kit-navTabs-boxShadow__wrapper--leftShadowVisible');
 			}
 
 			if (event.currentTarget.scrollLeft < event.currentTarget.scrollWidth - event.currentTarget.clientWidth) {
-				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper-rightShadowVisible');
+				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper--rightShadowVisible');
 			} else {
-				wrapper.classList.remove('ui-kit-navTabs-boxShadow__wrapper-rightShadowVisible');
+				wrapper.classList.remove('ui-kit-navTabs-boxShadow__wrapper--rightShadowVisible');
 			}
 		}
 	}
@@ -47,11 +47,11 @@ function NavTabs({
 
 		if (wrapper && container) {
 			if (container.scrollLeft > 0) {
-				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper-leftShadowVisible');
+				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper--leftShadowVisible');
 			}
 
 			if (container.scrollLeft < container.scrollWidth - container.clientWidth) {
-				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper-rightShadowVisible');
+				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper--rightShadowVisible');
 			}
 		}
 	}, []);
