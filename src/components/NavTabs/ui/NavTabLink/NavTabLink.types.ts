@@ -1,6 +1,6 @@
 import {Theme} from '../../../index.types';
 
-export declare type NavTabLinkProps = {
+export type NavTabLinkProps = {
 	link?: string;
 	disabled?: boolean;
 	tabClassName?: string;

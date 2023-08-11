@@ -1,17 +1,14 @@
 import {Theme} from '../index.types';
 
-declare const TabsPositions: ['top', 'right', 'bottom', 'left'];
-declare const TabsTypes: ['button', 'link'];
-
-declare type NavTab = {
+type NavTab = {
 	link: string;
 	title?: string;
 	disabled?: boolean;
 };
-declare type TabsPosition = (typeof TabsPositions)[number];
-declare type TabsType = (typeof TabsTypes)[number];
+type TabsPosition = 'top' | 'right' | 'bottom' | 'left';
+type TabsType = 'button' | 'link';
 
-export declare type NavTabsProps = {
+export type NavTabsProps = {
 	tabs?: NavTab[];
 	activeTabLink?: string;
 	onClick?: ((tabKey: string) => void) | undefined;
