@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React, {UIEvent, useEffect, useRef} from 'react';
 
+import {updateShadowClasses} from './lib';
 import {NavTabsProps} from './NavTabs.types';
 import {NavTabButton, NavTabLink} from './ui';
 
@@ -17,27 +18,25 @@ function NavTabs({
 	const wrapperRef = useRef(null);
 	const containerRef = useRef(null);
 
-	const containerClasses = classNames(
-		'ui-kit-navTabs__container',
-		`ui-kit-navTabs__container--rotate-${tabsPosition}`,
-		containerClassName,
+	const wrapperClasses = classNames(
+		'ui-kit-navTabs-boxShadow__wrapper',
+		`ui-kit-navTabs-boxShadow__wrapper--rotate-${tabsPosition}`,
 	);
+
+	const containerClasses = classNames('ui-kit-navTabs__container', containerClassName);
 
 	function handleScrollChange(event: UIEvent) {
 		const wrapper = wrapperRef.current as HTMLElement | null;
 
 		if (wrapper) {
-			if (event.currentTarget.scrollLeft > 0) {
-				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper--leftShadowVisible');
-			} else {
-				wrapper.classList.remove('ui-kit-navTabs-boxShadow__wrapper--leftShadowVisible');
-			}
+			const {scrollLeft, scrollWidth, clientWidth} = event.currentTarget;
 
-			if (event.currentTarget.scrollLeft < event.currentTarget.scrollWidth - event.currentTarget.clientWidth) {
-				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper--rightShadowVisible');
-			} else {
-				wrapper.classList.remove('ui-kit-navTabs-boxShadow__wrapper--rightShadowVisible');
-			}
+			updateShadowClasses({
+				wrapper,
+				scrollLeft,
+				scrollWidth,
+				clientWidth,
+			});
 		}
 	}
 
@@ -46,18 +45,19 @@ function NavTabs({
 		const container = containerRef.current as HTMLElement | null;
 
 		if (wrapper && container) {
-			if (container.scrollLeft > 0) {
-				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper--leftShadowVisible');
-			}
+			const {scrollLeft, scrollWidth, clientWidth} = container;
 
-			if (container.scrollLeft < container.scrollWidth - container.clientWidth) {
-				wrapper.classList.add('ui-kit-navTabs-boxShadow__wrapper--rightShadowVisible');
-			}
+			updateShadowClasses({
+				wrapper,
+				scrollLeft,
+				scrollWidth,
+				clientWidth,
+			});
 		}
-	}, []);
+	}, [tabsPosition]);
 
 	return (
-		<div className={classNames('ui-kit-navTabs-boxShadow__wrapper')} ref={wrapperRef}>
+		<div className={wrapperClasses} ref={wrapperRef}>
 			<div className={containerClasses} ref={containerRef} onScroll={handleScrollChange}>
 				{tabs.map(({key, title, disabled, ...tabProps}) => {
 					if (tabsType === 'button') {
