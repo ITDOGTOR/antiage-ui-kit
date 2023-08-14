@@ -23,9 +23,13 @@ function NavTabLink({link = '', disabled, tabClassName, theme, title, ...tabProp
 			}}
 			{...tabProps}
 		>
-			<span className={tabTextClasses} title={title}>
-				{title}
-			</span>
+			{typeof title === 'object' ? (
+				title
+			) : (
+				<span className={tabTextClasses} title={typeof title === 'string' ? title : undefined}>
+					{title}
+				</span>
+			)}
 		</NavLink>
 	);
 }

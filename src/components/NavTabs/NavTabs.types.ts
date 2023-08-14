@@ -1,8 +1,10 @@
+import {ReactNode} from 'react';
+
 import {Theme} from '../index.types';
 
 type NavTab = {
 	link: string;
-	title?: string;
+	title?: string | ReactNode | false;
 	disabled?: boolean;
 };
 type TabsPosition = 'top' | 'right' | 'bottom' | 'left';
