@@ -26,7 +26,12 @@ module.exports = {
 		'function-url-quotes': 'always',
 		'number-max-precision': 3,
 		'shorthand-property-no-redundant-values': true,
-		'value-no-vendor-prefix': true,
+		'value-no-vendor-prefix': [
+			true, {
+				"severity": "warning",
+				"disableFix": true
+			}
+		],
 		'selector-pseudo-element-colon-notation': 'double',
 		'rule-empty-line-before': [
 			'always',
@@ -66,6 +71,8 @@ module.exports = {
 			true,
 			{
 				ignoreProperties: ['composes'],
+				"severity": "warning",
+				"disableFix": true
 			},
 		],
 		'declaration-block-no-shorthand-property-overrides': true,

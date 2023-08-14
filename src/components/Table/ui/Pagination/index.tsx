@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import React from 'react';
 
 import {ChevronHorizontal} from '../../../../assets';
+import {Theme} from '../../../index.types';
 
 const itemRender: PaginationProps['itemRender'] = (_, type, originalElement) => {
 	if (type === 'prev') {
@@ -32,7 +33,7 @@ const itemRender: PaginationProps['itemRender'] = (_, type, originalElement) => 
 	return originalElement;
 };
 
-export const getPaginationComponentLocal = ({theme}: {theme: string}) => {
+export const getPaginationComponentLocal = ({theme}: {theme: Theme}) => {
 	return {
 		hideOnSinglePage: true,
 		className: classNames('ui-kit-pagination', ['ui-kit-pagination', theme].join('-')),

@@ -1,3 +1,4 @@
-import {setStylesToPinedColumn} from './pinnedColumn';
+import {getPinnedColumnIndexes} from './getPinnedColumnIndexes';
+import {setStylesToPinedColumn} from './setStylesToPinedColumn';
 
-export {setStylesToPinedColumn};
+export {getPinnedColumnIndexes, setStylesToPinedColumn};

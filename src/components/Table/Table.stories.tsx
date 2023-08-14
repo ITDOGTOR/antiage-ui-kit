@@ -8,7 +8,6 @@ import {UITable} from './ui/Table/types';
 const columns = [
 	{
 		title: 'Name',
-		// fixed: 'left',
 	},
 	{
 		title: 'Age',
@@ -30,7 +29,6 @@ const columns = [
 	},
 	{
 		title: 'Action4',
-		// fixed: 'right',
 	},
 ];
 
@@ -62,13 +60,11 @@ const data = [
 export default {
 	title: 'Table',
 	component: Table,
-	argTypes: {
-		className: {table: {disable: true}},
-	},
-} as ComponentMeta<typeof Table>;
+	argTypes: {},
+} as ComponentMeta<typeof Table.TableUI.Table>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof Table> = (args: UITable) => {
+const Template: ComponentStory<typeof Table.TableUI.Table> = (args: UITable) => {
 	return (
 		<Router>
 			<Table.TableUi.SortingProvider>

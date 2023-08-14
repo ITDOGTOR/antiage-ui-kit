@@ -5,7 +5,7 @@ import {UIColumns} from '../../ui/Table/types';
 export interface IUsePinnedColumns {
 	columns: UIColumns;
 	tbodyRef: RefObject<HTMLTableSectionElement>;
-	trheadRef: RefObject<HTMLTableRowElement>;
+	headTrRef: RefObject<HTMLTableRowElement>;
 	containerRef: RefObject<HTMLDivElement>;
 	children: ReactElement;
 }

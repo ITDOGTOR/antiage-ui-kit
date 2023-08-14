@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 import './Table.css';
 
 import classNames from 'classnames';
@@ -12,10 +11,7 @@ function Table({
 	children,
 	header = <TitleWithSorting title="" />,
 	trClassName,
-	tableClassName,
-	theadClassName,
 	tbodyClassName,
-	containerClassName,
 	wrapperClassName,
 	columns,
 }: UITable) {
@@ -25,40 +21,43 @@ function Table({
 	const containerRef = useRef<HTMLDivElement>(null);
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const tbodyRef = useRef<HTMLTableSectionElement>(null);
-	const trheadRef = useRef<HTMLTableRowElement>(null);
+	const headTrRef = useRef<HTMLTableRowElement>(null);
 
 	usePinnedColumns({
 		columns,
 		tbodyRef,
-		trheadRef,
+		headTrRef,
 		containerRef,
 		children,
 	});
 	useShadowControl({
 		children,
-		trheadRef,
+		headTrRef,
 		containerRef,
 		wrapperRef,
 		tbodyRef,
 		columns,
 	});
-	const wrapperClasses = classNames('ui-kit-table-wrapper', wrapperClassName);
-	const containerClasses = classNames('ui-kit-table-container', containerClassName);
-	const tableClasses = classNames('ui-kit-table-table', tableClassName);
-	const theadClasses = classNames('', theadClassName);
-	const trContainerClasses = classNames('ui-kit-table-tr-container', trClassName);
-	const tbodyContainerClasses = classNames('ui-kit-table-tbody-container', tbodyClassName);
+	const wrapperClasses = classNames('ui-kit-table__wrapper', wrapperClassName);
+	const containerClasses = classNames('ui-kit-table__container');
+	const tableClasses = classNames('ui-kit-table__table');
+	const trContainerClasses = classNames('ui-kit-table__tr-container', trClassName);
+	const tbodyContainerClasses = classNames('ui-kit-table__tbody', tbodyClassName);
 
 	return (
 		<div className={wrapperClasses} ref={wrapperRef}>
 			<div className={containerClasses} ref={containerRef}>
 				<table className={tableClasses}>
-					<thead className={theadClasses}>
-						<tr className={trContainerClasses} ref={trheadRef}>
-							{columns.map(({title, sortingKey}) =>
+					<thead>
+						<tr className={trContainerClasses} ref={headTrRef}>
+							{columns.map(({title, sortingKey = ''}) =>
 								React.cloneElement(header, {
 									title,
-									onClick: () => setSorting(sortingKey),
+									onClick: () => {
+										if (sortingKey) {
+											setSorting(sortingKey);
+										}
+									},
 									downActive: sorting.includes(`-${sortingKey}`),
 									upActive: sorting.includes(sortingKey),
 									sortingKey,
