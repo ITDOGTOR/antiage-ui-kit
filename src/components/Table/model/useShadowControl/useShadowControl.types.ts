@@ -1,6 +1,6 @@
 import {ReactElement, RefObject} from 'react';
 
-import {UIColumns} from '../../ui/Table/types';
+import {UIColumns} from '../../ui/Table/Table.types';
 
 export interface IUseShadowControl {
 	columns: UIColumns;

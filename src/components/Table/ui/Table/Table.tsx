@@ -4,12 +4,12 @@ import classNames from 'classnames';
 import React, {useRef} from 'react';
 
 import {usePinnedColumns, useShadowControl, useSortingContext} from '../../model';
-import TitleWithSorting from '../TitleWithSorting';
-import {UITable} from './types';
+import Title from '../TitleWithSorting/Title';
+import {UITable} from './Table.types';
 
 function Table({
 	children,
-	header = <TitleWithSorting title="" />,
+	header = <Title title="" />,
 	trClassName,
 	tbodyClassName,
 	wrapperClassName,

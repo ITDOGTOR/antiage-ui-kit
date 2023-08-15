@@ -1,4 +1,4 @@
-import {UIColumns} from '../../ui/Table/types';
+import {UIColumns} from '../../ui/Table/Table.types';
 
 export const getPinnedColumnIndexes = (columns: UIColumns) =>
 	columns.reduce(

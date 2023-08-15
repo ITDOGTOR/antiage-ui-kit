@@ -3,7 +3,7 @@ import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 
 import Table from './Table';
-import {UITable} from './ui/Table/types';
+import {UITable} from './ui/Table/Table.types';
 
 const columns = [
 	{

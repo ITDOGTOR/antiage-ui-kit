@@ -41,7 +41,7 @@
 	border-radius: 0 0 16px;
 }
 
-:where(.ui-kit-table-leftBody)::after {
+:where(.ui-kit-table__leftBody)::after {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -57,7 +57,7 @@
 	pointer-events: none;
 }
 
-:where(.ui-kit-table-rightBody)::after {
+:where(.ui-kit-table__rightBody)::after {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -73,15 +73,15 @@
 	pointer-events: none;
 }
 
-:where(.ui-kit-table-shadow)::after {
+:where(.ui-kit-table__shadow)::after {
 	box-shadow: inset 10px 0 8px -8px rgb(5 5 5 / 0.06);
 }
 
-:where(.ui-kit-table-shadow_right)::after {
+:where(.ui-kit-table__shadow--right)::after {
 	box-shadow: inset -10px 0 8px -8px rgb(5 5 5 / 0.06);
 }
 
-:where(.ui-kit-table-wrapper_shadow)::before {
+:where(.ui-kit-table__wrapper_shadow)::before {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -96,7 +96,7 @@
 	pointer-events: none;
 }
 
-:where(.ui-kit-table-wrapper_shadow)::after {
+:where(.ui-kit-table__wrapper_shadow)::after {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -111,10 +111,10 @@
 	pointer-events: none;
 }
 
-:where(.ui-kit-table-wrapper_shadow_active_right)::after {
+:where(.ui-kit-table__wrapper_shadow--active-right)::after {
 	box-shadow: inset -10px 0 8px -8px rgb(5 5 5 / 0.06);
 }
 
-:where(.ui-kit-table-wrapper_shadow_active_left)::before {
+:where(.ui-kit-table_wrapper_shadow--active-left)::before {
 	box-shadow: inset 10px 0 8px -8px rgb(5 5 5 / 0.06);
 }

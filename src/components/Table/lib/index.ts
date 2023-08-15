@@ -1,4 +1,5 @@
-import {getPinnedColumnIndexes} from './getPinnedColumnIndexes';
-import {setStylesToPinedColumn} from './setStylesToPinedColumn';
+import {getPinnedColumnIndexes} from './getPinnedColumnIndexes/getPinnedColumnIndexes';
+import {onXScroll} from './onXScroll/onXScroll';
+import {setStylesToPinedColumn} from './setStylesToPinedColumn/setStylesToPinnedColumn';
 
-export {getPinnedColumnIndexes, setStylesToPinedColumn};
+export {getPinnedColumnIndexes, onXScroll, setStylesToPinedColumn};

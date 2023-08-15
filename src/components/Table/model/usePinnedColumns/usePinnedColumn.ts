@@ -1,7 +1,7 @@
 import {useLayoutEffect} from 'react';
 
 import {getPinnedColumnIndexes, setStylesToPinedColumn} from '../../lib';
-import {IUsePinnedColumns} from './types';
+import {IUsePinnedColumns} from './usePinnedColumn.types';
 
 export const usePinnedColumns = ({columns, tbodyRef, headTrRef, containerRef, children}: IUsePinnedColumns) => {
 	useLayoutEffect(() => {

@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
 
 import {getSearchWithoutKeys} from '../../../../helpers';
-import {UISortingContext} from './types';
+import {UISortingContext} from './sortingContext.types';
 
 export const SortingContext = React.createContext<UISortingContext>({
 	sorting: [],

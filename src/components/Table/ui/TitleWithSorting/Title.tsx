@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import React from 'react';
 
-import {UITitleWithSorting} from './types';
+import {UITitleWithSorting} from './Title.types';
 
-function TitleWithSorting({onClick, upActive, downActive, title, sortingKey}: UITitleWithSorting) {
+function Title({onClick, upActive, downActive, title, sortingKey}: UITitleWithSorting) {
 	const titleClasses = classNames('ui-kit-table-title', {'ui-kit-table-title_hover': sortingKey});
 	const iconsClasses = classNames('ui-kit-table-title-icons');
 	const triangleUpClasses = classNames('ui-kit-table-title-icons-triangle-up', {
@@ -27,4 +27,4 @@ function TitleWithSorting({onClick, upActive, downActive, title, sortingKey}: UI
 	);
 }
 
-export default TitleWithSorting;
+export default Title;
