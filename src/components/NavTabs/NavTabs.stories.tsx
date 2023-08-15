@@ -1,5 +1,6 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import React from 'react';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 import NavTabs from './NavTabs';
 import {NavTabsProps} from './NavTabs.types';
@@ -10,16 +11,19 @@ export default {
 	argTypes: {
 		tabs: {
 			defaultValue: [
-				{key: 'tab1', title: 'Tab 1', disabled: false},
-				{key: 'tab2', title: 'Tab 2', disabled: false},
-				{key: 'tab3', title: 'Tab 3', disabled: true},
+				{link: 'tab1', title: 'Tab 1', disabled: false},
+				{link: 'tab2', title: 'Tab 2', disabled: false},
+				{link: 'tab3', title: 'Tab 3', disabled: false},
+				{link: 'tab4', title: 'Tab long 4', disabled: false},
+				{link: 'tab5', title: 'Tab long 5', disabled: true},
+				{link: 'tab6', title: 'Tab long 6', disabled: false},
 			],
 			description: 'An array of tab objects.',
 			control: {type: 'object'},
 		},
-		activeTabKey: {
+		activeTabLink: {
 			defaultValue: 'tab1',
-			description: '`key` property of current active `NavTab` object',
+			description: '`link` property of current active `NavTab` object',
 			control: {type: 'text'},
 		},
 		theme: {
@@ -27,6 +31,11 @@ export default {
 			control: {
 				type: 'inline-radio',
 			},
+		},
+		tabsType: {
+			defaultValue: 'button',
+			description: 'Regulates tabs type',
+			control: {type: 'select'},
 		},
 		tabsPosition: {
 			defaultValue: 'top',
@@ -47,9 +56,11 @@ export default {
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof NavTabs> = (args: NavTabsProps) => {
 	return (
-		<div style={{height: '400px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-			<NavTabs {...args} />
-		</div>
+		<Router>
+			<div style={{height: '400px', width: '400px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+				<NavTabs {...args} />
+			</div>
+		</Router>
 	);
 };
 

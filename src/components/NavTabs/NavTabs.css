@@ -1,43 +1,99 @@
 /* Стили контейнера */
-.ui-kit-navTabs-container {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	width: fit-content;
+.ui-kit-navTabs-boxShadow__wrapper {
+	position: relative;
+
+	width: 100%;
 }
 
-.ui-kit-navTabs-container__rotate-right {
+.ui-kit-navTabs-boxShadow__wrapper::before,
+.ui-kit-navTabs-boxShadow__wrapper::after {
+	position: absolute;
+
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+
+	width: 50px;
+
+	opacity: 0;
+
+	transition: opacity 0.3s linear;
+
+	content: "";
+	pointer-events: none;
+}
+
+.ui-kit-navTabs-boxShadow__wrapper::before {
+	left: 0;
+
+	background-image: linear-gradient(to right, var(--faint-weak-darker), transparent);
+}
+
+.ui-kit-navTabs-boxShadow__wrapper::after {
+	right: 0;
+
+	background-image: linear-gradient(to left, var(--faint-weak-darker), transparent);
+}
+
+.ui-kit-navTabs-boxShadow__wrapper--leftShadowVisible::before {
+	opacity: 1;
+}
+
+.ui-kit-navTabs-boxShadow__wrapper--rightShadowVisible::after {
+	opacity: 1;
+}
+
+.ui-kit-navTabs__container {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	width: auto;
+	overflow-x: auto;
+
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Chrome, Safari and Opera */
+.ui-kit-navTabs__container::-webkit-scrollbar {
+	display: none;
+}
+
+.ui-kit-navTabs-boxShadow__wrapper--rotate-right {
 	rotate: 90deg;
 }
 
-.ui-kit-navTabs-container__rotate-bottom {
+.ui-kit-navTabs-boxShadow__wrapper--rotate-bottom {
 	rotate: 180deg;
 }
 
-.ui-kit-navTabs-container__rotate-left {
+.ui-kit-navTabs-boxShadow__wrapper--rotate-left {
 	rotate: 270deg;
 }
 
-.ui-kit-navTabs-container__rotate-top,
-.ui-kit-navTabs-container__rotate-right {
+.ui-kit-navTabs-boxShadow__wrapper--rotate-top .ui-kit-navTabs__container,
+.ui-kit-navTabs-boxShadow__wrapper--rotate-right .ui-kit-navTabs__container {
 	flex-direction: row;
 }
 
-.ui-kit-navTabs-container__rotate-bottom,
-.ui-kit-navTabs-container__rotate-left {
+.ui-kit-navTabs-boxShadow__wrapper--rotate-bottom .ui-kit-navTabs__container,
+.ui-kit-navTabs-boxShadow__wrapper--rotate-left .ui-kit-navTabs__container {
 	flex-direction: row-reverse;
 }
 
 /* Стили таба */
-.ui-kit-navTabs-tab {
+.ui-kit-navTabs__tab {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	min-width: min-content;
 	height: 44px;
 	padding: 0 35px;
 	overflow: hidden;
 
 	white-space: nowrap;
+	text-decoration: none;
 	text-overflow: ellipsis;
 
 	background-color: var(--faint-weak-lighter);
@@ -49,45 +105,62 @@
 	transition: background-color 0.2s linear;
 }
 
-.ui-kit-navTabs-tab__theme-gray:hover,
-.ui-kit-navTabs-tab__theme-gray:active,
-.ui-kit-navTabs-tab__active__theme-gray {
+.ui-kit-navTabs__tab--theme-gray:hover,
+.ui-kit-navTabs__tab--theme-gray:active,
+.ui-kit-navTabs__tab--active--theme-gray {
 	background-color: var(--base-weak);
 }
 
-.ui-kit-navTabs-tab__theme-white:hover,
-.ui-kit-navTabs-tab__theme-white:active,
-.ui-kit-navTabs-tab__active__theme-white {
+.ui-kit-navTabs__tab--theme-white:hover,
+.ui-kit-navTabs__tab--theme-white:active,
+.ui-kit-navTabs__tab--active--theme-white {
 	background-color: var(--faint-weak);
 }
 
-.ui-kit-navTabs-tab:disabled:hover,
-.ui-kit-navTabs-tab:disabled:active,
-.ui-kit-navTabs-tab:disabled {
+.ui-kit-navTabs__tab:disabled:hover,
+.ui-kit-navTabs__tab:disabled:active,
+.ui-kit-navTabs__tab:disabled,
+.ui-kit-navTabs__tab--disabledLink:hover,
+.ui-kit-navTabs__tab--disabledLink:active,
+.ui-kit-navTabs__tab--disabledLink {
 	background-color: var(--faint-weak-lighter);
 	cursor: not-allowed;
 }
 
 /* Стили текста таба */
-.ui-kit-navTabs-tab-text {
+.ui-kit-navTabs__tab__text {
 	color: var(--base-strong);
 	font-weight: var(--fw-medium);
 	font-size: var(--fs-sm);
+	font-variant: normal;
 	line-height: var(--lh-md);
 
 	transition: color 0.2s linear;
+	font-feature-settings: normal;
 }
 
-.ui-kit-navTabs-tab__active__theme-gray .ui-kit-navTabs-tab-text,
-.ui-kit-navTabs-tab__active__theme-white .ui-kit-navTabs-tab-text {
+.ui-kit-navTabs__tab--active--theme-gray .ui-kit-navTabs__tab__text,
+.ui-kit-navTabs__tab--active--theme-white .ui-kit-navTabs__tab__text {
 	font-weight: var(--fw-semibold);
 }
 
-.ui-kit-navTabs-container__rotate-bottom .ui-kit-navTabs-tab-text {
+.ui-kit-navTabs-boxShadow__wrapper--rotate-bottom .ui-kit-navTabs__tab__text {
 	rotate: 180deg;
 }
 
-.ui-kit-navTabs-tab:disabled .ui-kit-navTabs-tab-text {
+.ui-kit-navTabs__tab:disabled .ui-kit-navTabs__tab__text,
+.ui-kit-navTabs__tab--disabledLink .ui-kit-navTabs__tab__text {
 	color: var(--faint-middle);
 	font-weight: var(--fw-medium);
+}
+
+@media screen and (max-width: 520px) {
+	.ui-kit-navTabs__tab {
+		padding: 0 25px;
+	}
+
+	.ui-kit-navTabs__tab__text {
+		font-size: var(--fs-xs);
+		line-height: var(--lh-xs);
+	}
 }

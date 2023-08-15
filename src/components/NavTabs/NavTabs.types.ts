@@ -1,20 +1,22 @@
+import {ReactNode} from 'react';
+
 import {Theme} from '../index.types';
 
-declare const TabsPositions: ['top', 'right', 'bottom', 'left'];
-
-declare type NavTab = {
-	key: string;
-	title?: string;
+type NavTab = {
+	link: string;
+	title?: string | ReactNode | false;
 	disabled?: boolean;
 };
-declare type TabsPosition = (typeof TabsPositions)[number];
+type TabsPosition = 'top' | 'right' | 'bottom' | 'left';
+type TabsType = 'button' | 'link';
 
-export declare type NavTabsProps = {
+export type NavTabsProps = {
 	tabs?: NavTab[];
-	activeTabKey?: string;
+	activeTabLink?: string;
 	onClick?: ((tabKey: string) => void) | undefined;
 	theme?: Theme;
 	tabsPosition?: TabsPosition;
+	tabsType?: TabsType;
 	containerClassName?: string;
 	tabClassName?: string;
 };
