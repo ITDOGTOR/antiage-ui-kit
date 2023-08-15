@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import {ReactElement} from 'react';
 
 import {Theme} from '../../../index.types';
 
@@ -8,5 +8,5 @@ export type NavTabLinkProps = {
 	tabClassName?: string;
 	isActive?: boolean;
 	theme?: Theme;
-	title?: string | ReactNode | false;
+	title?: string | ReactElement;
 };

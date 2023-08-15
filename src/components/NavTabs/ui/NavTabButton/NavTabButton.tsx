@@ -24,12 +24,12 @@ function NavTabButton({
 			onClick={onClick}
 			{...tabProps}
 		>
-			{typeof title === 'object' ? (
-				title
-			) : (
-				<span className={tabTextClasses} title={typeof title === 'string' ? title : undefined}>
+			{typeof title === 'string' ? (
+				<span className={tabTextClasses} title={title}>
 					{title}
 				</span>
+			) : (
+				title
 			)}
 		</button>
 	);
