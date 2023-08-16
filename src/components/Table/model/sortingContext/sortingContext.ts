@@ -1,8 +1,7 @@
 import React, {useContext} from 'react';
-import {useLocation, useNavigate} from 'react-router-dom';
 
 import {getSearchWithoutKeys} from '../../../../helpers';
-import {UISortingContext} from './sortingContext.types';
+import {UISortingContext, UIUseSorting} from './sortingContext.types';
 
 export const SortingContext = React.createContext<UISortingContext>({
 	sorting: [],
@@ -10,11 +9,9 @@ export const SortingContext = React.createContext<UISortingContext>({
 	sortingString: '',
 });
 
-export const useSorting = ({keyName = ''} = {}) => {
-	const history = useNavigate();
-	const location = useLocation();
+export const useSorting = ({keyName = '', setHistory}: UIUseSorting = {}) => {
 	const getSorting = () => {
-		const currentSorting = new URLSearchParams(location.search).get(`${keyName}order_by`);
+		const currentSorting = new URLSearchParams(window.location.search).get(`${keyName}order_by`);
 		if (currentSorting) {
 			return currentSorting.split(',');
 		}
@@ -26,9 +23,11 @@ export const useSorting = ({keyName = ''} = {}) => {
 		const newSearch = `${currentSearch || '?'}${
 			newSorting ? `${currentSearch ? '&' : ''}${keyName}order_by=${newSorting}` : ''
 		}`;
-		history({
-			search: newSearch,
-		});
+		if (setHistory) {
+			setHistory({
+				search: newSearch,
+			});
+		}
 	};
 	const localSetSorting = (value: string) => {
 		const sorting = getSorting();
