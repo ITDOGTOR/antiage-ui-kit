@@ -3,7 +3,7 @@ import './Table.css';
 import classNames from 'classnames';
 import React, {useRef} from 'react';
 
-import {usePinnedColumns, useShadowControl, useSortingContext} from '../../model';
+import {usePinnedColumns, useShadowControl} from '../../model';
 import Title from '../TitleWithSorting/Title';
 import {UITable} from './Table.types';
 
@@ -14,10 +14,9 @@ function Table({
 	tbodyClassName,
 	wrapperClassName,
 	columns,
+	sorting = [],
+	setSorting,
 }: UITable) {
-	const data = useSortingContext();
-	const {sorting, setSorting} = data || {};
-
 	const containerRef = useRef<HTMLDivElement>(null);
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const tbodyRef = useRef<HTMLTableSectionElement>(null);
@@ -54,7 +53,7 @@ function Table({
 								React.cloneElement(header, {
 									title,
 									onClick: () => {
-										if (sortingKey) {
+										if (sortingKey && setSorting) {
 											setSorting(sortingKey);
 										}
 									},

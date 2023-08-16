@@ -8,6 +8,7 @@ import {UITable} from './ui/Table/Table.types';
 const columns = [
 	{
 		title: 'Name',
+		sortingKey: 'name',
 	},
 	{
 		title: 'Age',
@@ -60,29 +61,32 @@ const data = [
 export default {
 	title: 'Table',
 	component: Table,
-	argTypes: {},
+	argTypes: {
+		sorting: {
+			defaultValue: [],
+			control: {type: 'object'},
+		},
+	},
 } as ComponentMeta<typeof Table.TableUI.Table>;
 
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Table.TableUI.Table> = (args: UITable) => {
 	return (
 		<Router>
-			<Table.TableUi.SortingProvider>
-				<Table.TableUi.Table {...args}>
-					{data.map((el) => (
-						<tr>
-							<td>{el.name}</td>
-							<td>{el.age}</td>
-							<td>{el.address}</td>
-							<td>{el.tags}</td>
-							<td>{el.action}</td>
-							<td>{el.action2}</td>
-							<td>{el.action3}</td>
-							<td>{el.action4}</td>
-						</tr>
-					))}
-				</Table.TableUi.Table>
-			</Table.TableUi.SortingProvider>
+			<Table.TableUi.Table {...args}>
+				{data.map((el) => (
+					<tr>
+						<td>{el.name}</td>
+						<td>{el.age}</td>
+						<td>{el.address}</td>
+						<td>{el.tags}</td>
+						<td>{el.action}</td>
+						<td>{el.action2}</td>
+						<td>{el.action3}</td>
+						<td>{el.action4}</td>
+					</tr>
+				))}
+			</Table.TableUi.Table>
 		</Router>
 	);
 };

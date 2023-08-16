@@ -13,4 +13,6 @@ export declare interface UITable {
 	tbodyClassName?: string;
 	wrapperClassName?: string;
 	columns: UIColumns;
+	sorting?: string[];
+	setSorting?: (v: string) => void;
 }
