@@ -1,9 +1,10 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 
 import {SortingContext, useSorting} from '../../model';
+import {SortingProviderTypes} from './SortingProvider.types';
 
-function SortingProvider({children, keyName}: {children: ReactElement; keyName: string}) {
-	const data = useSorting({keyName});
+function SortingProvider({children, keyName, setHistory}: SortingProviderTypes) {
+	const data = useSorting({keyName, setHistory});
 	return <SortingContext.Provider value={data}>{children}</SortingContext.Provider>;
 }
 
