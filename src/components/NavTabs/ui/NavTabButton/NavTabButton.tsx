@@ -6,7 +6,7 @@ import {NavTabButtonProps} from './NavTabButton.types';
 function NavTabButton({
 	onClick = () => {},
 	tabClassName,
-	isActive,
+	isActiveButton,
 	theme,
 	disabled,
 	title,
@@ -14,7 +14,7 @@ function NavTabButton({
 }: NavTabButtonProps) {
 	const tabTextClasses = classNames('ui-kit-navTabs__tab__text');
 	const singleTabClasses = classNames('ui-kit-navTabs__tab', `ui-kit-navTabs__tab--theme-${theme}`, tabClassName);
-	const activeTabClasses = classNames(isActive && `ui-kit-navTabs__tab--active--theme-${theme}`);
+	const activeTabClasses = classNames(isActiveButton && `ui-kit-navTabs__tab--active--theme-${theme}`);
 
 	return (
 		<button
