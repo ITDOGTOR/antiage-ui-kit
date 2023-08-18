@@ -7,6 +7,6 @@ export type NavTabButtonProps = {
 	tabClassName?: string;
 	title?: string | ReactElement;
 	disabled?: boolean;
-	isActive?: boolean;
+	isActiveButton?: boolean;
 	theme?: Theme;
 };

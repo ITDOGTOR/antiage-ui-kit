@@ -64,7 +64,7 @@ function NavTabs({
 						return (
 							<NavTabButton
 								disabled={disabled}
-								isActive={link === activeTabLink}
+								isActiveButton={link === activeTabLink}
 								key={link}
 								tabClassName={tabClassName}
 								theme={theme}
@@ -78,6 +78,7 @@ function NavTabs({
 						return (
 							<NavTabLink
 								disabled={disabled}
+								isActiveLink={link === activeTabLink}
 								key={link}
 								link={link}
 								tabClassName={tabClassName}
