@@ -1,0 +1,82 @@
+.ui-kit-day {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+
+	color: var(--faint-middle);
+	font-weight: var(--fw-medium);
+	font-size: var(--fs-sm);
+	line-height: 100%;
+
+	background-color: var(--base-weak);
+	border: none;
+
+	border-radius: var(--brad-circle);
+
+	transition: 0.3s all;
+}
+
+.ui-kit-day::before {
+	position: absolute;
+	top: -4px;
+	right: -4px;
+	bottom: -4px;
+	left: -4px;
+	z-index: -1;
+
+	background-color: inherit;
+	border-radius: var(--brad-circle);
+
+	content: "";
+}
+
+.ui-kit-day--week {
+	color: var(--accent-strong);
+}
+
+.ui-kit-day--current-month {
+	color: var(--base-strong);
+
+	cursor: pointer;
+}
+
+.ui-kit-day--current-month:hover,
+.ui-kit-day--current-month:focus {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-day--today {
+	color: var(--base-strong);
+	font-weight: var(--fw-semibold);
+
+	background-color: var(--faint-weak);
+	cursor: pointer;
+}
+
+.ui-kit-day--selected {
+	color: var(--base-weak);
+	font-weight: var(--fw-semibold);
+
+	background-color: var(--complement-strong);
+	cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+	.ui-kit-day {
+		width: 26px;
+		height: 26px;
+
+		font-size: var(--fs-xs);
+	}
+
+	.ui-kit-day::before {
+		top: -2px;
+		right: -2px;
+		bottom: -2px;
+		left: -2px;
+	}
+}
