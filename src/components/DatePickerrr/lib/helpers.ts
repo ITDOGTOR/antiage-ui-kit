@@ -1,12 +1,6 @@
 import range from 'lodash.range';
 
-import {DateAttributes} from '../ui/index.types';
-
-interface DateInfo {
-	day: number | null;
-	monthNum: number;
-	year: number;
-}
+import {DateAttributes, DateInfo} from '../ui/index.types';
 
 export const getZero = (num: number): string => {
 	if (num < 10) {

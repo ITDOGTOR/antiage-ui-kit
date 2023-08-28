@@ -16,3 +16,9 @@ export enum DateAttributes {
 	MONTH_NUM = 'monthNum',
 	YEAR = 'year',
 }
+
+export declare interface DateInfo {
+	day: number | null;
+	monthNum: number;
+	year: number;
+}
