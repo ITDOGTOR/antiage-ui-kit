@@ -1,0 +1,176 @@
+/*stylelint-disable*/
+/* Стили контейнера */
+.ui-kit-filterTabs-boxShadow__wrapper {
+	position: relative;
+
+	width: 100%;
+}
+
+.ui-kit-filterTabs-boxShadow__wrapper::before,
+.ui-kit-filterTabs-boxShadow__wrapper::after {
+	position: absolute;
+
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+
+	width: 50px;
+
+	opacity: 0;
+
+	transition: opacity 0.3s linear;
+
+	content: "";
+	pointer-events: none;
+}
+
+.ui-kit-filterTabs-boxShadow__wrapper::before {
+	left: 0;
+
+	background-image: linear-gradient(to right, var(--faint-weak-darker), transparent);
+}
+
+.ui-kit-filterTabs-boxShadow__wrapper::after {
+	right: 0;
+
+	background-image: linear-gradient(to left, var(--faint-weak-darker), transparent);
+}
+
+.ui-kit-filterTabs-boxShadow__wrapper--leftShadowVisible::before {
+	opacity: 1;
+}
+
+.ui-kit-filterTabs-boxShadow__wrapper--rightShadowVisible::after {
+	opacity: 1;
+}
+
+.ui-kit-filterTabs__container {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	width: auto;
+	overflow-x: auto;
+
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+
+	transition: background-color 0.2s linear;
+	border-radius: var(--brad-base);
+}
+
+/* Chrome, Safari and Opera */
+.ui-kit-filterTabs__container::-webkit-scrollbar {
+	display: none;
+}
+
+.ui-kit-filterTabs__container--theme-white {
+	background-color: var(--faint-weak);
+
+}
+
+.ui-kit-filterTabs__container--theme-gray {
+	background-color: var(--base-weak);
+}
+
+
+/* Стили таба */
+.ui-kit-filterTabs__tab {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: min-content;
+	overflow: hidden;
+
+	white-space: nowrap;
+	text-decoration: none;
+	text-overflow: ellipsis;
+
+	border: none;
+	border-radius: var(--brad-base);
+
+	transition: background-color 0.2s linear;
+}
+
+.ui-kit-filterTabs__tab:disabled {
+	cursor: not-allowed;
+
+}
+
+.ui-kit-filterTabs__tab--size-small {
+	height: 28px;
+	padding: 0 35px;
+
+}
+
+.ui-kit-filterTabs__tab--size-medium {
+	height: 34px;
+	padding: 0 35px;
+
+}
+
+.ui-kit-filterTabs__tab--size-large {
+	height: 44px;
+	padding: 0 35px;
+}
+
+.ui-kit-filterTabs__tab--theme-white {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-filterTabs__tab--theme-white:disabled {
+
+}
+
+.ui-kit-filterTabs__tab--theme-gray {
+	background-color: var(--base-weak);
+}
+
+.ui-kit-filterTabs__tab--theme-gray:disabled {
+
+}
+
+.ui-kit-filterTabs__tab--active {
+
+}
+
+.ui-kit-filterTabs__tab--active--color-accent {
+	background-color: var(--accent-strong);
+}
+
+.ui-kit-filterTabs__tab--active--color-complement {
+	background-color: var(--complement-strong);
+}
+
+/* Стили текста таба */
+.ui-kit-filterTabs__tab__text {
+
+}
+
+.ui-kit-filterTabs__tab__text--size-small {
+
+}
+
+.ui-kit-filterTabs__tab__text--size-medium {
+
+}
+
+.ui-kit-filterTabs__tab__text--size-large {
+
+}
+
+.ui-kit-filterTabs__tab__text--theme-white {
+
+}
+
+.ui-kit-filterTabs__tab:disabled .ui-kit-filterTabs__tab__text--theme-white {
+
+}
+
+.ui-kit-filterTabs__tab:disabled .ui-kit-filterTabs__tab__text--theme-gray {
+
+}
+
+.ui-kit-filterTabs__tab__text--active {
+
+}
