@@ -2,7 +2,7 @@
 	width: fit-content;
 }
 
-.ui-kit-checkbox__wrapper-disabled {
+.ui-kit-checkbox__wrapper[data-disabled] {
 	cursor: not-allowed;
 }
 
