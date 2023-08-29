@@ -2,7 +2,7 @@
 	width: fit-content;
 }
 
-.ui-kit-radio__wrapper-disabled {
+.ui-kit-radio__wrapper[data-disabled] {
 	cursor: not-allowed;
 }
 

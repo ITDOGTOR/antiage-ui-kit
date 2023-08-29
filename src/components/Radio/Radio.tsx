@@ -19,18 +19,14 @@ function Radio({
 	labelClassName,
 	...props
 }: RadioProps) {
-	const wrapperClasses = classNames(
-		'ui-kit-radio__wrapper',
-		disabled && 'ui-kit-radio__wrapper-disabled',
-		wrapperClassName,
-	);
+	const wrapperClasses = classNames('ui-kit-radio__wrapper', wrapperClassName);
 	const containerClasses = classNames('ui-kit-radio', containerClassName);
 	const inputClasses = classNames('ui-kit-radio-fakeInput', `ui-kit-radio-fakeInput__theme-${theme}`, className);
 	const inputIconClasses = classNames('ui-kit-radio-fakeInput-icon', `ui-kit-radio-fakeInput-icon__theme-${theme}`);
 	const labelClasses = classNames('ui-kit-radio-label', labelClassName);
 
 	return (
-		<div className={wrapperClasses}>
+		<div className={wrapperClasses} data-disabled={disabled}>
 			<input
 				className="ui-kit-radio-input__hidden"
 				defaultChecked={defaultChecked}
