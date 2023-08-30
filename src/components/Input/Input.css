@@ -5,11 +5,23 @@
 	align-items: center;
 	width: 100%;
 
-	height: 44px;
-
 	font-weight: var(--fw-medium);
 
 	border: 1px solid transparent;
+	border-radius: var(--brad-small);
+}
+
+.ui-kit-input-wrapper.small {
+	height: 28px;
+}
+
+.ui-kit-input-wrapper.medium {
+	height: 34px;
+}
+
+.ui-kit-input-wrapper.large {
+	height: 44px;
+
 	border-radius: var(--brad-base);
 }
 
@@ -125,16 +137,22 @@
 	width: 100%;
 
 	height: 100%;
-	padding: 14px;
+	padding: 0 14px;
 
 	font-weight: var(--fw-medium);
 
-	font-size: var(--fs-xs);
+	font-size: var(--fs-sm);
 
 	background-color: transparent;
 
 	border: none;
 	border-radius: var(--brad-base);
+}
+
+.ui-kit-input.small {
+	padding: 0 10px;
+
+	font-size: var(--fs-xs);
 }
 
 .ui-kit-input:-webkit-autofill,
@@ -191,6 +209,10 @@
 }
 
 .ui-kit-input-icon {
+	flex-shrink: 0;
+	width: 16px;
+	height: 16px;
+
 	color: var(--accent-strong);
 }
 

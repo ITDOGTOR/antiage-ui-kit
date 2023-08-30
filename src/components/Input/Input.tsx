@@ -13,6 +13,7 @@ function Input({
 	placeholderClassName = '',
 	iconClassName = '',
 	theme = 'white',
+	inputSize = 'medium',
 	placeholder = '',
 	label = '',
 	error = '',
@@ -57,6 +58,7 @@ function Input({
 	const inputWrapperClasses = classNames(
 		'ui-kit-input-wrapper',
 		theme,
+		inputSize,
 		{focused: isFocused},
 		{password: isPassword},
 		{icon: isEmail || isPassword},
@@ -67,6 +69,7 @@ function Input({
 	const classes = classNames(
 		'ui-kit-input',
 		theme,
+		inputSize,
 		{withLabel: label},
 		{password: isPassword},
 		{icon: isEmail || isPassword},
@@ -96,11 +99,6 @@ function Input({
 	const passwordBtnClasses = classNames('ui-kit-input-password-btn');
 	const iconClasses = classNames('ui-kit-input-icon', {disabled}, {error}, iconClassName);
 
-	let Icon = Lock;
-	if (isEmail) {
-		Icon = Letter;
-	}
-
 	const [showPassword, setShowPassword] = useState(false);
 
 	const togglePasswordVisible = () => setShowPassword((prev) => !prev);
@@ -125,7 +123,8 @@ function Input({
 			<label className={inputWrapperClasses}>
 				{label && <span className={labelClasses}>{label}</span>}
 				{placeholder && isPlaceholder && !localValue && <span className={placeholderClasses}>{placeholder}</span>}
-				{(isPassword || isEmail) && <Icon className={iconClasses} />}
+				{isEmail && <Letter className={iconClasses} />}
+				{isPassword && <Lock className={iconClasses} />}
 				<input {...commonProps} />
 				{isPassword && !disabled && (
 					<button className={passwordBtnClasses} type="button" onClick={togglePasswordVisible}>

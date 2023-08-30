@@ -13,6 +13,10 @@ export default {
 			table: {defaultValue: {summary: 'white'}},
 			control: {type: 'select'},
 		},
+		inputSize: {
+			defaultValue: 'medium',
+			control: {type: 'select'},
+		},
 		disabled: {
 			name: 'disabled',
 			defaultValue: false,
@@ -33,13 +37,13 @@ export default {
 		label: {
 			name: 'label',
 			description: 'Label-placeholder',
-			defaultValue: '',
+			defaultValue: 'Label',
 			control: {type: 'text'},
 		},
 		placeholder: {
 			name: 'placeholder',
 			description: 'simple placeholder',
-			defaultValue: '',
+			defaultValue: 'Placeholder',
 			control: {type: 'text'},
 		},
 		value: {
