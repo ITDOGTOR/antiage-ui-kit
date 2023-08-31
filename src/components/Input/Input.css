@@ -1,4 +1,5 @@
-.ui-kit-input-wrapper {
+/* Стили wrapper */
+.ui-kit-input__wrapper {
 	position: relative;
 
 	display: flex;
@@ -7,141 +8,156 @@
 
 	font-weight: var(--fw-medium);
 
-	border: 1px solid transparent;
+	transition: background-color 0.2s linear, height 0.2s linear, border-radius 0.2s linear;
+}
+
+.ui-kit-input__wrapper--size-small {
+	height: 28px;
+
 	border-radius: var(--brad-small);
 }
 
-.ui-kit-input-wrapper.small {
-	height: 28px;
-}
-
-.ui-kit-input-wrapper.medium {
+.ui-kit-input__wrapper--size-medium {
 	height: 34px;
+
+	border-radius: var(--brad-small);
 }
 
-.ui-kit-input-wrapper.large {
+.ui-kit-input__wrapper--size-large {
 	height: 44px;
 
 	border-radius: var(--brad-base);
 }
 
-.ui-kit-input-wrapper.password {
-	padding-right: 14px;
-}
-
-.ui-kit-input-wrapper.icon {
-	padding-left: 14px;
-}
-
-.ui-kit-input-wrapper.focused {
-	box-shadow: 0 0 0 2px var(--accent-weak-lighter);
-}
-
-.ui-kit-input-wrapper.white {
-	background-color: var(--base-weak);
-	border: 1px solid var(--back-faint-weak-darker);
-}
-
-.ui-kit-input-wrapper.white.focused {
-	border-color: var(--accent-weak-lighter);
-}
-
-.ui-kit-input-wrapper.gray {
+.ui-kit-input__wrapper--theme-white {
 	background-color: var(--faint-weak);
 }
 
-.ui-kit-input-wrapper.white.error {
-	border: 1px solid var(--critic-strong);
+.ui-kit-input__wrapper--theme-gray {
+	background-color: var(--base-weak);
 }
 
-.ui-kit-input-wrapper.gray.error {
-	background-color: var(--critic-weak-lighter);
-}
-
-.ui-kit-input-wrapper.disabled {
+.ui-kit-input__wrapper--disabled {
 	cursor: not-allowed;
 }
 
-.ui-kit-input-wrapper.white.disabled {
-	border: 1px solid var(--back-faint-weak-darker);
+.ui-kit-input__wrapper--passwordIcon {
+	padding-right: 14px;
 }
 
-.ui-kit-input-label-common {
+.ui-kit-input__wrapper--icon {
+	padding-left: 14px;
+}
+
+.ui-kit-input__wrapper--error {
+	background-color: var(--critic-weak-lighter);
+}
+
+/* Стили wrapper конец */
+
+/* Стили лейбла */
+.ui-kit-input__label {
 	position: absolute;
-	top: 50%;
-
-	color: var(--faint-strong);
-
-	font-size: var(--fs-xs);
-	line-height: var(--lh-xss);
-
-	background-color: transparent;
-
-	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-	resize: none;
-}
-
-.ui-kit-input-label-common.error {
-	color: var(--critic-strong);
-}
-
-.ui-kit-input-label-common.disabled {
-	color: var(--faint-strong);
-}
-
-.ui-kit-input-label-common.invisible {
-	color: transparent;
-}
-
-.ui-kit-input-label {
 	top: 0;
 	left: 14px;
 
 	padding: 2px 4px;
 
-	font-size: var(--fs-xxs);
+	color: var(--base-strong-lighter);
+	font-weight: var(--fw-medium);
 
-	background-color: var(--base-weak);
+	font-size: var(--fs-3xs);
+
+	line-height: normal;
 
 	border-radius: 4px;
 
 	transform: translate(0, -50%);
+
+	transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	resize: none;
 }
 
-.ui-kit-input-label.gray {
-	padding: 0;
+.ui-kit-input__label--theme-white {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-input__label--theme-gray {
+	background-color: var(--base-weak);
+}
+
+.ui-kit-input__label--error {
+	color: var(--critic-strong);
+	font-size: var(--fs-xxs);
+	line-height: var(--lh-xs);
+
+	background-color: var(--critic-weak-lighter);
+}
+
+.ui-kit-input__label--disabled {
+	color: var(--faint-strong);
+}
+
+.ui-kit-input__label--invisible {
+	color: transparent;
 
 	background-color: transparent;
-	transform: translate(0, 6px);
 }
 
-.ui-kit-input-label.gray.icon {
-	left: 40px;
-}
+/* Стили лейбла конец */
 
-.ui-kit-input-placeholder {
+/* Стили плейсхолдера */
+.ui-kit-input__placeholder {
+	position: absolute;
+	top: 50%;
 	left: 15px;
+
+	color: var(--base-strong-lighter);
+	font-weight: var(--fw-medium);
 
 	transform: translate(0, -50%);
 
 	cursor: text;
+
+	transition: all 0.2s linear;
 }
 
-.ui-kit-input-placeholder.icon {
+.ui-kit-input__placeholder--size-small {
+	font-size: var(--fs-xs);
+
+	line-height: var(--lh-sm);
+}
+
+.ui-kit-input__placeholder--size-medium,
+.ui-kit-input__placeholder--size-large {
+	font-size: var(--fs-sm);
+
+	line-height: var(--lh-md);
+}
+
+.ui-kit-input__placeholder--icon {
 	left: 42px;
 }
 
+.ui-kit-input__placeholder--invisible {
+	color: transparent;
+
+	background-color: transparent;
+}
+
+/* Стили плейсхолдера конец */
+
+/* Стили инпута */
 .ui-kit-input {
 	flex: 1 1;
 	width: 100%;
 
 	height: 100%;
-	padding: 0 14px;
+
+	color: var(--base-strong);
 
 	font-weight: var(--fw-medium);
-
-	font-size: var(--fs-sm);
 
 	background-color: transparent;
 
@@ -149,10 +165,35 @@
 	border-radius: var(--brad-base);
 }
 
-.ui-kit-input.small {
+.ui-kit-input--size-small {
 	padding: 0 10px;
 
 	font-size: var(--fs-xs);
+	line-height: var(--lh-sm);
+}
+
+.ui-kit-input--size-medium,
+.ui-kit-input--size-large {
+	padding: 0 14px;
+
+	font-size: var(--fs-sm);
+	line-height: var(--lh-md);
+}
+
+.ui-kit-input:focus,
+.ui-kit-input:active {
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
+.ui-kit-input:disabled {
+	color: var(--faint-strong);
+
+	background-color: transparent;
+
+	pointer-events: none;
+	-webkit-text-fill-color: var(--faint-strong);
 }
 
 .ui-kit-input:-webkit-autofill,
@@ -162,53 +203,14 @@
 	-webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
 }
 
-.ui-kit-input:focus {
-	border: none;
-	outline: none;
-	box-shadow: none;
-}
-
-.ui-kit-input:disabled {
-	color: var(--faint-strong);
-	-webkit-text-fill-color: var(--faint-strong);
-
-	background-color: transparent;
-}
-
-.ui-kit-input.icon {
+.ui-kit-input--icon {
 	padding-left: 10px;
 }
 
-.ui-kit-input.gray.withLabel {
-	padding-top: 20px;
-	padding-bottom: 8px;
-}
+/* Стили инпута конец */
 
-.ui-kit-input-password-btn {
-	padding: 0;
-
-	color: var(--faint-strong);
-
-	background-color: transparent;
-	border: 1px solid transparent;
-
-	cursor: pointer;
-}
-
-.ui-kit-input-password-btn > svg {
-	width: 14px;
-	height: 14px;
-}
-
-.ui-kit-input-password-btn:hover {
-	color: var(--accent-strong);
-}
-
-.ui-kit-input-password-btn.disabled {
-	display: none;
-}
-
-.ui-kit-input-icon {
+/* Стили иконок */
+.ui-kit-input__icon {
 	flex-shrink: 0;
 	width: 16px;
 	height: 16px;
@@ -216,10 +218,42 @@
 	color: var(--accent-strong);
 }
 
-.ui-kit-input-icon.error {
+.ui-kit-input__icon__togglePasswordIcon {
+	padding: 0;
+
+	color: var(--faint-strong);
+
+	background-color: transparent;
+	border: none;
+
+	cursor: pointer;
+
+	transition: color 0.1s linear;
+}
+
+.ui-kit-input__icon__togglePasswordIcon:hover {
+	color: var(--accent-strong);
+}
+
+.ui-kit-input__icon__togglePasswordIcon > svg {
+	width: 16px;
+	height: 16px;
+}
+
+.ui-kit-input__icon--error,
+.ui-kit-input__icon__togglePasswordIcon--error {
 	color: var(--critic-strong);
 }
 
-.ui-kit-input-icon.disabled {
-	color: var(--faint-strong);
+.ui-kit-input__icon__togglePasswordIcon--error:hover {
+	color: var(--critic-strong-darker);
 }
+
+.ui-kit-input__icon--disabled,
+.ui-kit-input__icon__togglePasswordIcon:disabled {
+	color: var(--faint-middle);
+
+	pointer-events: none;
+}
+
+/* Стили иконок конец */

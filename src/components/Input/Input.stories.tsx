@@ -10,8 +10,9 @@ export default {
 	argTypes: {
 		theme: {
 			defaultValue: 'white',
-			table: {defaultValue: {summary: 'white'}},
-			control: {type: 'select'},
+			control: {
+				type: 'inline-radio',
+			},
 		},
 		inputSize: {
 			defaultValue: 'medium',
@@ -59,18 +60,6 @@ export default {
 		placeholderClassName: {table: {disable: true}},
 		iconClassName: {table: {disable: true}},
 		innerRef: {table: {disable: true}},
-		name: {
-			name: 'name',
-			description: 'input name',
-			defaultValue: '',
-			control: {type: 'text'},
-		},
-		autoComplete: {
-			name: 'autocomplete',
-			description: 'input autocomplete',
-			defaultValue: false,
-			control: {type: 'boolean'},
-		},
 	},
 } as ComponentMeta<typeof Input>;
 
