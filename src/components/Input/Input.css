@@ -6,25 +6,30 @@
 	align-items: center;
 	width: 100%;
 
-	font-weight: var(--fw-medium);
-
 	transition: background-color 0.2s linear, height 0.2s linear, border-radius 0.2s linear;
+}
+
+.ui-kit-input__wrapper--active {
+	align-items: flex-end;
 }
 
 .ui-kit-input__wrapper--size-small {
 	height: 28px;
+	padding: 6px 14px;
 
 	border-radius: var(--brad-small);
 }
 
 .ui-kit-input__wrapper--size-medium {
 	height: 34px;
+	padding: 8px 14px;
 
 	border-radius: var(--brad-small);
 }
 
 .ui-kit-input__wrapper--size-large {
 	height: 44px;
+	padding: 7px 14px;
 
 	border-radius: var(--brad-base);
 }
@@ -58,10 +63,8 @@
 /* Стили лейбла */
 .ui-kit-input__label {
 	position: absolute;
-	top: 0;
+	top: 12px;
 	left: 14px;
-
-	padding: 2px 4px;
 
 	color: var(--base-strong-lighter);
 	font-weight: var(--fw-medium);
@@ -70,8 +73,6 @@
 
 	line-height: normal;
 
-	border-radius: 4px;
-
 	transform: translate(0, -50%);
 
 	transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -79,20 +80,10 @@
 	resize: none;
 }
 
-.ui-kit-input__label--theme-white {
-	background-color: var(--faint-weak);
-}
-
-.ui-kit-input__label--theme-gray {
-	background-color: var(--base-weak);
-}
-
 .ui-kit-input__label--error {
 	color: var(--critic-strong);
 	font-size: var(--fs-xxs);
 	line-height: var(--lh-xs);
-
-	background-color: var(--critic-weak-lighter);
 }
 
 .ui-kit-input__label--disabled {
@@ -111,7 +102,7 @@
 .ui-kit-input__placeholder {
 	position: absolute;
 	top: 50%;
-	left: 15px;
+	left: 14px;
 
 	color: var(--base-strong-lighter);
 	font-weight: var(--fw-medium);
@@ -153,8 +144,6 @@
 	flex: 1 1;
 	width: 100%;
 
-	height: 100%;
-
 	color: var(--base-strong);
 
 	font-weight: var(--fw-medium);
@@ -166,7 +155,7 @@
 }
 
 .ui-kit-input--size-small {
-	padding: 0 10px;
+	height: 16px;
 
 	font-size: var(--fs-xs);
 	line-height: var(--lh-sm);
@@ -174,7 +163,7 @@
 
 .ui-kit-input--size-medium,
 .ui-kit-input--size-large {
-	padding: 0 14px;
+	height: 18px;
 
 	font-size: var(--fs-sm);
 	line-height: var(--lh-md);

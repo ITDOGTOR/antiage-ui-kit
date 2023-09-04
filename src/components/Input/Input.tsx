@@ -62,6 +62,7 @@ function Input({
 
 	const inputWrapperClasses = classNames(
 		'ui-kit-input__wrapper',
+		{'ui-kit-input__wrapper--active': !!localValue},
 		`ui-kit-input__wrapper--size-${inputSize}`,
 		`ui-kit-input__wrapper--theme-${theme}`,
 		{'ui-kit-input__wrapper--disabled': disabled},
@@ -73,7 +74,6 @@ function Input({
 
 	const labelClasses = classNames(
 		'ui-kit-input__label',
-		`ui-kit-input__label--theme-${theme}`,
 		{'ui-kit-input__label--invisible': !label || inputSize !== 'large' || !localValue},
 		{'ui-kit-input__label--error': error},
 		{'ui-kit-input__label--disabled': disabled},
