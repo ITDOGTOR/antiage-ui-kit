@@ -1,4 +1,4 @@
-import React, {DetailedHTMLProps, InputHTMLAttributes} from 'react';
+import React, {DetailedHTMLProps, InputHTMLAttributes, SVGProps} from 'react';
 
 import {Size, Theme} from '../index.types';
 
@@ -15,4 +15,6 @@ export declare type InputProps = {
 	placeholderClassName?: string;
 	iconClassName?: string;
 	innerRef?: React.RefObject<HTMLInputElement>;
+	iconName?: string;
+	CustomIconComponent?: React.ElementType<SVGProps<SVGSVGElement>>;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;

@@ -1,11 +1,13 @@
 import classNames from 'classnames';
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, Suspense, useMemo, useState} from 'react';
 
 import {Eye, EyeClosed, Letter, Lock} from '../../assets';
 import InputError from '../InputError';
 import {InputProps} from './Input.types';
 
 function Input({
+	iconName = '',
+	CustomIconComponent = undefined,
 	theme = 'white',
 	inputSize = 'medium',
 	disabled,
@@ -26,10 +28,26 @@ function Input({
 }: InputProps) {
 	const [localValue, setLocalValue] = useState(value);
 	const [localType, setLocalType] = useState(type);
+	const [isIconImportError, setIsIconImportError] = useState(false);
+
+	const LocalInputIcon = useMemo(() => {
+		const importPromise = import(`../../assets/${iconName}`)
+			.then((importedModule) => {
+				setIsIconImportError(false);
+				return importedModule;
+			})
+			.catch((e) => {
+				console.error(e);
+				setIsIconImportError(true);
+				return e;
+			});
+
+		return React.lazy(() => importPromise);
+	}, [iconName]);
 
 	const isPassword = type === 'password';
 	const isEmail = type === 'email';
-	const isPlaceholder = !localValue && placeholder;
+	const isIcon = isPassword || isEmail || (!!iconName && !isIconImportError) || CustomIconComponent;
 
 	function togglePasswordVisible() {
 		setLocalType((prev) => (prev === 'password' ? 'text' : 'password'));
@@ -48,7 +66,7 @@ function Input({
 		`ui-kit-input__wrapper--theme-${theme}`,
 		{'ui-kit-input__wrapper--disabled': disabled},
 		{'ui-kit-input__wrapper--passwordIcon': isPassword},
-		{'ui-kit-input__wrapper--icon': isEmail || isPassword},
+		{'ui-kit-input__wrapper--icon': isIcon},
 		{'ui-kit-input__wrapper--error': !!error},
 		inputWrapperClassName,
 	);
@@ -65,15 +83,15 @@ function Input({
 	const placeholderClasses = classNames(
 		'ui-kit-input__placeholder',
 		`ui-kit-input__placeholder--size-${inputSize}`,
-		{'ui-kit-input__placeholder--icon': isEmail || isPassword},
-		{'ui-kit-input__placeholder--invisible': !isPlaceholder},
+		{'ui-kit-input__placeholder--icon': isIcon},
+		{'ui-kit-input__placeholder--invisible': !!localValue || !placeholder},
 		placeholderClassName,
 	);
 
 	const inputClasses = classNames(
 		'ui-kit-input',
 		`ui-kit-input--size-${inputSize}`,
-		{'ui-kit-input--icon': isEmail || isPassword},
+		{'ui-kit-input--icon': isIcon},
 		className,
 	);
 
@@ -93,6 +111,12 @@ function Input({
 			<label className={inputWrapperClasses}>
 				<span className={labelClasses}>{label}</span>
 				<span className={placeholderClasses}>{placeholder}</span>
+				{!!iconName && !isIconImportError && (
+					<Suspense fallback={<span>...</span>}>
+						<LocalInputIcon className={iconClasses} />
+					</Suspense>
+				)}
+				{!!CustomIconComponent && <CustomIconComponent className={iconClasses} />}
 				{isEmail && <Letter className={iconClasses} />}
 				{isPassword && <Lock className={iconClasses} />}
 				<input
