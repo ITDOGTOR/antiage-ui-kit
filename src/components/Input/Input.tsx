@@ -84,6 +84,7 @@ function Input({
 		'ui-kit-input__placeholder',
 		`ui-kit-input__placeholder--size-${inputSize}`,
 		{'ui-kit-input__placeholder--icon': isIcon},
+		{'ui-kit-input__placeholder--disabled': disabled || !!localValue || !placeholder},
 		{'ui-kit-input__placeholder--invisible': !!localValue || !placeholder},
 		placeholderClassName,
 	);

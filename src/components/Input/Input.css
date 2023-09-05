@@ -131,6 +131,10 @@
 	left: 42px;
 }
 
+.ui-kit-input__placeholder--disabled {
+	pointer-events: none;
+}
+
 .ui-kit-input__placeholder--invisible {
 	color: transparent;
 
