@@ -2,7 +2,7 @@ import React, {DetailedHTMLProps, InputHTMLAttributes, SVGProps} from 'react';
 
 import {Size, Theme} from '../index.types';
 
-export declare type InputProps = {
+export type InputProps = {
 	className?: string;
 	theme?: Theme;
 	inputSize?: Size;

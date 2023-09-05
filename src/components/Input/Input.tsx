@@ -2,8 +2,8 @@ import classNames from 'classnames';
 import React, {ChangeEvent, Suspense, useMemo, useState} from 'react';
 
 import {Eye, EyeClosed, Letter, Lock} from '../../assets';
-import InputError from '../InputError';
 import {InputProps} from './Input.types';
+import {InputErrorTooltip} from './ui';
 
 function Input({
 	iconName = '',
@@ -62,7 +62,7 @@ function Input({
 
 	const inputWrapperClasses = classNames(
 		'ui-kit-input__wrapper',
-		{'ui-kit-input__wrapper--active': !!localValue},
+		{'ui-kit-input__wrapper--active': inputSize === 'large' && !!localValue},
 		`ui-kit-input__wrapper--size-${inputSize}`,
 		`ui-kit-input__wrapper--theme-${theme}`,
 		{'ui-kit-input__wrapper--disabled': disabled},
@@ -138,8 +138,8 @@ function Input({
 						{localType === type ? <EyeClosed aria-label="hide-password" /> : <Eye aria-label="show-password" />}
 					</button>
 				)}
+				<InputErrorTooltip errorText={error} />
 			</label>
-			<InputError error={error} />
 		</div>
 	);
 }

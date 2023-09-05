@@ -6,7 +6,7 @@
 	align-items: center;
 	width: 100%;
 
-	transition: background-color 0.2s linear, height 0.2s linear, border-radius 0.2s linear;
+	transition: background-color, height 0.2s linear;
 }
 
 .ui-kit-input__wrapper--active {
@@ -200,15 +200,14 @@
 
 /* Стили иконок */
 .ui-kit-input__icon {
-	flex-shrink: 0;
-	width: 16px;
-	height: 16px;
-
 	color: var(--accent-strong);
+
+	transition: color, width, height 0.2s linear;
 }
 
 .ui-kit-input__icon__togglePasswordIcon {
-	padding: 0;
+	display: flex;
+	padding: 4px;
 
 	color: var(--faint-strong);
 
@@ -217,16 +216,47 @@
 
 	cursor: pointer;
 
-	transition: color 0.1s linear;
+	transition: color, background-color 0.1s linear;
 }
 
 .ui-kit-input__icon__togglePasswordIcon:hover {
 	color: var(--accent-strong);
 }
 
-.ui-kit-input__icon__togglePasswordIcon > svg {
+.ui-kit-input__errorIcon__wrapper {
+	display: flex;
+	padding: 4px;
+
+	background-color: transparent;
+	border: none;
+	border-radius: var(--brad-circle);
+
+	cursor: pointer;
+
+	transition: background-color 0.1s linear;
+}
+
+.ui-kit-input__errorIcon__wrapper--hidden {
+	padding: 0;
+}
+
+.ui-kit-input__errorIcon {
+	color: var(--critic-strong);
+
+	transition: background-color, width, height 0.1s linear;
+}
+
+.ui-kit-input__icon,
+.ui-kit-input__icon__togglePasswordIcon > svg,
+.ui-kit-input__errorIcon {
+	flex-shrink: 0;
 	width: 16px;
 	height: 16px;
+}
+
+.ui-kit-input__errorIcon__wrapper:hover,
+.ui-kit-input__errorIcon__wrapper:active {
+	background-color: var(--critic-weak);
 }
 
 .ui-kit-input__icon--error,
@@ -238,6 +268,11 @@
 	color: var(--critic-strong-darker);
 }
 
+.ui-kit-input__errorIcon--hidden {
+	width: 0;
+	height: 0;
+}
+
 .ui-kit-input__icon--disabled,
 .ui-kit-input__icon__togglePasswordIcon:disabled {
 	color: var(--faint-middle);
@@ -246,3 +281,18 @@
 }
 
 /* Стили иконок конец */
+
+/* Стили тултипа */
+.ui-kit-input__error-tooltip {
+	width: 100%;
+	max-width: 100%;
+}
+
+.ui-kit-input__error-tooltip-text {
+	color: var(--critic-strong);
+	font-weight: var(--fw-medium);
+	font-size: var(--fs-xs);
+	line-height: var(--lh-sm);
+}
+
+/* Стили тултипа конец */
