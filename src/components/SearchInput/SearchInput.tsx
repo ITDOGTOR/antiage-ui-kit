@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import debounce from 'lodash.debounce';
-import React, {useMemo, useState} from 'react';
+import React, {ChangeEvent, useMemo, useState} from 'react';
 
 import {Search} from '../../assets';
 import {SearchInputProps} from './SearchInput.types';
@@ -15,7 +15,7 @@ function SearchInput({
 	containerClassName,
 	inputClassName,
 	theme,
-	size,
+	inputSize,
 	...inputProps
 }: SearchInputProps) {
 	const [localValue, setLocalValue] = useState('');
@@ -30,21 +30,21 @@ function SearchInput({
 	const containerClasses = classNames(
 		'ui-kit-search-input-container',
 		disabled && `ui-kit-search-input-container-disabled`,
-		`ui-kit-search-input-container__size-${size}`,
+		`ui-kit-search-input-container__size-${inputSize}`,
 		`ui-kit-search-input-container__theme-${theme}`,
 		containerClassName,
 	);
-	const iconClasses = classNames('ui-kit-search-input-icon', `ui-kit-search-input-icon__size-${size}`);
-	const inputClasses = classNames('ui-kit-search-input', `ui-kit-search-input__size-${size}`, inputClassName);
+	const iconClasses = classNames('ui-kit-search-input-icon', `ui-kit-search-input-icon__size-${inputSize}`);
+	const inputClasses = classNames('ui-kit-search-input', `ui-kit-search-input__size-${inputSize}`, inputClassName);
 
-	function handleChange(inputValue: string) {
+	function handleChange(event: ChangeEvent<HTMLInputElement>) {
 		if (onChange) {
-			onChange(inputValue);
+			onChange(event);
 		}
 		if (debouncedOnChange) {
-			debouncedOnChange(inputValue);
+			debouncedOnChange(event.target.value);
 		}
-		setLocalValue(inputValue);
+		setLocalValue(event.target.value);
 	}
 
 	return (
@@ -56,7 +56,7 @@ function SearchInput({
 				placeholder={placeholder}
 				type="search"
 				value={value || localValue}
-				onChange={(e) => handleChange(e.target.value)}
+				onChange={handleChange}
 				{...inputProps}
 			/>
 		</div>

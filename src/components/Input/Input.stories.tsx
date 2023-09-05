@@ -9,12 +9,22 @@ export default {
 	component: Input,
 	argTypes: {
 		theme: {
+			name: 'theme',
 			defaultValue: 'white',
-			table: {defaultValue: {summary: 'white'}},
+			description: 'Input theme',
+			control: {
+				type: 'inline-radio',
+			},
+		},
+		inputSize: {
+			name: 'inputSize',
+			defaultValue: 'medium',
+			description: 'Input size',
 			control: {type: 'select'},
 		},
 		disabled: {
 			name: 'disabled',
+			description: 'Input disabled flag',
 			defaultValue: false,
 			control: {type: 'boolean'},
 		},
@@ -32,19 +42,33 @@ export default {
 		},
 		label: {
 			name: 'label',
-			description: 'Label-placeholder',
-			defaultValue: '',
+			description: 'Input label',
+			defaultValue: 'Label',
 			control: {type: 'text'},
 		},
 		placeholder: {
 			name: 'placeholder',
-			description: 'simple placeholder',
-			defaultValue: '',
+			description: 'Input placeholder',
+			defaultValue: 'Placeholder',
 			control: {type: 'text'},
 		},
 		value: {
 			name: 'value',
-			description: 'Outer value',
+			description: 'Input value',
+			defaultValue: '',
+			control: {type: 'text'},
+		},
+		CustomIconComponent: {
+			name: 'CustomIconComponent',
+			description: 'Компонент кастомной SVG-иконки',
+			defaultValue: undefined,
+			control: {
+				type: 'custom',
+			},
+		},
+		iconName: {
+			name: 'iconName',
+			description: 'Имя иконки для автоподставления в путь импорта из кита',
 			defaultValue: '',
 			control: {type: 'text'},
 		},
@@ -55,18 +79,6 @@ export default {
 		placeholderClassName: {table: {disable: true}},
 		iconClassName: {table: {disable: true}},
 		innerRef: {table: {disable: true}},
-		name: {
-			name: 'name',
-			description: 'input name',
-			defaultValue: '',
-			control: {type: 'text'},
-		},
-		autoComplete: {
-			name: 'autocomplete',
-			description: 'input autocomplete',
-			defaultValue: false,
-			control: {type: 'boolean'},
-		},
 	},
 } as ComponentMeta<typeof Input>;
 
