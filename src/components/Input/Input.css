@@ -6,7 +6,7 @@
 	align-items: center;
 	width: 100%;
 
-	transition: background-color, height 0.2s linear;
+	transition: all 0.2s linear;
 }
 
 .ui-kit-input__wrapper--active {
@@ -14,21 +14,21 @@
 }
 
 .ui-kit-input__wrapper--size-small {
-	height: 28px;
+	height: var(--h-small);
 	padding: 6px 14px;
 
 	border-radius: var(--brad-small);
 }
 
 .ui-kit-input__wrapper--size-medium {
-	height: 34px;
+	height: var(--h-medium);
 	padding: 8px 14px;
 
 	border-radius: var(--brad-small);
 }
 
 .ui-kit-input__wrapper--size-large {
-	height: 44px;
+	height: var(--h-large);
 	padding: 7px 14px;
 
 	border-radius: var(--brad-base);
@@ -75,7 +75,7 @@
 
 	transform: translate(0, -50%);
 
-	transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+	transition: all 0.2s linear;
 
 	resize: none;
 }
@@ -88,12 +88,14 @@
 
 .ui-kit-input__label--disabled {
 	color: var(--faint-strong);
+
+	pointer-events: none;
 }
 
 .ui-kit-input__label--invisible {
-	color: transparent;
+	opacity: 0;
 
-	background-color: transparent;
+	pointer-events: none;
 }
 
 /* Стили лейбла конец */
@@ -136,9 +138,9 @@
 }
 
 .ui-kit-input__placeholder--invisible {
-	color: transparent;
+	opacity: 0;
 
-	background-color: transparent;
+	pointer-events: none;
 }
 
 /* Стили плейсхолдера конец */
@@ -156,6 +158,10 @@
 
 	border: none;
 	border-radius: var(--brad-base);
+	outline: none;
+	box-shadow: none;
+
+	transition: all 0.2s linear;
 }
 
 .ui-kit-input--size-small {
@@ -173,13 +179,6 @@
 	line-height: var(--lh-md);
 }
 
-.ui-kit-input:focus,
-.ui-kit-input:active {
-	border: none;
-	outline: none;
-	box-shadow: none;
-}
-
 .ui-kit-input:disabled {
 	color: var(--faint-strong);
 
@@ -187,13 +186,6 @@
 
 	pointer-events: none;
 	-webkit-text-fill-color: var(--faint-strong);
-}
-
-.ui-kit-input:-webkit-autofill,
-.ui-kit-input:-webkit-autofill:hover,
-.ui-kit-input:-webkit-autofill:focus,
-.ui-kit-input:-webkit-autofill:active {
-	-webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
 }
 
 .ui-kit-input--icon {
@@ -206,7 +198,7 @@
 .ui-kit-input__icon {
 	color: var(--accent-strong);
 
-	transition: color, width, height 0.2s linear;
+	transition: all 0.1s linear;
 }
 
 .ui-kit-input__icon__togglePasswordIcon {
@@ -220,7 +212,7 @@
 
 	cursor: pointer;
 
-	transition: color, background-color 0.1s linear;
+	transition: all 0.1s linear;
 }
 
 .ui-kit-input__icon__togglePasswordIcon:hover {
@@ -247,7 +239,7 @@
 .ui-kit-input__errorIcon {
 	color: var(--critic-strong);
 
-	transition: background-color, width, height 0.1s linear;
+	transition: all 0.1s linear;
 }
 
 .ui-kit-input__icon,
@@ -286,7 +278,7 @@
 
 /* Стили иконок конец */
 
-/* Стили тултипа */
+/* Стили тултипа с тексом ошибки */
 .ui-kit-input__error-tooltip {
 	width: 100%;
 	max-width: 100%;
@@ -299,4 +291,4 @@
 	line-height: var(--lh-sm);
 }
 
-/* Стили тултипа конец */
+/* Стили тултипа с тексом ошибки конец */
