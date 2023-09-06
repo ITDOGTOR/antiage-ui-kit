@@ -21,6 +21,7 @@ function FilterTabs({
 	const wrapperClasses = classNames('ui-kit-filterTabs-boxShadow__wrapper');
 	const containerClasses = classNames(
 		'ui-kit-filterTabs__container',
+		`ui-kit-filterTabs__container--size-${size}`,
 		`ui-kit-filterTabs__container--theme-${theme}`,
 		containerClassName,
 	);
@@ -30,11 +31,14 @@ function FilterTabs({
 		`ui-kit-filterTabs__tab--theme-${theme}`,
 		tabClassName,
 	);
-	const defaultTextClasses = classNames(
-		'ui-kit-filterTabs__tab__text',
-		`ui-kit-filterTabs__tab__text--size-${size}`,
-		`ui-kit-filterTabs__tab__text--theme-${theme}`,
+	const activeTabClasses = classNames(
+		'ui-kit-filterTabs__tab--active',
+		`ui-kit-filterTabs__tab--active--color-${activeTabColor}`,
+		activeTabClassName,
 	);
+
+	const defaultTextClasses = classNames('ui-kit-filterTabs__tab__text');
+	const activeTabTextClasses = classNames('ui-kit-filterTabs__tab__text--active');
 
 	function handleScrollChange(event: UIEvent) {
 		const wrapper = wrapperRef.current as HTMLDivElement | null;
@@ -75,13 +79,6 @@ function FilterTabs({
 		<div className={wrapperClasses} ref={wrapperRef}>
 			<div className={containerClasses} ref={containerRef} onScroll={handleScrollChange}>
 				{tabs.map(({link, title, ...tabProps}) => {
-					const activeTabClasses = classNames(
-						'ui-kit-filterTabs__tab--active',
-						`ui-kit-filterTabs__tab--active--color-${activeTabColor}`,
-						activeTabClassName,
-					);
-					const activeTabTextClasses = classNames('ui-kit-filterTabs__tab__text--active', activeTabClassName);
-
 					const tabClasses = [defaultTabClasses, activeTabLink === link && activeTabClasses].join(' ');
 					const tabTextClasses = [defaultTextClasses, activeTabLink === link && activeTabTextClasses].join(' ');
 					return (

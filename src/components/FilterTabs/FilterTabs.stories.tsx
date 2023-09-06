@@ -43,18 +43,9 @@ export default {
 				type: 'inline-radio',
 			},
 		},
-		containerClassName: {
-			defaultValue: '',
-			control: {type: 'text'},
-		},
-		tabClassName: {
-			defaultValue: '',
-			control: {type: 'text'},
-		},
-		activeTabClassName: {
-			defaultValue: '',
-			control: {type: 'text'},
-		},
+		activeTabClassName: {table: {disable: true}},
+		tabClassName: {table: {disable: true}},
+		containerClassName: {table: {disable: true}},
 	},
 } as ComponentMeta<typeof FilterTabs>;
 
