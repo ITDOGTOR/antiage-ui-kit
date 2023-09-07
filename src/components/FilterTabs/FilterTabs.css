@@ -1,0 +1,176 @@
+/* Стили контейнера */
+.ui-kit-filterTabs-boxShadow__wrapper {
+	position: relative;
+
+	width: 100%;
+}
+
+.ui-kit-filterTabs-boxShadow__wrapper::before,
+.ui-kit-filterTabs-boxShadow__wrapper::after {
+	position: absolute;
+
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+
+	width: 50px;
+
+	opacity: 0;
+
+	transition: opacity 0.3s linear;
+
+	content: "";
+	pointer-events: none;
+}
+
+.ui-kit-filterTabs-boxShadow__wrapper::before {
+	left: 0;
+
+	background-image: linear-gradient(to right, var(--faint-weak-darker), transparent);
+}
+
+.ui-kit-filterTabs-boxShadow__wrapper::after {
+	right: 0;
+
+	background-image: linear-gradient(to left, var(--faint-weak-darker), transparent);
+}
+
+.ui-kit-filterTabs-boxShadow__wrapper--leftShadowVisible::before {
+	opacity: 1;
+}
+
+.ui-kit-filterTabs-boxShadow__wrapper--rightShadowVisible::after {
+	opacity: 1;
+}
+
+.ui-kit-filterTabs__container {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	width: auto;
+	overflow-x: auto;
+
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+
+	transition: background-color 0.2s linear;
+}
+
+/* Chrome, Safari and Opera */
+.ui-kit-filterTabs__container::-webkit-scrollbar {
+	display: none;
+}
+
+.ui-kit-filterTabs__container--size-small,
+.ui-kit-filterTabs__container--size-medium {
+	border-radius: var(--brad-small);
+}
+
+.ui-kit-filterTabs__container--size-large {
+	border-radius: var(--brad-base);
+}
+
+.ui-kit-filterTabs__container--theme-white {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-filterTabs__container--theme-gray {
+	background-color: var(--base-weak);
+}
+
+/* Стили контейнера конец */
+
+/* Стили таба */
+.ui-kit-filterTabs__tab {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: min-content;
+	padding: 12px 24px;
+	overflow: hidden;
+
+	white-space: nowrap;
+	text-decoration: none;
+	text-overflow: ellipsis;
+
+	border: none;
+
+	cursor: pointer;
+
+	transition: background-color 0.2s linear;
+}
+
+.ui-kit-filterTabs__tab:not(:disabled):hover {
+	background-color: var(--faint-weak-darker);
+}
+
+.ui-kit-filterTabs__tab:disabled {
+	cursor: not-allowed;
+}
+
+.ui-kit-filterTabs__tab--size-small {
+	height: var(--h-small);
+
+	border-radius: var(--brad-small);
+}
+
+.ui-kit-filterTabs__tab--size-medium {
+	height: var(--h-medium);
+
+	border-radius: var(--brad-small);
+}
+
+.ui-kit-filterTabs__tab--size-large {
+	height: var(--h-large);
+
+	border-radius: var(--brad-base);
+}
+
+.ui-kit-filterTabs__tab--theme-white {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-filterTabs__tab--theme-gray {
+	background-color: var(--base-weak);
+}
+
+.ui-kit-filterTabs__tab--active {
+	pointer-events: none;
+}
+
+.ui-kit-filterTabs__tab--active--color-accent {
+	background-color: var(--accent-strong);
+}
+
+.ui-kit-filterTabs__tab--active--color-complement {
+	background-color: var(--complement-strong);
+}
+
+/* Стили таба конец */
+
+/* Стили текста таба */
+.ui-kit-filterTabs__tab__text {
+	color: var(--base-strong-lighter);
+	font-weight: var(--fw-medium);
+	font-size: var(--fs-sm);
+	line-height: var(--lh-md);
+
+	transition: color 0.2s linear;
+}
+
+.ui-kit-filterTabs__tab:disabled .ui-kit-filterTabs__tab__text {
+	color: var(--faint-middle);
+
+	pointer-events: none;
+}
+
+.ui-kit-filterTabs__tab:not(:disabled):hover .ui-kit-filterTabs__tab__text {
+	color: var(--base-strong);
+}
+
+.ui-kit-filterTabs__tab__text--active {
+	color: var(--base-weak);
+}
+
+/* Стили текста таба конец */

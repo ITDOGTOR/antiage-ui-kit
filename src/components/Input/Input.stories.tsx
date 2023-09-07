@@ -20,7 +20,9 @@ export default {
 			name: 'inputSize',
 			defaultValue: 'medium',
 			description: 'Input size',
-			control: {type: 'select'},
+			control: {
+				type: 'inline-radio',
+			},
 		},
 		disabled: {
 			name: 'disabled',
@@ -32,7 +34,7 @@ export default {
 			name: 'type',
 			description: 'HTML input type',
 			defaultValue: 'text',
-			control: {type: 'select', options: ['text', 'password', 'email', 'number', 'range']},
+			control: {type: 'inline-radio', options: ['text', 'password', 'email']},
 		},
 		error: {
 			name: 'error',

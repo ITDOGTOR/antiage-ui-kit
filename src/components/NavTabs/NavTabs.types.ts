@@ -13,7 +13,7 @@ type TabsType = 'button' | 'link';
 export type NavTabsProps = {
 	tabs?: NavTab[];
 	activeTabLink?: string;
-	onClick?: ((tabKey: string) => void) | undefined;
+	onClick?: ((tabLink: string) => void) | undefined;
 	theme?: Theme;
 	tabsPosition?: TabsPosition;
 	tabsType?: TabsType;
