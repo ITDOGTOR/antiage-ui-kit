@@ -2,12 +2,10 @@ import range from 'lodash.range';
 
 import {DateAttributes, DateInfo} from '../ui/index.types';
 
-export const getZero = (num: number): string => {
-	if (num < 10) {
-		return `0${num}`;
-	}
+export const addZeroFirstSymbol = (value: string | number): string => {
+	const str = value.toString();
 
-	return num.toString();
+	return str.length <= 1 ? `0${str}` : str;
 };
 
 export const getToday = (): DateInfo => {
@@ -15,7 +13,7 @@ export const getToday = (): DateInfo => {
 
 	return {
 		[DateAttributes.DAY]: date.getDate(),
-		[DateAttributes.MONTH_NUM]: date.getMonth(),
+		[DateAttributes.MONTH]: date.getMonth(),
 		[DateAttributes.YEAR]: date.getFullYear(),
 	};
 };
@@ -71,28 +69,4 @@ export const getDays = (
 		currentMonthDays,
 		nextMonthFirstDays,
 	};
-};
-
-export const getDateObj = (value?: string): DateInfo => {
-	let date: Date;
-
-	if (value) {
-		date = new Date(value);
-	} else {
-		date = new Date();
-	}
-
-	return {
-		[DateAttributes.DAY]: value ? date.getDate() : null,
-		[DateAttributes.MONTH_NUM]: date.getMonth(),
-		[DateAttributes.YEAR]: date.getFullYear(),
-	};
-};
-
-export const createResponseValue = (date: DateInfo): string | null => {
-	if (!date.day) {
-		return null;
-	}
-
-	return `${date.year}-${getZero(date.monthNum + 1)}-${getZero(date.day)}`;
 };

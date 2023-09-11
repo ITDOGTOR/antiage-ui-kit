@@ -1,0 +1,8 @@
+.ui-kit-date-picker__container {
+	position: absolute;
+
+	display: grid;
+	row-gap: 10px;
+
+	box-shadow: 0 10px 15px 0 rgb(66 71 77 / 0.1);
+}

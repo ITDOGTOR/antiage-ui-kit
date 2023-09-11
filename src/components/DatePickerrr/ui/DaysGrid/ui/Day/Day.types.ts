@@ -5,4 +5,5 @@ export declare interface DayProps {
 	text?: string | number;
 	type?: DayTypes;
 	onClick?: (attribute: DateAttributes, value: number) => void;
+	disabled?: boolean;
 }

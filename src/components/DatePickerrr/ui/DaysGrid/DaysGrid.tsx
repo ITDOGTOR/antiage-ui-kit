@@ -9,38 +9,44 @@ import {DayTypes} from './DaysGrid.types';
 import {Day} from './ui';
 
 export const DaysGrid = withCurrentModeCheck(() => {
-	const {
-		date: {year, monthNum, day},
-		selectedDate,
-		onChangeHandle,
-		lang,
-	} = useDatePickerContext();
+	const {visualDate, selectedDate, onChangeDate, lang} = useDatePickerContext();
 
-	const {nextMonthFirstDays, currentMonthDays, prevMonthLastDays} = getDays(year, monthNum);
+	const {nextMonthFirstDays, currentMonthDays, prevMonthLastDays} = getDays(visualDate.year, visualDate.month);
 	const today = getToday();
 
 	return (
 		<div className={classNames('ui-kit-days-grid')}>
 			{getWeekDaysList(lang).map((weekDay) => (
-				<Day key={weekDay} text={weekDay} type={DayTypes.WEEK} />
+				<Day disabled key={weekDay} text={weekDay} type={DayTypes.WEEK} />
 			))}
 
 			{prevMonthLastDays.map((prevMonthDay) => (
-				<Day key={`prev-${prevMonthDay}`} text={prevMonthDay} type={DayTypes.OTHER_MONTH} />
+				<Day disabled key={`prev-${prevMonthDay}`} text={prevMonthDay} type={DayTypes.OTHER_MONTH} />
 			))}
 
-			{currentMonthDays.map((currentMonthDay, i) => {
-				let type = 'current-month';
-				if (selectedDate.day === i + 1 && selectedDate.year === year && selectedDate.monthNum === monthNum) {
-					type = 'selected';
-				} else if (day !== i + 1 && today.day === i + 1 && today.year === year && today.monthNum === monthNum) {
-					type = 'today';
+			{currentMonthDays.map((currentMonthDay) => {
+				let dayType = DayTypes.CURRENT_MONTH;
+
+				const isToday =
+					today.day === currentMonthDay && today.month === visualDate.month && today.year === visualDate.year;
+				const isSelected =
+					selectedDate?.day === currentMonthDay &&
+					selectedDate?.month === visualDate.month &&
+					selectedDate?.year === visualDate.year;
+
+				if (isToday) {
+					dayType = DayTypes.TODAY;
 				}
-				return <Day key={`current-${currentMonthDay}`} text={currentMonthDay} type={type} onClick={onChangeHandle} />;
+
+				if (isSelected) {
+					dayType = DayTypes.SELECTED;
+				}
+
+				return <Day key={`current-${currentMonthDay}`} text={currentMonthDay} type={dayType} onClick={onChangeDate} />;
 			})}
 
 			{nextMonthFirstDays.map((nextMonthDay) => (
-				<Day key={`next-${nextMonthDay}`} text={nextMonthDay} type={DayTypes.OTHER_MONTH} />
+				<Day disabled key={`next-${nextMonthDay}`} text={nextMonthDay} type={DayTypes.OTHER_MONTH} />
 			))}
 		</div>
 	);

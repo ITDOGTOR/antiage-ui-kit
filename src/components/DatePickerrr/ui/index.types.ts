@@ -1,24 +1,23 @@
 export enum ToggleButtons {
 	PREV = 'prev',
 	NEXT = 'next',
-	MONTH_NUM = 'monthNum',
-	YEAR = 'year',
+	MONTH_AND_YEAR = 'monthAndYear',
 }
 
 export enum ViewMode {
 	MAIN = 'main',
-	MONTHS_LIST = 'monthsList',
-	YEARS_LIST = 'yearsList',
+	MONTHS_AND_YEARS_LISTS = 'monthsAndYearsLists',
 }
 
 export enum DateAttributes {
+	INPUT = 'input',
 	DAY = 'day',
-	MONTH_NUM = 'monthNum',
+	MONTH = 'month',
 	YEAR = 'year',
 }
 
 export declare interface DateInfo {
-	day: number | null;
-	monthNum: number;
+	day: number;
+	month: number;
 	year: number;
 }

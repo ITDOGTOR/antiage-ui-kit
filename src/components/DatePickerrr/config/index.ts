@@ -1,16 +1,15 @@
 import {createContext} from 'react';
 
-import {DateInfo, ViewMode} from '../ui/index.types';
+import {DateAttributes, DateInfo, ViewMode} from '../ui/index.types';
 
 export interface IDatePickerContext {
-	date: DateInfo;
+	visualDate: DateInfo;
+	setVisualDate: (newVisualDate: DateInfo) => void;
 	selectedDate: DateInfo;
-	onChangeHandle: () => void;
-	onTogglePopup: () => void;
+	onChangeDate: (attribute: DateAttributes, newValue: string | number) => void;
+	lang: string;
 	mode: ViewMode;
 	setMode: (newMode: ViewMode) => void;
-	onReset: () => void;
-	lang: string;
 }
 
 export const DatePickerContext = createContext<IDatePickerContext | {}>({});
