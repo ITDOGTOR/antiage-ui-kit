@@ -9,13 +9,23 @@ import {addZeroFirstSymbol} from '../../lib';
 import {DateAttributes, DateInfo, ViewMode} from '../index.types';
 import {DatePickerProviderProps} from './DatePickerProvider.types';
 
+const formatDateInput = (newDate: string): string => {
+	if (newDate.length < 10) {
+		return newDate;
+	}
+
+	const [day, month, year]: string[] = newDate.slice(0, 10).split('.');
+
+	return `${year}-${month}-${day}`;
+};
+
 /**
  * Applies the "YYYY-MM-DD" mask to a date value.
  *
  * @param {string} newDate - The date value to be formatted.
  * @returns {string} The formatted date value in the "YYYY-MM-DD" format.
  */
-const defaultApplyMask = (newDate: string): string => {
+const setMaskedInputValue = (newDate: string): string => {
 	const maskDate: string = newDate.replace(/\D/g, '').slice(0, 10);
 
 	let formattedValue = '';
@@ -50,16 +60,6 @@ const defaultApplyMask = (newDate: string): string => {
 	}
 
 	return formattedValue;
-
-	/*	if (maskDate.length >= 8) {
-		const year: string = maskDate.slice(4, 8);
-		const month: string = maskDate.slice(2, 4).padStart(2, '0');
-		const day: string = maskDate.slice(0, 2).padStart(2, '0');
-
-		return `${year}-${month}-${day}`;
-	}
-
-	return maskDate; */
 };
 
 /**
@@ -83,7 +83,13 @@ const getDateObj = (value: Date | string): DateInfo => {
 	};
 };
 
-export function DatePickerProvider({value, onChange, lang = 'ru', children}: DatePickerProviderProps) {
+export function DatePickerProvider({
+	value,
+	onChange,
+	applyDateMaskInput = formatDateInput,
+	lang = 'ru',
+	children,
+}: DatePickerProviderProps) {
 	const [mode, setMode] = useState(ViewMode.MAIN);
 	const [visualDate, setVisualDate] = useState<DateInfo>(getDateObj(value));
 
@@ -92,11 +98,13 @@ export function DatePickerProvider({value, onChange, lang = 'ru', children}: Dat
 			onChange(`${visualDate.year}-${addZeroFirstSymbol(visualDate.month + 1)}-${addZeroFirstSymbol(newValue)}`);
 		}
 
-		/*			if (attribute === DateAttributes.INPUT) {
-			onChange(newValue);
+		if (attribute === DateAttributes.INPUT) {
+			if (typeof newValue !== 'number') {
+				onChange(applyDateMaskInput(newValue));
+			}
 
-			return getDateObj(newValue);
-		} */
+			setVisualDate(getDateObj(applyDateMaskInput(newValue)));
+		}
 
 		setVisualDate({...visualDate, [attribute]: newValue});
 	};
@@ -115,10 +123,10 @@ export function DatePickerProvider({value, onChange, lang = 'ru', children}: Dat
 
 	return (
 		<DatePickerContext.Provider value={contextData}>
-			{/*				<input
-					value={defaultApplyMask(value)}
-					onChange={({target}) => onChangeDate(DateAttributes.INPUT, target.value)}
-				/> */}
+			<input
+				value={setMaskedInputValue(value)}
+				onChange={({target}) => onChangeDate(DateAttributes.INPUT, target.value)}
+			/>
 
 			<Container className={classNames('ui-kit-date-picker__container')}>{children}</Container>
 		</DatePickerContext.Provider>

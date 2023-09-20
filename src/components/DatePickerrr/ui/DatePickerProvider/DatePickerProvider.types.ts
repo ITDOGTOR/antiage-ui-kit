@@ -4,6 +4,6 @@ export declare interface DatePickerProviderProps {
 	value: Date | string;
 	lang?: string;
 	onChange: (newDate: string) => void;
-	applyMask?: (newDate: string) => string;
+	applyDateMaskInput: Function;
 	children: ReactNode;
 }
