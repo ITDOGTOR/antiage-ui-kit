@@ -5,7 +5,7 @@ import React, {useMemo, useState} from 'react';
 
 import Container from '../../../Container';
 import {DatePickerContext} from '../../config';
-import {addZeroFirstSymbol} from '../../lib';
+import {addZeroFirstSymbol, getDateObj} from '../../lib';
 import {DateAttributes, DateInfo, ViewMode} from '../index.types';
 import {DatePickerProviderProps} from './DatePickerProvider.types';
 
@@ -26,6 +26,12 @@ const formatDateInput = (newDate: string): string => {
  * @returns {string} The formatted date value in the "YYYY-MM-DD" format.
  */
 const setMaskedInputValue = (newDate: string): string => {
+	if (newDate.includes('-')) {
+		const {day, month, year} = getDateObj(newDate);
+
+		return `${addZeroFirstSymbol(day)}.${addZeroFirstSymbol(month + 1)}.${year}`;
+	}
+
 	const maskDate: string = newDate.replace(/\D/g, '').slice(0, 10);
 
 	let formattedValue = '';
@@ -60,27 +66,6 @@ const setMaskedInputValue = (newDate: string): string => {
 	}
 
 	return formattedValue;
-};
-
-/**
- * Retrieves the date information from a given Date object or string.
- *
- * @param {Date | string} value - The Date object or string to extract the date information from.
- * @returns {DateInfo} - An object containing the day, month, and year attributes of the given date.
- */
-const getDateObj = (value: Date | string): DateInfo => {
-	let date: Date;
-	if (value) {
-		date = new Date(value);
-	} else {
-		date = new Date();
-	}
-
-	return {
-		[DateAttributes.DAY]: date.getDate(),
-		[DateAttributes.MONTH]: date.getMonth(),
-		[DateAttributes.YEAR]: date.getFullYear(),
-	};
 };
 
 export function DatePickerProvider({

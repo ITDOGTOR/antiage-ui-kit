@@ -70,3 +70,24 @@ export const getDays = (
 		nextMonthFirstDays,
 	};
 };
+
+/**
+ * Retrieves the date information from a given Date object or string.
+ *
+ * @param {Date | string} value - The Date object or string to extract the date information from.
+ * @returns {DateInfo} - An object containing the day, month, and year attributes of the given date.
+ */
+export const getDateObj = (value: Date | string): DateInfo => {
+	let date: Date;
+	if (value) {
+		date = new Date(value);
+	} else {
+		date = new Date();
+	}
+
+	return {
+		[DateAttributes.DAY]: date.getDate(),
+		[DateAttributes.MONTH]: date.getMonth(),
+		[DateAttributes.YEAR]: date.getFullYear(),
+	};
+};
