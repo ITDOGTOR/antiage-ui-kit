@@ -1,4 +1,4 @@
-import {DateAttributes} from '../../../index.types';
+import {DateAttributes} from '../../../../index.types';
 import {DayTypes} from '../../DaysGrid.types';
 
 export declare interface DayProps {

@@ -4,8 +4,8 @@ import classNames from 'classnames';
 import React, {MouseEvent} from 'react';
 
 import {ChevronHorizontal} from '../../../../assets';
+import {DateAttributes, ToggleButtons, ViewMode} from '../../index.types';
 import {getMonthName, useDatePickerContext, withCurrentModeCheck} from '../../lib';
-import {DateAttributes, ToggleButtons, ViewMode} from '../index.types';
 
 export const TogglePanel = withCurrentModeCheck(() => {
 	const {

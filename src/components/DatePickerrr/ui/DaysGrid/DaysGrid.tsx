@@ -3,8 +3,8 @@ import './DaysGrid.css';
 import classNames from 'classnames';
 import React from 'react';
 
+import {ViewMode} from '../../index.types';
 import {getDays, getToday, getWeekDaysList, useDatePickerContext, withCurrentModeCheck} from '../../lib';
-import {ViewMode} from '../index.types';
 import {DayTypes} from './DaysGrid.types';
 import {Day} from './ui';
 

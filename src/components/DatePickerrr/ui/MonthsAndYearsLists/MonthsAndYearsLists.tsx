@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import React, {MouseEvent} from 'react';
 
 import {ChevronHorizontal} from '../../../../assets';
+import {DateAttributes, ViewMode} from '../../index.types';
 import {
 	getMonthName,
 	getMonthsList,
@@ -13,7 +14,6 @@ import {
 	useScrollToCurrent,
 	withCurrentModeCheck,
 } from '../../lib';
-import {DateAttributes, ViewMode} from '../index.types';
 
 export const MonthsAndYearsLists = withCurrentModeCheck(() => {
 	const {visualDate, onChangeDate, setMode, lang} = useDatePickerContext();

@@ -4,9 +4,9 @@ import classNames from 'classnames';
 import React, {useMemo, useState} from 'react';
 
 import Container from '../../../Container';
-import {DatePickerContext} from '../../config';
+import {DateAttributes, DateInfo, ViewMode} from '../../index.types';
 import {addZeroFirstSymbol, getDateObj} from '../../lib';
-import {DateAttributes, DateInfo, ViewMode} from '../index.types';
+import {DatePickerContext} from '../../model';
 import {DatePickerProviderProps} from './DatePickerProvider.types';
 
 const formatDateInput = (newDate: string): string => {

@@ -1,6 +1,6 @@
 import {createContext} from 'react';
 
-import {DateAttributes, DateInfo, ViewMode} from '../ui/index.types';
+import {DateAttributes, DateInfo, ViewMode} from '../index.types';
 
 export interface IDatePickerContext {
 	visualDate: DateInfo;
