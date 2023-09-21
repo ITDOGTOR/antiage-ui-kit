@@ -1,6 +1,7 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import React from 'react';
 
+import DatePicker from '../DatePickerrr';
 import Button from './Button';
 import {ButtonProps} from './Button.types';
 
@@ -59,7 +60,13 @@ export default {
 
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Button> = (args: ButtonProps) => {
-	return <Button {...args}>Название</Button>;
+	return (
+		<>
+			<Button {...args}>Название</Button>
+
+			<DatePicker />
+		</>
+	);
 };
 
 export const Sandbox = Template.bind({});

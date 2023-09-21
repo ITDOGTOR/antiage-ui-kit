@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 
-import {DatePickerContext, IDatePickerContext} from '../config';
+import {DatePickerContext, IDatePickerContext} from './context';
 
 export const useDatePickerContext = (): IDatePickerContext => {
 	const context = useContext(DatePickerContext);

@@ -1,0 +1,1 @@
+export {getDays} from './getDays';

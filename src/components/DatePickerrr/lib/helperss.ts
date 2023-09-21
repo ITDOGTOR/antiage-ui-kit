@@ -40,37 +40,6 @@ export const getYearsList = (): number[] => {
 	return range(currentYear - 123, currentYear + 1);
 };
 
-const getLastDay = (year: number, month: number): number => {
-	return new Date(year, month, 0).getDate();
-};
-
-const getWeekDay = (year: number, month: number): number => {
-	return new Date(year, month, 0).getDay();
-};
-
-export const getDays = (
-	year: number,
-	month: number,
-): {
-	prevMonthLastDays: number[];
-	currentMonthDays: number[];
-	nextMonthFirstDays: number[];
-} => {
-	const currentMonthLastDay = getLastDay(year, month + 1);
-	const prevMonthLastDay = getLastDay(year, month);
-	const prevMonthWeekDay = getWeekDay(year, month);
-
-	const prevMonthLastDays = range(prevMonthLastDay - prevMonthWeekDay + 1, prevMonthLastDay + 1);
-	const currentMonthDays = range(1, currentMonthLastDay + 1);
-	const nextMonthFirstDays = range(1, 42 - (prevMonthWeekDay + currentMonthLastDay) + 1);
-
-	return {
-		prevMonthLastDays,
-		currentMonthDays,
-		nextMonthFirstDays,
-	};
-};
-
 /**
  * Retrieves the date information from a given Date object or string.
  *
