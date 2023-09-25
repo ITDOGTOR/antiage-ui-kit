@@ -1,4 +1,3 @@
 export * from './helpers';
-export * from './helperss';
+export * from './hocs';
 export * from './hooks';
-// export {withCurrentModeCheck} from './withCurrentModeCheck';

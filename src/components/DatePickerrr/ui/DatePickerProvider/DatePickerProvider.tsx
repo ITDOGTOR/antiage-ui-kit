@@ -5,82 +5,33 @@ import React, {useMemo, useState} from 'react';
 
 import Container from '../../../Container';
 import {DateAttributes, DateInfo, ViewMode} from '../../index.types';
-import {addZeroFirstSymbol, getDateObj} from '../../lib';
+import {addZeroFirstSymbol, formatDateInput, getDateObj, usePopupControl} from '../../lib';
 import {DatePickerContext} from '../../model';
 import {DatePickerProviderProps} from './DatePickerProvider.types';
 
-const formatDateInput = (newDate: string): string => {
-	if (newDate.length < 10) {
-		return newDate;
-	}
-
-	const [day, month, year]: string[] = newDate.slice(0, 10).split('.');
-
-	return `${year}-${month}-${day}`;
-};
-
-/**
- * Applies the "YYYY-MM-DD" mask to a date value.
- *
- * @param {string} newDate - The date value to be formatted.
- * @returns {string} The formatted date value in the "YYYY-MM-DD" format.
- */
-const setMaskedInputValue = (newDate: string): string => {
-	if (newDate.includes('-')) {
-		const {day, month, year} = getDateObj(newDate);
-
-		return `${addZeroFirstSymbol(day)}.${addZeroFirstSymbol(month + 1)}.${year}`;
-	}
-
-	const maskDate: string = newDate.replace(/\D/g, '').slice(0, 10);
-
-	let formattedValue = '';
-
-	let day = maskDate.slice(0, 2);
-	let month = maskDate.slice(2, 4);
-	if (Number(day) > 31) {
-		day = '31';
-	}
-	if (Number(month) > 12) {
-		month = '12';
-	}
-
-	if (maskDate.length >= 1) {
-		formattedValue += day[0];
-	}
-
-	if (maskDate.length >= 2) {
-		formattedValue += day[1];
-	}
-
-	if (maskDate.length >= 3) {
-		formattedValue += `.${month[0]}`;
-	}
-
-	if (maskDate.length >= 4) {
-		formattedValue += month[1];
-	}
-
-	if (maskDate.length >= 5) {
-		formattedValue += `.${maskDate.slice(4, 8)}`;
-	}
-
-	return formattedValue;
-};
-
 export function DatePickerProvider({
+	field,
 	value,
 	onChange,
 	applyDateMaskInput = formatDateInput,
-	lang = 'ru',
+	onClosePopup,
+	lang,
 	children,
 }: DatePickerProviderProps) {
 	const [mode, setMode] = useState(ViewMode.MAIN);
 	const [visualDate, setVisualDate] = useState<DateInfo>(getDateObj(value));
 
+	const {isOpen, onToggle, onBlur, isRenderPopupTop, isPopupShouldClose, onDelayClose} = usePopupControl(
+		setMode,
+		onClosePopup,
+	);
+
 	const onChangeDate = (attribute: DateAttributes, newValue: string | number) => {
+		setVisualDate({...visualDate, [attribute]: newValue});
+
 		if (attribute === DateAttributes.DAY) {
 			onChange(`${visualDate.year}-${addZeroFirstSymbol(visualDate.month + 1)}-${addZeroFirstSymbol(newValue)}`);
+			onDelayClose();
 		}
 
 		if (attribute === DateAttributes.INPUT) {
@@ -89,9 +40,8 @@ export function DatePickerProvider({
 			}
 
 			setVisualDate(getDateObj(applyDateMaskInput(newValue)));
+			onDelayClose();
 		}
-
-		setVisualDate({...visualDate, [attribute]: newValue});
 	};
 
 	const contextData = useMemo(
@@ -99,6 +49,7 @@ export function DatePickerProvider({
 			visualDate,
 			selectedDate: value ? getDateObj(value) : null,
 			onChangeDate,
+			onToggle,
 			lang,
 			mode,
 			setMode,
@@ -107,13 +58,28 @@ export function DatePickerProvider({
 	);
 
 	return (
-		<DatePickerContext.Provider value={contextData}>
-			<input
-				value={setMaskedInputValue(value)}
-				onChange={({target}) => onChangeDate(DateAttributes.INPUT, target.value)}
-			/>
+		// eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+		<div tabIndex={0} onBlur={onBlur}>
+			<DatePickerContext.Provider value={contextData}>
+				{field}
 
-			<Container className={classNames('ui-kit-date-picker__container')}>{children}</Container>
-		</DatePickerContext.Provider>
+				{/*				<input
+					value={setMaskedInputValue(value)}
+					onChange={({target}) => onChangeDate(DateAttributes.INPUT, target.value)}
+					onClick={onToggle}
+				/> */}
+
+				{isOpen && (
+					<Container
+						className={classNames('ui-kit-date-picker__container', {
+							'ui-kit-date-picker__container--top': isRenderPopupTop,
+							'ui-kit-date-picker__container--close': isPopupShouldClose,
+						})}
+					>
+						{children}
+					</Container>
+				)}
+			</DatePickerContext.Provider>
+		</div>
 	);
 }

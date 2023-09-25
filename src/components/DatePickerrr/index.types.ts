@@ -21,3 +21,9 @@ export declare interface DateInfo {
 	month: number;
 	year: number;
 }
+
+export declare interface DatePickerTypes {
+	value: string | Date;
+	onChange: Function;
+	lang?: string;
+}

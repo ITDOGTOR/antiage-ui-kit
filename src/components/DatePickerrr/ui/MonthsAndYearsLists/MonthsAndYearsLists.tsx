@@ -5,15 +5,8 @@ import React, {MouseEvent} from 'react';
 
 import {ChevronHorizontal} from '../../../../assets';
 import {DateAttributes, ViewMode} from '../../index.types';
-import {
-	getMonthName,
-	getMonthsList,
-	getToday,
-	getYearsList,
-	useDatePickerContext,
-	useScrollToCurrent,
-	withCurrentModeCheck,
-} from '../../lib';
+import {getMonthName, getMonthsList, getToday, getYearsList, useScrollToCurrent, withCurrentModeCheck} from '../../lib';
+import {useDatePickerContext} from '../../model';
 
 export const MonthsAndYearsLists = withCurrentModeCheck(() => {
 	const {visualDate, onChangeDate, setMode, lang} = useDatePickerContext();
@@ -78,6 +71,7 @@ export const MonthsAndYearsLists = withCurrentModeCheck(() => {
 									'ui-kit-months-and-years-lists__item--selected': visualDate.month === index,
 								})}
 								name={index.toString()}
+								// @ts-ignore
 								ref={visualDate.month === index ? activeMonthRef : null}
 								type="button"
 								onClick={onChangeMonth}
@@ -97,6 +91,7 @@ export const MonthsAndYearsLists = withCurrentModeCheck(() => {
 									'ui-kit-months-and-years-lists__item--selected': visualDate.year === year,
 								})}
 								name={year.toString()}
+								// @ts-ignore
 								ref={visualDate.year === year ? activeYearsRef : null}
 								type="button"
 								onClick={onChangeYear}

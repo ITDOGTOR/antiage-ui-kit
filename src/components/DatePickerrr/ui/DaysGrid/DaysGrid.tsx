@@ -4,7 +4,8 @@ import classNames from 'classnames';
 import React from 'react';
 
 import {ViewMode} from '../../index.types';
-import {getDays, getToday, getWeekDaysList, useDatePickerContext, withCurrentModeCheck} from '../../lib';
+import {getDays, getToday, getWeekDaysList, withCurrentModeCheck} from '../../lib';
+import {useDatePickerContext} from '../../model';
 import {DayTypes} from './DaysGrid.types';
 import {Day} from './ui';
 

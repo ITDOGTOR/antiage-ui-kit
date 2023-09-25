@@ -1,9 +1,11 @@
 import {ReactNode} from 'react';
 
 export declare interface DatePickerProviderProps {
-	value: Date | string;
+	field: ReactNode;
+	value: string | Date;
+	onChange: Function;
 	lang?: string;
-	onChange: (newDate: string) => void;
-	applyDateMaskInput: Function;
-	children: ReactNode;
+	applyDateMaskInput?: Function;
+	onClosePopup?: Function;
+	children?: ReactNode;
 }
