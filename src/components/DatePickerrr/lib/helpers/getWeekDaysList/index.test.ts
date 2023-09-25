@@ -1,4 +1,4 @@
-import {getWeekDaysList} from '../../../lib';
+import {getWeekDaysList} from './index';
 
 describe('getWeekDaysList', () => {
 	test('should return a list of abbreviated week day names for the Russian language (ru)', () => {

@@ -1,6 +1,6 @@
 import range from 'lodash.range';
 
-import {getMonthName} from './getMonthName';
+import {getMonthName} from '../getMonthName';
 
 /**
  * Gets a list of full month names for a specified language.

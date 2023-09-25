@@ -1,11 +1,11 @@
 import React from 'react';
 
 import {DatePickerTypes} from './index.types';
-import {DatePickerProvider, DaysGrid, MonthsAndYearsLists, TogglePanel} from './ui';
+import {DatePickerProvider, DaysGrid, MonthsAndYearsLists, TogglePanel, ViewField} from './ui';
 
 function DatePicker({value, onChange, lang = 'ru'}: DatePickerTypes) {
 	return (
-		<DatePickerProvider lang={lang} value={value} onChange={onChange}>
+		<DatePickerProvider field={<ViewField value={value} />} lang={lang} value={value} onChange={onChange}>
 			<TogglePanel />
 			<DaysGrid />
 			<MonthsAndYearsLists />

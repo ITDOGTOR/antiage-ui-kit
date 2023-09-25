@@ -1,4 +1,4 @@
-import {getDays} from '../../../lib';
+import {getDays} from './index';
 
 describe('getDays', () => {
 	test('should return the correct days for a month with 30 days', () => {

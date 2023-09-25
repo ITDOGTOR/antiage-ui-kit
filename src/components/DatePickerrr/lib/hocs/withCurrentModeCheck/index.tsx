@@ -1,6 +1,6 @@
 import React, {ComponentType} from 'react';
 
-import {useDatePickerContext} from '../../model';
+import {useDatePickerContext} from '../../../model';
 
 /**
  * A Higher Order Component (HOC) that conditionally renders a component based on the current mode.

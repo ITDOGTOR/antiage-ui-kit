@@ -1,5 +1,5 @@
 import {DateAttributes} from '../../../index.types';
-import {getToday} from '../../../lib';
+import {getToday} from './index';
 
 describe('getToday', () => {
 	test('should return an object with the current day, month, and year', () => {

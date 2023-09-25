@@ -1,5 +1,5 @@
 import {DateAttributes} from '../../../index.types';
-import {getDateObj} from '../../../lib';
+import {getDateObj} from './index';
 
 describe('getDateObj', () => {
 	test('should return the current date when no value is provided', () => {

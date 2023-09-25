@@ -1,4 +1,4 @@
-import {getMonthsList} from '../../../lib';
+import {getMonthsList} from './index';
 
 describe('getMonthsList', () => {
 	test('should return a list of full month names for the English language (en)', () => {

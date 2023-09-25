@@ -1,4 +1,4 @@
-import {getMonthName} from '../../../lib';
+import {getMonthName} from './index';
 
 describe('getMonthName', () => {
 	test('should return the full name of the month for January (default language)', () => {

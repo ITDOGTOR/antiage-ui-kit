@@ -1,4 +1,4 @@
-import {setMaskedInputValue} from '../../../lib';
+import {setMaskedInputValue} from './index';
 
 describe('setMaskedInputValue', () => {
 	test('should format a date string with dashes correctly', () => {

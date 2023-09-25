@@ -1,4 +1,4 @@
-import {addZeroFirstSymbol} from '../../../lib';
+import {addZeroFirstSymbol} from './index';
 
 describe('addZeroFirstSymbol', () => {
 	test('should add a leading zero to a single-digit number', () => {

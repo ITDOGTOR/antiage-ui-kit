@@ -1,4 +1,4 @@
-import {getYearsList} from '../../../lib';
+import {getYearsList} from './index';
 
 describe('getYearsList', () => {
 	test('should return a list of years starting from 123 years ago to the current year (default parameters)', () => {

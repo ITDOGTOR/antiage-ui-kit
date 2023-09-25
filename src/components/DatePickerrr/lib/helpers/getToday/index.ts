@@ -1,4 +1,4 @@
-import {DateAttributes, DateInfo} from '../../index.types';
+import {DateAttributes, DateInfo} from '../../../index.types';
 
 /**
  * Retrieves the current date and returns an object with day, month, and year attributes.

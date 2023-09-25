@@ -1,5 +1,5 @@
-import {addZeroFirstSymbol} from './addZeroFirstSymbol';
-import {getDateObj} from './getDateObj';
+import {addZeroFirstSymbol} from '../addZeroFirstSymbol';
+import {getDateObj} from '../getDateObj';
 
 /**
  * Formats a date string with or without dashes into a masked date input string 'DD.MM.YYYY'.

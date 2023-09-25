@@ -63,11 +63,11 @@ export function DatePickerProvider({
 			<DatePickerContext.Provider value={contextData}>
 				{field}
 
-				{/*				<input
+				<input
 					value={setMaskedInputValue(value)}
 					onChange={({target}) => onChangeDate(DateAttributes.INPUT, target.value)}
 					onClick={onToggle}
-				/> */}
+				/>
 
 				{isOpen && (
 					<Container

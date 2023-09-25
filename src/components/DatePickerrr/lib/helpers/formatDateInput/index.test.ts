@@ -1,4 +1,4 @@
-import {formatDateInput} from '../../../lib';
+import {formatDateInput} from './index';
 
 describe('formatDateInput', () => {
 	test('should format a valid date input string correctly', () => {

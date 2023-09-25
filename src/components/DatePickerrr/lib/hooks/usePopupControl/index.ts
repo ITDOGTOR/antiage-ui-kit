@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react';
 
-import {ViewMode} from '../../index.types';
+import {ViewMode} from '../../../index.types';
 
 export declare interface PopupControl {
 	onToggle: (evt: React.MouseEvent<HTMLElement>) => void;
