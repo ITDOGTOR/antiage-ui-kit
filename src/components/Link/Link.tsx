@@ -2,11 +2,12 @@ import classNames from 'classnames';
 import React from 'react';
 import {Link as LinkRouterDom} from 'react-router-dom';
 
+import {Theme} from '../index.types';
 import {LinkProps} from './Link.types';
 
 function Link({
 	className,
-	theme = 'white',
+	theme = Theme.WHITE,
 	gradient,
 	color,
 	danger,

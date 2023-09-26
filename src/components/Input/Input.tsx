@@ -2,13 +2,14 @@ import classNames from 'classnames';
 import React, {ChangeEvent, Suspense, useMemo, useState} from 'react';
 
 import {Eye, EyeClosed, Letter, Lock} from '../../assets';
+import {Theme} from '../index.types';
 import {InputProps} from './Input.types';
 import {InputErrorTooltip} from './ui';
 
 function Input({
 	iconName = '',
 	CustomIconComponent = undefined,
-	theme = 'white',
+	theme = Theme.WHITE,
 	inputSize = 'medium',
 	disabled,
 	type,

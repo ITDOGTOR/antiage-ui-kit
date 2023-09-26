@@ -2,10 +2,11 @@ import {Switch as SwitchAntd} from 'antd';
 import classNames from 'classnames';
 import React, {useState} from 'react';
 
+import {Theme} from '../index.types';
 import {SwitchProps} from './Switch.types';
 
 function Switch({
-	theme = 'white',
+	theme = Theme.WHITE,
 	className,
 	classNameContainer,
 	status,
