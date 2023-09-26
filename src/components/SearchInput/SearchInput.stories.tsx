@@ -38,7 +38,7 @@ export default {
 				type: 'inline-radio',
 			},
 		},
-		size: {
+		inputSize: {
 			defaultValue: 'medium',
 			control: {
 				type: 'inline-radio',

@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import React, {UIEvent, useEffect, useRef} from 'react';
 
-import {updateShadowClasses} from './lib';
+import {updateTabsShadowClasses} from '../../helpers';
+import {getIsFlexDirectionReversed} from './lib';
 import {NavTabsProps} from './NavTabs.types';
 import {NavTabButton, NavTabLink} from './ui';
 
@@ -15,8 +16,8 @@ function NavTabs({
 	containerClassName,
 	tabClassName,
 }: NavTabsProps) {
-	const wrapperRef = useRef(null);
-	const containerRef = useRef(null);
+	const wrapperRef = useRef<HTMLDivElement>(null);
+	const containerRef = useRef<HTMLDivElement>(null);
 
 	const wrapperClasses = classNames(
 		'ui-kit-navTabs-boxShadow__wrapper',
@@ -26,32 +27,38 @@ function NavTabs({
 	const containerClasses = classNames('ui-kit-navTabs__container', containerClassName);
 
 	function handleScrollChange(event: UIEvent) {
-		const wrapper = wrapperRef.current as HTMLElement | null;
+		const wrapper = wrapperRef.current as HTMLDivElement | null;
 
 		if (wrapper) {
 			const {scrollLeft, scrollWidth, clientWidth} = event.currentTarget;
+			const {isFlexDirectionReversed} = getIsFlexDirectionReversed({wrapper});
 
-			updateShadowClasses({
+			updateTabsShadowClasses({
 				wrapper,
 				scrollLeft,
 				scrollWidth,
 				clientWidth,
+				className: 'ui-kit-navTabs-boxShadow__wrapper',
+				isFlexDirectionReversed,
 			});
 		}
 	}
 
 	useEffect(() => {
-		const wrapper = wrapperRef.current as HTMLElement | null;
-		const container = containerRef.current as HTMLElement | null;
+		const wrapper = wrapperRef.current as HTMLDivElement | null;
+		const container = containerRef.current as HTMLDivElement | null;
 
 		if (wrapper && container) {
 			const {scrollLeft, scrollWidth, clientWidth} = container;
+			const {isFlexDirectionReversed} = getIsFlexDirectionReversed({wrapper});
 
-			updateShadowClasses({
+			updateTabsShadowClasses({
 				wrapper,
 				scrollLeft,
 				scrollWidth,
 				clientWidth,
+				className: 'ui-kit-navTabs-boxShadow__wrapper',
+				isFlexDirectionReversed,
 			});
 		}
 	}, [tabsPosition]);

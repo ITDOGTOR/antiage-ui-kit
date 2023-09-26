@@ -1,3 +1,3 @@
-import updateShadowClasses from './updateShadowClasses/update-shadow-classes';
+import getIsFlexDirectionReversed from './getIsFlexDirectionReversed/get-is-flex-direction-reversed';
 
-export {updateShadowClasses};
+export {getIsFlexDirectionReversed};

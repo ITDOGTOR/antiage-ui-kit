@@ -83,6 +83,11 @@
 	--fw-medium: 500;
 	--fw-regular: 400;
 
+	--brad-small: 6px;
 	--brad-base: 16px;
 	--brad-circle: 50%;
+
+	--h-small: 28px;
+	--h-medium: 34px;
+	--h-large: 44px;
 }

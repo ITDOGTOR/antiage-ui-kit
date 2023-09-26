@@ -17,6 +17,7 @@ import './components/Tooltip/Tooltip.css';
 import './components/NavTabs/NavTabs.css';
 import './components/Table/ui/Table/Table.css';
 import './components/Table/ui/TitleWithSorting/Title.css';
+import './components/FilterTabs/FilterTabs.css';
 
 export * from './assets';
 export * from './components';
