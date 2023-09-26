@@ -15,6 +15,5 @@ export type InputProps = {
 	placeholderClassName?: string;
 	iconClassName?: string;
 	innerRef?: React.RefObject<HTMLInputElement>;
-	iconName?: string;
 	CustomIconComponent?: React.ElementType<SVGProps<SVGSVGElement>>;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;

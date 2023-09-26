@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, {ChangeEvent, Suspense, useMemo, useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 
 import {Eye, EyeClosed, Letter, Lock} from '../../assets';
 import {Theme} from '../index.types';
@@ -7,8 +7,7 @@ import {InputProps} from './Input.types';
 import {InputErrorTooltip} from './ui';
 
 function Input({
-	iconName = '',
-	CustomIconComponent = undefined,
+	CustomIconComponent,
 	theme = Theme.WHITE,
 	inputSize = 'medium',
 	disabled,
@@ -29,26 +28,10 @@ function Input({
 }: InputProps) {
 	const [localValue, setLocalValue] = useState(value);
 	const [localType, setLocalType] = useState(type);
-	const [isIconImportError, setIsIconImportError] = useState(false);
-
-	const LocalInputIcon = useMemo(() => {
-		const importPromise = import(`../../assets/${iconName}`)
-			.then((importedModule) => {
-				setIsIconImportError(false);
-				return importedModule;
-			})
-			.catch((e) => {
-				console.error(e);
-				setIsIconImportError(true);
-				return e;
-			});
-
-		return React.lazy(() => importPromise);
-	}, [iconName]);
 
 	const isPassword = type === 'password';
 	const isEmail = type === 'email';
-	const isIcon = isPassword || isEmail || (!!iconName && !isIconImportError) || CustomIconComponent;
+	const isIcon = isPassword || isEmail || CustomIconComponent;
 
 	function togglePasswordVisible() {
 		setLocalType((prev) => (prev === 'password' ? 'text' : 'password'));
@@ -113,11 +96,6 @@ function Input({
 			<label className={inputWrapperClasses}>
 				<span className={labelClasses}>{label}</span>
 				<span className={placeholderClasses}>{placeholder}</span>
-				{!!iconName && !isIconImportError && (
-					<Suspense fallback={<span>...</span>}>
-						<LocalInputIcon className={iconClasses} />
-					</Suspense>
-				)}
 				{!!CustomIconComponent && <CustomIconComponent className={iconClasses} />}
 				{isEmail && <Letter className={iconClasses} />}
 				{isPassword && <Lock className={iconClasses} />}

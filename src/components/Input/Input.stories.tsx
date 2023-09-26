@@ -68,12 +68,6 @@ export default {
 				type: 'custom',
 			},
 		},
-		iconName: {
-			name: 'iconName',
-			description: 'Имя иконки для автоподставления в путь импорта из кита',
-			defaultValue: '',
-			control: {type: 'text'},
-		},
 		className: {table: {disable: true}},
 		wrapperClassName: {table: {disable: true}},
 		inputWrapperClassName: {table: {disable: true}},
