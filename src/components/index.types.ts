@@ -1,5 +1,7 @@
-declare const Themes: ['white', 'gray'];
-export declare type Theme = (typeof Themes)[number];
+export enum Theme {
+	WHITE = 'white',
+	GRAY = 'gray',
+}
 
 declare const Colors: ['base', 'accent', 'complement', 'warning', 'success'];
 export declare type Color = (typeof Colors)[number];

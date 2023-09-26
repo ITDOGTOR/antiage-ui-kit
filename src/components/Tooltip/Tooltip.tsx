@@ -6,7 +6,7 @@ import {TooltipProps} from './Tooltip.types';
 
 const overlayInnerStyles = {
 	padding: '14px',
-	color: 'var(--base-strong)',
+	color: 'inherit',
 	borderRadius: 'var(--brad-base)',
 	boxShadow: 'box-shadow: 0 10px 15px 0 rgb(0 0 0 / 0.1)',
 };

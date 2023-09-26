@@ -1,0 +1,52 @@
+.ui-kit-date-picker__container {
+	position: absolute;
+	top: 0;
+	z-index: 99999;
+
+	display: grid;
+
+	box-shadow: 0 10px 15px 0 rgb(66 71 77 / 0.1);
+	transform: translateY(54px);
+
+	animation-name: in;
+	animation-duration: 200ms;
+	row-gap: 10px;
+}
+
+.ui-kit-date-picker__container--close {
+	animation-name: out;
+	animation-duration: 200ms;
+}
+
+.ui-kit-date-picker__container--top {
+	box-shadow: 0 4px 15px 0 rgb(66 71 77 / 0.1);
+	transform: translateY(calc(-100% - 10px));
+}
+
+@keyframes in {
+	from {
+		grid-template-rows: 0;
+
+		opacity: 0;
+	}
+
+	to {
+		grid-template-rows: 50px;
+
+		opacity: 1;
+	}
+}
+
+@keyframes out {
+	from {
+		grid-template-rows: 50px;
+
+		opacity: 1;
+	}
+
+	to {
+		grid-template-rows: 0;
+
+		opacity: 0;
+	}
+}
