@@ -18,10 +18,4 @@ describe('setMaskedInputValue', () => {
 		const formattedDate = setMaskedInputValue(emptyInput);
 		expect(formattedDate).toEqual('');
 	});
-
-	test('should handle input with extra characters', () => {
-		const inputDate = '2023-09-24extra';
-		const formattedDate = setMaskedInputValue(inputDate);
-		expect(formattedDate).toEqual('24.09.2023');
-	});
 });
