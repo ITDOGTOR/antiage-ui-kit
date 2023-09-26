@@ -2,13 +2,14 @@ import classNames from 'classnames';
 import React, {UIEvent, useEffect, useRef} from 'react';
 
 import {updateTabsShadowClasses} from '../../helpers';
+import {Theme} from '../index.types';
 import {FilterTabsProps} from './FilterTabs.types';
 
 function FilterTabs({
 	tabs = [{link: '', title: '', disabled: true}],
 	activeTabColor = 'accent',
 	onClick = () => {},
-	theme = 'white',
+	theme = Theme.WHITE,
 	activeTabLink,
 	size = 'medium',
 	containerClassName,

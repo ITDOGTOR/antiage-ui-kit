@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 
+import {Theme} from '../index.types';
 import {StatusProps} from './Status.types';
 
 function Status({
@@ -9,7 +10,7 @@ function Status({
 	size = 'medium',
 	containerClassName,
 	textClassName,
-	theme = 'white',
+	theme = Theme.WHITE,
 }: StatusProps) {
 	const containerClasses = classNames(
 		'ui-kit-status',

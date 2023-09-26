@@ -1,65 +1,25 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import React from 'react';
+import React, {useState} from 'react';
 
 import DatePicker from './DatePicker';
-import {DatePickerProps} from './DatePicker.types';
+import {DatePickerProps} from './index.types';
 
 export default {
 	title: 'DatePicker',
 	component: DatePicker,
-	argTypes: {
-		theme: {
-			defaultValue: 'white',
-			table: {defaultValue: {summary: 'white'}},
-			control: {type: 'select'},
-		},
-		disabled: {
-			name: 'disabled',
-			defaultValue: false,
-			control: {type: 'boolean'},
-		},
-		error: {
-			name: 'error',
-			description: 'error message',
-			defaultValue: '',
-			control: {type: 'text'},
-		},
-		label: {
-			name: 'label',
-			description: 'Label-placeholder',
-			defaultValue: '',
-			control: {type: 'text'},
-		},
-		size: {
-			name: 'size',
-			description: 'size of datepicker',
-			defaultValue: 'default',
-			control: {type: 'select', options: ['default', 'small']},
-		},
-		dropdown: {
-			name: 'dropdown',
-			description: 'dropdown indicator',
-			defaultValue: 'false',
-			control: {type: 'boolean'},
-		},
-		contrast: {
-			name: 'contrast',
-			description: 'contrast',
-			defaultValue: 'false',
-			control: {type: 'boolean'},
-		},
-		className: {table: {disable: true}},
-		wrapperClassName: {table: {disable: true}},
-		labelClassName: {table: {disable: true}},
-		placeholderClassName: {table: {disable: true}},
-		iconClassName: {table: {disable: true}},
-		innerRef: {table: {disable: true}},
-	},
 } as ComponentMeta<typeof DatePicker>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof DatePicker> = (args: DatePickerProps) => {
+const UncontrolledTemplate: ComponentStory<typeof DatePicker> = (args: DatePickerProps) => {
 	return <DatePicker {...args} />;
 };
 
-export const Sandbox = Template.bind({});
+// eslint-disable-next-line react/function-component-definition
+const ControlledTemplate: ComponentStory<typeof DatePicker> = (args: DatePickerProps) => {
+	const [value, setValue] = useState('');
+
+	return <DatePicker {...args} value={value} onChange={(val: string) => setValue(val)} />;
+};
+
+export const Sandbox = UncontrolledTemplate.bind({});
+export const Controlled = ControlledTemplate.bind({});

@@ -1,0 +1,149 @@
+.ui-kit-date-picker__view-input {
+	position: relative;
+}
+
+.ui-kit-date-picker__label {
+	width: 100%;
+
+	font-weight: var(--fw-medium);
+}
+
+.ui-kit-date-picker__input {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 44px;
+	padding: 8px 14px 8px 40px;
+
+	font-weight: var(--fw-medium);
+	font-size: var(--fs-sm);
+	line-height: var(--lh-sm);
+
+	border: 1px solid transparent;
+	border-radius: var(--brad-base);
+	outline: none;
+	cursor: pointer;
+
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ui-kit-date-picker__input--split {
+	border-radius: 16px 0 0 16px;
+}
+
+.ui-kit-date-picker__input--withLabel {
+	padding-top: 20px;
+}
+
+.ui-kit-date-picker__input.white {
+	background-color: var(--base-weak);
+	border-color: var(--back-faint-weak-darker);
+}
+
+.ui-kit-date-picker__input.gray {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-date-picker__input:focus {
+	box-shadow: 0 0 5px var(--accent-strong);
+}
+
+.ui-kit-date-picker__input.error {
+	border-color: var(--critic-strong);
+}
+
+.ui-kit-date-picker__input.error:focus {
+	box-shadow: 0 0 2px var(--critic-strong);
+}
+
+.ui-kit-date-picker__input:disabled {
+	color: var(--faint-strong);
+
+	cursor: no-drop;
+}
+
+.ui-kit-date-picker__placeholder {
+	position: absolute;
+	top: 50%;
+	left: 40px;
+
+	color: var(--faint-strong);
+	font-size: var(--fs-sm);
+
+	transform: translateY(-50%);
+	cursor: pointer;
+
+	transition: all 0.3s ease;
+}
+
+.ui-kit-date-picker__placeholder.error {
+	color: var(--critic-strong);
+}
+
+.ui-kit-date-picker__input:disabled + .ui-kit-date-picker__placeholder {
+	cursor: no-drop;
+}
+
+.ui-kit-date-picker__placeholder--hide {
+	display: none;
+}
+
+.ui-kit-date-picker__placeholder--have-value {
+	top: 7px;
+
+	font-size: var(--fs-xxs);
+
+	transform: none;
+}
+
+.ui-kit-date-picker__icon-calendar {
+	position: absolute;
+	top: 50%;
+	left: 14px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 16px;
+	height: auto;
+
+	color: var(--accent-strong);
+
+	transform: translateY(-50%);
+}
+
+.ui-kit-date-picker__icon-calendar--disabled {
+	color: var(--faint-strong);
+}
+
+.ui-kit-date-picker__icon-calendar.error {
+	color: var(--critic-strong);
+}
+
+.ui-kit-date-picker__error {
+	position: absolute;
+	top: 50%;
+	right: 14px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 12px;
+	height: 12px;
+
+	color: var(--critic-strong);
+
+	transform: translateY(-50%);
+}
+
+.ui-kit-date-picker__error-tooltip {
+	color: var(--critic-strong);
+}
+
+@media screen and (max-width: 600px) {
+	.ui-kit-date-picker__input,
+	.ui-kit-date-picker__placeholder {
+		font-size: var(--fs-xs);
+	}
+}

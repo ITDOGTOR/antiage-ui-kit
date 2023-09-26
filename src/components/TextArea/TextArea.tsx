@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React, {ChangeEvent, FocusEvent, useEffect, useRef, useState} from 'react';
 
+import {Theme} from '../index.types';
 import InputError from '../InputError';
 import {TextAreaProps} from './TextArea.types';
 import useAutosizeTextArea from './utils/useAutoSizeTextArea';
@@ -10,7 +11,7 @@ function TextArea({
 	wrapperClassName = '',
 	labelClassName = '',
 	placeholderClassName = '',
-	theme = 'white',
+	theme = Theme.WHITE,
 	placeholder = '',
 	label = '',
 	error = '',
