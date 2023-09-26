@@ -1,1 +1,0 @@
-export {withCurrentModeCheck} from './withCurrentModeCheck';

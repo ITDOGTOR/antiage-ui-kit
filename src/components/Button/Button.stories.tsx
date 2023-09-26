@@ -1,7 +1,6 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import React, {useState} from 'react';
+import React from 'react';
 
-import DatePicker from '../DatePickerrr';
 import Button from './Button';
 import {ButtonProps} from './Button.types';
 
@@ -60,15 +59,7 @@ export default {
 
 // eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof Button> = (args: ButtonProps) => {
-	const [val, setVal] = useState('');
-
-	return (
-		<>
-			<Button {...args}>Название</Button>
-
-			<DatePicker value={val} onChange={(v) => setVal(v)} />
-		</>
-	);
+	return <Button {...args}>Название</Button>;
 };
 
 export const Sandbox = Template.bind({});
