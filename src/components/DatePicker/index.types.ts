@@ -32,16 +32,28 @@ export interface DatePickerGeneralProps {
 	lang?: string;
 }
 
-export interface FieldProps {
+interface FieldProps {
 	name?: string;
 	disabled?: boolean;
 	placeholder?: string;
 	theme?: Theme;
 	className?: string;
 	isSplit?: boolean;
-	withLabel?: boolean;
 	error?: string | boolean | {message: string};
 	inputMask?: Function;
 }
 
-export declare type DatePickerProps = DatePickerGeneralProps & FieldProps;
+type ConditionalFieldProps = FieldProps & {
+	withLabel?: false;
+	label?: never;
+};
+
+type FieldPropsWithLabel = FieldProps & {
+	withLabel: true;
+	label: string;
+	placeholder?: never;
+};
+
+export type FinalFieldProps = FieldPropsWithLabel | ConditionalFieldProps;
+
+export declare type DatePickerProps = DatePickerGeneralProps & FinalFieldProps;

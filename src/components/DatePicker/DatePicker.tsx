@@ -5,38 +5,18 @@ import {DatePickerProps} from './index.types';
 import {DatePickerProvider, DaysGrid, MonthsAndYearsLists, TogglePanel, ViewField} from './ui';
 
 function DatePicker({
-	name,
-	placeholder,
 	value = '',
 	onChange,
-	disabled,
-	isSplit,
-	withLabel,
-	error,
-	className,
 	theme = Theme.WHITE,
 	lang = 'ru',
 	onClosePopup,
-	inputMask,
 	applyMask,
+	...props
 }: DatePickerProps) {
 	return (
 		<DatePickerProvider
 			applyMask={applyMask}
-			field={
-				<ViewField
-					className={className}
-					disabled={disabled}
-					error={error}
-					inputMask={inputMask}
-					isSplit={isSplit}
-					name={name}
-					placeholder={placeholder}
-					theme={theme}
-					value={value}
-					withLabel={withLabel}
-				/>
-			}
+			field={<ViewField theme={theme} value={value} {...props} />}
 			lang={lang}
 			value={value}
 			onChange={onChange}

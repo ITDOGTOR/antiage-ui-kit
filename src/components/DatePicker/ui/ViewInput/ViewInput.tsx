@@ -16,6 +16,7 @@ export const ViewField = React.memo(
 		name,
 		value,
 		disabled,
+		label,
 		placeholder,
 		error,
 		withLabel,
@@ -61,7 +62,7 @@ export const ViewField = React.memo(
 						})}
 						id={name}
 					>
-						{placeholder}
+						{label || placeholder}
 					</span>
 				</label>
 

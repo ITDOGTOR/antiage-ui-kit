@@ -7,10 +7,16 @@ describe('formatDateInput', () => {
 		expect(formattedDate).toEqual('2023-09-24');
 	});
 
-	test('should return the input string for an invalid date input', () => {
-		const invalidInput = '24.09.2';
-		const result = formatDateInput(invalidInput);
-		expect(result).toEqual(invalidInput);
+	test('should format date with leading zeros correctly', () => {
+		const inputDate = '01.05.2023';
+		const formattedDate = formatDateInput(inputDate);
+		expect(formattedDate).toEqual('2023-05-01');
+	});
+
+	test('should handle invalid day exceeding the month length', () => {
+		const inputDate = '31.02.2023';
+		const formattedDate = formatDateInput(inputDate);
+		expect(formattedDate).toEqual('2023-03-03');
 	});
 
 	test('should return the input string for a short date input', () => {
