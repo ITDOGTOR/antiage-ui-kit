@@ -9,8 +9,8 @@ import ru from 'react-phone-input-2/lang/ru.json';
 
 import {ChevronVertical} from '../../assets';
 import {Theme} from '../index.types';
-import Input from '../Input';
 import InputError from '../InputError';
+import NewInput from '../NewInput';
 import {PhoneInputProps} from './PhoneInput.types';
 
 function PhoneInput({
@@ -124,7 +124,7 @@ function PhoneInput({
 					<span>{`+${countryInfo.dialCode}`}</span>
 					<ChevronVertical className={dropdownArrowClasses} />
 				</button>
-				<Input
+				<NewInput
 					disabled={disabled}
 					innerRef={innerRef}
 					placeholder={countryInfo.format?.slice(1 + (countryInfo.dialCode?.length || 1)).replace(/\./gi, '_')}

@@ -1,20 +1,32 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import React from 'react';
 
-import Input from './Input';
+import NewInput from './Input';
 import {InputProps} from './Input.types';
 
 export default {
-	title: 'Input',
-	component: Input,
+	title: 'Gghffghfgh',
+	component: NewInput,
 	argTypes: {
 		theme: {
+			name: 'theme',
 			defaultValue: 'white',
-			table: {defaultValue: {summary: 'white'}},
-			control: {type: 'select'},
+			description: 'Input theme',
+			control: {
+				type: 'inline-radio',
+			},
+		},
+		inputSize: {
+			name: 'inputSize',
+			defaultValue: 'medium',
+			description: 'Input size',
+			control: {
+				type: 'inline-radio',
+			},
 		},
 		disabled: {
 			name: 'disabled',
+			description: 'Input disabled flag',
 			defaultValue: false,
 			control: {type: 'boolean'},
 		},
@@ -22,7 +34,7 @@ export default {
 			name: 'type',
 			description: 'HTML input type',
 			defaultValue: 'text',
-			control: {type: 'select', options: ['text', 'password', 'email', 'number', 'range']},
+			control: {type: 'inline-radio', options: ['text', 'password', 'email']},
 		},
 		error: {
 			name: 'error',
@@ -32,21 +44,29 @@ export default {
 		},
 		label: {
 			name: 'label',
-			description: 'Label-placeholder',
-			defaultValue: '',
+			description: 'Input label',
+			defaultValue: 'Label',
 			control: {type: 'text'},
 		},
 		placeholder: {
 			name: 'placeholder',
-			description: 'simple placeholder',
-			defaultValue: '',
+			description: 'Input placeholder',
+			defaultValue: 'Placeholder',
 			control: {type: 'text'},
 		},
 		value: {
 			name: 'value',
-			description: 'Outer value',
+			description: 'Input value',
 			defaultValue: '',
 			control: {type: 'text'},
+		},
+		CustomIconComponent: {
+			name: 'CustomIconComponent',
+			description: 'Компонент кастомной SVG-иконки',
+			defaultValue: undefined,
+			control: {
+				type: 'custom',
+			},
 		},
 		className: {table: {disable: true}},
 		wrapperClassName: {table: {disable: true}},
@@ -55,24 +75,12 @@ export default {
 		placeholderClassName: {table: {disable: true}},
 		iconClassName: {table: {disable: true}},
 		innerRef: {table: {disable: true}},
-		name: {
-			name: 'name',
-			description: 'input name',
-			defaultValue: '',
-			control: {type: 'text'},
-		},
-		autoComplete: {
-			name: 'autocomplete',
-			description: 'input autocomplete',
-			defaultValue: false,
-			control: {type: 'boolean'},
-		},
 	},
-} as ComponentMeta<typeof Input>;
+} as ComponentMeta<typeof NewInput>;
 
 // eslint-disable-next-line react/function-component-definition
-const Template: ComponentStory<typeof Input> = (args: InputProps) => {
-	return <Input {...args} />;
+const Template: ComponentStory<typeof NewInput> = (args: InputProps) => {
+	return <NewInput {...args} />;
 };
 
 export const Sandbox = Template.bind({});

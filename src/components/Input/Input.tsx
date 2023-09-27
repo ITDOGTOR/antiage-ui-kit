@@ -1,125 +1,139 @@
 import classNames from 'classnames';
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, FocusEvent, SetStateAction, useEffect, useState} from 'react';
 
 import {Eye, EyeClosed, Letter, Lock} from '../../assets';
-import {Theme} from '../index.types';
+import InputError from '../InputError';
 import {InputProps} from './Input.types';
-import {InputErrorTooltip} from './ui';
 
 function Input({
-	CustomIconComponent,
-	theme = Theme.WHITE,
-	inputSize = 'medium',
-	disabled,
-	type,
-	error = '',
-	label = '',
-	placeholder = '',
-	value = '',
 	className = '',
 	wrapperClassName = '',
 	inputWrapperClassName = '',
 	labelClassName = '',
 	placeholderClassName = '',
 	iconClassName = '',
+	theme = 'white',
+	placeholder = '',
+	label = '',
+	error = '',
 	innerRef,
-	onChange,
 	...props
 }: InputProps) {
-	const [localValue, setLocalValue] = useState(value);
-	const [localType, setLocalType] = useState(type);
+	const [isFocused, setFocused] = useState(false);
+	const [localValue, setLocalValue] = useState<SetStateAction<string | number | readonly string[] | undefined>>('');
+
+	const {disabled, type, onChange, value} = props;
+
+	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+		if (onChange) {
+			onChange(event);
+		}
+		setLocalValue(event.target.value);
+	};
+
+	useEffect(() => {
+		setLocalValue(value);
+	}, [value]);
+
+	const onBlur = (e: FocusEvent<HTMLInputElement>) => {
+		if (props.onBlur) {
+			props.onBlur(e);
+		}
+		setFocused(false);
+	};
+
+	const onFocus = (e: FocusEvent<HTMLInputElement>) => {
+		if (props.onFocus) {
+			props.onFocus(e);
+		}
+		setFocused(true);
+	};
 
 	const isPassword = type === 'password';
 	const isEmail = type === 'email';
-	const isIcon = isPassword || isEmail || CustomIconComponent;
+	const isPlaceholder = !(isFocused || localValue) || !label;
 
-	function togglePasswordVisible() {
-		setLocalType((prev) => (prev === 'password' ? 'text' : 'password'));
-	}
-
-	function handleChange(e: ChangeEvent<HTMLInputElement>) {
-		if (onChange) {
-			onChange(e);
-		}
-		setLocalValue(e.target.value);
-	}
-
+	const wrapperClasses = classNames(wrapperClassName);
 	const inputWrapperClasses = classNames(
-		'ui-kit-input__wrapper',
-		{'ui-kit-input__wrapper--active': inputSize === 'large' && !!localValue},
-		`ui-kit-input__wrapper--size-${inputSize}`,
-		`ui-kit-input__wrapper--theme-${theme}`,
-		{'ui-kit-input__wrapper--disabled': disabled},
-		{'ui-kit-input__wrapper--passwordIcon': isPassword},
-		{'ui-kit-input__wrapper--icon': isIcon},
-		{'ui-kit-input__wrapper--error': !!error},
+		'ui-kit-input-wrapper',
+		theme,
+		{focused: isFocused},
+		{password: isPassword},
+		{icon: isEmail || isPassword},
+		{disabled},
+		{error},
 		inputWrapperClassName,
 	);
-
-	const labelClasses = classNames(
-		'ui-kit-input__label',
-		{'ui-kit-input__label--invisible': !label || inputSize !== 'large' || !localValue},
-		{'ui-kit-input__label--error': error},
-		{'ui-kit-input__label--disabled': disabled},
-		labelClassName,
-	);
-
-	const placeholderClasses = classNames(
-		'ui-kit-input__placeholder',
-		`ui-kit-input__placeholder--size-${inputSize}`,
-		{'ui-kit-input__placeholder--icon': isIcon},
-		{'ui-kit-input__placeholder--disabled': disabled},
-		{'ui-kit-input__placeholder--invisible': !!localValue || !placeholder},
-		placeholderClassName,
-	);
-
-	const inputClasses = classNames(
+	const classes = classNames(
 		'ui-kit-input',
-		`ui-kit-input--size-${inputSize}`,
-		{'ui-kit-input--icon': isIcon},
+		theme,
+		{withLabel: label},
+		{password: isPassword},
+		{icon: isEmail || isPassword},
+		{error},
 		className,
 	);
-
-	const iconClasses = classNames(
-		'ui-kit-input__icon',
-		{'ui-kit-input__icon--error': error},
-		{'ui-kit-input__icon--disabled': disabled},
-		iconClassName,
+	const labelClasses = classNames(
+		'ui-kit-input-label-common',
+		isFocused || localValue ? 'ui-kit-input-label' : 'ui-kit-input-placeholder',
+		{invisible: isPlaceholder && placeholder},
+		theme,
+		{icon: isEmail || isPassword},
+		{error},
+		labelClassName,
 	);
+	const placeholderClasses = classNames(
+		'ui-kit-input-label-common',
+		'ui-kit-input-placeholder',
+		theme,
+		{noLabel: !label},
+		{
+			icon: isEmail || isPassword,
+		},
+		{error},
+		placeholderClassName,
+	);
+	const passwordBtnClasses = classNames('ui-kit-input-password-btn');
+	const iconClasses = classNames('ui-kit-input-icon', {disabled}, {error}, iconClassName);
 
-	const togglePasswordIconClasses = classNames('ui-kit-input__icon__togglePasswordIcon', {
-		'ui-kit-input__icon__togglePasswordIcon--error': error,
-	});
+	let Icon = Lock;
+	if (isEmail) {
+		Icon = Letter;
+	}
+
+	const [showPassword, setShowPassword] = useState(false);
+
+	const togglePasswordVisible = () => setShowPassword((prev) => !prev);
+
+	let localType = type;
+	if (isPassword) {
+		localType = showPassword ? 'text' : 'password';
+	}
+
+	const commonProps = {
+		className: classes,
+		...props,
+		type: localType,
+		onBlur,
+		onFocus,
+		onChange: handleChange,
+		ref: innerRef,
+	};
 
 	return (
-		<div className={classNames(wrapperClassName)}>
+		<div className={wrapperClasses}>
 			<label className={inputWrapperClasses}>
-				<span className={labelClasses}>{label}</span>
-				<span className={placeholderClasses}>{placeholder}</span>
-				{!!CustomIconComponent && <CustomIconComponent className={iconClasses} />}
-				{isEmail && <Letter className={iconClasses} />}
-				{isPassword && <Lock className={iconClasses} />}
-				<input
-					className={inputClasses}
-					disabled={disabled}
-					ref={innerRef}
-					type={localType}
-					value={localValue}
-					onChange={handleChange}
-					{...props}
-				/>
-				{isPassword && (
-					<button
-						className={togglePasswordIconClasses}
-						disabled={disabled}
-						type="button"
-						onClick={togglePasswordVisible}
-					>
-						{localType === type ? <EyeClosed aria-label="hide-password" /> : <Eye aria-label="show-password" />}
+				{label && <span className={labelClasses}>{label}</span>}
+				{placeholder && isPlaceholder && !localValue && <span className={placeholderClasses}>{placeholder}</span>}
+				{(isPassword || isEmail) && <Icon className={iconClasses} />}
+				<input {...commonProps} />
+				{isPassword && !disabled && (
+					<button className={passwordBtnClasses} type="button" onClick={togglePasswordVisible}>
+						{showPassword ? <EyeClosed aria-label="hide-password" /> : <Eye aria-label="show-password" />}
 					</button>
 				)}
-				<InputErrorTooltip errorText={error} />
 			</label>
+			<InputError error={error} />
 		</div>
 	);
 }

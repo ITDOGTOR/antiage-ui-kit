@@ -1,0 +1,294 @@
+/* Стили wrapper */
+.ui-kit-input__wrapper {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	width: 100%;
+
+	transition: all 0.2s linear;
+}
+
+.ui-kit-input__wrapper--active {
+	align-items: flex-end;
+}
+
+.ui-kit-input__wrapper--size-small {
+	height: var(--h-small);
+	padding: 6px 14px;
+
+	border-radius: var(--brad-small);
+}
+
+.ui-kit-input__wrapper--size-medium {
+	height: var(--h-medium);
+	padding: 8px 14px;
+
+	border-radius: var(--brad-small);
+}
+
+.ui-kit-input__wrapper--size-large {
+	height: var(--h-large);
+	padding: 7px 14px;
+
+	border-radius: var(--brad-base);
+}
+
+.ui-kit-input__wrapper--theme-white {
+	background-color: var(--faint-weak);
+}
+
+.ui-kit-input__wrapper--theme-gray {
+	background-color: var(--base-weak);
+}
+
+.ui-kit-input__wrapper--disabled {
+	cursor: not-allowed;
+}
+
+.ui-kit-input__wrapper--passwordIcon {
+	padding-right: 14px;
+}
+
+.ui-kit-input__wrapper--icon {
+	padding-left: 14px;
+}
+
+.ui-kit-input__wrapper--error {
+	background-color: var(--critic-weak-lighter);
+}
+
+/* Стили wrapper конец */
+
+/* Стили лейбла */
+.ui-kit-input__label {
+	position: absolute;
+	top: 12px;
+	left: 14px;
+
+	color: var(--base-strong-lighter);
+	font-weight: var(--fw-medium);
+
+	font-size: var(--fs-3xs);
+
+	line-height: normal;
+
+	transform: translate(0, -50%);
+
+	transition: all 0.2s linear;
+
+	resize: none;
+}
+
+.ui-kit-input__label--error {
+	color: var(--critic-strong);
+	font-size: var(--fs-xxs);
+	line-height: var(--lh-xs);
+}
+
+.ui-kit-input__label--disabled {
+	color: var(--faint-strong);
+
+	pointer-events: none;
+}
+
+.ui-kit-input__label--invisible {
+	opacity: 0;
+
+	pointer-events: none;
+}
+
+/* Стили лейбла конец */
+
+/* Стили плейсхолдера */
+.ui-kit-input__placeholder {
+	position: absolute;
+	top: 50%;
+	left: 14px;
+
+	color: var(--base-strong-lighter);
+	font-weight: var(--fw-medium);
+
+	transform: translate(0, -50%);
+
+	cursor: text;
+
+	transition: all 0.2s linear;
+}
+
+.ui-kit-input__placeholder--size-small {
+	font-size: var(--fs-xs);
+
+	line-height: var(--lh-sm);
+}
+
+.ui-kit-input__placeholder--size-medium,
+.ui-kit-input__placeholder--size-large {
+	font-size: var(--fs-sm);
+
+	line-height: var(--lh-md);
+}
+
+.ui-kit-input__placeholder--icon {
+	left: 42px;
+}
+
+.ui-kit-input__placeholder--disabled {
+	pointer-events: none;
+}
+
+.ui-kit-input__placeholder--invisible {
+	opacity: 0;
+
+	pointer-events: none;
+}
+
+/* Стили плейсхолдера конец */
+
+/* Стили инпута */
+.ui-kit-input {
+	flex: 1 1;
+	width: 100%;
+
+	color: var(--base-strong);
+
+	font-weight: var(--fw-medium);
+
+	background-color: transparent;
+
+	border: none;
+	border-radius: var(--brad-base);
+	outline: none;
+	box-shadow: none;
+
+	transition: all 0.2s linear;
+}
+
+.ui-kit-input--size-small {
+	height: 16px;
+
+	font-size: var(--fs-xs);
+	line-height: var(--lh-sm);
+}
+
+.ui-kit-input--size-medium,
+.ui-kit-input--size-large {
+	height: 18px;
+
+	font-size: var(--fs-sm);
+	line-height: var(--lh-md);
+}
+
+.ui-kit-input:disabled {
+	color: var(--faint-strong);
+
+	background-color: transparent;
+
+	pointer-events: none;
+	-webkit-text-fill-color: var(--faint-strong);
+}
+
+.ui-kit-input--icon {
+	padding-left: 10px;
+}
+
+/* Стили инпута конец */
+
+/* Стили иконок */
+.ui-kit-input__icon {
+	color: var(--accent-strong);
+
+	transition: all 0.1s linear;
+}
+
+.ui-kit-input__icon__togglePasswordIcon {
+	display: flex;
+	padding: 4px;
+
+	color: var(--faint-strong);
+
+	background-color: transparent;
+	border: none;
+
+	cursor: pointer;
+
+	transition: all 0.1s linear;
+}
+
+.ui-kit-input__icon__togglePasswordIcon:hover {
+	color: var(--accent-strong);
+}
+
+.ui-kit-input__errorIcon__wrapper {
+	display: flex;
+	padding: 4px;
+
+	background-color: transparent;
+	border: none;
+	border-radius: var(--brad-circle);
+
+	cursor: pointer;
+
+	transition: background-color 0.1s linear;
+}
+
+.ui-kit-input__errorIcon__wrapper--hidden {
+	padding: 0;
+}
+
+.ui-kit-input__errorIcon {
+	color: var(--critic-strong);
+
+	transition: all 0.1s linear;
+}
+
+.ui-kit-input__icon,
+.ui-kit-input__icon__togglePasswordIcon > svg,
+.ui-kit-input__errorIcon {
+	flex-shrink: 0;
+	width: 16px;
+	height: 16px;
+}
+
+.ui-kit-input__errorIcon__wrapper:hover,
+.ui-kit-input__errorIcon__wrapper:active {
+	background-color: var(--critic-weak);
+}
+
+.ui-kit-input__icon--error,
+.ui-kit-input__icon__togglePasswordIcon--error {
+	color: var(--critic-strong);
+}
+
+.ui-kit-input__icon__togglePasswordIcon--error:hover {
+	color: var(--critic-strong-darker);
+}
+
+.ui-kit-input__errorIcon--hidden {
+	width: 0;
+	height: 0;
+}
+
+.ui-kit-input__icon--disabled,
+.ui-kit-input__icon__togglePasswordIcon:disabled {
+	color: var(--faint-middle);
+
+	pointer-events: none;
+}
+
+/* Стили иконок конец */
+
+/* Стили тултипа с тексом ошибки */
+.ui-kit-input__error-tooltip {
+	width: 100%;
+	max-width: 100%;
+}
+
+.ui-kit-input__error-tooltip-text {
+	color: var(--critic-strong);
+	font-weight: var(--fw-medium);
+	font-size: var(--fs-xs);
+	line-height: var(--lh-sm);
+}
+
+/* Стили тултипа с тексом ошибки конец */

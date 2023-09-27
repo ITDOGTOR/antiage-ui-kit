@@ -5,6 +5,7 @@ import './components/Switch/Switch.css';
 import './components/Table/Pagination.css';
 import './components/Table/Table.css';
 import './components/Input/Input.css';
+// import './components/NewInput/Input.css';
 import './components/TextArea/TextArea.css';
 import './components/InputError/InputError.css';
 import './components/PhoneInput/PhoneInput.css';

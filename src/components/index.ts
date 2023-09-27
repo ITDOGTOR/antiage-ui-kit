@@ -6,6 +6,7 @@ export {default as FilterTabs} from './FilterTabs';
 export {default as Input} from './Input';
 export {default as Link} from './Link';
 export {default as NavTabs} from './NavTabs';
+// export {default as Input} from './NewInput';
 export {default as PhoneInput} from './PhoneInput';
 export {default as Radio} from './Radio';
 export {default as SearchInput} from './SearchInput';
