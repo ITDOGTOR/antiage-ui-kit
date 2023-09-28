@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React, {useMemo, useState} from 'react';
 
 import Container from '../../../Container';
-import {DateAttributes, DateInfo, ViewMode} from '../../index.types';
+import {DateAttributes, DateInfo, Position, ViewMode} from '../../index.types';
 import {addZeroFirstSymbol, formatDateInput, getDateObj, usePopupControl} from '../../lib';
 import {DatePickerContext} from '../../model';
 import {DatePickerProviderProps} from './DatePickerProvider.types';
@@ -16,6 +16,7 @@ export function DatePickerProvider({
 	applyMask = formatDateInput,
 	onClosePopup,
 	lang,
+	position = Position.LEFT,
 	children,
 }: DatePickerProviderProps) {
 	const [mode, setMode] = useState(ViewMode.MAIN);
@@ -65,7 +66,7 @@ export function DatePickerProvider({
 
 				{isOpen && (
 					<Container
-						className={classNames('ui-kit-date-picker__container', {
+						className={classNames('ui-kit-date-picker__container', position, {
 							'ui-kit-date-picker__container--top': isRenderPopupTop,
 							'ui-kit-date-picker__container--close': isPopupShouldClose,
 						})}

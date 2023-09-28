@@ -24,6 +24,14 @@
 	transform: translateY(calc(-100% - 10px));
 }
 
+.ui-kit-date-picker__container.left {
+	left: 0;
+}
+
+.ui-kit-date-picker__container.right {
+	right: 0;
+}
+
 @keyframes in {
 	from {
 		grid-template-rows: 0;
