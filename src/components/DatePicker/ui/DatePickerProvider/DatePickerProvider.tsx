@@ -59,7 +59,7 @@ export function DatePickerProvider({
 
 	return (
 		// eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-		<div style={{position: 'relative'}} tabIndex={0} onBlur={onBlur}>
+		<div style={{position: 'relative'}} tabIndex={-1} onBlur={onBlur}>
 			<DatePickerContext.Provider value={contextData}>
 				{field}
 

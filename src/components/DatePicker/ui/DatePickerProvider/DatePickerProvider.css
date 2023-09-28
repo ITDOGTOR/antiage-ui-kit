@@ -4,6 +4,7 @@
 	z-index: 99999;
 
 	display: grid;
+	width: max-content;
 
 	box-shadow: 0 10px 15px 0 rgb(66 71 77 / 0.1);
 	transform: translateY(54px);

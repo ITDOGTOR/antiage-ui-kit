@@ -8,6 +8,10 @@ import {getDateObj} from '../getDateObj';
  * @returns A formatted masked date input string 'DD.MM.YYYY'.
  */
 export const setMaskedInputValue = (newDate: string): string => {
+	if (newDate === null) {
+		return '';
+	}
+
 	if (newDate.includes('-')) {
 		const {day, month, year} = getDateObj(newDate);
 
