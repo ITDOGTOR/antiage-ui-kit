@@ -1,7 +1,7 @@
 import './DatePickerProvider.css';
 
 import classNames from 'classnames';
-import React, {useMemo, useState} from 'react';
+import React, {useMemo, useRef, useState} from 'react';
 
 import Container from '../../../Container';
 import {DateAttributes, DateInfo, ViewMode} from '../../index.types';
@@ -16,16 +16,14 @@ export function DatePickerProvider({
 	applyMask = formatDateInput,
 	onClosePopup,
 	lang,
-	position,
 	children,
 }: DatePickerProviderProps) {
 	const [mode, setMode] = useState(ViewMode.MAIN);
 	const [visualDate, setVisualDate] = useState<DateInfo>(getDateObj(value));
+	const containerRef = useRef(null);
 
-	const {isOpen, onToggle, onBlur, isRenderPopupTop, isPopupShouldClose, onDelayClose} = usePopupControl(
-		setMode,
-		onClosePopup,
-	);
+	const {isOpen, onToggle, onBlur, isRenderPopupTop, isRenderPopupRight, isPopupShouldClose, onDelayClose} =
+		usePopupControl(setMode, onClosePopup);
 
 	const onChangeDate = (attribute: DateAttributes, newValue: string | number) => {
 		setVisualDate({...visualDate, [attribute]: newValue});
@@ -54,20 +52,21 @@ export function DatePickerProvider({
 			lang,
 			mode,
 			setMode,
+			containerRef,
 		}),
-		[visualDate, mode, lang, onChangeDate, onToggle],
+		[visualDate, mode, lang, onChangeDate, onToggle, containerRef],
 	);
 
 	return (
-		// eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-		<div style={{position: 'relative'}} tabIndex={-1} onBlur={onBlur}>
+		<div ref={containerRef} style={{position: 'relative'}} tabIndex={-1} onBlur={onBlur}>
 			<DatePickerContext.Provider value={contextData}>
 				{field}
 
 				{isOpen && (
 					<Container
-						className={classNames('ui-kit-date-picker__container', position, {
+						className={classNames('ui-kit-date-picker__container', {
 							'ui-kit-date-picker__container--top': isRenderPopupTop,
+							'ui-kit-date-picker__container--right': isRenderPopupRight,
 							'ui-kit-date-picker__container--close': isPopupShouldClose,
 						})}
 					>

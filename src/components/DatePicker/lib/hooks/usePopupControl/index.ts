@@ -8,6 +8,7 @@ export declare interface PopupControl {
 	onDelayClose: () => void;
 	isPopupShouldClose: boolean;
 	isRenderPopupTop: boolean;
+	isRenderPopupRight: boolean;
 	isOpen: boolean;
 }
 
@@ -22,22 +23,42 @@ export declare interface PopupControl {
  * - `isPopupShouldClose` - A boolean indicating if the popup should close.
  * - `onDelayClose` - A function to delay closing the popup.
  * - `isRenderPopupTop` - A boolean indicating if the popup should be rendered at the top.
+ * - `isRenderPopupRight` - A boolean indicating if the popup should be rendered at the right.
  * - `isOpen` - A boolean indicating if the popup is currently open.
  */
 export const usePopupControl = (setMode: (mode: ViewMode) => void, onClosePopup?: Function): PopupControl => {
 	const timeoutAlreadyStarted = useRef(false);
 	const isRenderPopupTop = useRef(false);
+	const isRenderPopupRight = useRef(false);
 
 	const [isOpen, setIsOpen] = useState(false);
 	const [isPopupShouldClose, setIsPopupShouldClose] = useState(false);
 
 	const getPopupPosition = (element: HTMLElement) => {
+		const clientWidth = window.innerWidth;
 		const clientHeight = window.innerHeight;
 		const mainRect = element.getBoundingClientRect();
 		const bottomSpace = clientHeight - mainRect.bottom;
+		const leftSpace = clientWidth - mainRect.left;
 
-		if (bottomSpace < 280) {
+		if (clientWidth > 600) {
+			if (bottomSpace < 400) {
+				isRenderPopupTop.current = true;
+			}
+
+			if (leftSpace < 366) {
+				isRenderPopupRight.current = true;
+			}
+
+			return;
+		}
+
+		if (bottomSpace < 260) {
 			isRenderPopupTop.current = true;
+		}
+
+		if (leftSpace < 300) {
+			isRenderPopupRight.current = true;
 		}
 	};
 
@@ -56,6 +77,7 @@ export const usePopupControl = (setMode: (mode: ViewMode) => void, onClosePopup?
 		}
 
 		isRenderPopupTop.current = false;
+		isRenderPopupRight.current = false;
 	};
 
 	const onDelayClose = () => {
@@ -92,6 +114,7 @@ export const usePopupControl = (setMode: (mode: ViewMode) => void, onClosePopup?
 		isPopupShouldClose,
 		onDelayClose,
 		isRenderPopupTop: isRenderPopupTop.current,
+		isRenderPopupRight: isRenderPopupRight.current,
 		isOpen,
 	};
 };

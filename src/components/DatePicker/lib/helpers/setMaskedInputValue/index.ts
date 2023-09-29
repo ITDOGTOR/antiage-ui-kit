@@ -12,13 +12,16 @@ export const setMaskedInputValue = (newDate: string): string => {
 		return '';
 	}
 
-	if (newDate.includes('-')) {
-		const {day, month, year} = getDateObj(newDate);
+	const stringNewDate = String(newDate);
+
+	// eslint-disable-next-line no-prototype-builtins
+	if (stringNewDate.includes?.('-')) {
+		const {day, month, year} = getDateObj(stringNewDate);
 
 		return `${addZeroFirstSymbol(day)}.${addZeroFirstSymbol(month + 1)}.${year}`;
 	}
 
-	const maskDate: string = newDate.replace(/\D/g, '').slice(0, 10);
+	const maskDate: string = stringNewDate.replace(/\D/g, '').slice(0, 10);
 
 	let formattedValue = '';
 

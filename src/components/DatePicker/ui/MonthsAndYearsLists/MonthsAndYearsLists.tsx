@@ -1,7 +1,7 @@
 import './MonthsAndYearsLists.css';
 
 import classNames from 'classnames';
-import React, {MouseEvent} from 'react';
+import React, {MouseEvent, useEffect} from 'react';
 
 import {ChevronHorizontal} from '../../../../assets';
 import {DateAttributes, ViewMode} from '../../index.types';
@@ -9,12 +9,20 @@ import {getMonthName, getMonthsList, getToday, getYearsList, useScrollToCurrent,
 import {useDatePickerContext} from '../../model';
 
 export const MonthsAndYearsLists = withCurrentModeCheck(() => {
-	const {visualDate, onChangeDate, setMode, lang} = useDatePickerContext();
+	const {visualDate, onChangeDate, setMode, lang, containerRef} = useDatePickerContext();
 
 	const activeMonthRef = useScrollToCurrent();
 	const activeYearsRef = useScrollToCurrent();
 
 	const today = getToday();
+
+	useEffect(() => {
+		containerRef?.current?.focus();
+
+		return () => {
+			containerRef?.current?.focus();
+		};
+	}, []);
 
 	const onBack = () => {
 		setMode(ViewMode.MAIN);
@@ -36,8 +44,6 @@ export const MonthsAndYearsLists = withCurrentModeCheck(() => {
 		<>
 			<div className={classNames('ui-kit-toggle-panel')}>
 				<button
-					// eslint-disable-next-line jsx-a11y/no-autofocus
-					autoFocus
 					className={classNames('ui-kit-toggle-panel__nav', 'ui-kit-toggle-panel__nav--prev')}
 					type="button"
 					onClick={onBack}

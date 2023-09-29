@@ -18,11 +18,6 @@ export enum DateAttributes {
 	YEAR = 'year',
 }
 
-export enum Position {
-	LEFT = 'left',
-	RIGHT = 'right',
-}
-
 export declare interface DateInfo {
 	day: number;
 	month: number;
@@ -35,7 +30,6 @@ export interface DatePickerGeneralProps {
 	onClosePopup?: Function;
 	applyMask?: Function;
 	lang?: string;
-	position?: Position;
 }
 
 interface FieldProps {

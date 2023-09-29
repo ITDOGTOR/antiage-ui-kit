@@ -1,4 +1,4 @@
-import {createContext, useContext} from 'react';
+import {createContext, RefObject, useContext} from 'react';
 
 import {DateAttributes, DateInfo, ViewMode} from '../index.types';
 
@@ -11,6 +11,7 @@ export interface IDatePickerContext {
 	lang: string;
 	mode: ViewMode;
 	setMode: (newMode: ViewMode) => void;
+	containerRef: RefObject<HTMLInputElement | null>;
 }
 
 export const DatePickerContext = createContext<IDatePickerContext | {}>({});
