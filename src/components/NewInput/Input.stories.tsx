@@ -5,7 +5,7 @@ import NewInput from './Input';
 import {InputProps} from './Input.types';
 
 export default {
-	title: 'Gghffghfgh',
+	title: 'NewInput',
 	component: NewInput,
 	argTypes: {
 		theme: {

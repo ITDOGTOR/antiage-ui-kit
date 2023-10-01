@@ -4,12 +4,11 @@ import classNames from 'classnames';
 import React from 'react';
 
 import {Calendar, ReportProblem} from '../../../../assets';
+import Tooltip from '../../../Tooltip';
 import {DateAttributes} from '../../index.types';
 import {setMaskedInputValue} from '../../lib';
 import {useDatePickerContext} from '../../model';
 import {ViewInputProps} from './ViewInput.types';
-
-const Tooltip = React.lazy(() => import('../../../Tooltip/Tooltip'));
 
 export const ViewField = React.memo(
 	({

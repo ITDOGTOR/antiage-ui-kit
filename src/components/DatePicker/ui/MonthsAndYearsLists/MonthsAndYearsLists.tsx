@@ -18,14 +18,11 @@ export const MonthsAndYearsLists = withCurrentModeCheck(() => {
 
 	useEffect(() => {
 		containerRef?.current?.focus();
-
-		return () => {
-			containerRef?.current?.focus();
-		};
 	}, []);
 
 	const onBack = () => {
 		setMode(ViewMode.MAIN);
+		containerRef?.current?.focus();
 	};
 
 	const onChangeMonth = (evt: MouseEvent<HTMLButtonElement>) => {

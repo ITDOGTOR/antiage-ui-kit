@@ -10,7 +10,7 @@ export const useScrollToCurrent = (): RefObject<HTMLElement | null> => {
 
 	useEffect(() => {
 		if (currentRef.current) {
-			currentRef.current.scrollIntoView({block: 'center'});
+			currentRef.current.scrollIntoView({block: 'nearest'});
 		}
 	}, []);
 
