@@ -70,7 +70,7 @@ export const ViewField = React.memo(
 						<Tooltip
 							align={{offset: [0, 16]}}
 							overlayClassName={classNames('ui-kit-date-picker__error-tooltip')}
-							placement="bottomLeft"
+							placement="bottomRight"
 							// @ts-ignore
 							title={error?.message || error}
 						>

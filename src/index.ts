@@ -14,7 +14,6 @@ import './components/Status/Status.css';
 import './components/Checkbox/Checkbox.css';
 import './components/Radio/Radio.css';
 import './components/SearchInput/SearchInput.css';
-import './components/Tooltip/Tooltip.css';
 import './components/NavTabs/NavTabs.css';
 import './components/Table/ui/Table/Table.css';
 import './components/Table/ui/TitleWithSorting/Title.css';

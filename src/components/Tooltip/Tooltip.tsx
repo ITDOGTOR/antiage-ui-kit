@@ -1,3 +1,5 @@
+import './Tooltip.css';
+
 import {Tooltip as TooltipAntd} from 'antd';
 import classNames from 'classnames';
 import React from 'react';

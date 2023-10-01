@@ -42,7 +42,7 @@ export const usePopupControl = (setMode: (mode: ViewMode) => void, onClosePopup?
 		const leftSpace = clientWidth - mainRect.left;
 
 		if (clientWidth > 600) {
-			if (bottomSpace < 400) {
+			if (bottomSpace < 260) {
 				isRenderPopupTop.current = true;
 			}
 
