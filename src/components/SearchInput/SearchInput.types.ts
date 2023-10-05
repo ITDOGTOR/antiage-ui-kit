@@ -4,6 +4,7 @@ import {Size, Theme} from '../index.types';
 
 export type SearchInputProps = {
 	value?: any;
+	onChange?: ((inputValue: string) => void) | undefined;
 	onDebounce?: ((inputValue: string) => void) | undefined;
 	debounceTimer?: number;
 	placeholder?: string;

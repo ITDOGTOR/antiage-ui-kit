@@ -39,7 +39,7 @@ function SearchInput({
 
 	function handleChange(event: ChangeEvent<HTMLInputElement>) {
 		if (onChange) {
-			onChange(event);
+			onChange(event.target.value);
 		}
 		if (debouncedOnChange) {
 			debouncedOnChange(event.target.value);
