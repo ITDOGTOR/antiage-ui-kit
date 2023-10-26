@@ -56,6 +56,15 @@
 	box-shadow: 0 0 2px var(--critic-strong);
 }
 
+.ui-kit-date-picker__input.gray.error {
+	background-color: var(--critic-weak-lighter);
+	border-color: transparent;
+}
+
+.ui-kit-date-picker__input.gray.error:focus {
+	box-shadow: 0 0 5px var(--critic-strong);
+}
+
 .ui-kit-date-picker__input:disabled {
 	color: var(--faint-strong);
 
