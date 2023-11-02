@@ -41,6 +41,7 @@ export const MonthsAndYearsLists = withCurrentModeCheck(() => {
 		<>
 			<div className={classNames('ui-kit-toggle-panel')}>
 				<button
+					aria-label="go-back"
 					className={classNames('ui-kit-toggle-panel__nav', 'ui-kit-toggle-panel__nav--prev')}
 					type="button"
 					onClick={onBack}

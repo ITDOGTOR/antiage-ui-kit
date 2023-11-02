@@ -11,12 +11,14 @@ function DatePicker({
 	lang = 'ru',
 	onClosePopup,
 	applyMask,
+	isDropdownAutoPosition,
 	...props
 }: DatePickerProps) {
 	return (
 		<DatePickerProvider
 			applyMask={applyMask}
 			field={<ViewField theme={theme} value={value} {...props} />}
+			isDropdownAutoPosition={isDropdownAutoPosition}
 			lang={lang}
 			value={value}
 			onChange={onChange}
