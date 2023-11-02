@@ -31,6 +31,7 @@ export const TogglePanel = withCurrentModeCheck(() => {
 	return (
 		<div className={classNames('ui-kit-toggle-panel')}>
 			<button
+				aria-label="prev-month"
 				className={classNames('ui-kit-toggle-panel__nav', 'ui-kit-toggle-panel__nav--prev')}
 				name={ToggleButtons.PREV}
 				type="button"
@@ -50,6 +51,7 @@ export const TogglePanel = withCurrentModeCheck(() => {
 			</button>
 
 			<button
+				aria-label="next-month"
 				className={classNames('ui-kit-toggle-panel__nav', 'ui-kit-toggle-panel__nav--next')}
 				name={ToggleButtons.NEXT}
 				type="button"

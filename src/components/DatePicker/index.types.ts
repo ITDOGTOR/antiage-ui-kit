@@ -30,6 +30,7 @@ export interface DatePickerGeneralProps {
 	onClosePopup?: Function;
 	applyMask?: Function;
 	lang?: string;
+	isDropdownAutoPosition?: boolean;
 }
 
 interface FieldProps {

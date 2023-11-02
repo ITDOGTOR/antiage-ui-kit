@@ -12,10 +12,17 @@ export declare interface PopupControl {
 	isOpen: boolean;
 }
 
+type UsePopupControl = (
+	setMode: (mode: ViewMode) => void,
+	isDropdownAutoPosition: boolean,
+	onClosePopup?: Function,
+) => PopupControl;
+
 /**
  * A custom hook for managing popup behavior, including opening, closing, and positioning.
  *
  * @param setMode - A function to set the mode of the popup (e.g., ViewMode.MAIN).
+ * @param isDropdownAutoPosition - Boolean prop to disable dropdown auto position detection.
  * @param onClosePopup - A callback function to execute when the popup is closed.
  * @returns An object with functions and states for controlling the popup:
  * - `onBlur` - A function to handle blur events and close the popup.
@@ -26,7 +33,8 @@ export declare interface PopupControl {
  * - `isRenderPopupRight` - A boolean indicating if the popup should be rendered at the right.
  * - `isOpen` - A boolean indicating if the popup is currently open.
  */
-export const usePopupControl = (setMode: (mode: ViewMode) => void, onClosePopup?: Function): PopupControl => {
+
+export const usePopupControl: UsePopupControl = (setMode, isDropdownAutoPosition, onClosePopup) => {
 	const timeoutAlreadyStarted = useRef(false);
 	const isRenderPopupTop = useRef(false);
 	const isRenderPopupRight = useRef(false);
@@ -42,7 +50,7 @@ export const usePopupControl = (setMode: (mode: ViewMode) => void, onClosePopup?
 		const leftSpace = clientWidth - mainRect.left;
 
 		if (clientWidth > 600) {
-			if (bottomSpace < 260) {
+			if (bottomSpace < 260 && isDropdownAutoPosition) {
 				isRenderPopupTop.current = true;
 			}
 
@@ -53,7 +61,7 @@ export const usePopupControl = (setMode: (mode: ViewMode) => void, onClosePopup?
 			return;
 		}
 
-		if (bottomSpace < 260) {
+		if (bottomSpace < 260 && isDropdownAutoPosition) {
 			isRenderPopupTop.current = true;
 		}
 
