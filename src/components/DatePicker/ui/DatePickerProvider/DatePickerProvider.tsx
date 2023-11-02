@@ -17,13 +17,14 @@ export function DatePickerProvider({
 	onClosePopup,
 	lang,
 	children,
+	isDropdownAutoPosition = true,
 }: DatePickerProviderProps) {
 	const [mode, setMode] = useState(ViewMode.MAIN);
 	const [visualDate, setVisualDate] = useState<DateInfo>(getDateObj(value));
 	const containerRef = useRef(null);
 
 	const {isOpen, onToggle, onBlur, isRenderPopupTop, isRenderPopupRight, isPopupShouldClose, onDelayClose} =
-		usePopupControl(setMode, onClosePopup);
+		usePopupControl(setMode, isDropdownAutoPosition, onClosePopup);
 
 	const onChangeDate = (attribute: DateAttributes, newValue: string | number) => {
 		setVisualDate({...visualDate, [attribute]: newValue});
