@@ -13,6 +13,7 @@
 	"scripts": {
 		"prepare": "husky install",
 		"build": "rollup -c",
+		"commitlint": "commitlint --edit",
 		"test": "jest --coverage",
 		"size": "size-limit",
 		"lint": "eslint . --fix --ext .ts,.tsx",
@@ -34,8 +35,11 @@
 		"@babel/preset-env": "^7.19.3",
 		"@babel/preset-react": "^7.18.6",
 		"@babel/preset-typescript": "^7.18.6",
-		"@rollup/plugin-commonjs": "^22.0.2",
-		"@rollup/plugin-node-resolve": "^14.1.0",
+		"@commitlint/cli": "^18.4.1",
+		"@commitlint/config-conventional": "^18.4.0",
+		"@rollup/plugin-commonjs": "^25.0.7",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-terser": "^0.4.4",
 		"@size-limit/preset-small-lib": "^8.1.0",
 		"@storybook/addon-actions": "^6.5.10",
 		"@storybook/addon-essentials": "^6.5.10",
@@ -50,8 +54,8 @@
 		"@svgr/cli": "^6.5.0",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
-		"@testing-library/user-event": "^14.4.3",
 		"@testing-library/react-hooks": "^7.0.2",
+		"@testing-library/user-event": "^14.4.3",
 		"@types/jest": "^29.1.1",
 		"@types/lodash.debounce": "^4.0.7",
 		"@types/lodash.range": "^3.2.7",
@@ -64,7 +68,9 @@
 		"babel-loader": "^8.2.5",
 		"classnames": "^2.3.2",
 		"colors": "^1.4.0",
+		"commitizen": "^4.3.0",
 		"core-js": "^3.25.5",
+		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.24.0",
 		"eslint-config-airbnb": "^19.0.4",
 		"eslint-config-airbnb-typescript": "^17.0.0",
@@ -90,12 +96,11 @@
 		"react-phone-input-2": "^2.15.1",
 		"react-router-dom": "^6.4.1",
 		"react-select": "^5.7.2",
-		"rollup": "^2.79.1",
+		"rollup": "^4.4.1",
 		"rollup-plugin-analyzer": "^4.0.0",
-		"rollup-plugin-import-css": "^3.0.3",
+		"rollup-plugin-import-css": "^3.3.5",
 		"rollup-plugin-peer-deps-external": "^2.2.4",
-		"rollup-plugin-terser": "^7.0.2",
-		"rollup-plugin-typescript2": "^0.34.0",
+		"rollup-plugin-typescript2": "^0.36.0",
 		"semantic-release": "^19.0.5",
 		"size-limit": "^8.1.0",
 		"storybook-addon-react-router-v6": "^0.2.1",
@@ -106,8 +111,7 @@
 		"stylelint-config-recommended": "^9.0.0",
 		"stylelint-order": "^5.0.0",
 		"stylelint-prettier": "^2.0.0",
-		"typescript": "^4.8.4",
-		"typescript-plugin-css-modules": "^3.4.0",
+		"typescript": "^5.2.2",
 		"webpack": "^5.74.0"
 	},
 	"peerDependencies": {
@@ -133,6 +137,35 @@
 		}
 	],
 	"engines": {
-		"node": ">=10"
+		"node": ">=16"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog",
+			"disableScopeLowerCase": true,
+			"types": {
+				"feat": {
+					"description": "Adding new feature"
+				},
+				"fix": {
+					"description": "Bug fix or defect"
+				},
+				"docs": {
+					"description": "Documentation Update"
+				},
+				"refactor": {
+					"description": "Editing code without fixing bugs or adding new features"
+				},
+				"chore": {
+					"description": "Add / update / customize tools and libraries"
+				},
+				"perf": {
+					"description": "Editing code to improve performance"
+				},
+				"test": {
+					"description": "Add / update / test"
+				}
+			}
+		}
 	}
 }
