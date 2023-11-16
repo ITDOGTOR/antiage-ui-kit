@@ -1,31 +1,30 @@
 .ui-kit-button {
+	touch-action: manipulation;
+	cursor: pointer;
+	user-select: none;
+
 	position: relative;
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	height: auto;
 	padding: 14px;
 
-	font-weight: var(--fw-medium);
 	font-size: var(--fs-xs);
+	font-weight: var(--fw-medium);
 	line-height: var(--lh-xs);
-	white-space: nowrap;
 	text-align: center;
 	text-shadow: none;
+	white-space: nowrap;
 
 	background-image: none;
-
 	border: 0;
 	border-radius: var(--brad-base);
-
 	box-shadow: none;
-	cursor: pointer;
 
 	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-	user-select: none;
-	touch-action: manipulation;
 }
 
 .ui-kit-button:not(.ant-btn-loading) {
@@ -63,15 +62,11 @@
 }
 
 .ui-kit-button-default[ant-click-animating-without-extra-node="true"]::after {
-	top: -1px;
-	right: -1px;
-	bottom: -1px;
-	left: -1px;
+	inset: -1px;
 }
 
 .ui-kit-button-default.base {
 	color: var(--base-strong);
-
 	border: 1px solid var(--back-faint-weak-darker);
 }
 
@@ -81,7 +76,6 @@
 
 .ui-kit-button-default.base:disabled {
 	color: var(--back-faint-middle);
-
 	background-color: transparent !important;
 	border-color: var(--back-faint-weak-darker);
 }
@@ -114,7 +108,6 @@
 
 .ui-kit-button-primary.base.gradient {
 	color: var(--base-weak);
-
 	background-image: var(--linear-base-strong);
 }
 
@@ -217,15 +210,12 @@
 
 .ui-kit-button-default.ant-btn-dangerous {
 	color: var(--critic-strong);
-
 	border: 1px solid var(--critic-strong);
 }
 
 .ui-kit-button-default.ant-btn-dangerous:disabled {
 	color: var(--critic-weak-darker);
-
 	background-color: transparent !important;
-
 	border-color: var(--critic-weak);
 }
 
@@ -241,7 +231,6 @@
 .ui-kit-button-primary.ant-btn-dangerous {
 	color: var(--base-weak);
 	text-shadow: none;
-
 	background-color: var(--critic-strong);
 }
 
@@ -264,13 +253,11 @@
 
 .ui-kit-button.ant-btn-text {
 	color: var(--accent-strong);
-
 	background-color: transparent !important;
 }
 
 .ui-kit-button-text {
 	padding: 0;
-
 	transition: none;
 }
 
@@ -289,14 +276,13 @@
 }
 
 .ui-kit-button-text:disabled {
-	color: var(--back-faint-middle) !important;
 	font-weight: var(--fw-medium);
+	color: var(--back-faint-middle) !important;
 	text-decoration: none !important;
 }
 
 .ui-kit-button-text.ant-btn-dangerous {
 	color: var(--critic-strong);
-
 	background-color: transparent;
 }
 

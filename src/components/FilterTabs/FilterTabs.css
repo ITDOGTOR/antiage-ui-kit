@@ -1,37 +1,33 @@
 /* Стили контейнера */
 .ui-kit-filterTabs-boxShadow__wrapper {
 	position: relative;
-
 	width: 100%;
 }
 
 .ui-kit-filterTabs-boxShadow__wrapper::before,
 .ui-kit-filterTabs-boxShadow__wrapper::after {
-	position: absolute;
+	pointer-events: none;
+	content: "";
 
+	position: absolute;
+	z-index: 1;
 	top: 0;
 	bottom: 0;
-	z-index: 1;
 
 	width: 50px;
 
 	opacity: 0;
 
 	transition: opacity 0.3s linear;
-
-	content: "";
-	pointer-events: none;
 }
 
 .ui-kit-filterTabs-boxShadow__wrapper::before {
 	left: 0;
-
 	background-image: linear-gradient(to right, var(--faint-weak-darker), transparent);
 }
 
 .ui-kit-filterTabs-boxShadow__wrapper::after {
 	right: 0;
-
 	background-image: linear-gradient(to left, var(--faint-weak-darker), transparent);
 }
 
@@ -44,17 +40,19 @@
 }
 
 .ui-kit-filterTabs__container {
+	scrollbar-width: none; /* Firefox */
+
+	overflow-x: auto;
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: center;
 	justify-content: flex-start;
-	width: auto;
-	overflow-x: auto;
 
-	scrollbar-width: none; /* Firefox */
-	-ms-overflow-style: none; /* IE and Edge */
+	width: auto;
 
 	transition: background-color 0.2s linear;
+
+	-ms-overflow-style: none; /* IE and Edge */
 }
 
 /* Chrome, Safari and Opera */
@@ -83,20 +81,21 @@
 
 /* Стили таба */
 .ui-kit-filterTabs__tab {
+	cursor: pointer;
+
+	overflow: hidden;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	min-width: min-content;
 	padding: 12px 24px;
-	overflow: hidden;
 
-	white-space: nowrap;
 	text-decoration: none;
 	text-overflow: ellipsis;
+	white-space: nowrap;
 
 	border: none;
-
-	cursor: pointer;
 
 	transition: background-color 0.2s linear;
 }
@@ -111,19 +110,16 @@
 
 .ui-kit-filterTabs__tab--size-small {
 	height: var(--h-small);
-
 	border-radius: var(--brad-small);
 }
 
 .ui-kit-filterTabs__tab--size-medium {
 	height: var(--h-medium);
-
 	border-radius: var(--brad-small);
 }
 
 .ui-kit-filterTabs__tab--size-large {
 	height: var(--h-large);
-
 	border-radius: var(--brad-base);
 }
 
@@ -151,18 +147,17 @@
 
 /* Стили текста таба */
 .ui-kit-filterTabs__tab__text {
-	color: var(--base-strong-lighter);
-	font-weight: var(--fw-medium);
 	font-size: var(--fs-sm);
+	font-weight: var(--fw-medium);
 	line-height: var(--lh-md);
+	color: var(--base-strong-lighter);
 
 	transition: color 0.2s linear;
 }
 
 .ui-kit-filterTabs__tab:disabled .ui-kit-filterTabs__tab__text {
-	color: var(--faint-middle);
-
 	pointer-events: none;
+	color: var(--faint-middle);
 }
 
 .ui-kit-filterTabs__tab:not(:disabled):hover .ui-kit-filterTabs__tab__text {

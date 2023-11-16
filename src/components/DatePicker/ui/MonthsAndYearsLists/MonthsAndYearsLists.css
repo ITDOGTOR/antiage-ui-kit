@@ -1,28 +1,27 @@
 .ui-kit-months-and-years-lists {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-
 	column-gap: 10px;
 }
 
 .ui-kit-months-and-years-lists__list {
+	scrollbar-color: var(--faint-weak-darker) var(--back-faint-middle);
+	scrollbar-width: 6px;
+
+	overflow-y: scroll;
 	display: grid;
 	row-gap: 4px;
 
 	height: 262px;
 	margin: 0;
 	padding: 0 10px 0 0;
-	overflow-y: scroll;
 
 	list-style: none;
-	scrollbar-width: 6px;
-	scrollbar-color: var(--faint-weak-darker) var(--back-faint-middle);
 }
 
 .ui-kit-months-and-years-lists__list::-webkit-scrollbar {
 	width: 6px;
 	height: 6px;
-
 	border-radius: 3px;
 }
 
@@ -37,20 +36,22 @@
 }
 
 .ui-kit-months-and-years-lists__item {
+	cursor: pointer;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	min-width: 144px;
 	min-height: 34px;
 
-	font-weight: var(--fw-medium);
 	font-size: var(--fs-sm);
+	font-weight: var(--fw-medium);
 	line-height: 100%;
 
 	background-color: transparent;
 	border: none;
 	border-radius: 6px;
-	cursor: pointer;
 
 	transition: 0.3s all;
 }
@@ -62,14 +63,12 @@
 
 .ui-kit-months-and-years-lists__item--today {
 	font-weight: var(--fw-semibold);
-
 	background-color: var(--faint-weak);
 }
 
 .ui-kit-months-and-years-lists__item--selected {
-	color: var(--base-weak);
 	font-weight: var(--fw-semibold);
-
+	color: var(--base-weak);
 	background-color: var(--complement-strong);
 }
 
@@ -82,7 +81,6 @@
 	.ui-kit-months-and-years-lists__item {
 		min-width: 109px;
 		min-height: 28px;
-
 		font-size: var(--fs-xs);
 	}
 }

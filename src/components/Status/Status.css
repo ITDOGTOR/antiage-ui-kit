@@ -5,6 +5,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	max-width: max-content;
 	padding: 4px 10px 4px 4px;
 
@@ -25,7 +26,6 @@
 	min-width: 160px;
 	height: 44px;
 	padding: 10px;
-
 	border-radius: 16px;
 }
 
@@ -81,9 +81,7 @@
 .ui-kit-status-icon {
 	position: absolute;
 	left: 4px;
-
 	width: 4px;
-
 	border-radius: 4px;
 }
 
@@ -97,7 +95,6 @@
 
 .ui-kit-status-icon__size-large {
 	left: 10px;
-
 	height: 24px;
 }
 
@@ -128,7 +125,6 @@
 /* Стили текста статуса */
 .ui-kit-status-text {
 	margin-left: 12px;
-
 	font-weight: 500;
 	line-height: 1.2em;
 }

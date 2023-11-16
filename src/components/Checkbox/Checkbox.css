@@ -11,13 +11,14 @@
 }
 
 .ui-kit-checkbox {
+	cursor: pointer;
+
 	display: flex;
 	gap: 10px;
 	align-items: center;
 	justify-content: flex-start;
-	width: fit-content;
 
-	cursor: pointer;
+	width: fit-content;
 }
 
 .ui-kit-checkbox-input__hidden:disabled + .ui-kit-checkbox {
@@ -30,13 +31,16 @@
 	flex-shrink: 0;
 	align-items: center;
 	justify-content: center;
+
 	width: 20px;
 	height: 20px;
 
 	border: 3px solid transparent;
 	border-radius: var(--brad-circle);
 
-	transition: border-color 0.1s linear, background-color 0.1s linear;
+	transition:
+		border-color 0.1s linear,
+		background-color 0.1s linear;
 }
 
 .ui-kit-checkbox-fakeInput__theme-white {
@@ -81,7 +85,6 @@
 .ui-kit-checkbox-fakeInput-icon {
 	width: 10px;
 	height: 10px;
-
 	transition: color 0.1s linear;
 }
 
@@ -108,11 +111,12 @@
 
 /* Стили для текста */
 .ui-kit-checkbox-label {
-	color: var(--base-strong);
-	font-weight: 500;
 	font-size: var(--fs-sm);
-
-	transition: font-weight 0.1s linear, color 0.1s linear;
+	font-weight: 500;
+	color: var(--base-strong);
+	transition:
+		font-weight 0.1s linear,
+		color 0.1s linear;
 }
 
 .ui-kit-checkbox-input__hidden:checked:not(:disabled) + .ui-kit-checkbox .ui-kit-checkbox-label {

@@ -1,37 +1,34 @@
 .ui-kit-switch-container {
 	display: flex;
+	column-gap: 10px;
 	align-items: center;
 	width: fit-content;
-
-	column-gap: 10px;
 }
 
 .ui-kit-switch-status-container {
+	touch-action: manipulation;
+	cursor: pointer;
+	user-select: none;
+
 	flex-direction: row-reverse;
 	justify-content: center;
 
 	padding: 4px 4px 4px 14px;
 
-	color: var(--base-strong-lighter);
-	font-weight: var(--fw-medium);
 	font-size: var(--fs-xs);
+	font-weight: var(--fw-medium);
 	line-height: var(--lh-xs);
+	color: var(--base-strong-lighter);
 
 	background-color: var(--faint-weak);
 	border-radius: var(--brad-base);
 
-	cursor: pointer;
-
 	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-	user-select: none;
-	touch-action: manipulation;
 }
 
 .ui-kit-switch-status-disabled {
-	color: var(--faint-strong);
-
 	cursor: not-allowed;
+	color: var(--faint-strong);
 }
 
 .ui-kit-switch-status-checked {
@@ -39,10 +36,9 @@
 }
 
 .ui-kit-switch-label {
-	cursor: pointer;
-
-	user-select: none;
 	touch-action: manipulation;
+	cursor: pointer;
+	user-select: none;
 }
 
 .ui-kit-switch-status-label {
@@ -50,14 +46,13 @@
 }
 
 .ui-kit-switch-status-label-checked {
-	color: var(--complement-strong-darker);
 	font-weight: var(--fw-semibold);
+	color: var(--complement-strong-darker);
 }
 
 .ui-kit-switch {
 	min-width: 44px;
 	height: 26px;
-
 	font-size: var(--fs-xs);
 	line-height: var(--lh-xs);
 }
@@ -111,7 +106,6 @@
 
 .ui-kit-switch .ant-switch-loading-icon {
 	top: calc(50% - 6px);
-
 	color: var(--back-faint-weak-darker);
 }
 

@@ -1,9 +1,8 @@
 .ui-kit-tooltip {
 	max-width: 300px;
-
-	color: var(--base-strong);
 	font-size: var(--fs-sm);
 	line-height: var(--lh-sm-text);
+	color: var(--base-strong);
 }
 
 .ui-kit-tooltip:is(

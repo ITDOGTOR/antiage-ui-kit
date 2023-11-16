@@ -4,11 +4,10 @@
 	align-items: flex-start;
 
 	max-width: 100%;
-
 	padding: 10px 14px;
 
-	color: var(--critic-strong);
 	font-size: var(--fs-xxs);
+	color: var(--critic-strong);
 }
 
 .ui-kit-input-error > *:first-child {

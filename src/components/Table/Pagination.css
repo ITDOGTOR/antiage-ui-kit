@@ -1,6 +1,6 @@
 .ui-kit-pagination {
-	font-weight: var(--fw-medium);
 	font-size: var(--fs-xs);
+	font-weight: var(--fw-medium);
 	line-height: var(--lh-xs);
 }
 
@@ -12,6 +12,7 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+
 	min-width: 34px;
 	min-height: 34px;
 
@@ -40,7 +41,6 @@
 .ant-pagination-item:hover,
 .ant-pagination-item:focus-visible {
 	background-color: var(--back-faint-weak);
-
 	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -55,7 +55,6 @@
 .ant-pagination-item:hover a,
 .ant-pagination-item:focus-visible a {
 	color: var(--base-strong-lighter);
-
 	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -75,6 +74,8 @@
 }
 
 .ui-kit-pagination .ui-kit-pagination-button {
+	cursor: pointer;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -83,7 +84,6 @@
 
 	background-color: transparent;
 	border: 0;
-	cursor: pointer;
 }
 
 .ui-kit-pagination-button [aria-label="left"] {
@@ -112,13 +112,11 @@
 	.ant-pagination-jump-prev:focus,
 	.ant-pagination-item:focus {
 		background-color: var(--back-faint-weak);
-
 		transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 
 	.ant-pagination-item:focus a {
 		color: var(--base-strong-lighter);
-
 		transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 	}
 

@@ -4,17 +4,16 @@
 
 .ui-kit-table__container {
 	position: relative;
-
 	overflow-x: auto;
 }
 
 .ui-kit-table__table {
-	width: -webkit-fill-available;
-	width: -moz-available;
+	table-layout: fixed;
+
+	width: fill-available;
+	width: available;
 	height: 100%;
 	min-height: 1%;
-
-	table-layout: fixed;
 }
 
 .ui-kit-table__tr-container {
@@ -23,9 +22,7 @@
 
 .ui-kit-table__tr-container > th {
 	position: relative;
-
 	align-self: flex-start;
-
 	background: var(--faint-weak);
 }
 
@@ -42,35 +39,33 @@
 }
 
 :where(.ui-kit-table__leftBody)::after {
+	pointer-events: none;
+	content: "";
+
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
+	transform: translateX(100%);
 
 	width: 30px;
 
-	transform: translateX(100%);
-
 	transition: box-shadow 0.3s;
-
-	content: "";
-	pointer-events: none;
 }
 
 :where(.ui-kit-table__rightBody)::after {
+	pointer-events: none;
+	content: "";
+
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: -60px;
+	transform: translateX(100%);
 
 	width: 30px;
 
-	transform: translateX(100%);
-
 	transition: box-shadow 0.3s;
-
-	content: "";
-	pointer-events: none;
 }
 
 :where(.ui-kit-table__shadow)::after {
@@ -82,33 +77,33 @@
 }
 
 :where(.ui-kit-table__wrapper_shadow)::before {
+	pointer-events: none;
+	content: "";
+
 	position: absolute;
+	z-index: 4;
 	top: 0;
 	bottom: 0;
 	left: 0;
-	z-index: 4;
 
 	width: 30px;
 
 	transition: box-shadow 0.3s;
-
-	content: "";
-	pointer-events: none;
 }
 
 :where(.ui-kit-table__wrapper_shadow)::after {
+	pointer-events: none;
+	content: "";
+
 	position: absolute;
+	z-index: 4;
 	top: 0;
 	right: 0;
 	bottom: 0;
-	z-index: 4;
 
 	width: 30px;
 
 	transition: box-shadow 0.3s;
-
-	content: "";
-	pointer-events: none;
 }
 
 :where(.ui-kit-table__wrapper_shadow--active-right)::after {

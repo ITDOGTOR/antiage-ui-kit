@@ -5,22 +5,23 @@
 }
 
 .ui-kit-toggle-panel__nav {
+	cursor: pointer;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	min-width: 44px;
 	min-height: 44px;
 	padding: 0;
 
-	color: var(--base-strong-lighter);
 	font-size: var(--fs-md);
 	line-height: var(--lh-md);
+	color: var(--base-strong-lighter);
 
 	background-color: transparent;
 	border: none;
 	border-radius: 50%;
-
-	cursor: pointer;
 
 	transition: 0.3s all;
 }
@@ -31,8 +32,8 @@
 }
 
 .ui-kit-toggle-panel__nav:disabled {
-	background-color: transparent;
 	cursor: default;
+	background-color: transparent;
 }
 
 .ui-kit-toggle-panel__nav--prev {
@@ -41,10 +42,11 @@
 
 .ui-kit-toggle-panel__nav--main {
 	display: flex;
+	column-gap: 10px;
+
 	padding: 0 14px;
 
 	color: var(--base-strong);
-	column-gap: 10px;
 
 	border-radius: 6px;
 }

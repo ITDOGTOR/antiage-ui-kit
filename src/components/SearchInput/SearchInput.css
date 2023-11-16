@@ -3,6 +3,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
+
 	width: max-content;
 
 	transition: all 0.1s linear;
@@ -14,6 +15,7 @@
 
 .ui-kit-search-input-container__size-large {
 	gap: 10px;
+
 	min-width: 160px;
 	height: 44px;
 	padding: 15px;
@@ -23,6 +25,7 @@
 
 .ui-kit-search-input-container__size-medium {
 	gap: 10px;
+
 	min-width: 120px;
 	height: 34px;
 	padding: 10px 5px 10px 15px;
@@ -32,6 +35,7 @@
 
 .ui-kit-search-input-container__size-small {
 	gap: 5px;
+
 	min-width: 80px;
 	height: 28px;
 	padding: 5px 5px 5px 10px;
@@ -50,9 +54,7 @@
 /* Стили иконки */
 .ui-kit-search-input-icon {
 	flex-shrink: 0;
-
 	color: var(--accent-strong);
-
 	transition: color 0.1s linear;
 }
 
@@ -77,15 +79,14 @@
 
 	width: 100%;
 
-	color: var(--base-strong);
 	font-weight: 500;
+	color: var(--base-strong);
 
 	transition: color 0.1s linear;
 }
 
 .ui-kit-search-input::placeholder {
 	color: var(--base-strong-lighter);
-
 	transition: color 0.1s linear;
 }
 
@@ -100,21 +101,18 @@
 
 .ui-kit-search-input__size-large {
 	height: 25px;
-
 	font-size: var(--fs-sm);
 	line-height: 1.2em;
 }
 
 .ui-kit-search-input__size-medium {
 	height: 18px;
-
 	font-size: var(--fs-sm);
 	line-height: 1.2em;
 }
 
 .ui-kit-search-input__size-small {
 	height: 16px;
-
 	font-size: var(--fs-xs);
 	line-height: 1em;
 }

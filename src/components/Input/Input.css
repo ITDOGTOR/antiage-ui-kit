@@ -3,8 +3,8 @@
 
 	display: flex;
 	align-items: center;
-	width: 100%;
 
+	width: 100%;
 	height: 44px;
 
 	font-weight: var(--fw-medium);
@@ -55,19 +55,18 @@
 }
 
 .ui-kit-input-label-common {
+	resize: none;
+
 	position: absolute;
 	top: 50%;
 
-	color: var(--faint-strong);
-
 	font-size: var(--fs-xs);
 	line-height: var(--lh-xss);
+	color: var(--faint-strong);
 
 	background-color: transparent;
 
 	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-	resize: none;
 }
 
 .ui-kit-input-label-common.error {
@@ -85,23 +84,20 @@
 .ui-kit-input-label {
 	top: 0;
 	left: 14px;
+	transform: translate(0, -50%);
 
 	padding: 2px 4px;
 
 	font-size: var(--fs-xxs);
 
 	background-color: var(--base-weak);
-
 	border-radius: 4px;
-
-	transform: translate(0, -50%);
 }
 
 .ui-kit-input-label.gray {
-	padding: 0;
-
-	background-color: transparent;
 	transform: translate(0, 6px);
+	padding: 0;
+	background-color: transparent;
 }
 
 .ui-kit-input-label.gray.icon {
@@ -109,11 +105,9 @@
 }
 
 .ui-kit-input-placeholder {
-	left: 15px;
-
-	transform: translate(0, -50%);
-
 	cursor: text;
+	left: 15px;
+	transform: translate(0, -50%);
 }
 
 .ui-kit-input-placeholder.icon {
@@ -122,17 +116,15 @@
 
 .ui-kit-input {
 	flex: 1 1;
-	width: 100%;
 
+	width: 100%;
 	height: 100%;
 	padding: 14px;
 
+	font-size: var(--fs-xs);
 	font-weight: var(--fw-medium);
 
-	font-size: var(--fs-xs);
-
 	background-color: transparent;
-
 	border: none;
 	border-radius: var(--brad-base);
 }
@@ -141,7 +133,7 @@
 .ui-kit-input:-webkit-autofill:hover,
 .ui-kit-input:-webkit-autofill:focus,
 .ui-kit-input:-webkit-autofill:active {
-	-webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+	box-shadow: 0 0 0 30px #ffffff inset !important;
 }
 
 .ui-kit-input:focus {
@@ -152,9 +144,9 @@
 
 .ui-kit-input:disabled {
 	color: var(--faint-strong);
-	-webkit-text-fill-color: var(--faint-strong);
-
 	background-color: transparent;
+
+	-webkit-text-fill-color: var(--faint-strong);
 }
 
 .ui-kit-input.icon {
@@ -167,14 +159,14 @@
 }
 
 .ui-kit-input-password-btn {
+	cursor: pointer;
+
 	padding: 0;
 
 	color: var(--faint-strong);
 
 	background-color: transparent;
 	border: 1px solid transparent;
-
-	cursor: pointer;
 }
 
 .ui-kit-input-password-btn > svg {

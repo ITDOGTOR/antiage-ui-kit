@@ -1,6 +1,5 @@
 .ui-kit-select-content-container {
 	position: relative;
-
 	width: 100%;
 }
 
@@ -24,9 +23,9 @@
 
 .ui-kit-select-label-container {
 	position: absolute;
+	z-index: -1;
 	top: calc(50% - 7px);
 	left: 15px;
-	z-index: -1;
 
 	line-height: 1;
 
@@ -37,9 +36,9 @@
 
 .ui-kit-select-label-container-active {
 	position: absolute;
+	z-index: 0;
 	top: -7px;
 	left: 15px;
-	z-index: 0;
 
 	line-height: 1;
 
@@ -49,10 +48,10 @@
 }
 
 .ui-kit-select-label {
-	color: var(--faint-strong);
-	font-weight: 500;
 	font-size: var(--fs-xs);
+	font-weight: 500;
 	line-height: 1;
+	color: var(--faint-strong);
 }
 
 .ui-kit-select-label-error {
@@ -63,7 +62,6 @@
 	position: absolute;
 	top: calc(50% - 9px);
 	left: 14px;
-
 	color: var(--accent-strong);
 }
 
