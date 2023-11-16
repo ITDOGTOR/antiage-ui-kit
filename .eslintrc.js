@@ -1,14 +1,26 @@
 module.exports = {
+	env: {
+		browser: true,
+		node: true,
+		es6: true,
+		jest: true,
+	},
 	extends: [
 		'airbnb',
 		'airbnb-typescript',
-		'plugin:import/typescript',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:react/recommended',
+		'plugin:react-hooks/recommended',
+		'plugin:import/recommended',
+		'plugin:jsx-a11y/recommended',
+		'plugin:jest/recommended',
 		'plugin:storybook/recommended',
 		'plugin:prettier/recommended',
 	],
-	plugins: ['react', '@typescript-eslint', 'jsx-a11y', 'simple-import-sort', 'import', 'react-hooks'],
+	plugins: ['@typescript-eslint', 'simple-import-sort'],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
+		createDefaultProgram: true,
 		ecmaFeatures: {
 			jsx: true,
 		},
@@ -16,47 +28,16 @@ module.exports = {
 		sourceType: 'module',
 		project: './tsconfig.eslint.json',
 	},
-	env: {
-		browser: true,
-		es6: true,
-	},
 	rules: {
-		'jsx-a11y/label-has-associated-control': 'off',
 		'react/jsx-props-no-spreading': 'off',
-		'no-restricted-exports': 'off',
+		'react/display-name': 'warn',
+		'react/jsx-key': 'warn',
 		'import/prefer-default-export': 'off',
-		'simple-import-sort/imports': 'error',
-		'simple-import-sort/exports': 'error',
-		'import/first': 'error',
-		'import/newline-after-import': 'error',
-		'import/no-duplicates': 'error',
-		'react/jsx-sort-props': [
-			'error',
-			{
-				callbacksLast: true,
-				shorthandFirst: true,
-			},
-		],
-		'no-unused-expressions': [
-			'error',
-			{
-				allowShortCircuit: true,
-				allowTernary: true,
-				allowTaggedTemplates: true,
-				enforceForJSX: true,
-			},
-		],
-		'react/jsx-filename-extension': [
-			'error',
-			{
-				extensions: ['.js', '.jsx', '.ts', '.tsx'],
-			},
-		],
-		'import/no-extraneous-dependencies': [
-			'error',
-			{
-				devDependencies: true,
-			},
-		],
+		'import/no-extraneous-dependencies': 'off',
+		'no-restricted-exports': 'off',
+		'jsx-a11y/label-has-associated-control': 'warn',
+		'@typescript-eslint/ban-ts-comment': 'warn',
+		'@typescript-eslint/no-explicit-any': 'warn',
+		'@typescript-eslint/ban-types': 'warn',
 	},
 };

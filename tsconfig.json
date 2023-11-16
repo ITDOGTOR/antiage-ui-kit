@@ -29,10 +29,12 @@
 	"exclude": [
 		"node_modules",
 		"**/node_modules/*",
-		"*.stories.tsx",
+		"__stories__",
+		"**/__stories__/*",
 		"**/*.stories.tsx",
 		"*.stories.ts",
-		"**/__stories__/*",
-		"__stories__"
+		"*.stories.tsx",
+		"**/*.test.ts",
+		"**/*.test.tsx",
 	]
 }
