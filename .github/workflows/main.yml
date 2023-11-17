@@ -28,7 +28,7 @@ jobs:
         run: npm run stylelint
 
       - name: Lint
-        run: npm run lint
+        run: npm run eslint
 
       - name: Test
         run: npm run test --ci --coverage --maxWorkers=2
