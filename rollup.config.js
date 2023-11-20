@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const commonjs = require('@rollup/plugin-commonjs');
 const resolve = require('@rollup/plugin-node-resolve');
 const terser = require('@rollup/plugin-terser');
 const analyzer = require('rollup-plugin-analyzer');
-const css = require('rollup-plugin-import-css');
+const postcss = require('rollup-plugin-postcss');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const typescript = require('rollup-plugin-typescript2');
 
@@ -28,7 +29,10 @@ module.exports = {
 	plugins: [
 		peerDepsExternal(),
 		resolve({browser: true}),
-		css({output: 'ui-kit.css', minify: true}),
+		postcss({
+			minimize: true,
+			extract: 'ui-kit.css',
+		}),
 		commonjs(),
 		typescript({useTsconfigDeclarationDir: true}),
 		terser(),
