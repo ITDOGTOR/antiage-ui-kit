@@ -13,6 +13,7 @@ function Input({
 	labelClassName = '',
 	placeholderClassName = '',
 	iconClassName = '',
+	Size = 'large',
 	theme = Theme.WHITE,
 	placeholder = '',
 	label = '',
@@ -58,6 +59,7 @@ function Input({
 	const inputWrapperClasses = classNames(
 		'ui-kit-input-wrapper',
 		theme,
+		Size,
 		{focused: isFocused},
 		{password: isPassword},
 		{icon: isEmail || isPassword},

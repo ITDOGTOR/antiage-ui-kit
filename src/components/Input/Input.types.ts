@@ -1,10 +1,11 @@
 import React, {DetailedHTMLProps, InputHTMLAttributes} from 'react';
 
-import {Theme} from '../index.types';
+import {Size, Theme} from '../index.types';
 
 export declare type InputProps = {
 	className?: string;
 	theme?: Theme;
+	Size?: Size;
 	placeholder?: string;
 	label?: string;
 	error?: string;

@@ -12,6 +12,22 @@
 	background: var(--faint-weak);
 }
 
+.ui-kit-select-container[data-size="small"] .ui-kit-select__control {
+	min-height: var(--h-small);
+}
+
+.ui-kit-select-container[data-size="small"] .ui-kit-select-label {
+	font-size: var(--fs-3xs);
+}
+
+.ui-kit-select-container[data-size="medium"] .ui-kit-select__control {
+	min-height: var(--h-medium);
+}
+
+.ui-kit-select-container[data-size="large"] .ui-kit-select__control {
+	min-height: var(--h-large);
+}
+
 .ui-kit-select-container[data-search="true"] .ui-kit-select__control {
 	padding: 0 14px 0 40px;
 }
