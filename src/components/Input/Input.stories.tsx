@@ -13,6 +13,10 @@ export default {
 			table: {defaultValue: {summary: 'white'}},
 			control: {type: 'select'},
 		},
+		Size: {
+			defaultValue: 'large',
+			control: {type: 'select'},
+		},
 		disabled: {
 			name: 'disabled',
 			defaultValue: false,
