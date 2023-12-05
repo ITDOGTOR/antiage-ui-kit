@@ -53,6 +53,7 @@ import Filter2 from './Filter2';
 import Folder from './Folder';
 import Game from './Game';
 import Graph from './Graph';
+import Grid from './Grid';
 import Heart from './Heart';
 import Home from './Home';
 import Image from './Image';
@@ -93,6 +94,7 @@ import StarOutlined from './StarOutlined';
 import Swap from './Swap';
 import Sync from './Sync';
 import SyncRounded from './SyncRounded';
+import TableChart from './TableChart';
 import Ticket from './Ticket';
 import TicketStar from './TicketStar';
 import Time from './Time';
@@ -503,8 +505,18 @@ function Template() {
 					</div>
 
 					<div className="svg-item">
+						<TableChart />
+						TableChart
+					</div>
+
+					<div className="svg-item">
 						<Image />
 						Image
+					</div>
+
+					<div className="svg-item">
+						<Grid />
+						Grid
 					</div>
 				</div>
 
