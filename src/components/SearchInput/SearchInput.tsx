@@ -16,9 +16,10 @@ function SearchInput({
 	inputClassName,
 	theme,
 	inputSize,
+	defaultValue,
 	...inputProps
 }: SearchInputProps) {
-	const [localValue, setLocalValue] = useState('');
+	const [localValue, setLocalValue] = useState(() => defaultValue || '');
 
 	const debouncedOnChange = useMemo(() => {
 		if (onDebounce) {
