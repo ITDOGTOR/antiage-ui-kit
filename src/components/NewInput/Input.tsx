@@ -2,14 +2,14 @@ import classNames from 'classnames';
 import React, {ChangeEvent, useState} from 'react';
 
 import {Eye, EyeClosed, Letter, Lock} from '../../assets';
-import {Theme} from '../index.types';
+import {Size, Theme} from '../index.types';
 import {InputProps} from './Input.types';
 import {InputErrorTooltip} from './ui';
 
 function NewInput({
 	CustomIconComponent,
 	theme = Theme.WHITE,
-	inputSize = 'medium',
+	inputSize = Size.MEDIUM,
 	disabled,
 	type,
 	error = '',

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, {UIEvent, useEffect, useRef} from 'react';
 
 import {updateTabsShadowClasses} from '../../helpers';
-import {Theme} from '../index.types';
+import {Size, Theme} from '../index.types';
 import {FilterTabsProps} from './FilterTabs.types';
 
 function FilterTabs({
@@ -11,7 +11,7 @@ function FilterTabs({
 	onClick = () => {},
 	theme = Theme.WHITE,
 	activeTabLink,
-	size = 'medium',
+	size = Size.MEDIUM,
 	containerClassName,
 	tabClassName,
 	activeTabClassName,
