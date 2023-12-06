@@ -32,8 +32,15 @@ module.exports = {
 		'react/jsx-props-no-spreading': 'off',
 		'react/display-name': 'warn',
 		'react/jsx-key': 'warn',
+
 		'import/prefer-default-export': 'off',
 		'import/no-extraneous-dependencies': 'off',
+		'import/first': 'error',
+		'import/newline-after-import': 'error',
+		'import/no-duplicates': 'error',
+		'simple-import-sort/imports': 'error',
+		'simple-import-sort/exports': 'error',
+
 		'no-restricted-exports': 'off',
 		'jsx-a11y/label-has-associated-control': 'warn',
 		'@typescript-eslint/ban-ts-comment': 'warn',
