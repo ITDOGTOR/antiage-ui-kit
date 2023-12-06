@@ -4,6 +4,7 @@ import Select from 'react-select';
 import CreatableSelect from 'react-select/creatable';
 
 import {Search} from '../../assets';
+import {Size} from '../index.types';
 import InputError from '../InputError';
 import {defaultStyles} from './config';
 import {SelectLocalProps} from './Select.types';
@@ -20,6 +21,7 @@ function SelectComponent({
 	label = '',
 	error,
 	theme,
+	size = Size.LARGE,
 	showLabelAlways = false,
 	search = false,
 	isDisabled = false,
@@ -29,7 +31,6 @@ function SelectComponent({
 }: SelectLocalProps) {
 	const [localSearch, setLocalSearch] = useState('');
 	const {value} = props;
-
 	const containerClasses = classNames('ui-kit-select-container', containerClassname);
 	const contentClasses = classNames('ui-kit-select-content-container');
 	const labelContainerClasses = classNames('ui-kit-select-label-container', {
@@ -41,7 +42,7 @@ function SelectComponent({
 	const Component = components[type];
 
 	return (
-		<div className={containerClasses} data-error={error || ''} data-search={search} data-theme={theme}>
+		<div className={containerClasses} data-error={error || ''} data-search={search} data-size={size} data-theme={theme}>
 			<div className={contentClasses}>
 				<Component
 					classNamePrefix="ui-kit-select"

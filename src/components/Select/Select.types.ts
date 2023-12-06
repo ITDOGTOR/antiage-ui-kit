@@ -1,9 +1,10 @@
 import {Ref} from 'react';
 import {InputActionMeta, StylesConfig} from 'react-select';
 
-import {Theme} from '../index.types';
+import {Size, Theme} from '../index.types';
 
 export interface SelectLocalProps {
+	size?: Size;
 	containerClassname?: string;
 	type?: 'default' | 'creatable';
 	getCustomStyles?: (arg: StylesConfig) => StylesConfig;

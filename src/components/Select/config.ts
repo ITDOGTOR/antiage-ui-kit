@@ -11,7 +11,6 @@ export const defaultStyles: StylesConfig = {
 			padding: '0 14px',
 			borderRadius: 'var(--brad-base)',
 			backgroundColor: 'var(--base-weak)',
-			minHeight: '44px',
 			boxShadow: 'none',
 			pointerEvents: 'auto',
 			cursor,

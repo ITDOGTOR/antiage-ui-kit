@@ -1,13 +1,13 @@
 import classNames from 'classnames';
 import React from 'react';
 
-import {Theme} from '../index.types';
+import {Size, Theme} from '../index.types';
 import {StatusProps} from './Status.types';
 
 function Status({
 	text,
 	color = 'accent',
-	size = 'medium',
+	size = Size.MEDIUM,
 	containerClassName,
 	textClassName,
 	theme = Theme.WHITE,

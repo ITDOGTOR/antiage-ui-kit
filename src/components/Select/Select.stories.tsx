@@ -22,6 +22,10 @@ export default {
 	title: 'Select',
 	component: Select,
 	argTypes: {
+		size: {
+			defaultValue: 'large',
+			control: {type: 'select'},
+		},
 		options: {
 			defaultValue: options,
 		},
