@@ -4,6 +4,7 @@ import Select from 'react-select';
 import CreatableSelect from 'react-select/creatable';
 
 import {Search} from '../../assets';
+import {Size} from '../index.types';
 import InputError from '../InputError';
 import {defaultStyles} from './config';
 import {SelectLocalProps} from './Select.types';
@@ -20,7 +21,7 @@ function SelectComponent({
 	label = '',
 	error,
 	theme,
-	size = 'large',
+	size = Size.LARGE,
 	showLabelAlways = false,
 	search = false,
 	isDisabled = false,

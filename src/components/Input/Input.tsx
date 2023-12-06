@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, {ChangeEvent, FocusEvent, SetStateAction, useEffect, useState} from 'react';
 
 import {Eye, EyeClosed, Letter, Lock} from '../../assets';
-import {Theme} from '../index.types';
+import {Size, Theme} from '../index.types';
 import InputError from '../InputError';
 import {InputProps} from './Input.types';
 
@@ -13,7 +13,7 @@ function Input({
 	labelClassName = '',
 	placeholderClassName = '',
 	iconClassName = '',
-	Size = 'large',
+	size = Size.LARGE,
 	theme = Theme.WHITE,
 	placeholder = '',
 	label = '',
@@ -59,7 +59,7 @@ function Input({
 	const inputWrapperClasses = classNames(
 		'ui-kit-input-wrapper',
 		theme,
-		Size,
+		size,
 		{focused: isFocused},
 		{password: isPassword},
 		{icon: isEmail || isPassword},
