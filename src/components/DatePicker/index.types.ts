@@ -31,13 +31,14 @@ export interface DatePickerGeneralProps {
 	applyMask?: Function;
 	lang?: string;
 	isDropdownAutoPosition?: boolean;
+	size: Size;
 }
 
 interface FieldProps {
 	name?: string;
+	size?: Size;
 	disabled?: boolean;
 	placeholder?: string;
-	size: Size;
 	theme?: Theme;
 	className?: string;
 	isSplit?: boolean;
