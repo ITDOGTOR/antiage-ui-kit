@@ -21,6 +21,7 @@ export const ViewField = React.memo(
 		withLabel,
 		isSplit,
 		theme,
+		size,
 		inputMask = setMaskedInputValue,
 		...props
 	}: ViewInputProps) => {
@@ -40,7 +41,7 @@ export const ViewField = React.memo(
 				<label className={classNames('ui-kit-date-picker__label')} htmlFor={name}>
 					<input
 						{...props}
-						className={classNames('ui-kit-date-picker__input', theme, {
+						className={classNames('ui-kit-date-picker__input', size, theme, {
 							'ui-kit-date-picker__input--split': isSplit,
 							'ui-kit-date-picker__input--withLabel': Boolean(value) && withLabel,
 							error,
