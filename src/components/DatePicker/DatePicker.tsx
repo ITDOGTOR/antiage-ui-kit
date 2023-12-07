@@ -21,6 +21,7 @@ function DatePicker({
 			field={<ViewField size={size} theme={theme} value={value} {...props} />}
 			isDropdownAutoPosition={isDropdownAutoPosition}
 			lang={lang}
+			size={size}
 			value={value}
 			onChange={onChange}
 			onClosePopup={onClosePopup}
