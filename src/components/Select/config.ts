@@ -1,6 +1,7 @@
 import {DropdownIndicatorProps, StylesConfig} from 'react-select';
 
 export const defaultStyles: StylesConfig = {
+	// @ts-ignore
 	control: (classes, state) => {
 		const cursor = state.isDisabled ? 'not-allowed' : 'pointer';
 		return {
@@ -16,12 +17,14 @@ export const defaultStyles: StylesConfig = {
 			cursor,
 		};
 	},
+	// @ts-ignore
 	input: (classes) => ({
 		...classes,
 		fontWeight: 500,
 		fontSize: 'var(--fs-xs)',
 		color: 'var(--base-strong)',
 	}),
+	// @ts-ignore
 	placeholder: (classes) => ({
 		...classes,
 		fontWeight: 500,
@@ -30,10 +33,12 @@ export const defaultStyles: StylesConfig = {
 		paddingLeft: '0px',
 		margin: '0',
 	}),
+	// @ts-ignore
 	indicatorSeparator: (classes) => ({
 		...classes,
 		display: 'none',
 	}),
+	// @ts-ignore
 	dropdownIndicator: (classes, state: DropdownIndicatorProps) => {
 		const transform = state.selectProps.menuIsOpen ? 'rotate(180deg)' : '';
 		const color = state.selectProps.menuIsOpen ? 'var(--accent-strong)' : 'var(--faint-strong)';
@@ -44,10 +49,12 @@ export const defaultStyles: StylesConfig = {
 			color,
 		};
 	},
+	// @ts-ignore
 	valueContainer: (classes) => ({
 		...classes,
 		padding: '0px',
 	}),
+	// @ts-ignore
 	singleValue: (classes) => {
 		return {
 			...classes,
@@ -55,6 +62,7 @@ export const defaultStyles: StylesConfig = {
 			fontSize: 'var(--fs-xs)',
 		};
 	},
+	// @ts-ignore
 	menu: (classes) => ({
 		...classes,
 		backgroundColor: 'white',
@@ -62,6 +70,7 @@ export const defaultStyles: StylesConfig = {
 		overflow: 'auto',
 		borderRadius: 'var(--brad-base)',
 	}),
+	// @ts-ignore
 	menuList: (classes) => ({
 		...classes,
 		padding: '0',
@@ -76,6 +85,7 @@ export const defaultStyles: StylesConfig = {
 			borderRadius: '3px',
 		},
 	}),
+	// @ts-ignore
 	option: (classes, {isSelected}) => ({
 		...classes,
 		cursor: 'pointer',
