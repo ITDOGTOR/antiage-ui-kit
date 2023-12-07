@@ -1,4 +1,4 @@
-import {Theme} from '../index.types';
+import {Size, Theme} from '../index.types';
 
 export enum ToggleButtons {
 	PREV = 'prev',
@@ -37,6 +37,7 @@ interface FieldProps {
 	name?: string;
 	disabled?: boolean;
 	placeholder?: string;
+	size: Size;
 	theme?: Theme;
 	className?: string;
 	isSplit?: boolean;
