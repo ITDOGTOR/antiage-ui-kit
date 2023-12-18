@@ -6,6 +6,7 @@ import Activity from './Activity';
 import ArrowHorizontal from './ArrowHorizontal';
 import ArrowPointerHorizontal from './ArrowPointerHorizontal';
 import ArrowPointerVertical from './ArrowPointerVertical';
+import ArrowReturn from './ArrowReturn';
 import ArrowRoundedHorizontal from './ArrowRoundedHorizontal';
 import ArrowRoundedVertical from './ArrowRoundedVertical';
 import ArrowSquareHorizontal from './ArrowSquareHorizontal';
@@ -85,6 +86,7 @@ import PointPlus from './PointPlus';
 import Refresh from './Refresh';
 import ReportProblem from './ReportProblem';
 import ReportProblemCircle from './ReportProblemCircle';
+import Save from './Save';
 import Scan from './Scan';
 import Search from './Search';
 import Send from './Send';
@@ -204,6 +206,10 @@ function Template() {
 					<div className="svg-item">
 						<CaretHorizontal />
 						CaretHorizontal
+					</div>
+					<div className="svg-item">
+						<ArrowReturn />
+						ArrowReturn
 					</div>
 				</div>
 
@@ -714,6 +720,11 @@ function Template() {
 					<div className="svg-item">
 						<Work />
 						Work
+					</div>
+
+					<div className="svg-item">
+						<Save />
+						Save
 					</div>
 				</div>
 			</div>
