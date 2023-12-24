@@ -65,6 +65,7 @@ export const defaultStyles: StylesConfig = {
 	// @ts-ignore
 	menu: (classes) => ({
 		...classes,
+		zIndex: 100,
 		backgroundColor: 'white',
 		boxShadow: '0px 10px 15px rgba(66, 71, 77, 0.1)',
 		overflow: 'auto',
